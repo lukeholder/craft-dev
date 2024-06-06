@@ -1,13 +1,40 @@
-dateModified: 1705627485
+dateModified: 1717696717
 email:
   fromEmail: tim@craftcms.com
   fromName: 'Craft Project'
   transportType: craft\mail\transportadapters\Sendmail
+fs:
+  privateFs:
+    hasUrls: false
+    name: 'Private FS'
+    settings:
+      expires: '1 years'
+      hasUrls: false
+      localFsPath: '@webroot/uploads'
+      localFsUrl: '@web/uploads'
+      subpath: null
+    type: craft\cloud\fs\AssetsFs
+  publicFs:
+    hasUrls: true
+    name: 'Public FS'
+    settings:
+      expires: '1 years'
+      hasUrls: true
+      localFsPath: '@webroot/uploads'
+      localFsUrl: '@web/uploads'
+      subpath: public
+    type: craft\cloud\fs\AssetsFs
+graphql:
+  publicToken:
+    enabled: false
+    expiryDate: null
 meta:
   __names__:
     1c4db2bd-b409-4bf2-a56e-c3327f0b160e: 'Craft Project' # Craft Project
     81a6b84b-4e06-4828-a256-d2d537885644: Common # Common
     283a253c-a365-4823-89c4-b48fbd2232a3: 'Craft Project' # Craft Project
+    a3055ce7-4027-475f-9618-c1725b0cb3a5: 'Private Assets' # Private Assets
+    de40aae4-ed01-4d89-95cc-f71b32bfc255: 'Public Assets' # Public Assets
 system:
   edition: pro
   live: true
