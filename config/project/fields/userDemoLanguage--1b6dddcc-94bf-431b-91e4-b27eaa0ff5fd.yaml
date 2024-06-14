@@ -1,0 +1,210 @@
+contentColumnType: string
+fieldGroup: 1ea0247b-17e7-419a-8029-d57f032f4ed0 # Users
+handle: userDemoLanguage
+instructions: ''
+name: 'Demographic Language'
+searchable: true
+settings:
+  multi: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Amharic
+        -
+          - value
+          - amharic
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Arabic
+        -
+          - value
+          - arabic
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Armenian
+        -
+          - value
+          - armenian
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Chinese
+        -
+          - value
+          - chinese
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - English
+        -
+          - value
+          - english
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Farsi
+        -
+          - value
+          - farsi
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Japanese
+        -
+          - value
+          - japanese
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Khmer
+        -
+          - value
+          - khmer
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Korean
+        -
+          - value
+          - korean
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Oromo
+        -
+          - value
+          - oromo
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Punjabi
+        -
+          - value
+          - punjabi
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Russian
+        -
+          - value
+          - russian
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Spanish
+        -
+          - value
+          - spanish
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Somali
+        -
+          - value
+          - somali
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Tagalog
+        -
+          - value
+          - tagalog
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Tigrinya
+        -
+          - value
+          - tigrinya
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Vietnamese
+        -
+          - value
+          - vietnamese
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Other
+        -
+          - value
+          - other
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Checkboxes

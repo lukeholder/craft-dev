@@ -1,0 +1,59 @@
+{# ACCOUNT PAGE HEADER #}
+
+{# SET PASSES SECTION BY CURRENT SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set pass                     = craft.entries().section(sitePrefix ~ 'passes').passFormat('digital').passUser(currentUser.id).one() %}
+
+{# SET ACCOUNT PROPERTIES #}
+{% set isTeen                   = currentUser and currentUser.userBirthdate.diff(now).days/360 < 20 %}
+{% set isExpired                = currentUser and currentUser.userIsProvisional and currentUser.dateCreated.diff(now).days > 15 %}
+
+{# SET URL VARIABLES FROM PATH #}
+{% set segment2                 = craft.app.request.segment(2) %}
+{% set path                     = craft.app.request.getPathInfo %}
+
+<header class="account-header">
+
+  <div class="grid-x grid-margin-x">
+    <div class="medium-6 large-8 cell">
+      <div class="account-message">
+        <h1 class="user-name">Hi {{ currentUser.fullName }}!</h1>
+        {% if isTeen and account.welcomeMessageProvisional and currentUser.userIsProvisional %}
+          {{ account.welcomeMessageProvisional }}
+        {% elseif isTeen and account.welcomeMessage %}
+          {{ account.welcomeMessage }}
+        {% elseif not isTeen and account.alumniMessage  %}
+          {{ account.alumniMessage }}
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="medium-6 large-4 cell">
+      <div class="account-pass">
+        {% if pass and isTeen and not isExpired %}
+          <a class="view-pass button primary expanded" href="{{ siteUrl }}account/pass/{{ currentUser.id }}" target="_blank" >
+            <div class="pass-logo"><img src="{{ siteUrl }}images/site/teentix-logo.png" alt="TeenTix Logo" /></div>
+            View My TeenTix Pass
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+
+  <div class="account-nav-mobile hide-for-medium">
+
+    <button id="account-nav-toggle" class="button success expanded" data-open="account-nav-modal">Manage Account</button>
+
+    <div class="reveal" id="account-nav-modal" data-reveal>
+      <div class="account-nav">
+        {% include 'account/_partials/nav-links' %}
+      </div>
+      <button class="close-button" data-close aria-label="Close modal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+  </div>
+
+</header>

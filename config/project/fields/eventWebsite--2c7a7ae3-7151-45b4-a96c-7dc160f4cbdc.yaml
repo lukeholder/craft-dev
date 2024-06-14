@@ -1,0 +1,12 @@
+contentColumnType: string(255)
+fieldGroup: 77d77e0d-cbd3-4972-b03e-ec05812e4b1b # Event
+handle: eventWebsite
+instructions: ''
+name: Website
+searchable: true
+settings:
+  maxLength: 255
+  placeholder: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

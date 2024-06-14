@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 77d77e0d-cbd3-4972-b03e-ec05812e4b1b # Event
+handle: eventCategory
+instructions: ''
+name: 'Event Category'
+searchable: true
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: ''
+  limit: null
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: 'group:9980e63a-d493-46d6-bde6-331b55821a2e' # Event Category
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

@@ -1,0 +1,56 @@
+{# GET RELEVANT EVENTS #}
+
+{# SET CONDITIONAL VARIABLES #}
+{% set limit                    = limit?? 5 %}
+{% set includeVenue             = includeVenue?? true %}
+{% set primaryVenueId           = primaryVenueId?? 0 %}
+
+{# RETRIEVE EVENTS #}
+{% set events                   = craft.calendar.events({
+  rangeStart                    : 'now',
+  loadOccurrences               : 6,
+  relatedTo                     : entry.id,
+}) %}
+{% set events                   = events|group(e => e.eventRelated? e.eventRelated.one().id : e.id) %}
+
+{% if events|length == 0 %}
+
+  <p>There are no upcoming events</p>
+
+{% else %}
+
+  <div class="grid-x grid-margin-x small-up-1 medium-up-2">
+    {% for eventId, showtimes in events %}
+
+      {% set event              = showtimes|first %}
+      {% set event               = event.id == eventId? event : event.eventRelated|first %}
+
+      <div class="cell">
+        <h4>
+          <a href="{{ siteUrl }}calendar/event/{{ event.slug }}">{{ event.title }}</a>
+        </h4>
+        <ul class="simple-list">
+          {% for showtime in showtimes %}
+            {% if loop.index0 < limit or loop.length == limit %}
+              <li>
+                <strong>{{showtime.startDate.format("D, M j, Y")}}</strong>
+                {% if showtime.allDay %}
+                  All day
+                {% else %}
+                  {{showtime.startDate.format("g:ia")}}
+                {% endif %}
+                {% if includeVenue and showtime.eventVenue|length and showtime.eventVenue.one().id != primaryVenueId -%}
+                  at <a href="{{ showtime.eventVenue.one().url }}">{{ showtime.eventVenue.one().title }}</a>
+                {% endif %}
+              </li>
+            {% elseif loop.index0 == limit %}
+              <li><a href="{{ siteUrl }}calendar/event/{{ event.slug }}">…and {{ event.occurrences|length-limit }} more</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+    {% endfor %}
+  </div>
+
+{% endif %}

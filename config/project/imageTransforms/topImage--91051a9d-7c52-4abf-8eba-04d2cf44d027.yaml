@@ -1,0 +1,10 @@
+format: null
+handle: topImage
+height: 500
+interlace: none
+mode: crop
+name: 'Top Image'
+position: top-left
+quality: null
+upscale: true
+width: 1200

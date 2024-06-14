@@ -1,0 +1,101 @@
+columnSuffix: lnkxngta
+contentColumnType: string(15)
+fieldGroup: 1ea0247b-17e7-419a-8029-d57f032f4ed0 # Users
+handle: userAdultRelationshipToTeen
+instructions: null
+name: 'Adult''s Relationship to Teen'
+searchable: true
+settings:
+  columnType: null
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - ''
+        -
+          - value
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Parent
+        -
+          - value
+          - parent
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Guardian
+        -
+          - value
+          - guardian
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Teacher
+        -
+          - value
+          - teacher
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Counselor
+        -
+          - value
+          - counselor
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Mentor
+        -
+          - value
+          - mentor
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Community Leader'
+        -
+          - value
+          - communityLeader
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Friend
+        -
+          - value
+          - friend
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

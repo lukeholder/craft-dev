@@ -1,0 +1,204 @@
+field: 019bfad1-7fee-4969-a0ce-4106539e4f9b # Flexible Content
+fieldLayouts:
+  f9593dd4-0c32-46d4-8f0b-35b4822c63aa:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: df016b46-8972-4cdf-8a2f-a6b53a8d4bde # Header
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 83537bab-6787-441c-983d-19891f23ea08
+            warning: null
+            width: 100
+          -
+            fieldUid: d5333808-ac8c-4d5a-820b-cab3267a226c # Copy
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d737c791-c02b-406f-a478-ca0932b2ecdb
+            warning: null
+            width: 100
+          -
+            fieldUid: fb819ac6-1202-488a-8ca3-ed74fe083e45 # Grid count
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cc1ff2e4-e55c-413b-810e-9c39f566fda5
+            warning: null
+            width: 100
+          -
+            fieldUid: 0a530a48-e35a-44a6-ba97-841a535d88a9 # Images
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e63f5e24-fdc0-4ab5-bf72-129573bb4c52
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 6ed0e563-fa27-4240-83ab-f57fb9ec9a13
+fields:
+  0a530a48-e35a-44a6-ba97-841a535d88a9: # Images
+    contentColumnType: string
+    fieldGroup: null
+    handle: images
+    instructions: ''
+    name: Images
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowUploads: false
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+      defaultUploadLocationSubpath: ''
+      limit: ''
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+        - 'volume:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+        - 'volume:834d8a22-ae60-4d04-9fd2-a0924a7e93f2' # SEA Ad Images
+        - 'volume:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+        - 'volume:d8eeb3df-3c65-4ed9-b943-c95348bd3f50' # SEA Sponsor Logos
+        - 'volume:7f7bf724-7909-4699-b70a-5cd496c314bb' # LA Page Images
+        - 'volume:0543ea8d-9bf0-4033-bb9a-bae51d9860cf' # LA Partner Images
+        - 'volume:a6e1f43e-7d92-4454-b86e-9b57856d3c34' # LA Ad Images
+        - 'volume:d8052c64-2464-4aa2-8b41-9f106bc1d1f6' # LA General Images
+        - 'volume:5ec9bf08-ecd8-45fc-9476-42230de4ea06' # LA Sponsor Logos
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  d5333808-ac8c-4d5a-820b-cab3267a226c: # Copy
+    contentColumnType: text
+    fieldGroup: null
+    handle: copy
+    instructions: ''
+    name: Copy
+    searchable: true
+    settings:
+      availableTransforms: ''
+      availableVolumes: ''
+      ckeConfig: 37036a58-d782-4f1e-b28d-d76b77295540 # Default
+      columnType: text
+      defaultTransform: ''
+      enableSourceEditingForNonAdmins: true
+      purifierConfig: ''
+      purifyHtml: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  df016b46-8972-4cdf-8a2f-a6b53a8d4bde: # Header
+    contentColumnType: text
+    fieldGroup: null
+    handle: header
+    instructions: ''
+    name: Header
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  fb819ac6-1202-488a-8ca3-ed74fe083e45: # Grid count
+    contentColumnType: string
+    fieldGroup: null
+    handle: gridCount
+    instructions: ''
+    name: 'Grid count'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - two
+            -
+              - value
+              - '2'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - three
+            -
+              - value
+              - '3'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - four
+            -
+              - value
+              - '4'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - five
+            -
+              - value
+              - '5'
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - six
+            -
+              - value
+              - '6'
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: imageGrid
+name: 'Image Grid'
+sortOrder: 5

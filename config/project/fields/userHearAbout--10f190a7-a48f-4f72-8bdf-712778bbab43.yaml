@@ -1,0 +1,133 @@
+contentColumnType: string
+fieldGroup: 1ea0247b-17e7-419a-8029-d57f032f4ed0 # Users
+handle: userHearAbout
+instructions: ''
+name: 'Hear About'
+searchable: true
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Select One'
+        -
+          - value
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Friend or Sibling'
+        -
+          - value
+          - friend
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Teacher or School Counselor'
+        -
+          - value
+          - teacher
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Presentation at School'
+        -
+          - value
+          - presentationAtSchool
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Table at Event'
+        -
+          - value
+          - tableAtEvent
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Community Center or Youth Group'
+        -
+          - value
+          - communityCenter
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'A website'
+        -
+          - value
+          - website
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Social Media'
+        -
+          - value
+          - socialMedia
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Poster
+        -
+          - value
+          - poster
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Parent / Guardian'
+        -
+          - value
+          - parentGuardian
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Other
+        -
+          - value
+          - other
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

@@ -1,0 +1,114 @@
+field: 1b067782-5ec8-465b-a1b7-5fb3d20a708f # Social Links
+fieldLayouts:
+  af027e62-7f7e-4597-98d3-10a461e96c42:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 23273b5c-1323-461a-9fd4-9a6ce23daec8 # Website
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: aefd1f1d-cb71-422e-a087-d20e53e9bdd0
+            warning: null
+            width: 100
+          -
+            fieldUid: 5a668aea-8c05-4ffb-9f06-30f9733cde93 # Website Url
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c51c736e-a2dd-4c90-9e0d-503ee28eb4eb
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 1f0e957b-0192-480f-a9c9-fce86c2c37a9
+fields:
+  5a668aea-8c05-4ffb-9f06-30f9733cde93: # Website Url
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: websiteUrl
+    instructions: ''
+    name: 'Website Url'
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  23273b5c-1323-461a-9fd4-9a6ce23daec8: # Website
+    contentColumnType: string
+    fieldGroup: null
+    handle: website
+    instructions: ''
+    name: Website
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Facebook
+            -
+              - value
+              - facebook
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Twitter
+            -
+              - value
+              - twitter
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Youtube
+            -
+              - value
+              - youtube
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Vimeo
+            -
+              - value
+              - vimeo
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Instagram
+            -
+              - value
+              - instagram
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: link
+name: 'Social Link'
+sortOrder: 1

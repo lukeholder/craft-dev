@@ -1,0 +1,20 @@
+columnSuffix: umafygeo
+contentColumnType: integer(10)
+fieldGroup: 243aa178-cda7-4f1a-8094-268c903002ed # Check Ins
+handle: checkinGuestCount
+instructions: 'The number of guests that the Member is attending with'
+name: 'Number of Guests'
+searchable: true
+settings:
+  decimals: 0
+  defaultValue: 0
+  max: null
+  min: 0
+  prefix: null
+  previewCurrency: null
+  previewFormat: none
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

@@ -1,0 +1,20 @@
+contentColumnType: text
+fieldGroup: 261d2164-7376-4ca2-acf0-4ea3a0f16d84 # Ads
+handle: adHomeCopy
+instructions: ''
+name: 'Homepage Copy'
+searchable: true
+settings:
+  availableTransforms: ''
+  availableVolumes: ''
+  ckeConfig: 37036a58-d782-4f1e-b28d-d76b77295540 # Default
+  columnType: text
+  defaultTransform: ''
+  enableSourceEditingForNonAdmins: true
+  purifierConfig: ''
+  purifyHtml: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

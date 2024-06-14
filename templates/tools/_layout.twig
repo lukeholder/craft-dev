@@ -1,0 +1,14 @@
+{# TOOLS LAYOUT #}
+{% extends "_layout" %}
+
+{# VALIDATE ROLE #}
+{% if not currentUser.admin and not currentUser.isInGroup(4) and not currentUser.isInGroup(5) %}
+  {% exit 401 %}
+{% endif %}
+
+{% block content %}
+  <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+  <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+{% endblock %}
+
+{% block footerJs %}{% endblock %}

@@ -1,0 +1,249 @@
+field: 019bfad1-7fee-4969-a0ce-4106539e4f9b # Flexible Content
+fieldLayouts:
+  b43f8dc0-d99f-49ad-99ad-d1fb8cedc44e:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 13b750c3-a582-454e-b040-0cf73dbb7a5f # Header
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 54fcdd75-105b-41fe-813e-18d26fa4bde6
+            warning: null
+            width: 100
+          -
+            fieldUid: d5f9d4a5-b92e-4172-9d1c-f6b3135de6d8 # Copy
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 54b0c3c4-9013-46a2-80dd-bbaed1b775cf
+            warning: null
+            width: 100
+          -
+            fieldUid: 8f001033-978a-40fd-8c8b-a2c6cd93e08b # Background Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ccab46cd-54f1-470f-b270-ee4a2654317d
+            warning: null
+            width: 100
+          -
+            fieldUid: fabebbb4-c8af-4bc5-bd71-d5e7d7793ee9 # Gallery Position
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9a14311c-6a03-4b2e-ace2-1898d6d4f258
+            warning: null
+            width: 100
+          -
+            fieldUid: 9060a498-dd4b-4c7b-9cda-01e693a6ddce # Images
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5737d9bf-27a5-4c34-80e5-ee2f8e231522
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 80066691-caa5-4430-8910-61bbec429284
+fields:
+  8f001033-978a-40fd-8c8b-a2c6cd93e08b: # Background Color
+    contentColumnType: string
+    fieldGroup: null
+    handle: backgroundColor
+    instructions: ''
+    name: 'Background Color'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - none
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Green
+            -
+              - value
+              - green
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Blue
+            -
+              - value
+              - blue
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Gray
+            -
+              - value
+              - gray
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  13b750c3-a582-454e-b040-0cf73dbb7a5f: # Header
+    contentColumnType: text
+    fieldGroup: null
+    handle: header
+    instructions: ''
+    name: Header
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  9060a498-dd4b-4c7b-9cda-01e693a6ddce: # Images
+    contentColumnType: string
+    fieldGroup: null
+    handle: images
+    instructions: ''
+    name: Images
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowUploads: false
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+      defaultUploadLocationSubpath: ''
+      limit: ''
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+        - 'volume:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+        - 'volume:834d8a22-ae60-4d04-9fd2-a0924a7e93f2' # SEA Ad Images
+        - 'volume:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+        - 'volume:d8eeb3df-3c65-4ed9-b943-c95348bd3f50' # SEA Sponsor Logos
+        - 'volume:7f7bf724-7909-4699-b70a-5cd496c314bb' # LA Page Images
+        - 'volume:0543ea8d-9bf0-4033-bb9a-bae51d9860cf' # LA Partner Images
+        - 'volume:a6e1f43e-7d92-4454-b86e-9b57856d3c34' # LA Ad Images
+        - 'volume:d8052c64-2464-4aa2-8b41-9f106bc1d1f6' # LA General Images
+        - 'volume:5ec9bf08-ecd8-45fc-9476-42230de4ea06' # LA Sponsor Logos
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  d5f9d4a5-b92e-4172-9d1c-f6b3135de6d8: # Copy
+    contentColumnType: text
+    fieldGroup: null
+    handle: copy
+    instructions: ''
+    name: Copy
+    searchable: true
+    settings:
+      availableTransforms: ''
+      availableVolumes: ''
+      ckeConfig: 37036a58-d782-4f1e-b28d-d76b77295540 # Default
+      columnType: text
+      defaultTransform: ''
+      enableSourceEditingForNonAdmins: true
+      purifierConfig: ''
+      purifyHtml: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  fabebbb4-c8af-4bc5-bd71-d5e7d7793ee9: # Gallery Position
+    contentColumnType: string
+    fieldGroup: null
+    handle: contentAlign
+    instructions: ''
+    name: 'Gallery Position'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - center
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: imageGallery
+name: 'Image Gallery'
+sortOrder: 4

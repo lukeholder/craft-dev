@@ -1,0 +1,33 @@
+contentColumnType: string
+fieldGroup: e823674a-d2fc-4023-89dd-2bfacf7bc359 # Common
+handle: featuredImage
+instructions: ''
+name: 'Featured Image'
+searchable: true
+settings:
+  allowSelfRelations: false
+  allowUploads: false
+  allowedKinds: null
+  defaultUploadLocationSource: 'volume:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: ''
+  selectionLabel: ''
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+  singleUploadLocationSubpath: ''
+  source: null
+  sources:
+    - 'volume:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+    - 'volume:d8052c64-2464-4aa2-8b41-9f106bc1d1f6' # LA General Images
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

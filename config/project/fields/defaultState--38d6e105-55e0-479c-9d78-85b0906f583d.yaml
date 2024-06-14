@@ -1,0 +1,35 @@
+columnSuffix: zieqsvxg
+contentColumnType: string(2)
+fieldGroup: 4f2d0446-809a-4896-9a97-3b5409c32324 # Global
+handle: defaultState
+instructions: 'The state that the TeenTix location is based out of. This will be the default state selected on the Member Sign-Up Form. '
+name: 'Default State'
+searchable: false
+settings:
+  columnType: null
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - California
+        -
+          - value
+          - CA
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Washington
+        -
+          - value
+          - WA
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Dropdown

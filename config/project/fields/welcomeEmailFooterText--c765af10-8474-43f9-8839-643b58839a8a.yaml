@@ -1,0 +1,19 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: a51ba621-81f3-4260-a89b-f7dc5e425ee4 # Emails
+handle: welcomeEmailFooterText
+instructions: 'Content to display in the footer of emails'
+name: 'Welcome Email (Footer) (Text)'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: true
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\PlainText

@@ -1,0 +1,23 @@
+enableVersioning: true
+handle: la_venuesIndex
+name: 'LA Venues Index'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  7d81a2c3-37f0-4c8e-ae20-7d3ab5055184: # TeenTix LA
+    enabledByDefault: true
+    hasUrls: true
+    template: venues/index
+    uriFormat: venues
+type: single

@@ -1,0 +1,34 @@
+contentColumnType: string
+fieldGroup: 4f2d0446-809a-4896-9a97-3b5409c32324 # Global
+handle: footerLogos
+instructions: ''
+name: 'Footer Logos'
+searchable: true
+settings:
+  allowSelfRelations: false
+  allowUploads: false
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:d8eeb3df-3c65-4ed9-b943-c95348bd3f50' # SEA Sponsor Logos
+  defaultUploadLocationSubpath: ''
+  limit: ''
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: '1'
+  selectionLabel: 'Add a logo'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+  singleUploadLocationSubpath: ''
+  source: null
+  sources:
+    - 'volume:d8eeb3df-3c65-4ed9-b943-c95348bd3f50' # SEA Sponsor Logos
+    - 'volume:5ec9bf08-ecd8-45fc-9476-42230de4ea06' # LA Sponsor Logos
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

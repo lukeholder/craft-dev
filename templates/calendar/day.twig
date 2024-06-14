@@ -1,0 +1,104 @@
+{# CALENDAR DAY VIEW #}
+{% extends "_layout" %}
+
+{# SET CALENDAR BY SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set calendars                = [sitePrefix ~ "events", sitePrefix ~ "eventsAdditional"] %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Calendar" %}
+{% set class                    = "calendar list" %}
+
+{# ACQUIRE URL SEGMENTS #}
+{% set baseUrlSegments          = 1 %}
+{% set segment1                 = craft.app.request.segment(baseUrlSegments + 1) %}
+{% set segment2                 = craft.app.request.segment(baseUrlSegments + 2) %}
+{% set segment3                 = craft.app.request.segment(baseUrlSegments + 3) %}
+{% set segment4                 = craft.app.request.segment(baseUrlSegments + 4) %}
+{% set segment5                 = craft.app.request.segment(baseUrlSegments + 5) %}
+{% set segment6                 = craft.app.request.segment(baseUrlSegments + 6) %}
+
+{# SET DATE FROM URL #}
+{% set targetDate               = now|date("M d, Y") %}
+{% if segment2 is not empty %}
+  {% set targetDate             = segment2 ~ "-" ~ segment3 ~ "-" ~ segment4 %}
+{% endif %}
+
+{# SET CALENDAR VARIABLES #}
+{% set day                      = craft.calendar.day({
+  date                          : targetDate,
+  calendar                      : calendars
+}) %}
+{% set allday                   = craft.calendar.day({
+  date                          : targetDate,
+  allDay                        : true,
+  orderBy                       : "title ASC",
+  calendar                      : calendars
+}) %}
+
+{# SET SEO VALUES #}
+{% set dayLabel                 = "" %}
+{% if segment2 is not empty %}
+  {% set dayLabel               = " - " ~ day.date.format('l, F j, Y') %}
+{% endif %}
+
+{% do seomatic.meta.seoTitle( siteName ~ " Events Calendar" ~ dayLabel ) %}
+{% do seomatic.meta.seoDescription( "Daily calendar of TeenTix eligible events" ~ dayLabel ) %}
+
+{% block content %}
+{% cache %}
+
+  <div id="main">
+  
+    <header class="page-header">
+      <h1 class="page-title">{{ siteName }} Events Calendar</h1>
+    </header>
+  
+    {% include 'calendar/_partials/calendar-view-nav' %}
+  
+    <div id="dailyCalendar">
+    
+      <div id="calendarHeader" class="grid-x align-middle">
+        <div class="cell auto">
+          <div><a href="{{ siteUrl }}calendar/day/{{ segment2 == "calendar" ? "calendar/"~segment3~"/" }}{{ day.previousDate.format('Y/m/d') }}"><i class="fas fa-caret-left"></i> Previous Day</a></div>
+        </div>
+        <div class="cell auto">
+          <h3 class="text-center">{{ day.date.format('l, F j, Y') }}</h3>
+        </div>
+        <div class="cell auto">
+          <div class="text-right"><a href="{{ siteUrl }}calendar/day/{{ segment2 == "calendar" ? "calendar/"~segment3~"/" }}{{ day.nextDate.format('Y/m/d') }}">Next Day <i class="fas fa-caret-right"></i></a></div>
+        </div>
+      </div>
+  
+      <div class="calendar-listing">
+  
+        {% for entry in day.events %}
+          {% if not entry.allDay %}
+            {% set time = entry.startDate.format('g:ia') %}
+            {% include 'calendar/_partials/day-event' with {'time': time} %}
+          {% endif %}
+        {% endfor %}
+
+        {% for entry in allday.events %}
+          {% include 'calendar/_partials/day-event' with {'time': 'All Day'} %}
+        {% endfor %}
+  
+      </div>
+  
+      <div id="calendarFooter" class="grid-x align-middle">
+        <div class="cell auto">
+          <div><a href="{{ siteUrl }}calendar/day/{{ segment2 == "calendar" ? "calendar/"~segment3~"/" }}{{ day.previousDate.format('Y/m/d') }}"><i class="fas fa-caret-left"></i> Previous Day</a></div>
+        </div>
+        <div class="cell auto">
+          <div class="text-right"><a href="{{ siteUrl }}calendar/day/{{ segment2 == "calendar" ? "calendar/"~segment3~"/" }}{{ day.nextDate.format('Y/m/d') }}">Next Day <i class="fas fa-caret-right"></i></a></div>
+        </div>
+      </div>
+  
+    </div>
+  
+    {% include 'calendar/_partials/calendar-mobile-nav' %}
+  
+  </div>
+
+{% endcache %}
+{% endblock %}

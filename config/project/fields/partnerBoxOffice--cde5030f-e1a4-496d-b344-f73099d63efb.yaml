@@ -1,0 +1,30 @@
+contentColumnType: text
+fieldGroup: 61cb854e-4648-46e6-aa10-5c8caea1d4fe # Partners
+handle: partnerBoxOffice
+instructions: ''
+name: 'Box Office Info'
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes:
+    - ff4a3796-5f38-4dbb-8328-85026951b987 # SEA Page Images
+    - bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb # SEA Partner Images
+    - 834d8a22-ae60-4d04-9fd2-a0924a7e93f2 # SEA Ad Images
+    - a16a3316-a22e-4c0f-82e4-fe841faf49ce # SEA General Images
+    - d8eeb3df-3c65-4ed9-b943-c95348bd3f50 # SEA Sponsor Logos
+    - 7f7bf724-7909-4699-b70a-5cd496c314bb # LA Page Images
+    - 0543ea8d-9bf0-4033-bb9a-bae51d9860cf # LA Partner Images
+    - a6e1f43e-7d92-4454-b86e-9b57856d3c34 # LA Ad Images
+    - d8052c64-2464-4aa2-8b41-9f106bc1d1f6 # LA General Images
+    - 5ec9bf08-ecd8-45fc-9476-42230de4ea06 # LA Sponsor Logos
+  ckeConfig: 37036a58-d782-4f1e-b28d-d76b77295540 # Default
+  columnType: text
+  defaultTransform: ''
+  enableSourceEditingForNonAdmins: true
+  purifierConfig: ''
+  purifyHtml: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

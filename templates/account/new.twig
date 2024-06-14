@@ -1,0 +1,239 @@
+{# ACCOUNT NEW #}
+
+{# APPLICANT IS SET IN CONFIG/ROUTES.PHP #}
+{% extends "_layout" %}
+
+{# DEFINE APPLICANT TYPES #}
+{% set applicantTypes           = ["teen", "adult", "quick", "finish"] %}
+
+{# SET USER REFERENCE #}
+{% set user                     = user?? currentUser?? create('craft\\elements\\User') %}
+
+{# SET ACCOUNT PROPERTIES #}
+{% set isProvisional            = user.id and user.userIsProvisional %}
+
+{# SET REDIRECTS IF CERTAIN VALUES ARE MISSING #}
+{% if currentUser and not isProvisional %}
+  {% redirect "account" %}
+{% endif %}
+{% if applicant is not defined %}
+  {% redirect "sign-up" %}
+{% endif %}
+{% if applicant not in applicantTypes %}
+  {% redirect "sign-up" %}
+{% endif %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Account" %}
+{% set class                    = "account" %}
+
+{# SET SEO VALUES #}
+{% do seomatic.meta.seoTitle( "TeenTix Pass Application for " ~ applicant ~ "s" ) %}
+
+{# SET BIRTHDAY YEAR RANGE #}
+{% set end_year                 = date()|date('Y')-13 %}
+{% set start_year               = end_year-7 %}
+
+{# SET GRAMMATICAL REFERENCES BASED ON AUDIENCE #}
+{% if applicant == "adult" %}
+  {% set you                    = "the Pass holder" %}
+  {% set your                   = you ~ "'s" %}
+  {% set are, do                = "is", "does" %}
+{% else %}
+  {% set you                    = "you" %}
+  {% set your                   = "your" %}
+  {% set are, do                = "are", "do" %}
+{% endif %}
+
+{# SET FORM OPTIONS FROM CRAFT APP #}
+{% set userCountry              = craft.app.fields.getFieldByHandle('userCountry') %}
+
+{# GENERATE DETERMINISTIC PASSWORD #}
+{% if applicant == "quick" %}
+  {% set password               = now|date("FWzl")|hash %}
+{% elseif isProvisional %}
+  {% set password               = user.dateCreated|date("FWzl")|hash %}
+{% endif %}
+
+{% block content %}
+
+  <header class="page-header text-center">
+    <h1 class="page-title">Sign Up for a TeenTix Pass</h1>
+  </header>
+
+  <div class="grid-x grid-margin-x">
+
+    <div class="sidebar large-4 cell">
+      {% if applicant == "quick" %}
+        {% if account.signUpSidebarQuick %}
+          {{ account.signUpSidebarQuick }}
+        {% endif %}
+      {% elseif isProvisional %}
+        {% if account.signUpSidebarProvisional %}
+          {{ account.signUpSidebarProvisional }}
+        {% endif %}
+      {% elseif account.signUpSidebar %}
+        {{ account.signUpSidebar }}
+      {% endif %}
+    </div>
+
+    <div class="main large-8 cell">
+
+      <form id="form-regisration" method="post" accept-charset="UTF-8" data-abide novalidate>
+        {{ csrfInput() }}
+        <input type="hidden" name="action" value="recaptcha/recaptcha/verify-submission">
+        <input type="hidden" name="verified-action" value="users/save-user">
+        <input type="hidden" name="fields[userApplicantType]" value="{{ applicant }}">
+        <input type="hidden" name="fields[userSite]" value="{{ currentSite.handle }}">
+        {{ redirectInput('account') }}
+
+        {% if isProvisional %}
+          <input type="hidden" name="userId" value="{{ user.id }}">
+          <input type="hidden" name="fields[userIsProvisional]" value="0">
+        {% elseif applicant == "quick" %}
+          <input type="hidden" name="fields[userIsProvisional]" value="1">
+        {% endif %}
+
+        {% macro errorList(errors) %}
+          {% if errors %}
+            <ul class="errors">
+              {% for error in errors %}
+                <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endmacro %}
+
+        {% from _self import errorList %}
+
+        {% if applicant == "adult" %}
+          <div class="form-group">
+
+            <h3 class="section-header">Adult Applicant Info</h3>
+            <div class="section-instructions">
+              <p>If you are an adult, applying on behalf of a teen, please provide us with your name and email address.</p>
+            </div>
+
+            <div id="register-adult-name">
+              <label for="field-adult-name" class="require">Adult Applicant Name</label>
+              <input type="text" name="fields[userAdultName]" id="field-adult-name" value="" aria-errormessage="adultNameError" required>
+              <span class="form-error" id="adultNameError">Please enter a name</span>
+            </div>
+
+            <div id="register-adult-email">
+              <label for="field-adult-email" class="require">Adult Applicant Email Address</label>
+              <input type="email" name="fields[userAdultEmailAddress]" id="field-adult-email" value="" aria-errormessage="adultEmailError" required>
+              <span class="form-error" id="adultEmailError">Please enter a valid email address</span>
+            </div>
+
+            <div id="register-adult-relationship">
+              <label for="field-relationship">How are you related to the teen?</label>
+              <select id="field-relationship" name="fields[userAdultRelationshipToTeen]">
+                {% for option in user.userAdultRelationshipToTeen.options %}
+                  <option value="{{ option.value }}">{{ option.label|raw }}</option>
+                {% endfor %}
+              </select>
+            </div>
+
+          </div>
+        {% endif %}
+
+        <div class="form-group">
+
+          <h3 class="section-header">Email {% if applicant != "quick" %}and Password{% endif %}</h3>
+
+          <div class="section-instructions">
+            <p>
+              In order to sign up, you'll need a unique and individual email address—most of our members use their school emails.
+              {% if applicant == "adult" %}
+                We do this to keep accounts separate and keep ownership of an account in the teen's hands.
+                <strong>Even if you are registering on behalf of a teen, unique emails must be used for each account.</strong>
+              {% endif %}
+            </p>
+          </div>
+
+          <div id="register-email">
+            <label for="field-email" class="require">Email Address</label>
+            <input id="field-email" type="email" name="email" placeholder="Email Address" {%- if user is defined %} value="{{ user.email }}"{% endif %} {{ isProvisional? "readonly" }} aria-describedby="emailHelpText" aria-errormessage="emailError" required>
+            <span class="form-error" id="emailError">Please enter a valid email address</span>
+            <span class="duplicate-error hide">This email is already taken. <a href="/account/login">Login to your account</a> or <a href="/account/password">reset your password</a>.</span>
+            <p class="help-text" id="emailHelpText">A unique email address is required</p>
+          </div>
+  
+          {% if user is defined %}
+            {{ errorList(user.getErrors('email')) }}
+          {% endif %}
+
+          {% if applicant == "quick" or isProvisional %}
+            <input type="hidden" name="password" value="{{ password }}">
+          {% endif %}
+          {% if applicant != "quick" %}
+            <div id="register-password">
+              <label for="field-password" class="require">Password</label>
+              <input id="field-password" type="password" name="{{ isProvisional? "newPassword" : "password" }}" placeholder="Password" aria-describedby="passwordHelpText" aria-errormessage="passwordError" pattern="minlength" required>
+              <span class="form-error" id="passwordError">Please enter a valid password</span>
+              <p class="help-text" id="passwordHelpText">Your password must be at least 6 characters long</p>
+            </div>
+          {% endif %}
+  
+          {% if user is defined %}
+            {{ errorList(user.getErrors('password')) }}
+            {{ errorList(user.getErrors('newPassword')) }}
+          {% endif %}
+  
+        </div>
+  
+        {% include 'account/_partials/profile-core' %}
+
+        <div class="form-group">
+
+          <h3 class="section-header">Other Info</h3>
+
+          {% if applicant != "quick" %}
+            <div id="register-referral">
+              <label for="field-hear-about">How did you hear about TeenTix?</label>
+              <select id="field-hear-about" name="fields[userHearAbout]">
+                {% for option in user.userHearAbout.options %}
+                  <option value="{{ option.value }}">{{ option.label|raw }}</option>
+                {% endfor %}
+              </select>
+              <label for="field-referred">Who referred you to TeenTix?</label>
+              <input type="text" name="fields[userReferred]" id="field-referred" value="">
+            </div>
+          {% endif %}
+
+          <fieldset id="register-newsletter">
+            <legend>TeenTix Newsletter</legend>
+            <div class="checkbox">
+              <label for="field-newsletter"><input type="checkbox" name="fields[userNewsletter]" id="field-newsletter" {{ user.userNewsletter? "checked" }} value="1"> I want to receive the TeenTix newsletter, a weekly arts &amp; culture guide for the most exciting TeenTix-eligible events.</label>
+            </div>
+          </fieldset>
+
+        </div>
+
+        <div class="form-group recaptcha">
+          {{ craft.recaptcha.render({
+            callback: 'enableSubmitButton',
+            size: 'normal',
+            badge: 'bottomright',
+          }) }}
+        </div>
+
+        <script>
+          function enableSubmitButton(){
+            document.getElementById("submit-button").disabled = false;
+          }
+        </script>
+  
+        <input id="submit-button" class="button success large expanded" type="submit" value="SUBMIT" disabled>
+  
+        <div data-abide-error class="alert callout" style="display: none;">
+          <p class="text-center">There are some errors in your form, please fix them before submitting.</p>
+        </div>
+  
+      </form>
+  
+    </div>
+  </div>
+
+{% endblock %}

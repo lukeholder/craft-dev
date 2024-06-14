@@ -1,0 +1,55 @@
+contentColumnType: string
+fieldGroup: 1ea0247b-17e7-419a-8029-d57f032f4ed0 # Users
+handle: userApplicantType
+instructions: ''
+name: 'Applicant Type'
+searchable: true
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Teen
+        -
+          - value
+          - teen
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Adult
+        -
+          - value
+          - adult
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Quick
+        -
+          - value
+          - quick
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Quick (Completed)'
+        -
+          - value
+          - finish
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\RadioButtons

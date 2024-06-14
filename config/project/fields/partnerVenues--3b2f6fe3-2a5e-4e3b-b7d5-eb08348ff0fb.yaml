@@ -1,0 +1,22 @@
+contentColumnType: string
+fieldGroup: 61cb854e-4648-46e6-aa10-5c8caea1d4fe # Partners
+handle: partnerVenues
+instructions: ''
+name: Venues
+searchable: true
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'section:452b1ee2-d2bb-4dbd-8ce6-7c35b24dde49' # LA Venues
+    - 'section:4249fa93-3dc0-4275-bd60-5b10cd7541c4' # SEA Venues
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

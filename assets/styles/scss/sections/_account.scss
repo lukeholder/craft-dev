@@ -1,0 +1,208 @@
+#loginForm,
+#passwordForm {
+  border-radius: 1rem;
+  padding: 30px;
+  background-color: $offwhite;
+  border: 1px solid $light-gray;
+  box-shadow: 0 0 10px rgba($black, .1);
+  margin-bottom: 1rem;
+}
+
+.account {
+
+  .page-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .account-header {
+    background-color: $teal;
+    color: $white;
+    text-align: left;
+    padding-top: 1rem;
+    margin: -2rem -1rem 1.5rem -1rem;
+
+    .account-message {
+      padding: 0 1rem;
+
+      h1 {
+        font-family: $font-header;
+        margin: 1rem 0;
+        line-height: 1em;
+      }
+
+      p {
+        font-weight: 500;
+      }
+
+      a {
+        color: $blue;
+        &:hover {
+          color: $white;
+        }
+      }
+
+      @include breakpoint(medium) {
+        padding: 0;
+      }
+
+    }
+
+    .user-group {
+      margin-bottom: 0;
+      font-weight: 700;
+    }
+
+    .account-pass {
+      text-align: center;
+      margin: 1rem 1rem 2rem 1rem;
+
+      .pass-logo {
+        @include breakpoint(medium) {
+          margin-bottom: 1rem;
+        }
+
+      }
+
+      a {
+        border-radius: 1rem;
+        display: block;
+        background: $blue;
+        padding: 1rem;
+        color: $white;
+        font-family: $font-header;
+        font-size: rem-calc(32);
+        transition: background-color 500ms;
+        box-shadow: 0 0 10px rgba($black, .2);
+        &:hover {
+          background-color: $dark-blue;
+        }
+        @include breakpoint(medium) {
+          padding: 2rem;
+        }
+      }
+
+      @include breakpoint(medium) {
+        margin: 1rem 0 1rem 2rem;
+      }
+
+    }
+
+    @include breakpoint(medium) {
+      margin: 0 0 2rem -2rem;
+      border-radius: 0 1rem 1rem 0;
+      padding: 1.5rem 2rem;
+    }
+
+  }
+
+  .sidebar {
+    margin-bottom: 2rem;
+  }
+
+  .account-nav {
+    padding: 2rem;
+    text-align: center;
+    @include breakpoint(medium) {
+      background: $light-green;
+    }
+
+    h2 {
+      color: $white;
+      line-height: 1em;
+    }
+
+    .menu {
+      font-size: rem-calc(20);
+
+      a {
+        font-weight: 700;
+        border-radius: 10rem;
+        margin: .25rem;
+        color: $white;
+        transition: all 500ms;
+        &:hover {
+          color: $green;
+          background-color: $white;
+        }
+      }
+
+      .is-active > a {
+        color: $green;
+        background-color: $white;
+      }
+
+    }
+
+    @include breakpoint(medium) {
+      border-radius: 1rem;
+    }
+
+  }
+
+  #view-pass {
+
+    a {
+      background-color: $blue;
+      &:hover {
+        background-color: $dark-blue;
+      }
+    }
+    @include breakpoint(medium) {
+      max-width: 300px;
+      margin: 1rem auto;
+    }
+  }
+
+  #view-pass a,
+  #account-nav-toggle {
+    color: $white;
+    font-size: rem-calc(36);
+    font-family: $font-header;
+    margin-bottom: 0;
+  }
+
+  #account-nav-modal {
+    padding: 0;
+    background-color: $green;
+
+    .close-button {
+      color: $white;
+    }
+
+    .account-nav {
+      @include absolute-center();
+      width: 100%;
+    }
+
+    .menu {
+      padding: 2rem;
+      text-align: center;
+      color: $white;
+    }
+
+  }
+
+  .applicant-type {
+    margin: 2rem auto;
+    max-width: 300px;
+    background-color: $blue;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 5px;
+
+    h2 {
+      font-size: rem-calc(48);
+      font-family: $font-header;
+      font-weight: 700;
+      color: $dark-teal;
+      margin: 0;
+    }
+
+    .button {
+      margin: 0;
+      font-weight: 700;
+    }
+
+  }
+
+}

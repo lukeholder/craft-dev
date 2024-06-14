@@ -1,0 +1,39 @@
+{# BLOG EXCERPT #}
+
+{# SET BLOG CATEGORIES #}
+{% set genres                   = entry.genre.all()  %}
+{% set image                    = entry.featuredImage.one() %}
+
+<article class="entry">
+  <header class="entry-header">
+    <h2 class="entry-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+
+    {% if entry.subhead %}
+      <div class="entry-subhead">{{ entry.subhead }}</div>
+    {% endif %}
+
+    <div class="entry-meta">
+      {% if genres|length %}
+        <span class="entry-categories">
+          {% for genre in genres %}
+            <a href="/blog/category/{{ genre.slug }}">{{ genre.title }}</a>
+          {% endfor %}
+        </span>
+      {% endif %}
+      by <a href="/blog/author/{{ entry.author.id }}">{{ entry.author }}</a> | {{ entry.postDate.format('F j, Y') }}
+    </div>
+  </header>
+
+  {% if image %}
+    <div class="entry-image">
+      <a href="{{ entry.url }}"><img src="{{ image.getUrl('max800') }}" alt="{{ image.title }}"></a>
+    </div>
+  {% endif %}
+
+  <div class="entry-excerpt">
+    {{ entry.body | chop(limit=2, allowedTags="<a> <b> <i> <strong> <em>") }}
+  </div>
+
+  <p class="read-more"><a href="{{ entry.url }}">Read More <i class="fas fa-angle-right"></i></a></p>
+
+</article>

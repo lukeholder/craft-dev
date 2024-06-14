@@ -1,0 +1,31 @@
+handle: la_footerNav
+instructions: ''
+maxNodes: ''
+name: 'LA Footer Nav'
+permissions:
+  craft\elements\Asset:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Category:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Entry:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Tag:
+    enabled: ''
+    permissions: '*'
+  verbb\navigation\nodetypes\CustomType:
+    enabled: '1'
+  verbb\navigation\nodetypes\PassiveType:
+    enabled: '1'
+  verbb\navigation\nodetypes\SiteType:
+    enabled: '1'
+propagationMethod: none
+siteSettings:
+  7d81a2c3-37f0-4c8e-ae20-7d3ab5055184: # TeenTix LA
+    enabled: '1'
+sortOrder: 8
+structure:
+  maxLevels: null
+  uid: 7c557e10-310e-4b7c-8967-a7a028b9bbf1

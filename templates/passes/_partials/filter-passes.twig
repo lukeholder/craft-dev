@@ -1,0 +1,37 @@
+
+<div class="search-filter">
+  <form  action="{{ url('passes/results') }}">
+    <div class="grid-x align-right align-middle">
+      <div class="medium-4 cell">
+        <p>
+          <strong>Total passes: {{ results }}</strong>
+          {% if craft.app.request.getSegment(2) == "results" %}
+            <a href="{{ siteUrl }}passes">Clear search</a>
+          {% endif %}
+        </p>
+      </div>
+      <div class="medium-2 cell">
+        <select name="status">
+          <option value="">All Statuses</option>
+          <option value="available" {% if status == 'available' %}selected{% endif %}>Available</option>
+          <option value="assigned" {% if status == 'assigned' %}selected{% endif %}>Assigned</option>
+        </select>
+      </div>
+      <div class="medium-2 cell">
+        <select name="format">
+          <option value="">All Formats</option>
+          <option value="physical" {% if  format == 'physical' %}selected{% endif %}>Physical</option>
+          <option value="digital" {% if  format == 'digital' %}selected{% endif %}>Digital</option>
+        </select>
+      </div>
+      <div class="medium-4 cell">
+        <div class="input-group">
+          <input id="pass-search" class="input-group-field" type="text" name="q" value="{{ query }}" placeholder="Search pass and user IDs">
+          <div class="input-group-button">
+            <input type="submit" class="button" value="Submit">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

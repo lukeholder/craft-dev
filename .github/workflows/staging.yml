@@ -1,0 +1,17 @@
+name: Staging - Fly Deploy
+on:
+  push:
+    branches:
+      - staging
+concurrency: 
+  group: ${{ github.workflow }}
+env:
+  FLY_API_TOKEN: ${{ secrets.STAGING_FLY_DEPLOY_TOKEN }}
+jobs:
+  deploy:
+      name: Deploy apps
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - uses: superfly/flyctl-actions/setup-flyctl@master
+        - run: make deploy-staging FLY_DEPLOY_FLAGS=--remote-only

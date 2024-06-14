@@ -1,0 +1,34 @@
+contentColumnType: string
+fieldGroup: 261d2164-7376-4ca2-acf0-4ea3a0f16d84 # Ads
+handle: adBanner300X600
+instructions: ''
+name: 'Banner 300x600'
+searchable: true
+settings:
+  allowSelfRelations: false
+  allowUploads: false
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+  defaultUploadLocationSubpath: ''
+  limit: '1'
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: '1'
+  selectionLabel: 'Upload an image'
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:834d8a22-ae60-4d04-9fd2-a0924a7e93f2' # SEA Ad Images
+  singleUploadLocationSubpath: ''
+  source: null
+  sources:
+    - 'volume:834d8a22-ae60-4d04-9fd2-a0924a7e93f2' # SEA Ad Images
+    - 'volume:a6e1f43e-7d92-4454-b86e-9b57856d3c34' # LA Ad Images
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

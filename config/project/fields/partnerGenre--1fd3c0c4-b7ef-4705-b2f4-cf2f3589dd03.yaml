@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: 61cb854e-4648-46e6-aa10-5c8caea1d4fe # Partners
+handle: partnerGenre
+instructions: ''
+name: 'Partner Genre'
+searchable: true
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: ''
+  limit: null
+  localizeRelations: false
+  selectionLabel: 'Add a Genre'
+  showSiteMenu: true
+  source: 'group:dc332cd7-e491-4e7f-a605-65a93f8e63e3' # Event Genre
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

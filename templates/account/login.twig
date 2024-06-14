@@ -1,0 +1,54 @@
+{# ACCOUNT PAGE LOGIN #}
+{% extends "_layout" %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Account" %}
+{% set class                    = "account" %}
+
+{# SET SEO VALUES #}
+{% do seomatic.meta.seoTitle( "Account Login" ) %}
+
+{% block content %}
+
+  <header class="page-header text-center">
+    <h1 class="page-title">Login to Your Account</h1>
+  </header>
+  
+  <div class="grid-x grid-margin-x align-center">
+    <div class="main medium-8 large-6 cell">
+  
+      <form id="loginForm" method="post" accept-charset="UTF-8" data-abide novalidate>
+
+        {{ csrfInput() }}
+        {{ actionInput('users/login') }}
+
+        <div>
+          <label for="loginName">Email</label>
+          <input id="loginName" type="email" name="loginName" value="{{ craft.app.user.rememberedUsername }}" placeholder="Your email address" required>
+          <span class="form-error" id="emailError">Please enter a valid email address.</span>
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password" placeholder="Password" required>
+          <span class="form-error" id="passwordError">Please enter a valid password.</span>
+        </div>
+  
+        {# <label for="rememberMe">
+          <input id="rememberMe" type="checkbox" name="rememberMe" value="1"> Remember me
+        </label> #}
+  
+        <input class="button success large expanded" type="submit" value="SUBMIT">
+  
+        {% if errorMessage is defined %}
+          <p>{{ errorMessage }}</p>
+        {% endif %}
+  
+      </form>
+  
+      <p class="text-center"><a href="{{ url('account/password') }}">Forgot your password?</a></p>
+  
+    </div>
+  </div>
+
+{% endblock %}

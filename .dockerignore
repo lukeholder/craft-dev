@@ -1,0 +1,11 @@
+/docker/azblobstorage
+/docker/db_init_scripts
+/docker/mysql
+/html/images
+/html/cpresources
+/img-migration
+/storage
+/vendor
+/db
+/.git
+/node_modules

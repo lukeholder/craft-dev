@@ -1,0 +1,40 @@
+fieldLayouts:
+  79a55203-fe41-411a-895a-3e9cb88bc103:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 46368bb7-f628-4518-91ab-64d94f3d13c8
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 53ce60cc-afb9-4164-b869-64224f0b5f1f
+fs: userPhotos
+handle: userPhotos
+hasUrls: true
+name: 'User Photos'
+sortOrder: 0
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+url: '@assetsUrl'

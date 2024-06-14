@@ -1,0 +1,24 @@
+{# VENUE QR CODE #}
+
+{# SET VARIABLES FROM URL #}
+{% set venueSlug = venueSlug?? craft.app.request.getQueryParam('venueSlug') %}
+
+{# ENSURE ADMIN #}
+{% if not currentUser.can('accessCp')?? false %}
+  {% redirect "/venues/" ~ venueSlug %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TeenTix Venue QR Code</title>
+    <meta name="robots" content="noindex, nofollow" />
+  </head>
+  <body>
+
+    <div id="qrcode"></div>
+    {% include 'venues/_partials/qrcode' with { 'venueSlug': venueSlug } %}
+
+  </body>
+</html>

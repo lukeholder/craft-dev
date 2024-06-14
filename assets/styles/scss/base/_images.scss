@@ -1,0 +1,21 @@
+/*
+  Images
+*/
+
+.image-center,
+figure.image-center {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.image-left,
+figure.image-left {
+  margin: 0px 1rem 1rem 0px;
+  float: left;
+}
+
+.image-right,
+figure.image-right {
+  margin: 0px 0px 1rem 1rem;
+  float: right;
+}

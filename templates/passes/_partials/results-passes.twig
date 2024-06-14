@@ -1,0 +1,41 @@
+<tr>
+  <td><a href="{{ entry.url }}"><strong>{{ entry.id }}</strong></a></td>
+  <td>{{ entry.passStatus.label }}</td>
+  <td>{{ entry.passFormat.label }}</td>
+
+  {% if entry.passUser %}
+    {% set user = craft.users().id( entry.passUser ).one() %}
+    <td>
+      {% if user %}
+        <a href="{{ siteUrl }}passes/user/{{ user.id }}"><strong>{{ user.id }}</strong> ( {{ user.name }} )</a>
+      {% else %}
+        <em>User deleted</em>
+      {% endif %}
+    </td>
+  {% else %}
+    <td>
+      <button class="button alert hollow small" data-open="assignModal-{{ entry.id }}">Assign Pass</button>
+
+      <div id="assignModal-{{ entry.id }}" class="reveal" data-reveal>
+        <h2 class="text-center">Assign Pass</h2>
+        <form class="assign-pass" method="post" accept-charset="UTF-8">
+          {{ csrfInput() }}
+          <input type="hidden" name="action" value="entries/save-entry">
+          <input type="hidden" name="entryId" value="{{ entry.id }}">
+          <input type="hidden" name="fields[passStatus]" value="assigned">
+          <label>Pass ID</label>
+          <input id="passid" type="number"  value="{{ entry.id }}" readonly>
+          <label>User ID</label>
+          <input id="user" type="number" name="fields[passUser]" value="" placeholder="User ID" required>
+          <div class="text-center"><input class="button" type="submit" value="Save"></div>
+        </form>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+    </td>
+  {% endif %}
+
+  <td class="text-right"><a class="button" href="{{ entry.url }}">View</a></td>
+</tr>

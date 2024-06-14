@@ -1,0 +1,114 @@
+.venues.list {
+
+  #main-content {
+    margin-bottom: 0;
+  }
+
+}
+
+#venue-list {
+  margin-bottom: 1rem;
+
+  a {
+    font-weight: 700;
+    color: $black;
+  }
+
+  .is-dropdown-submenu-parent {
+    width: 100%;
+  }
+
+  .is-dropdown-submenu-parent a {
+    padding-left: 1.5rem;
+    text-align: left;
+  }
+
+  .is-dropdown-submenu .is-dropdown-submenu-parent.opens-left>a::after {
+    left: 10px;
+  }
+
+  .submenu {
+    
+  }
+
+}
+
+#venueMap {
+  margin: 1.5rem -1rem 0 -1rem;
+  min-height: 500px;
+  @include breakpoint(medium) {
+    margin: 2rem -2rem 0 -2rem;
+  }
+
+  .infobox-title {
+    margin: .25rem 0 0 0;
+  }
+
+  .infobox-address {
+    font-size: rem-calc(16);
+  }
+
+  .infobox-body {
+
+    h5 {
+      margin: 0;
+      font-size: rem-calc(16);
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: rem-calc(16);
+    }
+
+    .button {
+      margin-bottom: .25rem;
+    }
+
+  }
+
+}
+
+#venue-contact {
+
+  p {
+    margin: 0;
+  }
+
+}
+
+#venue-single {
+
+  .page-header {
+    margin-bottom: 1.5rem;
+    @include breakpoint(small only) {
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    h2 {
+      font-size: rem-calc(18);
+      font-weight: 700;
+    }
+
+  }
+
+  #venue-map-link {
+    margin-bottom: 2rem;
+  }
+
+  #venue-partners {
+    margin-bottom: 2rem;
+  }
+
+  #venue-events {
+    margin-bottom: 2rem;
+  }
+
+  .entry-gallery {
+    margin-bottom: 2rem;
+  }
+
+}

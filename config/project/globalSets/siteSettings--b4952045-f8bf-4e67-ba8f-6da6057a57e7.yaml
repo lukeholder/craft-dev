@@ -1,0 +1,122 @@
+fieldLayouts:
+  1aa8f558-6b7b-48d9-8415-ab46984d213a:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            heading: 'Site Location Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: 2688c305-6d5f-44c0-89d3-ca2b820a5705
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 38d6e105-55e0-479c-9d78-85b0906f583d # Default State
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ab3a7b96-916f-426c-bcea-7e273e7c571a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2c5f41e9-ed43-432d-8270-bb6943ebd508 # Venue Map (Longitude)
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bdce3146-3ec4-48ff-b992-626cab48a7d5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: fb7031ed-98d8-4544-b661-120cf5097a75 # Venue Map (Latitude)
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a6203530-e660-4e37-b1f6-ca06f8dbb729
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: 'Site Preferences'
+            type: craft\fieldlayoutelements\Heading
+            uid: 8e7b2a34-ad4f-467c-b6dc-93d9c5d827ae
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: f0b4f769-6827-4a4c-8bb7-03b9880444c5 # Member Pass Type
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ed26313e-7f92-4b99-8a43-ce6e16226687
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9b121dd1-56b4-42ff-9d76-c19d86bc8ba9 # Local Press Corps?
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 66062e47-5ec4-406e-bfd5-6d31d4a549c5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            heading: 'Givebutter Settings'
+            type: craft\fieldlayoutelements\Heading
+            uid: 2227fc64-d0ea-41d8-bb86-3484febeec79
+            userCondition: null
+          -
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'Filling in _both_ the Account Number _and_ the Widget ID will enable a "Donate" button in the lower-right corner of the website which links to the Givebutter campaign site. See [Givebutter''s site](https://givebutter.com/features/donate-buttons) for details.'
+            type: craft\fieldlayoutelements\Tip
+            uid: dc92fd03-9b58-4db5-847e-65d2283bf248
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: 1728bb5b-0f71-4594-81c1-eb2532e226b7 # Account #
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5cf9b0f9-0759-4409-9027-0d37444dec82
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 997bf998-7317-4ff9-abdd-23fc8b7ca5f7 # Widget ID
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 09c9cefa-575e-48b7-86d7-14e40826f7db
+            userCondition: null
+            warning: null
+            width: 100
+        name: Preferences
+        uid: aaf43602-1956-4136-87f3-c12a6e98fbf0
+        userCondition: null
+handle: siteSettings
+name: 'Site Settings'
+sortOrder: 8

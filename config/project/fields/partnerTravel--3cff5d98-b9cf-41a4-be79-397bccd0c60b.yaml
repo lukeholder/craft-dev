@@ -1,0 +1,20 @@
+contentColumnType: text
+fieldGroup: 61cb854e-4648-46e6-aa10-5c8caea1d4fe # Partners
+handle: partnerTravel
+instructions: ''
+name: 'Travel Information'
+searchable: true
+settings:
+  availableTransforms: ''
+  availableVolumes: ''
+  ckeConfig: 37036a58-d782-4f1e-b28d-d76b77295540 # Default
+  columnType: text
+  defaultTransform: ''
+  enableSourceEditingForNonAdmins: true
+  purifierConfig: ''
+  purifyHtml: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

@@ -1,0 +1,51 @@
+fieldLayouts:
+  8a2730a2-3d4d-41fc-b584-031ed494dd6a:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 77d152fe-f019-40e2-b5e3-d38cc078314a # Footer About
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 88b579b3-64be-4220-b045-b4024d8b858b
+            warning: null
+            width: 100
+          -
+            fieldUid: a5e4f400-d013-4f1f-a7f0-bb14f9e64442 # Footer Social Links
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d8d3db7b-6bc5-4f5a-919c-fa25d4441fdd
+            warning: null
+            width: 100
+          -
+            fieldUid: 2ad583a9-47f7-4fc1-a1a0-add3cef338f7 # Footer Contact
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0ab2fbfe-1860-4b4c-bd64-7ce6f9438f83
+            warning: null
+            width: 100
+          -
+            fieldUid: 4c5e0440-d31b-4e74-b3e3-1b52685bc91d # Footer Copyright
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f16b1b5c-8502-483d-9e12-82ccc3bf3fa5
+            warning: null
+            width: 100
+        name: Global
+        sortOrder: 1
+        uid: 58b9c09b-559b-40e4-9bfa-a457549e801f
+handle: footer
+name: Footer
+sortOrder: 5

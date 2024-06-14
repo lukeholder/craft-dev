@@ -1,0 +1,203 @@
+description: ''
+handle: sea_admin
+name: 'SEA Admin'
+permissions:
+  - accesscp
+  - accesscpwhensystemisoff
+  - accessplugin-calendar
+  - accessplugin-freeform
+  - accessplugin-navigation
+  - accesssitewhensystemisoff
+  - 'assignusergroup:3a2d8490-dc06-4203-8ae9-e1b331b163b5' # SEA Editors
+  - 'assignusergroup:a493105f-dcc7-4ac7-acbe-c29085d5b04c' # Teens
+  - 'assignusergroup:f8b74dba-0c83-421f-8e83-d68f0b804d18' # SEA Admin
+  - calendar-manageevents
+  - 'calendar-manageeventsfor:237bfcc6-9ea0-47f4-9ab6-9368d0f35bda' # Events Additional Time
+  - 'calendar-manageeventsfor:cdddcd33-f9e3-445e-905c-bd6856b1aa8f' # Events
+  - 'createentries:4249fa93-3dc0-4275-bd60-5b10cd7541c4' # SEA Venues
+  - 'createentries:58ddfcec-fc33-455c-9bc5-918e692e49f8' # SEA Partners
+  - 'createentries:843bfe13-9de4-497e-b864-9e775c5bfa16' # SEA Blog
+  - 'createentries:8de01c48-93b4-49f3-8137-bd63a4dc7f5d' # SEA Ads
+  - 'createentries:b0e72035-1996-45cf-bf66-86aff178704d' # SEA Pass Usage
+  - 'createentries:ea460316-fa92-49f2-824c-ab3a7284aeeb' # SEA Pages
+  - 'createentries:f7473d80-e069-4bc8-bc71-71c8864b9f30' # SEA Passes
+  - 'createfolders:834d8a22-ae60-4d04-9fd2-a0924a7e93f2' # SEA Ad Images
+  - 'createfolders:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+  - 'createfolders:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+  - 'createfolders:d8eeb3df-3c65-4ed9-b943-c95348bd3f50' # SEA Sponsor Logos
+  - 'createfolders:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+  - 'deleteassets:834d8a22-ae60-4d04-9fd2-a0924a7e93f2' # SEA Ad Images
+  - 'deleteassets:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+  - 'deleteassets:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+  - 'deleteassets:d8eeb3df-3c65-4ed9-b943-c95348bd3f50' # SEA Sponsor Logos
+  - 'deleteassets:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+  - 'deletecategories:53a2fd62-044a-4d52-a6d7-6a31038fb212' # Blog Category
+  - 'deletecategories:9980e63a-d493-46d6-bde6-331b55821a2e' # Event Category
+  - 'deletecategories:dc332cd7-e491-4e7f-a605-65a93f8e63e3' # Event Genre
+  - 'deletecategories:de8e6bef-5f53-4651-80fc-1a2426314bb2' # Ticket Type
+  - 'deleteentries:4249fa93-3dc0-4275-bd60-5b10cd7541c4' # SEA Venues
+  - 'deleteentries:58ddfcec-fc33-455c-9bc5-918e692e49f8' # SEA Partners
+  - 'deleteentries:843bfe13-9de4-497e-b864-9e775c5bfa16' # SEA Blog
+  - 'deleteentries:8de01c48-93b4-49f3-8137-bd63a4dc7f5d' # SEA Ads
+  - 'deleteentries:b0e72035-1996-45cf-bf66-86aff178704d' # SEA Pass Usage
+  - 'deleteentries:ea460316-fa92-49f2-824c-ab3a7284aeeb' # SEA Pages
+  - 'deleteentries:f7473d80-e069-4bc8-bc71-71c8864b9f30' # SEA Passes
+  - 'deletepeerassets:834d8a22-ae60-4d04-9fd2-a0924a7e93f2' # SEA Ad Images
+  - 'deletepeerassets:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+  - 'deletepeerassets:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+  - 'deletepeerassets:d8eeb3df-3c65-4ed9-b943-c95348bd3f50' # SEA Sponsor Logos
+  - 'deletepeerassets:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+  - 'deletepeercategorydrafts:53a2fd62-044a-4d52-a6d7-6a31038fb212' # Blog Category
+  - 'deletepeercategorydrafts:9980e63a-d493-46d6-bde6-331b55821a2e' # Event Category
+  - 'deletepeercategorydrafts:dc332cd7-e491-4e7f-a605-65a93f8e63e3' # Event Genre
+  - 'deletepeercategorydrafts:de8e6bef-5f53-4651-80fc-1a2426314bb2' # Ticket Type
+  - 'deletepeerentries:4249fa93-3dc0-4275-bd60-5b10cd7541c4' # SEA Venues
+  - 'deletepeerentries:58ddfcec-fc33-455c-9bc5-918e692e49f8' # SEA Partners
+  - 'deletepeerentries:843bfe13-9de4-497e-b864-9e775c5bfa16' # SEA Blog
+  - 'deletepeerentries:8de01c48-93b4-49f3-8137-bd63a4dc7f5d' # SEA Ads
+  - 'deletepeerentries:b0e72035-1996-45cf-bf66-86aff178704d' # SEA Pass Usage
+  - 'deletepeerentries:ea460316-fa92-49f2-824c-ab3a7284aeeb' # SEA Pages
+  - 'deletepeerentries:f7473d80-e069-4bc8-bc71-71c8864b9f30' # SEA Passes
+  - 'deletepeerentrydrafts:3224591a-a646-4d25-b95e-2672c1aa85e2' # SEA Home
+  - 'deletepeerentrydrafts:4249fa93-3dc0-4275-bd60-5b10cd7541c4' # SEA Venues
+  - 'deletepeerentrydrafts:559cd26f-f4d3-4a7c-a26d-da69e18446dd' # SEA Partners Index
+  - 'deletepeerentrydrafts:58ddfcec-fc33-455c-9bc5-918e692e49f8' # SEA Partners
+  - 'deletepeerentrydrafts:843bfe13-9de4-497e-b864-9e775c5bfa16' # SEA Blog
+  - 'deletepeerentrydrafts:8de01c48-93b4-49f3-8137-bd63a4dc7f5d' # SEA Ads
+  - 'deletepeerentrydrafts:b0e72035-1996-45cf-bf66-86aff178704d' # SEA Pass Usage
+  - 'deletepeerentrydrafts:caf1f890-f6d8-4392-a708-d7db99a535e4' # SEA Venues Index
+  - 'deletepeerentrydrafts:ea460316-fa92-49f2-824c-ab3a7284aeeb' # SEA Pages
+  - 'deletepeerentrydrafts:f7473d80-e069-4bc8-bc71-71c8864b9f30' # SEA Passes
+  - 'editglobalset:0ae85203-f862-4d8f-a722-6e80a5ab1268' # Calendar
+  - 'editglobalset:163af3ab-7cd6-4e72-a1fc-a1f8dc965139' # Account
+  - 'editglobalset:59f1cb97-1093-4f93-b6dd-7687cca0dd28' # Emails
+  - 'editglobalset:81fc0592-3752-4346-a2a4-4a7b5018b4b4' # Schools
+  - 'editglobalset:c83433fa-2eba-4741-bcbe-66ef7d030672' # Footer
+  - 'editimages:834d8a22-ae60-4d04-9fd2-a0924a7e93f2' # SEA Ad Images
+  - 'editimages:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+  - 'editimages:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+  - 'editimages:d8eeb3df-3c65-4ed9-b943-c95348bd3f50' # SEA Sponsor Logos
+  - 'editimages:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+  - 'editpeerimages:834d8a22-ae60-4d04-9fd2-a0924a7e93f2' # SEA Ad Images
+  - 'editpeerimages:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+  - 'editpeerimages:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+  - 'editpeerimages:d8eeb3df-3c65-4ed9-b943-c95348bd3f50' # SEA Sponsor Logos
+  - 'editpeerimages:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+  - 'editsite:0e7592e9-74d0-48f7-a1d7-2bf18b97d6a0' # TeenTix
+  - editusers
+  - freeform-access-quick-export
+  - freeform-submissionsaccess
+  - 'freeform-submissionsmanage:1'
+  - 'freeform-submissionsmanage:2'
+  - 'freeform-submissionsmanage:3'
+  - freeform-submissionsmanageindividual
+  - 'freeform-submissionsread:1'
+  - 'freeform-submissionsread:2'
+  - 'freeform-submissionsread:3'
+  - freeform-submissionsreadindividual
+  - moderateusers
+  - 'navigation-managenav:0ebff79d-8231-42b7-9811-bb11d88afa59' # Sea Sidebar About
+  - 'navigation-managenav:33ce937b-78fe-4bc8-8b80-073514d569d9' # Sea Main Nav
+  - 'navigation-managenav:a2516258-6cac-4190-b04a-38dcfab15d72' # Sea Footer Nav
+  - 'navigation-managenav:f08e029f-eacb-446a-b0e3-749239c14d13' # Sea Sidebar Support
+  - registerusers
+  - 'replacefiles:834d8a22-ae60-4d04-9fd2-a0924a7e93f2' # SEA Ad Images
+  - 'replacefiles:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+  - 'replacefiles:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+  - 'replacefiles:d8eeb3df-3c65-4ed9-b943-c95348bd3f50' # SEA Sponsor Logos
+  - 'replacefiles:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+  - 'replacepeerfiles:834d8a22-ae60-4d04-9fd2-a0924a7e93f2' # SEA Ad Images
+  - 'replacepeerfiles:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+  - 'replacepeerfiles:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+  - 'replacepeerfiles:d8eeb3df-3c65-4ed9-b943-c95348bd3f50' # SEA Sponsor Logos
+  - 'replacepeerfiles:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+  - 'saveassets:834d8a22-ae60-4d04-9fd2-a0924a7e93f2' # SEA Ad Images
+  - 'saveassets:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+  - 'saveassets:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+  - 'saveassets:d8eeb3df-3c65-4ed9-b943-c95348bd3f50' # SEA Sponsor Logos
+  - 'saveassets:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+  - 'savecategories:53a2fd62-044a-4d52-a6d7-6a31038fb212' # Blog Category
+  - 'savecategories:9980e63a-d493-46d6-bde6-331b55821a2e' # Event Category
+  - 'savecategories:dc332cd7-e491-4e7f-a605-65a93f8e63e3' # Event Genre
+  - 'savecategories:de8e6bef-5f53-4651-80fc-1a2426314bb2' # Ticket Type
+  - 'saveentries:3224591a-a646-4d25-b95e-2672c1aa85e2' # SEA Home
+  - 'saveentries:4249fa93-3dc0-4275-bd60-5b10cd7541c4' # SEA Venues
+  - 'saveentries:559cd26f-f4d3-4a7c-a26d-da69e18446dd' # SEA Partners Index
+  - 'saveentries:58ddfcec-fc33-455c-9bc5-918e692e49f8' # SEA Partners
+  - 'saveentries:843bfe13-9de4-497e-b864-9e775c5bfa16' # SEA Blog
+  - 'saveentries:8de01c48-93b4-49f3-8137-bd63a4dc7f5d' # SEA Ads
+  - 'saveentries:b0e72035-1996-45cf-bf66-86aff178704d' # SEA Pass Usage
+  - 'saveentries:caf1f890-f6d8-4392-a708-d7db99a535e4' # SEA Venues Index
+  - 'saveentries:ea460316-fa92-49f2-824c-ab3a7284aeeb' # SEA Pages
+  - 'saveentries:f7473d80-e069-4bc8-bc71-71c8864b9f30' # SEA Passes
+  - 'savepeerassets:834d8a22-ae60-4d04-9fd2-a0924a7e93f2' # SEA Ad Images
+  - 'savepeerassets:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+  - 'savepeerassets:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+  - 'savepeerassets:d8eeb3df-3c65-4ed9-b943-c95348bd3f50' # SEA Sponsor Logos
+  - 'savepeerassets:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+  - 'savepeercategorydrafts:53a2fd62-044a-4d52-a6d7-6a31038fb212' # Blog Category
+  - 'savepeercategorydrafts:9980e63a-d493-46d6-bde6-331b55821a2e' # Event Category
+  - 'savepeercategorydrafts:dc332cd7-e491-4e7f-a605-65a93f8e63e3' # Event Genre
+  - 'savepeercategorydrafts:de8e6bef-5f53-4651-80fc-1a2426314bb2' # Ticket Type
+  - 'savepeerentries:4249fa93-3dc0-4275-bd60-5b10cd7541c4' # SEA Venues
+  - 'savepeerentries:58ddfcec-fc33-455c-9bc5-918e692e49f8' # SEA Partners
+  - 'savepeerentries:843bfe13-9de4-497e-b864-9e775c5bfa16' # SEA Blog
+  - 'savepeerentries:8de01c48-93b4-49f3-8137-bd63a4dc7f5d' # SEA Ads
+  - 'savepeerentries:b0e72035-1996-45cf-bf66-86aff178704d' # SEA Pass Usage
+  - 'savepeerentries:ea460316-fa92-49f2-824c-ab3a7284aeeb' # SEA Pages
+  - 'savepeerentries:f7473d80-e069-4bc8-bc71-71c8864b9f30' # SEA Passes
+  - 'savepeerentrydrafts:3224591a-a646-4d25-b95e-2672c1aa85e2' # SEA Home
+  - 'savepeerentrydrafts:4249fa93-3dc0-4275-bd60-5b10cd7541c4' # SEA Venues
+  - 'savepeerentrydrafts:559cd26f-f4d3-4a7c-a26d-da69e18446dd' # SEA Partners Index
+  - 'savepeerentrydrafts:58ddfcec-fc33-455c-9bc5-918e692e49f8' # SEA Partners
+  - 'savepeerentrydrafts:843bfe13-9de4-497e-b864-9e775c5bfa16' # SEA Blog
+  - 'savepeerentrydrafts:8de01c48-93b4-49f3-8137-bd63a4dc7f5d' # SEA Ads
+  - 'savepeerentrydrafts:b0e72035-1996-45cf-bf66-86aff178704d' # SEA Pass Usage
+  - 'savepeerentrydrafts:caf1f890-f6d8-4392-a708-d7db99a535e4' # SEA Venues Index
+  - 'savepeerentrydrafts:ea460316-fa92-49f2-824c-ab3a7284aeeb' # SEA Pages
+  - 'savepeerentrydrafts:f7473d80-e069-4bc8-bc71-71c8864b9f30' # SEA Passes
+  - 'viewassets:834d8a22-ae60-4d04-9fd2-a0924a7e93f2' # SEA Ad Images
+  - 'viewassets:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+  - 'viewassets:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+  - 'viewassets:d8eeb3df-3c65-4ed9-b943-c95348bd3f50' # SEA Sponsor Logos
+  - 'viewassets:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+  - 'viewcategories:53a2fd62-044a-4d52-a6d7-6a31038fb212' # Blog Category
+  - 'viewcategories:9980e63a-d493-46d6-bde6-331b55821a2e' # Event Category
+  - 'viewcategories:dc332cd7-e491-4e7f-a605-65a93f8e63e3' # Event Genre
+  - 'viewcategories:de8e6bef-5f53-4651-80fc-1a2426314bb2' # Ticket Type
+  - 'viewentries:3224591a-a646-4d25-b95e-2672c1aa85e2' # SEA Home
+  - 'viewentries:4249fa93-3dc0-4275-bd60-5b10cd7541c4' # SEA Venues
+  - 'viewentries:559cd26f-f4d3-4a7c-a26d-da69e18446dd' # SEA Partners Index
+  - 'viewentries:58ddfcec-fc33-455c-9bc5-918e692e49f8' # SEA Partners
+  - 'viewentries:843bfe13-9de4-497e-b864-9e775c5bfa16' # SEA Blog
+  - 'viewentries:8de01c48-93b4-49f3-8137-bd63a4dc7f5d' # SEA Ads
+  - 'viewentries:b0e72035-1996-45cf-bf66-86aff178704d' # SEA Pass Usage
+  - 'viewentries:caf1f890-f6d8-4392-a708-d7db99a535e4' # SEA Venues Index
+  - 'viewentries:ea460316-fa92-49f2-824c-ab3a7284aeeb' # SEA Pages
+  - 'viewentries:f7473d80-e069-4bc8-bc71-71c8864b9f30' # SEA Passes
+  - 'viewpeerassets:834d8a22-ae60-4d04-9fd2-a0924a7e93f2' # SEA Ad Images
+  - 'viewpeerassets:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+  - 'viewpeerassets:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+  - 'viewpeerassets:d8eeb3df-3c65-4ed9-b943-c95348bd3f50' # SEA Sponsor Logos
+  - 'viewpeerassets:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+  - 'viewpeercategorydrafts:53a2fd62-044a-4d52-a6d7-6a31038fb212' # Blog Category
+  - 'viewpeercategorydrafts:9980e63a-d493-46d6-bde6-331b55821a2e' # Event Category
+  - 'viewpeercategorydrafts:dc332cd7-e491-4e7f-a605-65a93f8e63e3' # Event Genre
+  - 'viewpeercategorydrafts:de8e6bef-5f53-4651-80fc-1a2426314bb2' # Ticket Type
+  - 'viewpeerentries:4249fa93-3dc0-4275-bd60-5b10cd7541c4' # SEA Venues
+  - 'viewpeerentries:58ddfcec-fc33-455c-9bc5-918e692e49f8' # SEA Partners
+  - 'viewpeerentries:843bfe13-9de4-497e-b864-9e775c5bfa16' # SEA Blog
+  - 'viewpeerentries:8de01c48-93b4-49f3-8137-bd63a4dc7f5d' # SEA Ads
+  - 'viewpeerentries:b0e72035-1996-45cf-bf66-86aff178704d' # SEA Pass Usage
+  - 'viewpeerentries:ea460316-fa92-49f2-824c-ab3a7284aeeb' # SEA Pages
+  - 'viewpeerentries:f7473d80-e069-4bc8-bc71-71c8864b9f30' # SEA Passes
+  - 'viewpeerentrydrafts:3224591a-a646-4d25-b95e-2672c1aa85e2' # SEA Home
+  - 'viewpeerentrydrafts:4249fa93-3dc0-4275-bd60-5b10cd7541c4' # SEA Venues
+  - 'viewpeerentrydrafts:559cd26f-f4d3-4a7c-a26d-da69e18446dd' # SEA Partners Index
+  - 'viewpeerentrydrafts:58ddfcec-fc33-455c-9bc5-918e692e49f8' # SEA Partners
+  - 'viewpeerentrydrafts:843bfe13-9de4-497e-b864-9e775c5bfa16' # SEA Blog
+  - 'viewpeerentrydrafts:8de01c48-93b4-49f3-8137-bd63a4dc7f5d' # SEA Ads
+  - 'viewpeerentrydrafts:b0e72035-1996-45cf-bf66-86aff178704d' # SEA Pass Usage
+  - 'viewpeerentrydrafts:caf1f890-f6d8-4392-a708-d7db99a535e4' # SEA Venues Index
+  - 'viewpeerentrydrafts:ea460316-fa92-49f2-824c-ab3a7284aeeb' # SEA Pages
+  - 'viewpeerentrydrafts:f7473d80-e069-4bc8-bc71-71c8864b9f30' # SEA Passes

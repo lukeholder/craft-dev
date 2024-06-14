@@ -1,0 +1,77 @@
+{# BLOG SINGLE ENTRY #}
+{% extends "_layout" %}
+
+{# SET BLOG SECTION BY CURRENT SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set criteria                 = {section: sitePrefix ~ 'blog', orderBy: 'postDate'} %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = entry.title %}
+{% set class                    = "blog single" %}
+
+{# SET PAGING VARIABLES #}
+{% set prev                     = entry.getPrev(criteria) %}
+{% set next                     = entry.getNext(criteria) %}
+
+{# SET ENTRY VARIABLES #}
+{% set genres                   = entry.genre.all() %}
+{% set image                    = entry.featuredImage.one() %}
+
+{% block content %}
+
+<header class="page-header">
+  <h2 class="page-title"><a href="{{ siteUrl }}blog">{{ siteName }} Blog</a></h2>
+</header>
+
+<div class="grid-x grid-margin-x">
+  <div class="main large-7 cell">
+    <article class="entry">
+
+      <header class="entry-header">
+
+        <h1 class="entry-title">{{ entry.title }}</h1>
+        {% if entry.subhead %}
+          <div class="entry-subhead">{{ entry.subhead }}</div>
+        {% endif %}
+
+        <div class="entry-meta">
+          {% if genres|length %}
+            <span class="entry-categories">
+              {% for genre in genres %}
+                <a href="/blog/category/{{ genre.slug }}">{{ genre.title }}</a>
+              {% endfor %}
+            </span>
+          {% endif %}
+          by <a href="/blog/author/{{ entry.author.id }}">{{ entry.author }}</a> | {{ entry.postDate.format('F j, Y') }}
+        </div>
+
+      </header>
+
+      {% if image %}
+        <div class="entry-image">
+          <figure>
+            <img src="{{ image.getUrl('max800') }}" alt="{% if image.imageAlt %}{{ image.imageAlt }}{% else %}{{ image.title }}{% endif %}">
+            {% if image.imageCaption %}
+              <figcaption>{{ image.imageCaption }}</figcaption>
+            {% endif %}
+          </figure>
+        </div>
+      {% endif %}
+
+      <div class="entry-content">
+        {{ entry.body }}
+      </div>
+
+    </article>
+
+    {% include '_partials/paginate-single' %}
+
+  </div>
+
+  {% include 'blog/_sidebar' %}
+
+</div>
+
+{% include "_partials/edit-link" %}
+
+{% endblock %}

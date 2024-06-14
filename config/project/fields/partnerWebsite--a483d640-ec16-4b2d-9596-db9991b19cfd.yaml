@@ -1,0 +1,12 @@
+contentColumnType: string(255)
+fieldGroup: 61cb854e-4648-46e6-aa10-5c8caea1d4fe # Partners
+handle: partnerWebsite
+instructions: ''
+name: Website
+searchable: true
+settings:
+  maxLength: '255'
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

@@ -15,13 +15,45 @@
  * If you want to modify the application config for *only* web requests or
  * *only* console requests, create an app.web.php or app.console.php file in
  * your config/ folder, alongside this one.
- * 
- * Read more about application configuration:
- * https://craftcms.com/docs/4.x/config/app.html
  */
 
-use craft\helpers\App;
-
 return [
-    'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
+
+  '*' => [
+    'modules' => [
+      'site-module' => [
+            'class' => \modules\sitemodule\SiteModule::class,
+      ],
+        'teentixcsp' => [
+            'class' => \modules\teentixcsp\Module::class,
+        ],
+    ],
+    'bootstrap' => ['site-module', 'teentixcsp'],
+  ],
+
+  'dev' => [
+    'components' => [
+      'mailer' => function() {
+        // Get the stored email settings
+        $settings = \craft\helpers\App::mailSettings();
+        $settings->transportType = \craft\mail\transportadapters\Smtp::class;
+        $settings->transportSettings = [
+          'useAuthentication' => true,
+          'host' => 'smtp.mailtrap.io',
+          'port' => '2525',
+          'username' => getenv('MAILTRAP_USERNAME'),
+          'password' => getenv('MAILTRAP_PASSWORD')
+        ];
+        
+        $config = \craft\helpers\App::mailerConfig($settings);
+        return Craft::createObject($config);
+      },
+    ],
+  ],
+
+  'staging' => [
+  ],
+
+  'production' => [
+  ],
 ];

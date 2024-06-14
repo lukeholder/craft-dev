@@ -1,0 +1,46 @@
+fieldLayouts:
+  61a86458-bf83-4424-8bdd-0d883262dee4:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: b4696b44-de59-44e0-84e9-329e863538ee
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: ce927075-1a43-4044-a547-5b0b8917ba06
+handle: eventCategory
+name: 'Event Category'
+siteSettings:
+  0e7592e9-74d0-48f7-a1d7-2bf18b97d6a0: # TeenTix
+    hasUrls: false
+    template: null
+    uriFormat: null
+  7d81a2c3-37f0-4c8e-ae20-7d3ab5055184: # TeenTix LA
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: null
+  uid: b51e7b9e-ca94-4a09-b974-01ce02617c51

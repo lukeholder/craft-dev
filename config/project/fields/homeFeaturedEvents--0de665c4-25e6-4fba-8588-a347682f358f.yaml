@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 0066c35c-d64c-4398-b138-23b72223575d # Home
+handle: homeFeaturedEvents
+instructions: 'Add blocks to create a featured slideshow on the homepage. An image, a title and a link is required. Recommended image size is 1200W x 500H.'
+name: 'Featured Events'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_homefeaturedevents}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

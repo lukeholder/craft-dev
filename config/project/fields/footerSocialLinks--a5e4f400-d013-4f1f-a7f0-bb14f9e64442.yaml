@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 4f2d0446-809a-4896-9a97-3b5409c32324 # Global
+handle: footerSocialLinks
+instructions: ''
+name: 'Footer Social Links'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_footersociallinks}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: none
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

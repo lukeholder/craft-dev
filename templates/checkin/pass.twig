@@ -1,0 +1,138 @@
+{# CHECKIN PASS #}
+
+{# SET VARIABLES FROM URL #}
+{% set isValidation             = craft.app.request.getQueryParam('validate') %}
+
+{# RETRIEVE PASS #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set pass                     = craft.entries().section(sitePrefix ~ "checkins").id(passId).one() %}
+
+{# SET VARIABLES FROM PASS #}
+{% set user                     = pass.checkinUser.one() %}
+{% set event                    = pass.checkinEvent.one() %}
+{% set showtime                 = pass.checkinShowtime %}
+{% set isTwoForTen              = pass.checkinIsTwoForTen %}
+
+{# SET EXPIRATION #}
+{% if user.userIsProvisional %}
+  {% set expiration = user.dateCreated|date_modify("+15 days") %}
+{% else %}
+  {% set expiration = user.userBirthdate|date_modify("+20 years") %}
+{% endif %}
+
+{# VALIDATE INPUT #}
+{% if not isValidation %}
+  {% requireLogin %}
+{% endif %}
+{% if not pass %}
+  {% redirect "/calendar/now" %}
+{% endif %}
+{% if pass.dateCreated.diff(now).days > 0 %}
+  {% redirect "/calendar/now" %}
+{% endif %}
+{% if not isValidation and (not user or user.id != currentUser.id) %}
+  {% redirect "/calendar/now" %}
+{% endif %}
+
+{# SET SEO VALUES #}
+{% do seomatic.tag.get('robots').content('noindex,nofollow') %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TeenTix Check-In Pass</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="icon" href="{{ siteUrl }}favicon.png" type="image/x-icon">
+    <link rel="manifest" href="{{ siteUrl }}webmanifest/manifest.webmanifest" {{ craft.app.config.general.devMode? "crossorigin=\"use-credentials\"" : "" }} />
+    <meta name="apple-mobile-web-app-title" content="TeenTix" />
+    <style>
+      body {
+        background-color: #79CAC9;
+        text-align: center;
+        font-family: sans-serif;
+      }
+      #instructions {
+        color: #fff;
+        width: 240px;
+        margin: 50px auto;
+      }
+      #pass {
+        background-color: #fff;
+        width: 240px;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      #qrcode img {
+      }
+      #pass p {
+        line-height: 24px;
+      }
+      #pass .icon {
+        display: inline-block;
+        text-align:center;
+        font-size: 150px;
+        width: 200px;
+        height: 150px;
+        color: #8FC73E;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="instructions">
+      <h1>Checked in!</h1>
+      Now, just present this pass at the box office to purchase your ticket.
+    </div>
+
+    <div id="pass">
+      <div id="logo"><img src="{{ siteUrl }}images/site/teentix-logo.png" /></div>
+      {% if not isValidation %}
+        <p>
+          <strong>
+            {{ user.firstName }}
+            {{ user.lastName }}
+          </strong>
+          <br>
+          Expires {{ expiration|date('M j, Y') }}
+          <br>
+          Pass #{{ pass.id }}
+          {% if isTwoForTen %}
+            <br>2 for $10 eligible
+          {% endif %}
+        </p>
+        <div id="qrcode"></div>
+        {% include 'checkin/_partials/qrcode'  with { 'pass' : pass.id } %}
+      {% else %}
+        <div class="fas fa-solid fa-user-check icon"></div>
+      {% endif %}
+      <p>
+        <strong>{{ event.title }}</strong><br>
+        {{ showtime|date }}
+      </p>
+
+    </div>
+
+    <script>
+      dataLayer = dataLayer || [];
+      dataLayer.push({
+        'event': 'checkin_pass',
+        'venue_name': '{{ event.eventVenue|length? event.eventVenue.one().title }}',
+        'partner_name': '{{ event.eventPartner|length? event.eventPartner.one().title }}',
+        'event_name': '{{ event.title }}',
+        'event_city': '{{ event.eventVenue|length? event.eventVenue.one().partnerAddress.parts.city }}',
+        'event_time': '{{ showtime|date('H:i:s') }}',
+        'event_time_is_unlisted': '{{ pass.checkinShowtimeIsUnlisted? 'true' : 'false' }}',
+        'user_age': '{{ currentUser.userIsProvisional? '' : (currentUser.userBirthdate.diff(now).days/360)|round }}',
+        'user_is_provisional': '{{ currentUser.userIsProvisional? 'true' : 'false' }}',
+        'checkin_is_twoforten': '{{ isTwoForTen? 'true' : 'false' }}',
+        'checkin_guest_count': '{{ pass.checkinGuestCount?? '0' }}',
+        'checkin_transportation': '{{ pass.checkinTransportation? pass.checkinTransportation.value : '' }}'
+      });
+    </script>
+
+  </body>
+</html>

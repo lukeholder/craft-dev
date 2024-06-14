@@ -1,0 +1,238 @@
+{# CORE PROFILE MARKUP #}
+
+{# GET LIST OF STATES #}
+{% set states                   = craft.app.getAddresses().subdivisionRepository.getList(['US']) %}
+{% set defaultState             = craft.app.getAddresses().subdivisionRepository.get(siteSettings.defaultState?? "WA", ['US']) %}
+
+<div class="form-group">
+
+  <h3 class="section-header">TeenTix Pass Holder Info</h3>
+  <div class="section-instructions">
+    <p>Please fill out the information for the TeenTix Pass holder</p>
+  </div>
+
+  {% if applicant != "quick" %}
+    <div id="register-name" class="grid-x grid-margin-x">
+      <div class="medium-6 cell">
+        <label for="field-firstName" class="require">First Name</label>
+        <input type="text" name="firstName" id="field-firstName" placeholder="First Name" value="{{ user.firstName }}" aria-errormessage="firstNameError" required>
+        <span class="form-error" id="firstNameError">Please enter a first name</span>
+      </div>
+
+      <div class="medium-6 cell">
+        <label for="field-lastName" class="require">Last Name</label>
+        <input type="text" name="lastName" id="field-lastName" placeholder="Last Name" value="{{ user.lastName }}" aria-errormessage="lastNameError" required>
+        <span class="form-error" id="lastNameError">Please enter a last name</span>
+      </div>
+    </div>
+  {% endif %}
+
+  <div id="register-birthdate">
+    <label for="birthdate" class="require">Birthdate (Pass holder must be between 13 and 19 years old)</label>
+    {% if not user.id %}
+      <input type="hidden" name="fields[userBirthdate][timezone]" value="America/Los_Angeles">
+      <input type="hidden" name="fields[userBirthdate][date]" id="field-birthdate" aria-errormessage="birthdateError" required>
+      <div id="birthdate-select" class="grid-x grid-margin-x">
+        <div class="small-5 medium-3 cell">
+          <select name="birth-month" aria-errormessage="birthdateError" required>
+            <option value="">Month</option>
+            {% for month in 1..12 %}
+              {% set date = month ~ "/1/2000" %}
+              <option value="{{ date|date("n") }}" {{ entry is defined and user.userBirthdate|date("n") == date|date("n")? "selected" }}>{{ date|date("F") }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="small-3 medium-2 cell">
+          <select name="birth-day" aria-errormessage="birthdateError" required>
+            <option value="">Day</option>
+            {% for day in 1..31 %}
+              <option value="{{ day }}" {{ entry is defined and user.userBirthdate|date("j") == day? "selected" }}>{{ day }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="small-4 medium-3 cell">
+          <select name="birth-year" aria-errormessage="birthdateError" required>
+            <option value="">Year</option>
+            {% for year in start_year..end_year %}
+              <option value="{{ year }}" {{ entry is defined and user.userBirthdate|date("Y") == year? "selected" }}>{{ year }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <span class="form-error" id="birthdateError">Please enter a birthdate</span>
+    {% else %}
+      {% if user.userBirthdate %}
+        <input type="text" name="" value="{{ user.userBirthdate.format('F j, Y') }}" readonly>
+      {% else %}
+        <input type="text" name="" value="No birthdate on file" readonly>
+      {% endif %}
+      <p class="help-text" id="schoolHelpText">If you need to update your birthdate, <a href="/contact">please contact us</a>.</p>
+    {% endif %}
+  </div>
+
+  <div id="register-phone">
+    <label for="field-phone" class="require">Best Contact Phone Number</label>
+    <input type="tel" name="fields[userPhone]" id="field-phone" placeholder="000-000-0000" value="{{ user.userPhone }}" aria-errormessage="phoneError" pattern="phone-number" required>
+    <span class="form-error" id="phoneError">Please enter a phone number</span>
+  </div>
+
+  <div id="register-school">
+    <label for="field-school" class="require">School</label>
+    <input type="text" name="fields[userSchool]" id="field-school" placeholder="Start typing the name of {{ your }} school" value="{{ user.userSchool }}" aria-describedby="schoolHelpText" aria-errormessage="schoolError" required>
+    <span class="form-error" id="schoolError">Please enter a school name</span>
+    <p class="help-text" id="schoolHelpText">If {{ you }} {{ are }} homeschooled, select <strong>Homeschool</strong>. If {{you }} {{ are }} not in school, select <strong>None</strong>. <br>If {{ your }} school is not listed, please enter the full name of {{ your }} school in the text field.</p>
+  </div>
+
+  {% if applicant != "quick" %}
+    <fieldset id="register-interests">
+      <legend>Interests (select all that apply)</legend>
+      <input type="hidden" name="fields[userInterests]" value="">
+      <div class="grid-x grid-margin-x small-up-1 medium-up-3">
+        {% for option in user.userInterests.options %}
+          <div class="cell">
+            <input type="checkbox" name="fields[userInterests][]" value="{{ option.value }}" id="field-interests-{{ option.value }}" {{ option.selected? "checked" }}><label for="field-interests-{{ option.value }}">{{ option.label|raw }}</label>
+          </div>
+        {% endfor %}
+      </div>
+    </fieldset>
+  {% endif %}
+
+</div>
+
+{% if applicant == "quick" %}
+  <input type="hidden" name="fields[userCountry]" value="US">
+{% else %}
+  <div class="form-group">
+
+    <h3 class="section-header">Demographic Info</h3>
+    <div class="section-instructions">
+      <p>Your answers will help us make sure we are serving our whole community.</p>
+    </div>
+
+    <div id="register-location">
+      <legend class="require">Where {{ do }} {{ you }} live?</legend>
+      <div class="grid-x grid-margin-x">
+        <div class="medium-8 cell">
+          <label for="field-city" class="require">City</label>
+          <input type="text" name="fields[userCity]" id="field-city" value="{{ user.userCity }}" aria-errormessage="cityError" required>
+          <span class="form-error" id="cityError">Please enter a city</span>
+        </div>
+        <div class="medium-4 cell">
+          <label for="field-state" class="require">State</label>
+          <select name="fields[userState]" id="field-state" aria-errormessage="stateError" required>
+            {% if defaultState %}
+              <optgroup>
+                <option value="{{ defaultState.code }}" {{ user.userState == defaultState.code? "selected" }}>{{ defaultState.name }}</option>
+              </optgroup>
+            {% endif %}
+            <optgroup>
+              {% for code, name in states %}
+                <option value="{{ code }}" {{ user.userState == code? "selected" }}>{{ name }}</option>
+              {% endfor %}
+              <option value="Other" {{ user.userState == "Other"? "selected" }}>Other / Not listed</option>
+            </optgroup>
+          </select>
+          <span class="form-error" id="stateError">Please select a state or other/not listed</span>
+        </div>
+        <div class="medium-4 cell">
+          <label for="field-zip" class="require">Zip/Postal Code</label>
+          <input type="text" name="fields[userZipcode]" id="field-zip" value="{{ user.userZipcode }}" aria-errormessage="zipError" required>
+          <span class="form-error" id="zipError">Please enter a zip / postal code</span>
+        </div>
+        <div class="medium-8 cell">
+          <label for="field-country" class="require">Country</label>
+          <select name="fields[userCountry]" id="field-country" aria-errormessage="countryError" required>
+            <optgroup>
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+            </optgroup>
+            <optgroup>
+              {% for option in userCountry is defined? userCountry.settings.options : user.userCountry.options %}
+                <option value="{{ option.value }}" {{ userCountry is not defined and option.selected? "selected" }}>{{ option.label|raw }}</option>
+              {% endfor %}
+            </optgroup>
+          </select>
+          <span class="form-error" id="countryError">Please select a country</span>
+        </div>
+      </div>
+    </div>
+
+    <fieldset id="register-ethnicity">
+      <legend class="require">What is {{ your }} ethnic/racial background? (select all that apply)</legend>
+      <div class="checkbox-group grid-x grid-margin-x small-up-1 medium-up-2" data-abide-validator-min="1">
+        {% for option in user.userDemoEthnicity.options  %}
+          <div class="cell">
+            <label for="field-ethnicity-{{ option.value }}">
+              <input type="checkbox" name="fields[userDemoEthnicity][]" value="{{ option.value }}" id="field-ethnicity-{{ option.value }}" {{ option.selected? "checked" }} data-validator="require-checkbox" aria-errormessage="ethnicityError">
+              {{ option.label|raw }}
+            </label>
+          </div>
+        {% endfor %}
+        <span class="form-error" id="ethnicityError">Please select at least one ethnicity</span>
+      </div>
+    </fieldset>
+
+    <fieldset id="register-language">
+      <legend class="require">What languages are spoken in {{ your }} home? (select all that apply)</legend>
+      <div class="checkbox-group grid-x grid-margin-x small-up-1 medium-up-3" data-abide-validator-min="1">
+        {% for option in user.userDemoLanguage.options %}
+          <div class="cell">
+            <label for="field-language-{{ option.value }}">
+              <input type="checkbox" name="fields[userDemoLanguage][]" value="{{ option.value }}" id="field-language-{{ option.value }}" {{ option.selected? "checked" }} data-validator="require-checkbox" aria-errormessage="languageError">
+              {{ option.label|raw }}
+            </label>
+            {% if option.value == "other" %}
+              <input id="field-language-custom-input" class="optional-field {{ option.selected? "show" }}" type="text" name="fields[userDemoLanguageOther]" placeholder="Please enter language (optional)" value="{{ user.userDemoLanguageOther }}">
+            {% endif %}
+          </div>
+        {% endfor %}
+        <span class="form-error" id="languageError">Please select at least one language</span>
+      </div>
+    </fieldset>
+
+    <fieldset id="register-lgbtq">
+      <legend class="require">{{ "Do" ~ (applicant == "adult" ? 'es' : '') }} {{ you }} identify as LGBTQ?</legend>
+      <div class="checkbox-group" data-abide-validator-min="1">
+        {% for option in user.userDemoLgbtq.options %}
+          <label for="field-lgbtq-{{ option.value }}">
+            <input type="radio" name="fields[userDemoLgbtq][]" value="{{ option.value }}" id="field-lgbtq-{{ option.value }}" {{ option.selected? "checked" }} data-validator="require-checkbox" aria-errormessage="lgbtqError">
+            {{ option.label|raw }}
+          </label>
+        {% endfor %}
+        <span class="form-error" id="lgbtqError">Please select an answer</span>
+      </div>
+    </fieldset>
+
+    <fieldset id="register-gender">
+      <legend class="require">What is {{ your }} gender?</legend>
+      <div class="checkbox-group grid-x grid-margin-x small-up-1 medium-up-2" data-abide-validator-min="1">
+        {% for option in user.userDemoGender.options %}
+          <div class="cell">
+            <label for="field-gender-{{ option.value }}">
+              <input type="radio" name="fields[userDemoGender][]" value="{{ option.value }}" id="field-gender-{{ option.value }}" {{ option.selected? "checked" }} data-validator="require-checkbox" aria-errormessage="lgbtqError">
+              {{ option.label|raw }}
+            </label>
+            {% if option.value == "custom" %}
+              <input id="field-gender-custom-input" class="optional-field {{ option.selected? "show" }}" type="text" name="fields[userDemoGenderOther]" placeholder="Please enter gender (optional)" value="{{ user.userDemoGenderOther }}">
+            {% endif %}
+          </div>
+        {% endfor %}
+        <span class="form-error" id="genderError">Please select an answer</span>
+      </div>
+    </fieldset>
+
+    <fieldset id="register-reduced-meal">
+      <legend>Do {{ you }} or {{ your }} family qualify for free or reduced priced meals?</legend>
+      <input type="hidden" value="0" name="fields[userFreeReducedEligible]">
+      <div class="switch large">
+        <input class="switch-input" id="yes-no" type="checkbox" name="fields[userFreeReducedEligible]" value="1" {{ user.userFreeReducedEligible? "checked" }}>
+        <label class="switch-paddle" for="yes-no">
+          <span class="show-for-sr">Do {{ you }} or {{ your }} family qualify for free or reduced priced meals?</span>
+          <span class="switch-active" aria-hidden="true">Yes</span>
+          <span class="switch-inactive" aria-hidden="true">No</span>
+        </label>
+      </div>
+    </fieldset>
+
+  </div>
+{% endif %}

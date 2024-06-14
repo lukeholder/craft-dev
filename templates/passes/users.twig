@@ -1,0 +1,47 @@
+{% extends "passes/_layout" %}
+
+{% SET RESULTS BY SITE %}
+{% set results                  = craft.users().group('teens').userSite(currentSite.handle).orderBy('elements.id desc').limit(100) %}
+
+{% paginate results as pageInfo, users %}
+
+{% set title                    = siteName ~ " Passholders" %}
+{% set class                    = "passes users list" %}
+
+{% block content %}
+  
+  <header class="page-header">
+    <h1 class="page-title">{{ siteName }} Passholders</h1>
+  </header>
+  
+  {% include 'passes/_partials/filter-users' with { 'query' : '', 'status' : '', 'format' : '', 'results' : results|length } %}
+  
+  <div class="grid-x grid-margin-x">
+  
+    <div class="main small-12 cell">
+  
+      <table>
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Account Created</th>
+            <th>Birthdate</th>
+            <th>School</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="pass-results">
+          {% for user in users %}
+            {% include 'passes/_partials/results-users' %}
+          {% endfor %}
+        </tbody>
+      </table>
+
+      {% include '_partials/paginate-list' %}
+
+    </div>
+  
+  </div>
+{% endblock %}

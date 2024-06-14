@@ -1,0 +1,271 @@
+allowRepeatingEvents: true
+color: '#8fc73e'
+description: 'TeenTix LA events calendar'
+descriptionFieldHandle: '0'
+fieldLayout:
+  tabs:
+    -
+      elementCondition: null
+      elements:
+        -
+          elementCondition: null
+          type: craft\fieldlayoutelements\HorizontalRule
+          uid: 44e7dde6-0441-4815-b2f5-3a838367db11
+          userCondition: null
+        -
+          elementCondition: null
+          fieldUid: d8797704-1354-4bc2-8ac7-4675305c5fcc # Event Dates Label
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 962922cb-27d7-4b0a-8bb0-dca779a4e962
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 0968ba9e-9a4c-4238-a65b-ad3a323f8cca # Event Partner
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 04f8df92-226e-4bdc-b47a-0e5f47a81952
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: b0a408b3-9d0d-409e-b9a9-564c0ecb283c # Venue
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 107884ed-84eb-44ac-96ca-3f8dc423fa9f
+          userCondition: null
+          warning: null
+          width: 100
+      name: Dates
+      uid: 732ceb11-f1c0-4170-b26f-a1c525fe3113
+      userCondition: null
+    -
+      elementCondition: null
+      elements:
+        -
+          elementCondition: null
+          type: craft\fieldlayoutelements\HorizontalRule
+          uid: c82e371e-2035-4586-b44e-bc72e835b073
+          userCondition: null
+        -
+          elementCondition: null
+          fieldUid: edd758f8-e0ec-4ef3-86af-51690335ece7 # Event Genre
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: cc10206c-4625-4f4c-ac69-734dfdbb2a74
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 9e9abb47-ea9a-4f12-96b5-d915fab1218f # Event Category
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: d057f070-b5e6-4aff-9456-3ccdc61397ac
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 7a51aca1-1a70-435b-bc16-6ec7bd2c4be0 # Featured Video Embed Code
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: d8462435-819a-495c-a2ca-ebf5b3742418
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 1982700e-6aa7-4022-bc0f-ee96d891149c # Event Image Gallery
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 6577f75b-5d20-4135-90b6-6310ea0d7a2c
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 5764896d-54f2-425b-b36e-4278f5440071 # Body
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: ed78067b-1db7-4f1a-82a7-269a7c8e8612
+          userCondition: null
+          warning: null
+          width: 100
+      name: 'General Info'
+      uid: d0404746-6b24-498a-a0e5-a126d9521a84
+      userCondition: null
+    -
+      elementCondition: null
+      elements:
+        -
+          elementCondition: null
+          type: craft\fieldlayoutelements\HorizontalRule
+          uid: 7e86697c-ba07-4a62-9a36-39236615f9b5
+          userCondition: null
+        -
+          elementCondition: null
+          fieldUid: 2c7a7ae3-7151-45b4-a96c-7dc160f4cbdc # Website
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: a9affa22-1a9b-4683-a9fd-f84ca00a18be
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 8065e96a-f788-4d62-bfab-88e8a9ec7872 # Social Links
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 7dab8522-15e2-472f-a677-0b7f994b8b6e
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 730d3ebd-b810-43f9-8762-02f4e5f2642b # Age Recommendations
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 676ad4b0-eef7-4ec5-aeaa-8b14c4044a16
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 63e026f8-a9fa-4d9d-8bce-ae031666a224 # Guest Ticket Price (Low)
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 834007c4-39a9-40b9-a0fc-f927fbcd7dba
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: f15b2626-a689-40e2-ac33-e96a23e3b391 # Guest Ticket Price (High)
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: aba93104-ee6c-4702-9e2f-c73f2df53dc8
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: dd61bfae-367e-406a-8a90-69eac20f74d1 # Ticket Info
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: bbb4b049-4c5e-4072-beb7-98c3c4e21602
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: b66ab360-21e0-4037-9f78-eff3d16eeccc # Ticket Availability
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: c07dc7ba-390b-4ab4-a3be-1a0cfde23c2b
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          dismissible: false
+          elementCondition: null
+          style: warning
+          tip: '***Important:*** By default, the the Box Office Info for the event is pulled from the associated partner(s). By filling this out, you will _override_ that content on the event page. Only complete this if the information is _truly_ specific to the event; otherwise, prefer updating the partner''s Box Office Info.'
+          type: craft\fieldlayoutelements\Tip
+          uid: a99b1a9b-29c2-4838-b9ed-c64cb3f83eb9
+          userCondition: null
+        -
+          elementCondition: null
+          fieldUid: 276f46bb-020c-42ad-8bc0-2b9f6e46f1dc # Box Office Info
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: d39896dd-00fb-4769-889f-216f07052f62
+          userCondition: null
+          warning: null
+          width: 100
+      name: 'Additional Info'
+      uid: f4b98033-b824-4e85-97bf-2a0574e3267f
+      userCondition: null
+    -
+      elementCondition: null
+      elements:
+        -
+          dismissible: false
+          elementCondition: null
+          style: tip
+          tip: "## SINGLE DAY EVENTS\r\nEnter the start day and time of the event. Set the end date to the same day and the calendar will automatically  select an end time that is one hour later. **The calendar does not display the end time.**\r\nIf the event is open all day that the venue is open  (for example, art exhibits), set the event to **All Day**.\r\n\r\n## MULTIPLE DAY EVENTS\r\nIf the event is running for multiple days, enter the first date and start time the for the event. The calendar will automatically select an end time that is one hour later. Do not change this. Then select **Repeats**. You will be given a few options to display repeating events. This creates a repeat rule for this particular start time. \r\n\r\nIf the event has multiple start times (for example: 4pm showing and 7pm showing or weekends at 7pm with a sunday matinee) you will need to add the additional start times as a separate entry under \"Calendar: Events Additional Time\".\r\n\r\n**Repeat - Select Dates**\r\nIn most cases, it will be best to use the select dates option. Select the dates from the calendar with the same start time as this event. **Do not add the first date of the event, you only need to add additional dates.**\r\n\r\n**Repeat - Days**\r\nIf the event is running for multiple days, you can select this option and set an end repeat date. To end the repeat, select **After** and set the date to the last day of the event. This is a good option for long running festivals.\r\n\r\n**Repeat - Weeks**\r\nIf the event is running on select days of the week, you can select this option, select the days of the week, and set an end repeat date. To end the repeat, select **After** and set the date to the last day of the event. This is a good option for museums, or events that only happen on a specific day of the week.\r\n\r\n**Repeat - Months**\r\nIf the event is running on select days of the month (first Thursday, etc), you can select this option, select **On the: first, second, third, fourth, last**, and set an end repeat date. To end the repeat, select **After** and set the date to the last day of the event. This is a good option for monthly events.\r\n\r\n**Repeat - Years**\r\nThis option is for events that happen annually and will probably never be selected.\r\n\r\n## SPECIAL CASES\r\n\r\n**Movies**\r\nFor movies with multiple screenings, enter the event as **All Day** and include a message in the description field to check with the venue website for movie times. \r\n\r\n"
+          type: craft\fieldlayoutelements\Tip
+          uid: e62238d1-fd4c-473d-9a2b-bb51ae35c9b5
+          userCondition: null
+      name: Help
+      uid: d7c2fd3f-34ac-4562-8cf6-5bc5cdd13b49
+      userCondition: null
+  uid: 5ab6c8bd-2ac5-40d4-abe9-a31245a37f3c
+handle: la_events
+hasTitleField: true
+icsHash: null
+icsTimezone: floating
+locationFieldHandle: '0'
+name: 'LA Events'
+siteSettings:
+  febcaec3-8de3-4832-a584-76cb42c02e73:
+    enabledByDefault: true
+    hasUrls: true
+    siteId: 7d81a2c3-37f0-4c8e-ae20-7d3ab5055184 # TeenTix LA
+    template: calendar/event
+    uriFormat: 'calendar/event/{slug}'
+titleFormat: ''
+titleLabel: Title
+titleTranslationKeyFormat: ''
+titleTranslationMethod: site

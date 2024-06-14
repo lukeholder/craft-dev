@@ -1,0 +1,119 @@
+{# VENUE LIST MAP PAGE #}
+{% extends "_layout" %}
+
+{# SET SITE SETTINGS #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set mapLat                   = siteSettings.venueMapLatitude %}
+{% set mapLng                   = siteSettings.venueMapLongitude %}
+
+{# SET VENUES BY CURRENT EVENTS #}
+{% set events                   = craft.calendar.events({
+  rangeStart                    : 'now',
+  loadOccurrences               : 'next'
+}) %}
+{% set venues                   = events|group(e => e.eventVenue|length? e.eventVenue.one().title : 'No Venue')|supersort('ksort') %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "#{ entry.title }" %}
+{% set class                    = "venues list" %}
+
+{% block content %}
+{% cache %}
+
+  <header class="page-header grid-x grid-margin-x align-middle">
+    <div class="medium-7 large-9 cell">
+      <h1 class="page-title">{{ entry.title }}</h1>
+    </div>
+    <div class="medium-5 large-3 cell">
+      <label class="show-for-sr">Venues by Name</label>
+      <select id="venue-list">
+        <option value="">Venues by Name</option>
+        {% for venueId, events in venues %}
+          {% set entry = events|first.eventVenue|length ? events|first.eventVenue.one() : null %}
+          {% if entry %}
+            <option value="{{ entry.url }}">{{ entry.title }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+    </div>
+  </header>
+  
+  {{ entry.body }}
+  
+{% endcache %}
+
+{% include "_partials/edit-link" %}
+
+<div id="venueMap" class="responsive-embed"></div>
+
+{% endblock %}
+
+{% block footerJs %}
+
+{% cache %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key={{ craft.maps.mapToken }}&callback=initMap" async defer></script>
+  <script>
+    let map;
+    let infowindow = null;
+    function initMap() {
+      // Display the map
+      map = new google.maps.Map(document.getElementById("venueMap"), {
+        center: {
+          lat: {{mapLat}},
+          lng: {{mapLng}}
+        },
+        zoom: 10
+      });
+
+    {% for venueId, events in venues %}
+
+      {% set entry            = events|first.eventVenue|length ? events|first.eventVenue.one() : null %}
+
+      {% if entry and entry.partnerAddress is not empty %}
+        {% set address          = entry.partnerAddress %}
+
+        const contentString{{ entry.id }} = '<div id="content">'+
+        '<h3 class="infobox-title">{{ entry.title }}</h3>'+
+        '<p class="infobox-address">{{ address.parts.number }} {{ address.parts.address }}, {{ address.parts.city }}</p>'+
+        '<div class="infobox-body">'+
+        {% if events|length %}
+          {% for event in events|slice(0,3) %}
+            '<p><strong>{{event.startDate.format("D, M j, Y")}}</strong> {% if event.allDay %}All Day{% else %} {{event.startDate.format("g:ia")}}{% endif %}<br>{% if event.eventRelated %}{% set related = craft.calendar.events().relatedTo(event.id).one() %}{% if related %}<strong><a href="{{ siteUrl }}calendar/event/{{ related.slug }}">{{ related.title }}</a></strong>{% endif %}{% else %}<strong><a href="{{ siteUrl }}calendar/event/{{ event.slug }}">{{ event.title }}</a></strong>{% endif %}</p>'+
+          {% endfor %}
+        {% else %}
+          '<p><em>There are no upcoming events</em></p>' +
+        {% endif %}
+        '<a href="{{ entry.url }}" class="button">View More Events</a>'+
+        '</div></div>';
+
+        const marker{{ entry.id }} = new google.maps.Marker({
+          position: {
+            lat: {{ address.lat }},
+            lng: {{ address.lng }}
+          },
+          title: '{{ entry.title }}',
+          // icon: '/path/to/custom/icon.png',
+          map: map
+        });
+
+        marker{{ entry.id }}.addListener('click', function() {
+          if (infowindow) {
+            infowindow.close();
+          }
+          infowindow = new google.maps.InfoWindow({
+            content: contentString{{ entry.id }}
+          });
+
+          infowindow.open(map, marker{{ entry.id }});
+
+        });
+
+      {% endif %}
+    {% endfor %}
+  }
+
+  </script>
+
+{% endcache %}
+{% endblock %}

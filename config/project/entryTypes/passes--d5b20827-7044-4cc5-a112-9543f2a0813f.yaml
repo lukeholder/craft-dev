@@ -1,0 +1,70 @@
+fieldLayouts:
+  f7c09786-29cd-4f76-9b6e-3ae8589ae609:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 9b225776-9a96-4487-89f8-a774ea5a6c06
+            warning: null
+            width: 100
+          -
+            fieldUid: 56ca60fc-8226-4b04-a5ad-f1579ee34e48 # User
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4941c5ef-0f80-4a59-be6d-389c750cdf8f
+            warning: null
+            width: 100
+          -
+            fieldUid: 5ee4563b-8ef4-43e4-b18d-ecb15da9783f # Format
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: da6598e6-7187-4580-8256-a513fd0a4c11
+            warning: null
+            width: 100
+          -
+            fieldUid: 2fbdf9f4-1ba7-4d6e-bd63-dd29f71dbffd # Status
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cd0ed041-ebd6-4890-a25e-234ceb54e032
+            warning: null
+            width: 100
+        name: Passes
+        sortOrder: 1
+        uid: acba21da-0a16-49c8-8110-b03f7b0bd4c3
+handle: passes
+hasTitleField: true
+name: Passes
+section: f7473d80-e069-4bc8-bc71-71c8864b9f30 # SEA Passes
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

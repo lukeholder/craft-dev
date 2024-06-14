@@ -1,0 +1,17 @@
+columnSuffix: kcsyyuey
+contentColumnType: integer(10)
+fieldGroup: 77d77e0d-cbd3-4972-b03e-ec05812e4b1b # Event
+handle: eventTicketPriceLow
+instructions: 'Standard advertised price for adult tickets to the event without the TeenTix Membership or other youth rates.'
+name: 'Guest Ticket Price (Low)'
+searchable: true
+settings:
+  currency: USD
+  defaultValue: null
+  max: null
+  min: 0
+  showCurrency: true
+  size: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Money

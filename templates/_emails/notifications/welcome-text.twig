@@ -1,0 +1,13 @@
+Hello {{ name }}!
+
+Welcome to TeenTix!
+
+{% if userIsProvisional %}
+{{ emails.welcomeEmailProvisionalHtml|striptags|raw }}
+
+Complete your registration: {{ siteUrl }}account/login-provisional?email={{ email }}&accountToken={{ dateCreated|date("FWzl")|hash|replace(dateCreated|date("FWzl")) }}
+{% else %}
+{{ emails.welcomeEmailHtml|striptags|raw }}
+{% endif %}
+
+View your TeenTix pass here: {{ siteUrl }}account/pass/{{ userId }}

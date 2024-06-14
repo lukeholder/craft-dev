@@ -1,0 +1,26 @@
+{# PARTNER SOCIAL LINKS #}
+
+{% if socialLinks | length %}
+  <div id="org-social" class="social-icons section">
+    <h4 class="section-head sans">Social Links</h4>
+
+    {% for block in socialLinks %}
+
+      {% if block.type == "link" %}
+        {% switch block.website %}
+          {% case "facebook" %}{% set icon = "facebook-f" %}
+          {% case "twitter" %}{% set icon = "twitter" %}
+          {% case "youtube" %}{% set icon = "youtube" %}
+          {% case "vimeo" %}{% set icon = "vimeo-v" %}
+          {% case "instagram" %}{% set icon = "instagram" %}
+          {% case "flickr" %}{% set icon = "flickr" %}
+        {% endswitch %}
+
+        <a href="{{ block.websiteUrl }}" target="_blank"><i class="fab fa-{{ icon }}"></i></a>
+
+      {% endif %}
+
+    {% endfor %}
+
+  </div>
+{% endif %}

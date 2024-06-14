@@ -1,22 +1,774 @@
-dateModified: 1705627485
+dateModified: 1717733104
 email:
-  fromEmail: tim@craftcms.com
-  fromName: 'Craft Project'
-  transportType: craft\mail\transportadapters\Sendmail
+  fromEmail: info@teentix.org
+  fromName: TeenTix
+  replyToEmail: info@teentix.org
+  template: ''
+  transportSettings:
+    apiKey: $MANDRILL_PASSWORD
+    subaccount: ''
+    template: ''
+  transportType: perfectwebteam\mailchimptransactional\mail\MailchimpTransactionalAdapter
+fs:
+  adImages:
+    hasUrls: true
+    name: 'SEA Ad Images'
+    settings:
+      expires: '1 years'
+      localFsPath: '@webroot'
+      localFsUrl: '@assetsUrl'
+      subpath: images/ads
+    type: craft\cloud\fs\AssetsFs
+  generalImages:
+    hasUrls: true
+    name: 'SEA General Images'
+    settings:
+      expires: '1 years'
+      localFsPath: '@webroot'
+      localFsUrl: '@assetsUrl'
+      subpath: images/general
+    type: craft\cloud\fs\AssetsFs
+  la_adImages:
+    hasUrls: true
+    name: 'LA Ad Images'
+    settings:
+      expires: '1 years'
+      localFsPath: '@webroot'
+      localFsUrl: '@assetsUrl'
+      subpath: images/la/ads
+    type: craft\cloud\fs\AssetsFs
+  la_generalImages:
+    hasUrls: true
+    name: 'LA General Images'
+    settings:
+      expires: '1 years'
+      localFsPath: '@webroot'
+      localFsUrl: '@assetsUrl'
+      subpath: images/la/general
+    type: craft\cloud\fs\AssetsFs
+  la_pageImages:
+    hasUrls: true
+    name: 'LA Page Images'
+    settings:
+      expires: '1 years'
+      localFsPath: '@webroot'
+      localFsUrl: '@assetsUrl'
+      subpath: images/la/pages
+    type: craft\cloud\fs\AssetsFs
+  la_partnerImages:
+    hasUrls: true
+    name: 'LA Partner Images'
+    settings:
+      expires: '1 years'
+      localFsPath: '@webroot'
+      localFsUrl: '@assetsUrl'
+      subpath: images/la/partner
+    type: craft\cloud\fs\AssetsFs
+  la_sponsorLogos:
+    hasUrls: true
+    name: 'LA Sponsor Logos'
+    settings:
+      expires: '1 years'
+      localFsPath: '@webroot'
+      localFsUrl: '@assetsUrl'
+      subpath: images/la/logos
+    type: craft\cloud\fs\AssetsFs
+  pageImages:
+    hasUrls: true
+    name: 'SEA Page Images'
+    settings:
+      expires: '1 years'
+      localFsPath: '@webroot'
+      localFsUrl: '@assetsUrl'
+      subpath: images/pages
+    type: craft\cloud\fs\AssetsFs
+  partnerImages:
+    hasUrls: true
+    name: 'SEA Partner Images'
+    settings:
+      expires: '1 years'
+      localFsPath: '@webroot'
+      localFsUrl: '@assetsUrl'
+      subpath: images/partner
+    type: craft\cloud\fs\AssetsFs
+  sponsorLogos:
+    hasUrls: true
+    name: 'SEA Sponsor Logos'
+    settings:
+      expires: '1 years'
+      localFsPath: '@webroot'
+      localFsUrl: '@assetsUrl'
+      subpath: images/logos
+    type: craft\cloud\fs\AssetsFs
+  userPhotos:
+    hasUrls: true
+    name: 'User Photos'
+    settings:
+      expires: '1 years'
+      localFsPath: '@webroot'
+      localFsUrl: '@assetsUrl'
+      subpath: images/members
+    type: craft\cloud\fs\AssetsFs
 meta:
   __names__:
-    1c4db2bd-b409-4bf2-a56e-c3327f0b160e: 'Craft Project' # Craft Project
-    81a6b84b-4e06-4828-a256-d2d537885644: Common # Common
-    283a253c-a365-4823-89c4-b48fbd2232a3: 'Craft Project' # Craft Project
+    0a530a48-e35a-44a6-ba97-841a535d88a9: Images # Images
+    0ae85203-f862-4d8f-a722-6e80a5ab1268: Calendar # Calendar
+    0bb29461-9c99-48e6-b8dd-c38776cd8b84: 'Image Grid' # Image Grid
+    0de665c4-25e6-4fba-8588-a347682f358f: 'Featured Events' # Featured Events
+    0e2cedc1-21a7-4696-a999-92b8b3552254: Header # Header
+    0e7592e9-74d0-48f7-a1d7-2bf18b97d6a0: TeenTix # TeenTix
+    0ebff79d-8231-42b7-9811-bb11d88afa59: 'Sea Sidebar About' # Sea Sidebar About
+    1b067782-5ec8-465b-a1b7-5fb3d20a708f: 'Social Links' # Social Links
+    1b4a37bb-da36-4f51-8536-e34aa98dee6c: 'Related Event' # Related Event
+    1b6dddcc-94bf-431b-91e4-b27eaa0ff5fd: 'Demographic Language' # Demographic Language
+    1bef7358-ad99-4460-827c-31e5ab2d4f28: 'Affiliated Venue Message' # Affiliated Venue Message
+    1dc1278d-c429-4ba3-ba73-239a54a8da2f: '2 for $10 Description' # 2 for  Description
+    1e632a7e-98f9-4ce4-9107-7dcfa2206b05: City # City
+    1ea0247b-17e7-419a-8029-d57f032f4ed0: Users # Users
+    1f0ccd3f-7d5b-4da9-85eb-b8a8b8e3a15d: 'LA Blog' # LA Blog
+    1fd3c0c4-b7ef-4705-b2f4-cf2f3589dd03: 'Partner Genre' # Partner Genre
+    1fd8f3ff-5b7b-45a5-86d0-5ad68c4e1636: Website # Website
+    2ad583a9-47f7-4fc1-a1a0-add3cef338f7: 'Footer Contact' # Footer Contact
+    2aec49df-2c58-40a0-ab6c-1edc7f4653f3: gallery # gallery
+    2b746c39-8ded-45b2-aaf9-77878ad827ff: 'Alumni Message' # Alumni Message
+    2c0a312d-bf97-4a8c-97d0-76a9a06c1224: Site # Site
+    2c5f41e9-ed43-432d-8270-bb6943ebd508: 'Venue Map (Longitude)' # Venue Map (Longitude)
+    2c7a7ae3-7151-45b4-a96c-7dc160f4cbdc: Website # Website
+    2d216db2-7255-4c3e-a9d1-8ec36907f736: Ads # Ads
+    2debf6b7-c27d-45e8-912c-3f4980d798c8: Check-Ins # Check-Ins
+    2fbdf9f4-1ba7-4d6e-bd63-dd29f71dbffd: Status # Status
+    3a2d8490-dc06-4203-8ae9-e1b331b163b5: 'SEA Editors' # SEA Editors
+    3b2f6fe3-2a5e-4e3b-b7d5-eb08348ff0fb: Venues # Venues
+    3b35de68-31ec-45e8-91f3-f55c9ab8d974: Caption # Caption
+    3be92485-cdce-4cdc-816c-b1bb2f73cd30: 'Name or type' # Name or type
+    3cff5d98-b9cf-41a4-be79-397bccd0c60b: 'Travel Information' # Travel Information
+    03d3b7e5-9fca-4789-b7ba-ca374aa1b19d: Sidebar # Sidebar
+    3da310b3-4824-49c4-acde-7b2f840beb43: 'User Photos' # User Photos
+    3e08096d-5243-4d61-9e01-b983bd73a42e: 'Top Image Header' # Top Image Header
+    3e4fb3cc-168c-4140-8a15-160cd3823ea8: 'LA Partners Index' # LA Partners Index
+    3ef356cf-810a-429b-a5fd-2ae13946ec02: Copy # Copy
+    3f0b39c1-54ce-45ac-80fe-a623dae164a4: logo # logo
+    3f09ea84-fca8-4c00-a456-da8c386acad9: Featured # Featured
+    3f4bdcee-5f68-4b73-8010-0bf80e558472: 'Equity Statement URL' # Equity Statement URL
+    4b8f39b9-62c4-48c9-a80f-e682dd677fed: 'Sidebar Navigation' # Sidebar Navigation
+    4be93c1d-dad7-4d60-b81d-568bc7396c22: 'Max 800' # Max 800
+    4c5e0440-d31b-4e74-b3e3-1b52685bc91d: 'Footer Copyright' # Footer Copyright
+    4c6edd80-f445-4879-afe0-3e94039bb6d1: Phone # Phone
+    4db5eccb-070e-420b-a1ec-91f903861d6b: 'HTML body' # HTML body
+    04e552e5-3475-4c31-af48-0c83a705b533: 'Content Position' # Content Position
+    4ee72751-55a9-4af3-b3b9-fd3e888686a8: 'Physical Pass' # Physical Pass
+    4f2d0446-809a-4896-9a97-3b5409c32324: Global # Global
+    5a124ad1-5d97-4204-aa48-b9290c137c4f: 'Content One Column' # Content One Column
+    5a668aea-8c05-4ffb-9f06-30f9733cde93: 'Website Url' # Website Url
+    5e8c93a1-7ae1-4c87-8da0-19115c2b9dcb: 'Provisional Member?' # Provisional Member?
+    5ec9bf08-ecd8-45fc-9476-42230de4ea06: 'LA Sponsor Logos' # LA Sponsor Logos
+    5ee4563b-8ef4-43e4-b18d-ecb15da9783f: Format # Format
+    6bfc4b23-14c0-4271-ad9a-23fd5bb39c1a: 'Image Gallery' # Image Gallery
+    6c107926-e723-4d35-a3fa-642374417f10: 'LA Ads' # LA Ads
+    6de2343b-5b9d-4c75-812e-63350083723f: 'Image Gallery' # Image Gallery
+    6e41e820-726f-41e3-accc-bcc17213deb8: 'Top Image' # Top Image
+    6e290fc3-f22c-429b-a097-33ad83ee2ebf: Logo # Logo
+    6f7a3e23-0dff-4980-8cde-2ab349d4ab96: 'Content Align' # Content Align
+    6fd3ea66-44b0-4b56-8fc3-6880f5dc4ad9: 'LA Check-Ins' # LA Check-Ins
+    6fe4cb80-0b85-4a81-90d1-2726460948d0: 'Website Url' # Website Url
+    7a51aca1-1a70-435b-bc16-6ec7bd2c4be0: 'Featured Video Embed Code' # Featured Video Embed Code
+    7bc6a511-10a7-4729-b23e-340511a91a7c: 'Related Event' # Related Event
+    7befc186-4e73-42d2-be92-de32c46622bf: 'Unaffiliated Venue Message' # Unaffiliated Venue Message
+    7d4a5613-3c05-4534-adfc-577177355e56: 'Program Copy' # Program Copy
+    7d81a2c3-37f0-4c8e-ae20-7d3ab5055184: 'TeenTix LA' # TeenTix LA
+    7d574c10-9a96-4a1f-9248-99393e773ba6: 'Provisional Notice' # Provisional Notice
+    7dd75f09-6042-4575-8cd9-107ad9cca4e5: 'Demographic LGBTQ' # Demographic LGBTQ
+    7f7bf724-7909-4699-b70a-5cd496c314bb: 'LA Page Images' # LA Page Images
+    7f284818-c0c2-4a70-b8c7-787646f74397: Centered # Centered
+    7fe338e4-2b40-4fc5-b4b3-f7d932392c07: 'LA Editors' # LA Editors
+    8b0828cb-f1af-4d35-a74a-ce937f8e99bd: User # User
+    8de01c48-93b4-49f3-8137-bd63a4dc7f5d: 'SEA Ads' # SEA Ads
+    8e26db8d-0eba-4352-b600-6466a8a49041: Genre # Genre
+    8f001033-978a-40fd-8c8b-a2c6cd93e08b: 'Background Color' # Background Color
+    8f66492e-a2f2-4afb-8669-162d920a6eab: School # School
+    8fb5378a-f891-4bd6-9a91-f45144eecd29: 'LA Partners' # LA Partners
+    9a41b4a7-be99-4a44-a85b-59f8b51805e6: 'Mailing Address Country' # Mailing Address Country
+    9b58c022-443e-452c-acd2-fbc516d0d8d9: URL # URL
+    9b121dd1-56b4-42ff-9d76-c19d86bc8ba9: 'Local Press Corps?' # Local Press Corps?
+    9c078771-2412-4868-b07c-7da74ab2e95a: Flexible # Flexible
+    9d76e086-b2cf-4699-a6dd-445bdea1988b: Header # Header
+    9e9abb47-ea9a-4f12-96b5-d915fab1218f: 'Event Category' # Event Category
+    9e61e4c1-5b33-42dd-aa7c-b3d11d23b351: 'Partner Type' # Partner Type
+    9eceeb25-5e29-4263-84f0-53203f894c30: 'Simple 2' # Simple 2
+    10cb8d68-f4ae-4361-ad84-134c760a0cfe: 'Max 300' # Max 300
+    10f190a7-a48f-4f72-8bdf-712778bbab43: 'Hear About' # Hear About
+    12c1a7a7-5cae-4d47-8ef0-2b19f588e3ca: 'Applicant Type' # Applicant Type
+    13b750c3-a582-454e-b040-0cf73dbb7a5f: Header # Header
+    14c10dbb-f84a-4029-b867-15eefc9b4f20: Contact # Contact
+    019bfad1-7fee-4969-a0ce-4106539e4f9b: 'Flexible Content' # Flexible Content
+    22e7ff07-9f8c-4ea0-9a23-de573a9208da: 'Mailing Address Street' # Mailing Address Street
+    22f15960-9f20-4eb1-9234-fe848b4bcb10: 'Unlisted Showtime?' # Unlisted Showtime?
+    23cd7ff8-6ed9-48df-8bbe-d250e1c80e26: Copy # Copy
+    24a9e9d6-7048-41e2-89f9-b07ce4eb2457: 'Alt Tag' # Alt Tag
+    26c17f79-dc84-458e-b911-cccfaa260ae1: 'Embed Code' # Embed Code
+    29c55f0e-cfa5-4ec7-b754-12e37e503556: Interests # Interests
+    33ce937b-78fe-4bc8-8b80-073514d569d9: 'Sea Main Nav' # Sea Main Nav
+    34eff12f-2a0d-4a7f-a878-0707280412be: 'LA Blog' # LA Blog
+    35cd9ae2-be06-4393-99ba-f416c96fdbc6: 'Email Address' # Email Address
+    35d67051-9b34-4eea-8ba8-182e395d2db3: 'Adult Email Address' # Adult Email Address
+    036c4165-dd29-4c06-b046-7de87e84e28f: 'Welcome Email (HTML)' # Welcome Email (HTML)
+    37a45800-9fce-4a5e-8cf5-9d1bbfc010e8: 'Zip Code' # Zip Code
+    38d6e105-55e0-479c-9d78-85b0906f583d: 'Default State' # Default State
+    40b2a3eb-57c5-41cc-864b-aec73e349cc8: Country # Country
+    44d08827-6c92-45d4-ad1a-7d0b1f090784: 'Phone Number' # Phone Number
+    46a70627-1c9f-42d0-99e5-06d393e0b8d2: 'Banner 1000x50' # Banner 1000x50
+    48eb74de-92d8-4d65-8b05-06dcb60dc50d: Event # Event
+    49b3762c-1b8d-4a85-bf34-ed40e63868e8: 'Content with Sidebar' # Content with Sidebar
+    49d4e220-e823-4cc4-9f40-597d55a53ca1: 'Button Link' # Button Link
+    52d4dc08-82de-4335-873c-84ed0ed6d8f2: 'LA Partners Index' # LA Partners Index
+    53a2fd62-044a-4d52-a6d7-6a31038fb212: 'Blog Category' # Blog Category
+    56ca60fc-8226-4b04-a5ad-f1579ee34e48: User # User
+    058abf4d-d015-4c64-9c43-3f6f763a99ff: TeenTix # TeenTix
+    58ddfcec-fc33-455c-9bc5-918e692e49f8: 'SEA Partners' # SEA Partners
+    59f1cb97-1093-4f93-b6dd-7687cca0dd28: Emails # Emails
+    60ab3f1e-c223-44f6-bf59-9eae13970e0c: 'Content Sidebar' # Content Sidebar
+    61cb854e-4648-46e6-aa10-5c8caea1d4fe: Partners # Partners
+    62bb6ffb-8b09-4fec-a98f-4804f1ea8b9c: 'Featured Image' # Featured Image
+    63e026f8-a9fa-4d9d-8bce-ae031666a224: 'Guest Ticket Price (Low)' # Guest Ticket Price (Low)
+    65cb78cb-f363-4a6e-a999-cdded615158e: 'Welcome Message (Provisional)' # Welcome Message (Provisional)
+    0066c35c-d64c-4398-b138-23b72223575d: Home # Home
+    66e1d821-77cd-4b98-a3a3-0247e0919dfc: Referred # Referred
+    77d77e0d-cbd3-4972-b03e-ec05812e4b1b: Event # Event
+    77d152fe-f019-40e2-b5e3-d38cc078314a: 'Footer About' # Footer About
+    79d9c2be-81a4-49f4-8536-eb9b4eaee168: 'Welcome Email (Provisional) (HTML)' # Welcome Email (Provisional) (HTML)
+    80d49d25-87d4-479c-9277-ae40762c6019: 'Email Addresses' # Email Addresses
+    81fc0592-3752-4346-a2a4-4a7b5018b4b4: Schools # Schools
+    86af69a0-4529-46ea-be4d-08256420300e: 'Image Link' # Image Link
+    88ba6b31-7b5c-4d55-b491-a020e1ce0df0: 'SEA Home' # SEA Home
+    89d3afdf-0aa9-4f44-883c-49b5f71761eb: 'Sidebar Background' # Sidebar Background
+    90ffc9f2-cc58-445d-b0e5-40ccdcc8e3d5: 'LA Footer Nav' # LA Footer Nav
+    91f36981-bc0d-4b75-9414-4d787f99c6fb: Program # Program
+    95a72cfc-c760-45b1-a7fa-6e36d3bbad32: Contact # Contact
+    096f693b-0393-4f9c-a47d-63889f337b23: 'School List' # School List
+    98d5f5a0-ba64-4ade-92ed-9ff9cbb75f81: 'Featured Programs' # Featured Programs
+    99a9f27c-e703-4c72-ba89-911b346f2a09: 'Content Right' # Content Right
+    102fc83a-5e1e-4d25-bd24-2abd9a49e20b: Link # Link
+    105f3941-9573-43e3-b8f7-138524a266ac: Ads # Ads
+    127fd295-905e-4e9d-b2d7-5fb09c761391: 'Equity Statement Excerpt' # Equity Statement Excerpt
+    163af3ab-7cd6-4e72-a1fc-a1f8dc965139: Account # Account
+    197eecfc-95d5-433e-aa0e-1378bbefb6d0: Partners # Partners
+    237bfcc6-9ea0-47f4-9ab6-9368d0f35bda: 'Events Additional Time' # Events Additional Time
+    243aa178-cda7-4f1a-8094-268c903002ed: 'Check Ins' # Check Ins
+    261d2164-7376-4ca2-acf0-4ea3a0f16d84: Ads # Ads
+    276f46bb-020c-42ad-8bc0-2b9f6e46f1dc: 'Box Office Info' # Box Office Info
+    277b4f6b-9c36-40cb-86e9-ca7a4867e059: 'LA Main Nav' # LA Main Nav
+    295bbd16-ea50-42cf-958e-360b165363c9: 'Partner Affiliated?' # Partner Affiliated?
+    320b4f5d-524a-4bf0-b668-f8894aed42dc: 'LA Venues Index' # LA Venues Index
+    336bc69c-8dd6-4d03-9601-a992c0a06862: 'Background Color' # Background Color
+    360c03bd-6893-4b6d-971f-63a5c35094da: State # State
+    371a236b-2f84-47f9-9e0c-445bd3cc28e0: 'Plain Text' # Plain Text
+    402d7032-1e12-4221-8d37-5ddb466c157f: 'Physical Pass Submission' # Physical Pass Submission
+    452b1ee2-d2bb-4dbd-8ce6-7c35b24dde49: 'LA Venues' # LA Venues
+    494afe00-636f-479f-83cc-a0308c6bf0cb: 'LA Venues Index' # LA Venues Index
+    0543ea8d-9bf0-4033-bb9a-bae51d9860cf: 'LA Partner Images' # LA Partner Images
+    559cd26f-f4d3-4a7c-a26d-da69e18446dd: 'SEA Partners Index' # SEA Partners Index
+    607fadf8-2650-4793-baa7-00cb551b1ea4: Subhead # Subhead
+    675f67d7-07c5-4acd-8df6-621353d79e1c: 'LA Partners' # LA Partners
+    730d3ebd-b810-43f9-8762-02f4e5f2642b: 'Age Recommendations' # Age Recommendations
+    834d8a22-ae60-4d04-9fd2-a0924a7e93f2: 'SEA Ad Images' # SEA Ad Images
+    843bfe13-9de4-497e-b864-9e775c5bfa16: 'SEA Blog' # SEA Blog
+    928e8c53-aa4a-4a3d-9fc2-c5e954737fd0: 'LA Home' # LA Home
+    933cc760-9909-41d6-ab00-8b49de9ca7ab: 'Adult''s Relationship to Teen' # Adult's Relationship to Teen
+    967ec534-7ba7-419b-9a16-1123629a086d: 'Sign-Up Sidebar (Quick)' # Sign-Up Sidebar (Quick)
+    0968ba9e-9a4c-4238-a65b-ad3a323f8cca: 'Event Partner' # Event Partner
+    997bf998-7317-4ff9-abdd-23fc8b7ca5f7: 'Widget ID' # Widget ID
+    1728bb5b-0f71-4594-81c1-eb2532e226b7: 'Account #' # Account #
+    1841c9d7-d4db-4167-8fe5-56829152403c: MobilePartnerScannerPlatform # MobilePartnerScannerPlatform
+    2546d390-75b9-4e13-beef-438a8b928418: Pass # Pass
+    4249fa93-3dc0-4275-bd60-5b10cd7541c4: 'SEA Venues' # SEA Venues
+    05135f4f-5d8a-43da-8396-f6878472c9dd: '2 for $10 Day?' # 2 for  Day?
+    8065e96a-f788-4d62-bfab-88e8a9ec7872: 'Social Links' # Social Links
+    8369a280-2dfe-4bbc-8093-0ec52679754a: 'Scan Timestamp' # Scan Timestamp
+    08574ff6-94a2-47f1-ba9e-253d13017204: 'LA Sidebar Support' # LA Sidebar Support
+    9060a498-dd4b-4c7b-9cda-01e693a6ddce: Images # Images
+    9395f647-3fbf-4c45-b796-5c0937424f40: 'Social Link' # Social Link
+    9980e63a-d493-46d6-bde6-331b55821a2e: 'Event Category' # Event Category
+    16480e16-bc67-413c-83f9-e824dc7db014: 'Demographic Language Other' # Demographic Language Other
+    22466f6a-85f0-4bbd-bac1-bb9c3cf5b6f5: TeenCompanionInfo # TeenCompanionInfo
+    23273b5c-1323-461a-9fd4-9a6ce23daec8: Website # Website
+    37036a58-d782-4f1e-b28d-d76b77295540: Default # Default
+    68071b7b-fe17-4b13-8318-ba9c86b92d73: Newsletter # Newsletter
+    70621ff5-3921-4cb4-a203-877963ba9751: 'Demographic Ethnicity' # Demographic Ethnicity
+    73619ef2-831b-4cbf-9da3-9d261470f0ba: Header # Header
+    88388b2a-26f4-4b84-a1a3-9d3710b8c564: 'Mailing Address City' # Mailing Address City
+    91051a9d-7c52-4abf-8eba-04d2cf44d027: 'Top Image' # Top Image
+    106326b9-e90a-4244-9aa2-ca3ec30d8657: 'Featured Image' # Featured Image
+    164135ca-7569-4da4-9bf1-500b9d484d24: 'LA Passes' # LA Passes
+    270435f9-36d6-40b4-aceb-39eb540b9782: 'Campaign End Date' # Campaign End Date
+    712553f1-aab8-43a2-ac2f-f2f73fecc7ab: 'Social Link' # Social Link
+    1718532f-9c0b-4b5e-8a4c-91468adaea98: Venue # Venue
+    1982700e-6aa7-4022-bc0f-ee96d891149c: 'Event Image Gallery' # Event Image Gallery
+    3224591a-a646-4d25-b95e-2672c1aa85e2: 'SEA Home' # SEA Home
+    3361506e-4e0b-44b8-bb6f-03b0b917b6e8: Logo # Logo
+    4909882b-caa0-440b-b080-55a976d6ff41: 'Top Image Copy' # Top Image Copy
+    5764896d-54f2-425b-b36e-4278f5440071: Body # Body
+    6208178f-75ad-49a8-941a-81f98ab612fc: 'Demographic Gender Other' # Demographic Gender Other
+    6819789d-669e-4a28-8e33-74670bd76715: 'SEA Partners Index' # SEA Partners Index
+    52587948-17bd-440e-a0d6-cb56e3f0c5d0: 'Address Temp' # Address Temp
+    a2befbb4-ab0d-466b-9e21-537f7e576644: 'Member Ticket Price' # Member Ticket Price
+    a4ca1c2b-8c30-4901-ad55-36c919a81780: Birthdate # Birthdate
+    a5e4f400-d013-4f1f-a7f0-bb14f9e64442: 'Footer Social Links' # Footer Social Links
+    a6e1f43e-7d92-4454-b86e-9b57856d3c34: 'LA Ad Images' # LA Ad Images
+    a6fcee8c-d6c6-4cf9-b583-6b0286a0e586: 'Featured Headline' # Featured Headline
+    a16a3316-a22e-4c0f-82e4-fe841faf49ce: 'SEA General Images' # SEA General Images
+    a51ba621-81f3-4260-a89b-f7dc5e425ee4: Emails # Emails
+    a90c52fa-0196-4670-b873-28510ea21097: Form # Form
+    a483d640-ec16-4b2d-9596-db9991b19cfd: Website # Website
+    a493105f-dcc7-4ac7-acbe-c29085d5b04c: Teens # Teens
+    a650395a-f64f-490e-a903-a388b4c2cad8: 'LA Home' # LA Home
+    a2516258-6cac-4190-b04a-38dcfab15d72: 'Sea Footer Nav' # Sea Footer Nav
+    aa4c696b-cfb5-41a6-b9cf-7d081747dc4c: Assets # Assets
+    aaaf5538-67b2-40c5-b4f5-853ed323090f: 'SEA Venues Index' # SEA Venues Index
+    ab9c5972-c0a9-4cfe-ba97-6a0bf0c350a8: Featured # Featured
+    ad344599-5214-4547-9cfa-ba883a0dea43: Showtime # Showtime
+    ade9603f-655a-4d58-a530-129bf91ddefb: Summary # Summary
+    ae7f50be-feb7-44c0-8620-8c4174b78fc4: Newsletter # Newsletter
+    ae90256b-0669-43a0-a7cc-3469bad479cc: 'LA Sidebar About' # LA Sidebar About
+    aeb3b289-45fb-4c02-b8b7-db407750d5c1: 'Homepage Copy' # Homepage Copy
+    b0a408b3-9d0d-409e-b9a9-564c0ecb283c: Venue # Venue
+    b0e72035-1996-45cf-bf66-86aff178704d: 'SEA Pass Usage' # SEA Pass Usage
+    b0eceb4f-b5bc-4e49-b49e-33a7974ea2ec: 'Banner Link' # Banner Link
+    b00923a3-6edc-40db-b9d4-c4d390c2abe9: '2 for $10?' # 2 for ?
+    b045a639-84ef-4a2b-a0a6-b67509c6b17f: 'Short Name' # Short Name
+    b1a441b5-2f7b-4283-bbd1-77853c9009b9: 'Content Two Column' # Content Two Column
+    b4ffa242-edbb-410f-85ba-faeed6526d56: Simple # Simple
+    b7d26990-cf71-4f7c-8600-87de0daa8cc4: 'Calendar Donation Prompt' # Calendar Donation Prompt
+    b66ab360-21e0-4037-9f78-eff3d16eeccc: 'Ticket Availability' # Ticket Availability
+    b69e2fb5-5a87-434a-9359-8986f38bc9cd: Notifications # Notifications
+    b86fb5af-a8ca-4f4c-8aca-22840feda647: 'LA Pass Usage' # LA Pass Usage
+    b425c414-dfa9-43ad-950f-c3b1456a00ed: 'Mailing Address Zip' # Mailing Address Zip
+    b67324c5-7b44-4da0-89ad-278d1de7409a: Blog # Blog
+    b81189a7-4d65-47e9-bf68-b5e97de1c1ae: 'Who’s with you?' # Who’s with you?
+    b4952045-f8bf-4e67-ba8f-6da6057a57e7: 'Site Settings' # Site Settings
+    bb1f6d32-2807-499e-991a-56a2838216dc: 'LA Ads' # LA Ads
+    bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb: 'SEA Partner Images' # SEA Partner Images
+    bc5e0113-41e9-4c4f-b4d2-85eb6b97deb0: Address # Address
+    bddc9338-040f-444a-b614-1198e0969861: Flexible # Flexible
+    be842f67-78b6-48de-ba9d-a590fff7fe7f: 'Newsletter Subscribe' # Newsletter Subscribe
+    c0519cb6-b643-4026-a4d3-d6afc4f8fbcb: Hours # Hours
+    c1fc48a7-4033-4ac5-a541-8bbb03e2ab8f: Dates # Dates
+    c4c09c27-bb9f-4773-90b5-120485d28e72: 'Pass Usage' # Pass Usage
+    c6dbe416-bf37-43d4-a18d-1db8c8324319: 'Video Position' # Video Position
+    c7be71fc-981e-4773-949e-203c3d1a8856: 'Background Color' # Background Color
+    c7f25e94-31bc-4f79-abc0-778d4a3c5301: Video # Video
+    c17be617-d356-4c28-8dbc-8af433719638: 'LA Venues' # LA Venues
+    c144b4bd-543d-43d7-96ec-6ad8626e7880: Images # Images
+    c635c40f-2f06-433d-b9d9-433329ed2f64: 'Campaign Start Date' # Campaign Start Date
+    c765af10-8474-43f9-8839-643b58839a8a: 'Welcome Email (Footer) (Text)' # Welcome Email (Footer) (Text)
+    c83433fa-2eba-4741-bcbe-66ef7d030672: Footer # Footer
+    ca75a9bf-81d5-463f-9445-aa907c7ce251: Email # Email
+    caf1f890-f6d8-4392-a708-d7db99a535e4: 'SEA Venues Index' # SEA Venues Index
+    cb33afce-0d25-40ce-b60c-1abe465d5425: 'Content Left' # Content Left
+    cbdb02eb-d774-4820-a58c-edda9dbbfb87: 'Adult Name' # Adult Name
+    cd1eb2b1-2e93-416d-a5ff-c42fe6f264e6: 'Pass Usage' # Pass Usage
+    cdddcd33-f9e3-445e-905c-bd6856b1aa8f: Events # Events
+    cde5030f-e1a4-496d-b344-f73099d63efb: 'Box Office Info' # Box Office Info
+    ce8c0355-8267-4664-bf52-1d74a6fe3ffe: 'Number of Guests' # Number of Guests
+    d094b0a5-1093-4ecb-a904-eef7fc65ea3e: 'Banner Location' # Banner Location
+    d1e58700-f6dc-4d30-b20d-756b3b5148f5: 'LA Check-Ins' # LA Check-Ins
+    d3ed089c-46e6-4f89-b0ff-ab09fd25b395: 'Old ID' # Old ID
+    d5b20827-7044-4cc5-a112-9543f2a0813f: Passes # Passes
+    d5c997f3-7790-4a12-a113-ceb567221d44: 'Content Main' # Content Main
+    d5f9d4a5-b92e-4172-9d1c-f6b3135de6d8: Copy # Copy
+    d8eeb3df-3c65-4ed9-b943-c95348bd3f50: 'SEA Sponsor Logos' # SEA Sponsor Logos
+    d8f6df29-8bd5-4eec-8ba6-5fa033c72a49: 'Advertiser Name' # Advertiser Name
+    d57b7f37-d318-4280-b2f7-d898d3049383: Standard # Standard
+    d69ec1fe-34c3-415b-b299-c9e1bd04e9bf: 'Provisional Notice (Expired)' # Provisional Notice (Expired)
+    d264a8d6-ade1-442c-be0f-89ffcd9099bf: Header # Header
+    d322eeba-d462-44c3-97db-ea0f3f76938f: 'Sign Up Sidebar' # Sign Up Sidebar
+    d799bd0c-4874-43bb-944f-517dd5e53f2b: 'LA Pass Usage' # LA Pass Usage
+    d6819f20-e8ed-4e24-9e34-e5b494d72f4e: 'LA Events Additional Time' # LA Events Additional Time
+    d8052c64-2464-4aa2-8b41-9f106bc1d1f6: 'LA General Images' # LA General Images
+    d5333808-ac8c-4d5a-820b-cab3267a226c: Copy # Copy
+    d8797704-1354-4bc2-8ac7-4675305c5fcc: 'Event Dates Label' # Event Dates Label
+    da66bcf0-09d4-4be6-8293-a34eb5076824: 'Banner 300x600' # Banner 300x600
+    db0c51d2-2510-4daa-873b-61d976f51c01: 'Link URL' # Link URL
+    dbcc3a32-04e0-414d-b42b-51950b060c48: 'Sign-Up Sidebar (Provisional)' # Sign-Up Sidebar (Provisional)
+    dc332cd7-e491-4e7f-a605-65a93f8e63e3: 'Event Genre' # Event Genre
+    dc197434-bc80-4945-8419-c80349589bfc: 'LA Events' # LA Events
+    dd61bfae-367e-406a-8a90-69eac20f74d1: 'Ticket Info' # Ticket Info
+    de6b6fca-d855-44ff-8557-3f044be49dab: Transportation # Transportation
+    de8e6bef-5f53-4651-80fc-1a2426314bb2: 'Ticket Type' # Ticket Type
+    df016b46-8972-4cdf-8a2f-a6b53a8d4bde: Header # Header
+    e00c261a-e462-4ceb-a892-0311b7eb39ea: 'LA Admin' # LA Admin
+    e4a09351-408a-4459-b83d-40214c14df2b: Venues # Venues
+    e4a157e4-7a79-4ade-b9e1-6dae99160bfe: 'Footer Logos' # Footer Logos
+    e796a608-4f61-46ac-9c7d-59ca1074d233: TeenHasCompanion # TeenHasCompanion
+    e823674a-d2fc-4023-89dd-2bfacf7bc359: Common # Common
+    ea460316-fa92-49f2-824c-ab3a7284aeeb: 'SEA Pages' # SEA Pages
+    ec85ae9a-2046-47c2-af74-0ca10cc0e2eb: 'ETL Schema' # ETL Schema
+    ecd707fb-e14b-46d0-b010-f0f0be15ab1b: 'Cropped 600 x 400' # Cropped 600 x 400
+    ed2c25c5-46ce-4e73-ae55-a8a67a803da7: 'Free and Reduced Meal Program Eligible' # Free and Reduced Meal Program Eligible
+    edd758f8-e0ec-4ef3-86af-51690335ece7: 'Event Genre' # Event Genre
+    ede4bcc5-7922-45a1-8927-831ff4f82b21: 'Blog Category' # Blog Category
+    ede8a2ce-d955-4415-9cca-155641fbd853: 'SEA Check-Ins' # SEA Check-Ins
+    efea13ad-4689-4181-84ff-fa3be9993ba2: Text # Text
+    f0b4f769-6827-4a4c-8bb7-03b9880444c5: 'Member Pass Type' # Member Pass Type
+    f08e029f-eacb-446a-b0e3-749239c14d13: 'Sea Sidebar Support' # Sea Sidebar Support
+    f2ba8d49-5b17-4b98-9ea6-b00195f84a4d: 'Button Text' # Button Text
+    f5f1ee07-d133-4dc3-b095-7599d5096ebb: 'Welcome Message' # Welcome Message
+    f6b825aa-dca9-4c38-ae85-7467c61b8aec: 'Banner 300x250 or 600x500' # Banner 300x250 or 600x500
+    f8b74dba-0c83-421f-8e83-d68f0b804d18: 'SEA Admin' # SEA Admin
+    f15b2626-a689-40e2-ac33-e96a23e3b391: 'Guest Ticket Price (High)' # Guest Ticket Price (High)
+    f717a6d2-043d-41cd-987f-4d177515e12f: 'LA Pages' # LA Pages
+    f828ca13-51b5-43e4-9fde-09b0b91ca6ea: 'Mailing Address State' # Mailing Address State
+    f5393bb0-0a3c-45e2-bac2-e73fb2622299: 'Public Schema' # Public Schema
+    f7473d80-e069-4bc8-bc71-71c8864b9f30: 'SEA Passes' # SEA Passes
+    f2064581-7d0b-4d38-8752-0899e7806c52: 'LA Passes' # LA Passes
+    fa1a75bd-1062-4ce3-99d0-79c72b7c2f69: Centered # Centered
+    fabac9ba-de6e-4297-b984-c066c1037c63: 'Two Column' # Two Column
+    fabebbb4-c8af-4bc5-bd71-d5e7d7793ee9: 'Gallery Position' # Gallery Position
+    fb819ac6-1202-488a-8ca3-ed74fe083e45: 'Grid count' # Grid count
+    fb7031ed-98d8-4544-b661-120cf5097a75: 'Venue Map (Latitude)' # Venue Map (Latitude)
+    fc2ad897-ac3c-40ec-913e-c446e85d15f7: 'Content Main' # Content Main
+    fc6cf9f9-233f-429c-9d3e-e1a66f0d3efb: 'Two Column' # Two Column
+    fcf39215-31c1-442c-bf9d-2c4cdbb6a189: 'Background Color' # Background Color
+    fd168c2d-3fe2-412c-b16f-66be2771df44: Website # Website
+    fd236ba0-1e89-4e9f-987a-b6574f8ba498: Passes # Passes
+    fe5ad9d7-d539-497c-83ad-020c4f3ecc6f: Event # Event
+    fe46e9dc-3387-4342-b45f-dcf02e0e59fe: 'Demographic Gender' # Demographic Gender
+    ff4a3796-5f38-4dbb-8328-85026951b987: 'SEA Page Images' # SEA Page Images
+plugins:
+  azure-blob:
+    edition: standard
+    enabled: true
+    schemaVersion: '2.0'
+  calendar:
+    edition: pro
+    enabled: true
+    licenseKey: NC1SBADGDLNQ8XIWEG6QL8WI
+    schemaVersion: 4.0.2
+    settings:
+      allDay: false
+      authoredEventEditOnly: ''
+      defaultView: events
+      demoBannerDisabled: '1'
+      descriptionFieldHandle: null
+      eventDuration: 60
+      guestAccess: null
+      locationFieldHandle: null
+      overlapThreshold: 5
+      quickCreateEnabled: '1'
+      showDisabledEvents: '1'
+      showMiniCal: '1'
+      timeInterval: 30
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
+  contact-form:
+    enabled: '0'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings:
+      allowAttachments: ''
+      prependSender: 'On behalf of'
+      prependSubject: 'New message from Teentix'
+      successFlashMessage: 'Your message has been sent.'
+      toEmail: info@teentix.org
+  contact-form-extensions:
+    enabled: '0'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  country-select:
+    enabled: true
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  country-select-field:
+    edition: standard
+    enabled: true
+    licenseKey: EYBOJ4Z7Z8R0IXGK3W0KQ4TR
+    schemaVersion: 1.0.0
+  craftnavigation:
+    enabled: '0'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings:
+      someAttribute: 'Class Name'
+  element-api:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  entry-instructions:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings: null
+  feed-me:
+    enabled: false
+    licenseKey: null
+    schemaVersion: 2.1.2
+    settings: null
+  freeform:
+    edition: pro
+    enabled: '1'
+    licenseKey: KKNUZEI7QH1XPCVWL5UU2W0W
+    schemaVersion: 5.1.0
+    settings:
+      ajaxByDefault: ''
+      alertNotificationRecipients: null
+      allowFileTemplateEdit: true
+      autoScroll: true
+      autoScrollToErrors: '1'
+      badgeType: all
+      blockedEmails: ''
+      blockedEmailsError: 'Invalid Email Address'
+      blockedIpAddresses: ''
+      blockedKeywords: ''
+      blockedKeywordsError: 'Invalid Entry Data'
+      bypassSpamCheckOnLoggedInUsers: false
+      clientDigestFrequency: 1
+      clientDigestRecipients: null
+      customErrorMessage: null
+      customHoneypotName: null
+      defaultTemplates: '1'
+      defaultView: dashboard
+      digestFrequency: 1
+      digestOnlyOnProduction: false
+      digestRecipients: null
+      displayFeed: true
+      emailTemplateDefault: files
+      emailTemplateDirectory: contact
+      emailTemplateStorageType: files_database
+      exportHandlesAsNames: false
+      exportLabels: false
+      fieldDisplayOrder: name
+      fillWithGet: ''
+      footerScripts: '0'
+      formFieldShowOnlyAllowedForms: false
+      formSubmitDisable: '1'
+      formSubmitExpiration: null
+      formTemplateDirectory: null
+      formattingTemplate: flexbox.twig
+      freeformHoneypot: '1'
+      freeformHoneypotEnhancement: true
+      hideBannerDemo: true
+      hideBannerOldFreeform: false
+      minimumSubmitTime: null
+      pluginName: Forms
+      purgableSpamAgeInDays: '0'
+      purgableSubmissionAgeInDays: '0'
+      purgableUnfinalizedAssetAgeInMinutes: 180
+      recaptchaBehaviour: display_error
+      recaptchaEnabled: '1'
+      recaptchaErrorMessage: 'Please verify that you are not a robot.'
+      recaptchaKey: $RECAPTCHA_SITE
+      recaptchaLazyLoad: false
+      recaptchaMinScore: '0.5'
+      recaptchaSecret: $RECAPTCHA_SECRET
+      recaptchaSize: normal
+      recaptchaTheme: light
+      recaptchaType: v2_checkbox
+      rememberPageSubmitOrder: true
+      removeNewlines: ''
+      renderFormHtmlInCpViews: '1'
+      salesforce_client_id: null
+      salesforce_client_secret: null
+      salesforce_password: null
+      salesforce_username: null
+      saveFormSessionLimit: 10
+      saveFormTtl: 30
+      scriptInsertLocation: form
+      scriptInsertType: pointers
+      sessionContext: payload
+      sessionContextCount: 100
+      sessionContextSecret: ''
+      sessionContextTimeToLiveMinutes: 180
+      sessionEntryMaxCount: 50
+      sessionEntryTTL: 10800
+      showErrorsForBlockedEmails: ''
+      showErrorsForBlockedKeywords: ''
+      showTutorial: ''
+      spamFolderEnabled: ''
+      spamProtectionBehaviour: simulate_success
+      submissionThrottlingCount: '6'
+      submissionThrottlingTimeFrame: m
+      successTemplateDirectory: null
+      twigInHtml: true
+      twigInHtmlIsolatedMode: true
+      updateSearchIndexes: true
+  geoaddress:
+    enabled: '0'
+    licenseKey: null
+    schemaVersion: 1.0.1
+    settings: null
+  mailchimp-subscribe:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 2.0.0
+    settings: null
+  mailchimp-transactional:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  mailgun:
+    edition: standard
+    enabled: false
+    schemaVersion: 1.0.0
+  mailgun-events:
+    edition: standard
+    enabled: false
+    schemaVersion: 1.0.0
+    settings:
+      eventTypes:
+        - delivered
+        - failed
+        - opened
+        - rejected
+      limit: '300'
+  navigation:
+    enabled: '1'
+    licenseKey: JT1EWPHAI9R3436MPINX6VYC
+    schemaVersion: 2.0.7
+    settings: null
+  new-relic:
+    edition: standard
+    enabled: true
+    schemaVersion: 0.0.0.0
+  recaptcha:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 1.0.0
+    settings:
+      secretKey: $RECAPTCHA_SECRET
+      siteKey: $RECAPTCHA_SITE
+      validateContactForm: '1'
+  remote-sync:
+    edition: standard
+    enabled: true
+    licenseKey: 6HFNZ8D5O408L9PXCRDB4T44
+    schemaVersion: 1.0.0
+    settings:
+      b2BucketName: ''
+      b2BucketPath: ''
+      b2MasterAppKey: ''
+      b2MasterKeyID: ''
+      b2RegionName: ''
+      cloudProvider: other-s3
+      displayDateFormat: Y-m-d
+      doAccessKey: ''
+      doRegionName: ''
+      doSecretKey: ''
+      doSpacesName: ''
+      doSpacesPath: ''
+      dropboxAccessToken: ''
+      dropboxAppKey: ''
+      dropboxFolder: ''
+      dropboxSecretKey: ''
+      enabled: '1'
+      googleAuthRedirect: ''
+      googleClientId: ''
+      googleClientSecret: ''
+      googleDriveFolderId: ''
+      googleProjectName: ''
+      hideDatabases: ''
+      hideVolumes: ''
+      keepEmergencyBackup: '1'
+      otherS3AccessKey: $AWS_ACCESS_KEY_ID
+      otherS3BucketName: $BUCKET_NAME
+      otherS3BucketPath: craft-backups
+      otherS3Endpoint: $AWS_ENDPOINT_URL_S3
+      otherS3RegionName: $AWS_REGION
+      otherS3SecretKey: $AWS_SECRET_ACCESS_KEY
+      prune: ''
+      pruneLimit: '10'
+      queueTtr: '300'
+      s3AccessKey: ''
+      s3BucketName: ''
+      s3BucketPath: ''
+      s3RegionName: ''
+      s3SecretKey: ''
+      useQueue: '1'
+  seo:
+    enabled: false
+    licenseKey: null
+    schemaVersion: 3.1.1
+    settings:
+      description: ''
+      facebookAppId: '333290523442274'
+      metaTemplate: ''
+      robots:
+        - ''
+        - ''
+        - ''
+        - ''
+        - ''
+        - ''
+      robotsTxt: "{# Sitemap URL #}\r\nSitemap: {{ url(seo.sitemapName ~ '.xml') }}\r\n\r\n{# Disallows #}\r\n{% if craft.app.config.env != 'production' %}\r\n\r\n{# Disallow access to everything when NOT in production #}\r\nUser-agent: *\r\nDisallow: /\r\n\r\n{% else %}\r\n\r\n{# Disallow access to cpresources/ when live #}\r\nUser-agent: *\r\nDisallow: /cpresources/\r\n\r\n{% endif %}"
+      sitemapLimit: '1000'
+      sitemapName: sitemap
+      socialImage:
+        - '53528'
+      title:
+        -
+          key: '1'
+          locked: '0'
+          template: '{title}  '
+        -
+          key: '2'
+          locked: '0'
+          template: ' - {{ siteName }}'
+      titleSuffix: null
+      twitterHandle: teentix
+  seomatic:
+    edition: standard
+    enabled: true
+    licenseKey: VFIYNATWEYYAHSQNDLDM0WXX
+    schemaVersion: 3.0.12
+  simplemap:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 3.4.2
+    settings:
+      apiKey: $GOOGLE_MAPS_API
+      browserApiKey: null
+      disablePopulateMissingFieldData: false
+      geoLocationAutoRedirect: false
+      geoLocationCacheDuration: 5356800
+      geoLocationService: none
+      geoLocationToken: ''
+      geoService: google
+      geoToken: $GOOGLE_MAPS_API
+      mapTiles: google.roadmap
+      mapToken: $GOOGLE_MAPS_API
+      serverApiKey: null
+      unrestrictedApiKey: $GOOGLE_MAPS_API
+      w3wEnabled: ''
+      w3wToken: ''
+  social:
+    edition: standard
+    enabled: false
+    schemaVersion: 1.0.3
+  sprout-import:
+    enabled: false
+    licenseKey: null
+    schemaVersion: 1.0.3
+    settings: null
+  supersort:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 0.0.0.0
+    settings: null
+  venveo-bulk-edit:
+    edition: standard
+    enabled: true
+    schemaVersion: 4.0.0
+  wordsmith:
+    enabled: '1'
+    licenseKey: null
+    schemaVersion: 0.0.0.0
+    settings: null
 system:
   edition: pro
   live: true
-  name: 'Craft Project'
+  name: TeenTix
   schemaVersion: 4.5.3.0
   timeZone: America/Los_Angeles
-users:
-  allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: null
-  photoVolumeUid: null
-  requireEmailVerification: true

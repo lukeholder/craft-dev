@@ -1,0 +1,23 @@
+enableVersioning: true
+handle: venuesIndex
+name: 'SEA Venues Index'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  0e7592e9-74d0-48f7-a1d7-2bf18b97d6a0: # TeenTix
+    enabledByDefault: true
+    hasUrls: true
+    template: venues/index
+    uriFormat: venues
+type: single

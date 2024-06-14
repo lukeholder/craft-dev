@@ -1,0 +1,78 @@
+contentColumnType: string
+fieldGroup: 1ea0247b-17e7-419a-8029-d57f032f4ed0 # Users
+handle: userDemoEthnicity
+instructions: ''
+name: 'Demographic Ethnicity'
+searchable: true
+settings:
+  multi: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - '<span data-tooltip tabindex="1" title="This includes Europe, Middle East, and North Africa">White</span>'
+        -
+          - value
+          - white
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '<span data-tooltip tabindex="1" title="This includes Africa">Black / African American</span>'
+        -
+          - value
+          - black
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '<span data-tooltip tabindex="1" title="This includes the Far East, Southeast Asia, South Asia, Central Asia, and the Middle East">Asian</span>'
+        -
+          - value
+          - asian
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '<span data-tooltip tabindex="1" title="This includes North America, South America, and Central America">American Indian / Alaska Native</span>'
+        -
+          - value
+          - americanIndian
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - '<span data-tooltip tabindex="1" title="This includes Hawaii, Guam, Samoa, and other Pacific Islands">Native Hawaiian / Pacific Islander</span>'
+        -
+          - value
+          - pacificIslander
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Hispanic or Latinx'
+        -
+          - value
+          - hispanic
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Checkboxes

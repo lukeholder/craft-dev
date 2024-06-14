@@ -1,0 +1,48 @@
+fieldLayouts:
+  270ebdae-c89e-4bc6-b322-7df0d580c078:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 036c4165-dd29-4c06-b046-7de87e84e28f # Welcome Email (HTML)
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7497ef79-0f68-44db-a829-fab47191da2e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 79d9c2be-81a4-49f4-8536-eb9b4eaee168 # Welcome Email (Provisional) (HTML)
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f2f181f3-375c-4659-b5de-c241c8b4ebf3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c765af10-8474-43f9-8839-643b58839a8a # Welcome Email (Footer) (Text)
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ed4275b1-781d-43dd-80ec-3278dfc79132
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: fd8cecd6-5e36-4e3c-8547-a402d8726a99
+        userCondition: null
+handle: emails
+name: Emails
+sortOrder: 4

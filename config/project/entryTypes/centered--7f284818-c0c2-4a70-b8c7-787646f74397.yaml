@@ -1,0 +1,65 @@
+fieldLayouts:
+  a3f712cb-fa53-4985-8da1-f46fd76fde89:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: e1bdb9bf-6d64-44ed-8bb5-3639caded4a7
+            warning: null
+            width: 100
+          -
+            fieldUid: 5764896d-54f2-425b-b36e-4278f5440071 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5715adc3-3f74-4cb9-8a56-6d290d2c0f5f
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 2681af3a-d99c-4165-817e-a160e89ade80
+      -
+        elements:
+          -
+            fieldUid: 12f0e18b-8472-48c3-b1ea-8d447c21c8ec
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 85851418-725d-4a14-99ba-5baedab3fa7a
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 2
+        uid: c7171617-bb8d-4b77-b743-6bbcf33e84cd
+handle: centered
+hasTitleField: true
+name: Centered
+section: f717a6d2-043d-41cd-987f-4d177515e12f # LA Pages
+sortOrder: 3
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

@@ -1,0 +1,9 @@
+baseUrl: $SITE_URL_LA
+enabled: true
+handle: la
+hasUrls: true
+language: en-US
+name: 'TeenTix LA'
+primary: false
+siteGroup: 058abf4d-d015-4c64-9c43-3f6f763a99ff # TeenTix
+sortOrder: 2

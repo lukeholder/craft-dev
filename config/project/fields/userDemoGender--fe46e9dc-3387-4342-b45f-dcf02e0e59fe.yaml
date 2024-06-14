@@ -1,0 +1,77 @@
+contentColumnType: string
+fieldGroup: 1ea0247b-17e7-419a-8029-d57f032f4ed0 # Users
+handle: userDemoGender
+instructions: ''
+name: 'Demographic Gender'
+searchable: true
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Female
+        -
+          - value
+          - female
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Male
+        -
+          - value
+          - male
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Transgender Female'
+        -
+          - value
+          - transgenderFemale
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Transgender Male'
+        -
+          - value
+          - transgenderMale
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Non-conforming/non-binary
+        -
+          - value
+          - nonConformingNonBinary
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Other
+        -
+          - value
+          - custom
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\RadioButtons

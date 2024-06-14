@@ -1,0 +1,2020 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 1ea0247b-17e7-419a-8029-d57f032f4ed0 # Users
+handle: userCountry
+instructions: null
+name: Country
+searchable: true
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - value
+          - AF
+        -
+          - label
+          - Afghanistan
+    -
+      __assoc__:
+        -
+          - value
+          - AX
+        -
+          - label
+          - 'Aland Islands'
+    -
+      __assoc__:
+        -
+          - value
+          - AL
+        -
+          - label
+          - Albania
+    -
+      __assoc__:
+        -
+          - value
+          - DZ
+        -
+          - label
+          - Algeria
+    -
+      __assoc__:
+        -
+          - value
+          - AS
+        -
+          - label
+          - 'American Samoa'
+    -
+      __assoc__:
+        -
+          - value
+          - AD
+        -
+          - label
+          - Andorra
+    -
+      __assoc__:
+        -
+          - value
+          - AO
+        -
+          - label
+          - Angola
+    -
+      __assoc__:
+        -
+          - value
+          - AI
+        -
+          - label
+          - Anguilla
+    -
+      __assoc__:
+        -
+          - value
+          - AQ
+        -
+          - label
+          - Antarctica
+    -
+      __assoc__:
+        -
+          - value
+          - AG
+        -
+          - label
+          - 'Antigua and Barbuda'
+    -
+      __assoc__:
+        -
+          - value
+          - AR
+        -
+          - label
+          - Argentina
+    -
+      __assoc__:
+        -
+          - value
+          - AM
+        -
+          - label
+          - Armenia
+    -
+      __assoc__:
+        -
+          - value
+          - AW
+        -
+          - label
+          - Aruba
+    -
+      __assoc__:
+        -
+          - value
+          - AP
+        -
+          - label
+          - 'Asia/Pacific Region'
+    -
+      __assoc__:
+        -
+          - value
+          - AU
+        -
+          - label
+          - Australia
+    -
+      __assoc__:
+        -
+          - value
+          - AT
+        -
+          - label
+          - Austria
+    -
+      __assoc__:
+        -
+          - value
+          - AZ
+        -
+          - label
+          - Azerbaijan
+    -
+      __assoc__:
+        -
+          - value
+          - BS
+        -
+          - label
+          - Bahamas
+    -
+      __assoc__:
+        -
+          - value
+          - BH
+        -
+          - label
+          - Bahrain
+    -
+      __assoc__:
+        -
+          - value
+          - BD
+        -
+          - label
+          - Bangladesh
+    -
+      __assoc__:
+        -
+          - value
+          - BB
+        -
+          - label
+          - Barbados
+    -
+      __assoc__:
+        -
+          - value
+          - BY
+        -
+          - label
+          - Belarus
+    -
+      __assoc__:
+        -
+          - value
+          - BE
+        -
+          - label
+          - Belgium
+    -
+      __assoc__:
+        -
+          - value
+          - BZ
+        -
+          - label
+          - Belize
+    -
+      __assoc__:
+        -
+          - value
+          - BJ
+        -
+          - label
+          - Benin
+    -
+      __assoc__:
+        -
+          - value
+          - BM
+        -
+          - label
+          - Bermuda
+    -
+      __assoc__:
+        -
+          - value
+          - BT
+        -
+          - label
+          - Bhutan
+    -
+      __assoc__:
+        -
+          - value
+          - BO
+        -
+          - label
+          - Bolivia
+    -
+      __assoc__:
+        -
+          - value
+          - BQ
+        -
+          - label
+          - 'Bonaire, Saint Eustatius and Saba'
+    -
+      __assoc__:
+        -
+          - value
+          - BA
+        -
+          - label
+          - 'Bosnia and Herzegovina'
+    -
+      __assoc__:
+        -
+          - value
+          - BW
+        -
+          - label
+          - Botswana
+    -
+      __assoc__:
+        -
+          - value
+          - BV
+        -
+          - label
+          - 'Bouvet Island'
+    -
+      __assoc__:
+        -
+          - value
+          - BR
+        -
+          - label
+          - Brazil
+    -
+      __assoc__:
+        -
+          - value
+          - IO
+        -
+          - label
+          - 'British Indian Ocean Territory'
+    -
+      __assoc__:
+        -
+          - value
+          - BN
+        -
+          - label
+          - 'Brunei Darussalam'
+    -
+      __assoc__:
+        -
+          - value
+          - BG
+        -
+          - label
+          - Bulgaria
+    -
+      __assoc__:
+        -
+          - value
+          - BF
+        -
+          - label
+          - 'Burkina Faso'
+    -
+      __assoc__:
+        -
+          - value
+          - BI
+        -
+          - label
+          - Burundi
+    -
+      __assoc__:
+        -
+          - value
+          - KH
+        -
+          - label
+          - Cambodia
+    -
+      __assoc__:
+        -
+          - value
+          - CM
+        -
+          - label
+          - Cameroon
+    -
+      __assoc__:
+        -
+          - value
+          - CA
+        -
+          - label
+          - Canada
+    -
+      __assoc__:
+        -
+          - value
+          - CV
+        -
+          - label
+          - 'Cape Verde'
+    -
+      __assoc__:
+        -
+          - value
+          - KY
+        -
+          - label
+          - 'Cayman Islands'
+    -
+      __assoc__:
+        -
+          - value
+          - CF
+        -
+          - label
+          - 'Central African Republic'
+    -
+      __assoc__:
+        -
+          - value
+          - TD
+        -
+          - label
+          - Chad
+    -
+      __assoc__:
+        -
+          - value
+          - CL
+        -
+          - label
+          - Chile
+    -
+      __assoc__:
+        -
+          - value
+          - CN
+        -
+          - label
+          - China
+    -
+      __assoc__:
+        -
+          - value
+          - CX
+        -
+          - label
+          - 'Christmas Island'
+    -
+      __assoc__:
+        -
+          - value
+          - CC
+        -
+          - label
+          - 'Cocos (Keeling) Islands'
+    -
+      __assoc__:
+        -
+          - value
+          - CO
+        -
+          - label
+          - Colombia
+    -
+      __assoc__:
+        -
+          - value
+          - KM
+        -
+          - label
+          - Comoros
+    -
+      __assoc__:
+        -
+          - value
+          - CG
+        -
+          - label
+          - Congo
+    -
+      __assoc__:
+        -
+          - value
+          - CD
+        -
+          - label
+          - 'Congo, The Democratic Republic of the'
+    -
+      __assoc__:
+        -
+          - value
+          - CK
+        -
+          - label
+          - 'Cook Islands'
+    -
+      __assoc__:
+        -
+          - value
+          - CR
+        -
+          - label
+          - 'Costa Rica'
+    -
+      __assoc__:
+        -
+          - value
+          - CI
+        -
+          - label
+          - 'Cote d''Ivoire'
+    -
+      __assoc__:
+        -
+          - value
+          - HR
+        -
+          - label
+          - Croatia
+    -
+      __assoc__:
+        -
+          - value
+          - CU
+        -
+          - label
+          - Cuba
+    -
+      __assoc__:
+        -
+          - value
+          - CW
+        -
+          - label
+          - Curacao
+    -
+      __assoc__:
+        -
+          - value
+          - CY
+        -
+          - label
+          - Cyprus
+    -
+      __assoc__:
+        -
+          - value
+          - CZ
+        -
+          - label
+          - 'Czech Republic'
+    -
+      __assoc__:
+        -
+          - value
+          - DK
+        -
+          - label
+          - Denmark
+    -
+      __assoc__:
+        -
+          - value
+          - DJ
+        -
+          - label
+          - Djibouti
+    -
+      __assoc__:
+        -
+          - value
+          - DM
+        -
+          - label
+          - Dominica
+    -
+      __assoc__:
+        -
+          - value
+          - DO
+        -
+          - label
+          - 'Dominican Republic'
+    -
+      __assoc__:
+        -
+          - value
+          - EC
+        -
+          - label
+          - Ecuador
+    -
+      __assoc__:
+        -
+          - value
+          - EG
+        -
+          - label
+          - Egypt
+    -
+      __assoc__:
+        -
+          - value
+          - SV
+        -
+          - label
+          - 'El Salvador'
+    -
+      __assoc__:
+        -
+          - value
+          - GQ
+        -
+          - label
+          - 'Equatorial Guinea'
+    -
+      __assoc__:
+        -
+          - value
+          - ER
+        -
+          - label
+          - Eritrea
+    -
+      __assoc__:
+        -
+          - value
+          - EE
+        -
+          - label
+          - Estonia
+    -
+      __assoc__:
+        -
+          - value
+          - ET
+        -
+          - label
+          - Ethiopia
+    -
+      __assoc__:
+        -
+          - value
+          - EU
+        -
+          - label
+          - Europe
+    -
+      __assoc__:
+        -
+          - value
+          - FK
+        -
+          - label
+          - 'Falkland Islands (Malvinas)'
+    -
+      __assoc__:
+        -
+          - value
+          - FO
+        -
+          - label
+          - 'Faroe Islands'
+    -
+      __assoc__:
+        -
+          - value
+          - FJ
+        -
+          - label
+          - Fiji
+    -
+      __assoc__:
+        -
+          - value
+          - FI
+        -
+          - label
+          - Finland
+    -
+      __assoc__:
+        -
+          - value
+          - FR
+        -
+          - label
+          - France
+    -
+      __assoc__:
+        -
+          - value
+          - GF
+        -
+          - label
+          - 'French Guiana'
+    -
+      __assoc__:
+        -
+          - value
+          - PF
+        -
+          - label
+          - 'French Polynesia'
+    -
+      __assoc__:
+        -
+          - value
+          - TF
+        -
+          - label
+          - 'French Southern Territories'
+    -
+      __assoc__:
+        -
+          - value
+          - GA
+        -
+          - label
+          - Gabon
+    -
+      __assoc__:
+        -
+          - value
+          - GM
+        -
+          - label
+          - Gambia
+    -
+      __assoc__:
+        -
+          - value
+          - GE
+        -
+          - label
+          - Georgia
+    -
+      __assoc__:
+        -
+          - value
+          - DE
+        -
+          - label
+          - Germany
+    -
+      __assoc__:
+        -
+          - value
+          - GH
+        -
+          - label
+          - Ghana
+    -
+      __assoc__:
+        -
+          - value
+          - GI
+        -
+          - label
+          - Gibraltar
+    -
+      __assoc__:
+        -
+          - value
+          - GR
+        -
+          - label
+          - Greece
+    -
+      __assoc__:
+        -
+          - value
+          - GL
+        -
+          - label
+          - Greenland
+    -
+      __assoc__:
+        -
+          - value
+          - GD
+        -
+          - label
+          - Grenada
+    -
+      __assoc__:
+        -
+          - value
+          - GP
+        -
+          - label
+          - Guadeloupe
+    -
+      __assoc__:
+        -
+          - value
+          - GU
+        -
+          - label
+          - Guam
+    -
+      __assoc__:
+        -
+          - value
+          - GT
+        -
+          - label
+          - Guatemala
+    -
+      __assoc__:
+        -
+          - value
+          - GG
+        -
+          - label
+          - Guernsey
+    -
+      __assoc__:
+        -
+          - value
+          - GN
+        -
+          - label
+          - Guinea
+    -
+      __assoc__:
+        -
+          - value
+          - GW
+        -
+          - label
+          - Guinea-Bissau
+    -
+      __assoc__:
+        -
+          - value
+          - GY
+        -
+          - label
+          - Guyana
+    -
+      __assoc__:
+        -
+          - value
+          - HT
+        -
+          - label
+          - Haiti
+    -
+      __assoc__:
+        -
+          - value
+          - HM
+        -
+          - label
+          - 'Heard Island and McDonald Islands'
+    -
+      __assoc__:
+        -
+          - value
+          - VA
+        -
+          - label
+          - 'Holy See (Vatican City State)'
+    -
+      __assoc__:
+        -
+          - value
+          - HN
+        -
+          - label
+          - Honduras
+    -
+      __assoc__:
+        -
+          - value
+          - HK
+        -
+          - label
+          - 'Hong Kong'
+    -
+      __assoc__:
+        -
+          - value
+          - HU
+        -
+          - label
+          - Hungary
+    -
+      __assoc__:
+        -
+          - value
+          - IS
+        -
+          - label
+          - Iceland
+    -
+      __assoc__:
+        -
+          - value
+          - IN
+        -
+          - label
+          - India
+    -
+      __assoc__:
+        -
+          - value
+          - ID
+        -
+          - label
+          - Indonesia
+    -
+      __assoc__:
+        -
+          - value
+          - IR
+        -
+          - label
+          - 'Iran, Islamic Republic of'
+    -
+      __assoc__:
+        -
+          - value
+          - IQ
+        -
+          - label
+          - Iraq
+    -
+      __assoc__:
+        -
+          - value
+          - IE
+        -
+          - label
+          - Ireland
+    -
+      __assoc__:
+        -
+          - value
+          - IM
+        -
+          - label
+          - 'Isle of Man'
+    -
+      __assoc__:
+        -
+          - value
+          - IL
+        -
+          - label
+          - Israel
+    -
+      __assoc__:
+        -
+          - value
+          - IT
+        -
+          - label
+          - Italy
+    -
+      __assoc__:
+        -
+          - value
+          - JM
+        -
+          - label
+          - Jamaica
+    -
+      __assoc__:
+        -
+          - value
+          - JP
+        -
+          - label
+          - Japan
+    -
+      __assoc__:
+        -
+          - value
+          - JE
+        -
+          - label
+          - Jersey
+    -
+      __assoc__:
+        -
+          - value
+          - JO
+        -
+          - label
+          - Jordan
+    -
+      __assoc__:
+        -
+          - value
+          - KZ
+        -
+          - label
+          - Kazakhstan
+    -
+      __assoc__:
+        -
+          - value
+          - KE
+        -
+          - label
+          - Kenya
+    -
+      __assoc__:
+        -
+          - value
+          - KI
+        -
+          - label
+          - Kiribati
+    -
+      __assoc__:
+        -
+          - value
+          - KP
+        -
+          - label
+          - 'Korea, Democratic People''s Republic of'
+    -
+      __assoc__:
+        -
+          - value
+          - KR
+        -
+          - label
+          - 'Korea, Republic of'
+    -
+      __assoc__:
+        -
+          - value
+          - KW
+        -
+          - label
+          - Kuwait
+    -
+      __assoc__:
+        -
+          - value
+          - KG
+        -
+          - label
+          - Kyrgyzstan
+    -
+      __assoc__:
+        -
+          - value
+          - LA
+        -
+          - label
+          - 'Lao People''s Democratic Republic'
+    -
+      __assoc__:
+        -
+          - value
+          - LV
+        -
+          - label
+          - Latvia
+    -
+      __assoc__:
+        -
+          - value
+          - LB
+        -
+          - label
+          - Lebanon
+    -
+      __assoc__:
+        -
+          - value
+          - LS
+        -
+          - label
+          - Lesotho
+    -
+      __assoc__:
+        -
+          - value
+          - LR
+        -
+          - label
+          - Liberia
+    -
+      __assoc__:
+        -
+          - value
+          - LY
+        -
+          - label
+          - 'Libyan Arab Jamahiriya'
+    -
+      __assoc__:
+        -
+          - value
+          - LI
+        -
+          - label
+          - Liechtenstein
+    -
+      __assoc__:
+        -
+          - value
+          - LT
+        -
+          - label
+          - Lithuania
+    -
+      __assoc__:
+        -
+          - value
+          - LU
+        -
+          - label
+          - Luxembourg
+    -
+      __assoc__:
+        -
+          - value
+          - MO
+        -
+          - label
+          - Macao
+    -
+      __assoc__:
+        -
+          - value
+          - MK
+        -
+          - label
+          - Macedonia
+    -
+      __assoc__:
+        -
+          - value
+          - MG
+        -
+          - label
+          - Madagascar
+    -
+      __assoc__:
+        -
+          - value
+          - MW
+        -
+          - label
+          - Malawi
+    -
+      __assoc__:
+        -
+          - value
+          - MY
+        -
+          - label
+          - Malaysia
+    -
+      __assoc__:
+        -
+          - value
+          - MV
+        -
+          - label
+          - Maldives
+    -
+      __assoc__:
+        -
+          - value
+          - ML
+        -
+          - label
+          - Mali
+    -
+      __assoc__:
+        -
+          - value
+          - MT
+        -
+          - label
+          - Malta
+    -
+      __assoc__:
+        -
+          - value
+          - MH
+        -
+          - label
+          - 'Marshall Islands'
+    -
+      __assoc__:
+        -
+          - value
+          - MQ
+        -
+          - label
+          - Martinique
+    -
+      __assoc__:
+        -
+          - value
+          - MR
+        -
+          - label
+          - Mauritania
+    -
+      __assoc__:
+        -
+          - value
+          - MU
+        -
+          - label
+          - Mauritius
+    -
+      __assoc__:
+        -
+          - value
+          - YT
+        -
+          - label
+          - Mayotte
+    -
+      __assoc__:
+        -
+          - value
+          - MX
+        -
+          - label
+          - Mexico
+    -
+      __assoc__:
+        -
+          - value
+          - FM
+        -
+          - label
+          - 'Micronesia, Federated States of'
+    -
+      __assoc__:
+        -
+          - value
+          - MD
+        -
+          - label
+          - 'Moldova, Republic of'
+    -
+      __assoc__:
+        -
+          - value
+          - MC
+        -
+          - label
+          - Monaco
+    -
+      __assoc__:
+        -
+          - value
+          - MN
+        -
+          - label
+          - Mongolia
+    -
+      __assoc__:
+        -
+          - value
+          - ME
+        -
+          - label
+          - Montenegro
+    -
+      __assoc__:
+        -
+          - value
+          - MS
+        -
+          - label
+          - Montserrat
+    -
+      __assoc__:
+        -
+          - value
+          - MA
+        -
+          - label
+          - Morocco
+    -
+      __assoc__:
+        -
+          - value
+          - MZ
+        -
+          - label
+          - Mozambique
+    -
+      __assoc__:
+        -
+          - value
+          - MM
+        -
+          - label
+          - Myanmar
+    -
+      __assoc__:
+        -
+          - value
+          - NA
+        -
+          - label
+          - Namibia
+    -
+      __assoc__:
+        -
+          - value
+          - NR
+        -
+          - label
+          - Nauru
+    -
+      __assoc__:
+        -
+          - value
+          - NP
+        -
+          - label
+          - Nepal
+    -
+      __assoc__:
+        -
+          - value
+          - NL
+        -
+          - label
+          - Netherlands
+    -
+      __assoc__:
+        -
+          - value
+          - NC
+        -
+          - label
+          - 'New Caledonia'
+    -
+      __assoc__:
+        -
+          - value
+          - NZ
+        -
+          - label
+          - 'New Zealand'
+    -
+      __assoc__:
+        -
+          - value
+          - NI
+        -
+          - label
+          - Nicaragua
+    -
+      __assoc__:
+        -
+          - value
+          - NE
+        -
+          - label
+          - Niger
+    -
+      __assoc__:
+        -
+          - value
+          - NG
+        -
+          - label
+          - Nigeria
+    -
+      __assoc__:
+        -
+          - value
+          - NU
+        -
+          - label
+          - Niue
+    -
+      __assoc__:
+        -
+          - value
+          - NF
+        -
+          - label
+          - 'Norfolk Island'
+    -
+      __assoc__:
+        -
+          - value
+          - MP
+        -
+          - label
+          - 'Northern Mariana Islands'
+    -
+      __assoc__:
+        -
+          - value
+          - 'NO'
+        -
+          - label
+          - Norway
+    -
+      __assoc__:
+        -
+          - value
+          - OM
+        -
+          - label
+          - Oman
+    -
+      __assoc__:
+        -
+          - value
+          - PK
+        -
+          - label
+          - Pakistan
+    -
+      __assoc__:
+        -
+          - value
+          - PW
+        -
+          - label
+          - Palau
+    -
+      __assoc__:
+        -
+          - value
+          - PS
+        -
+          - label
+          - 'Palestinian Territory'
+    -
+      __assoc__:
+        -
+          - value
+          - PA
+        -
+          - label
+          - Panama
+    -
+      __assoc__:
+        -
+          - value
+          - PG
+        -
+          - label
+          - 'Papua New Guinea'
+    -
+      __assoc__:
+        -
+          - value
+          - PY
+        -
+          - label
+          - Paraguay
+    -
+      __assoc__:
+        -
+          - value
+          - PE
+        -
+          - label
+          - Peru
+    -
+      __assoc__:
+        -
+          - value
+          - PH
+        -
+          - label
+          - Philippines
+    -
+      __assoc__:
+        -
+          - value
+          - PN
+        -
+          - label
+          - Pitcairn
+    -
+      __assoc__:
+        -
+          - value
+          - PL
+        -
+          - label
+          - Poland
+    -
+      __assoc__:
+        -
+          - value
+          - PT
+        -
+          - label
+          - Portugal
+    -
+      __assoc__:
+        -
+          - value
+          - PR
+        -
+          - label
+          - 'Puerto Rico'
+    -
+      __assoc__:
+        -
+          - value
+          - QA
+        -
+          - label
+          - Qatar
+    -
+      __assoc__:
+        -
+          - value
+          - RE
+        -
+          - label
+          - Reunion
+    -
+      __assoc__:
+        -
+          - value
+          - RO
+        -
+          - label
+          - Romania
+    -
+      __assoc__:
+        -
+          - value
+          - RU
+        -
+          - label
+          - 'Russian Federation'
+    -
+      __assoc__:
+        -
+          - value
+          - RW
+        -
+          - label
+          - Rwanda
+    -
+      __assoc__:
+        -
+          - value
+          - BL
+        -
+          - label
+          - 'Saint Bartelemey'
+    -
+      __assoc__:
+        -
+          - value
+          - SH
+        -
+          - label
+          - 'Saint Helena'
+    -
+      __assoc__:
+        -
+          - value
+          - KN
+        -
+          - label
+          - 'Saint Kitts and Nevis'
+    -
+      __assoc__:
+        -
+          - value
+          - LC
+        -
+          - label
+          - 'Saint Lucia'
+    -
+      __assoc__:
+        -
+          - value
+          - MF
+        -
+          - label
+          - 'Saint Martin'
+    -
+      __assoc__:
+        -
+          - value
+          - PM
+        -
+          - label
+          - 'Saint Pierre and Miquelon'
+    -
+      __assoc__:
+        -
+          - value
+          - VC
+        -
+          - label
+          - 'Saint Vincent and the Grenadines'
+    -
+      __assoc__:
+        -
+          - value
+          - WS
+        -
+          - label
+          - Samoa
+    -
+      __assoc__:
+        -
+          - value
+          - SM
+        -
+          - label
+          - 'San Marino'
+    -
+      __assoc__:
+        -
+          - value
+          - ST
+        -
+          - label
+          - 'Sao Tome and Principe'
+    -
+      __assoc__:
+        -
+          - value
+          - SA
+        -
+          - label
+          - 'Saudi Arabia'
+    -
+      __assoc__:
+        -
+          - value
+          - SN
+        -
+          - label
+          - Senegal
+    -
+      __assoc__:
+        -
+          - value
+          - RS
+        -
+          - label
+          - Serbia
+    -
+      __assoc__:
+        -
+          - value
+          - SC
+        -
+          - label
+          - Seychelles
+    -
+      __assoc__:
+        -
+          - value
+          - SL
+        -
+          - label
+          - 'Sierra Leone'
+    -
+      __assoc__:
+        -
+          - value
+          - SG
+        -
+          - label
+          - Singapore
+    -
+      __assoc__:
+        -
+          - value
+          - SX
+        -
+          - label
+          - 'Sint Maarten'
+    -
+      __assoc__:
+        -
+          - value
+          - SK
+        -
+          - label
+          - Slovakia
+    -
+      __assoc__:
+        -
+          - value
+          - SI
+        -
+          - label
+          - Slovenia
+    -
+      __assoc__:
+        -
+          - value
+          - SB
+        -
+          - label
+          - 'Solomon Islands'
+    -
+      __assoc__:
+        -
+          - value
+          - SO
+        -
+          - label
+          - Somalia
+    -
+      __assoc__:
+        -
+          - value
+          - ZA
+        -
+          - label
+          - 'South Africa'
+    -
+      __assoc__:
+        -
+          - value
+          - GS
+        -
+          - label
+          - 'South Georgia and the South Sandwich Islands'
+    -
+      __assoc__:
+        -
+          - value
+          - SS
+        -
+          - label
+          - 'South Sudan'
+    -
+      __assoc__:
+        -
+          - value
+          - ES
+        -
+          - label
+          - Spain
+    -
+      __assoc__:
+        -
+          - value
+          - LK
+        -
+          - label
+          - 'Sri Lanka'
+    -
+      __assoc__:
+        -
+          - value
+          - SD
+        -
+          - label
+          - Sudan
+    -
+      __assoc__:
+        -
+          - value
+          - SR
+        -
+          - label
+          - Suriname
+    -
+      __assoc__:
+        -
+          - value
+          - SJ
+        -
+          - label
+          - 'Svalbard and Jan Mayen'
+    -
+      __assoc__:
+        -
+          - value
+          - SZ
+        -
+          - label
+          - Swaziland
+    -
+      __assoc__:
+        -
+          - value
+          - SE
+        -
+          - label
+          - Sweden
+    -
+      __assoc__:
+        -
+          - value
+          - CH
+        -
+          - label
+          - Switzerland
+    -
+      __assoc__:
+        -
+          - value
+          - SY
+        -
+          - label
+          - 'Syrian Arab Republic'
+    -
+      __assoc__:
+        -
+          - value
+          - TW
+        -
+          - label
+          - Taiwan
+    -
+      __assoc__:
+        -
+          - value
+          - TJ
+        -
+          - label
+          - Tajikistan
+    -
+      __assoc__:
+        -
+          - value
+          - TZ
+        -
+          - label
+          - 'Tanzania, United Republic of'
+    -
+      __assoc__:
+        -
+          - value
+          - TH
+        -
+          - label
+          - Thailand
+    -
+      __assoc__:
+        -
+          - value
+          - TL
+        -
+          - label
+          - Timor-Leste
+    -
+      __assoc__:
+        -
+          - value
+          - TG
+        -
+          - label
+          - Togo
+    -
+      __assoc__:
+        -
+          - value
+          - TK
+        -
+          - label
+          - Tokelau
+    -
+      __assoc__:
+        -
+          - value
+          - TO
+        -
+          - label
+          - Tonga
+    -
+      __assoc__:
+        -
+          - value
+          - TT
+        -
+          - label
+          - 'Trinidad and Tobago'
+    -
+      __assoc__:
+        -
+          - value
+          - TN
+        -
+          - label
+          - Tunisia
+    -
+      __assoc__:
+        -
+          - value
+          - TR
+        -
+          - label
+          - Turkey
+    -
+      __assoc__:
+        -
+          - value
+          - TM
+        -
+          - label
+          - Turkmenistan
+    -
+      __assoc__:
+        -
+          - value
+          - TC
+        -
+          - label
+          - 'Turks and Caicos Islands'
+    -
+      __assoc__:
+        -
+          - value
+          - TV
+        -
+          - label
+          - Tuvalu
+    -
+      __assoc__:
+        -
+          - value
+          - UG
+        -
+          - label
+          - Uganda
+    -
+      __assoc__:
+        -
+          - value
+          - UA
+        -
+          - label
+          - Ukraine
+    -
+      __assoc__:
+        -
+          - value
+          - AE
+        -
+          - label
+          - 'United Arab Emirates'
+    -
+      __assoc__:
+        -
+          - value
+          - GB
+        -
+          - label
+          - 'United Kingdom'
+    -
+      __assoc__:
+        -
+          - value
+          - US
+        -
+          - label
+          - 'United States'
+    -
+      __assoc__:
+        -
+          - value
+          - UM
+        -
+          - label
+          - 'United States Minor Outlying Islands'
+    -
+      __assoc__:
+        -
+          - value
+          - UY
+        -
+          - label
+          - Uruguay
+    -
+      __assoc__:
+        -
+          - value
+          - UZ
+        -
+          - label
+          - Uzbekistan
+    -
+      __assoc__:
+        -
+          - value
+          - VU
+        -
+          - label
+          - Vanuatu
+    -
+      __assoc__:
+        -
+          - value
+          - VE
+        -
+          - label
+          - Venezuela
+    -
+      __assoc__:
+        -
+          - value
+          - VN
+        -
+          - label
+          - Vietnam
+    -
+      __assoc__:
+        -
+          - value
+          - VG
+        -
+          - label
+          - 'Virgin Islands, British'
+    -
+      __assoc__:
+        -
+          - value
+          - VI
+        -
+          - label
+          - 'Virgin Islands, U.S.'
+    -
+      __assoc__:
+        -
+          - value
+          - WF
+        -
+          - label
+          - 'Wallis and Futuna'
+    -
+      __assoc__:
+        -
+          - value
+          - EH
+        -
+          - label
+          - 'Western Sahara'
+    -
+      __assoc__:
+        -
+          - value
+          - YE
+        -
+          - label
+          - Yemen
+    -
+      __assoc__:
+        -
+          - value
+          - ZM
+        -
+          - label
+          - Zambia
+    -
+      __assoc__:
+        -
+          - value
+          - ZW
+        -
+          - label
+          - Zimbabwe
+translationKeyFormat: null
+translationMethod: none
+type: boxhead\countryselect\fields\CountrySingleSelectField

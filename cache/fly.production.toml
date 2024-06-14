@@ -1,0 +1,17 @@
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+
+app = "production-teentix-redis"
+primary_region = "sea"
+kill_signal = "SIGINT"
+kill_timeout = "5s"
+
+[mount]
+  source = "production_teentix_redis"
+  destination = "/data"
+
+[env]
+  APPENDONLY = "yes"
+  MAXMEMORY_POLICY = "allkeys-lru"
+
+[build]
+  image = "flyio/redis:6.2.6"

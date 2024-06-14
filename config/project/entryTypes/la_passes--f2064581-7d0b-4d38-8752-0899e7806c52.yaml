@@ -1,0 +1,70 @@
+fieldLayouts:
+  f3c05693-b204-4557-915a-6d2babd64748:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 664bcb4d-04cc-4ba5-9402-0b077a9ebe2e
+            warning: null
+            width: 100
+          -
+            fieldUid: 56ca60fc-8226-4b04-a5ad-f1579ee34e48 # User
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 27f61eee-0940-4b04-a047-f8a145c73b7b
+            warning: null
+            width: 100
+          -
+            fieldUid: 5ee4563b-8ef4-43e4-b18d-ecb15da9783f # Format
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7b58c442-413a-4cad-af8d-1f821d25653a
+            warning: null
+            width: 100
+          -
+            fieldUid: 2fbdf9f4-1ba7-4d6e-bd63-dd29f71dbffd # Status
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 99d82263-715e-43da-8d2b-9f7576cae629
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 96d26edb-d94d-4322-9ea4-f2dce96180a4
+handle: la_passes
+hasTitleField: true
+name: 'LA Passes'
+section: 164135ca-7569-4da4-9bf1-500b9d484d24 # LA Passes
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

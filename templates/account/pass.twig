@@ -1,0 +1,82 @@
+{# ACCOUNT PAGE PASS #}
+
+{# SET PASS SECTION BY CURRENT SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set pass                     = craft.entries().section(sitePrefix ~ 'passes').passFormat('digital').passUser(userid).one() %}
+
+{# SET ACCOUNT PROPERTIES #}
+{% set isTeen                   = currentUser and currentUser.userBirthdate.diff(now).days/360 < 20 %}
+{% set user                     = craft.users.id(userid).one() %}
+
+{# SET EXPIRATION #}
+{% if user.userIsProvisional %}
+  {% set expiration = user.dateCreated|date_modify("+15 days") %}
+{% else %}
+  {% set expiration = user.userBirthdate|date_modify("+20 years") %}
+{% endif %}
+
+{# SET REDIRECTS IF CERTAIN VALUES ARE MISSING #}
+{% if not isTeen %}
+  {% redirect "account" %}
+{% endif %}
+{% if (craft.app.request.getSegment('3') == '') %}
+  {% redirect "account" %}
+{% endif %}
+{% if not user or not currentUser or user.id != currentUser.id %}
+  {% redirect "account" %}
+{% endif %}
+{% if pass == null %}
+  {% redirect "account" %}
+{% endif %}
+{% if user.userIsProvisional and expiration < tomorrow %}
+  {% redirect "account" %}
+{% endif %}
+
+{# SET SEO VALUES #}
+{% do seomatic.meta.seoTitle( "TeenTix Pass" ) %}
+
+{% cache %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TeenTix Pass</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ siteUrl }}favicon.png" type="image/x-icon">
+    <link rel="manifest" href="{{ siteUrl }}webmanifest/manifest.webmanifest" {{ craft.app.config.general.devMode? "crossorigin=\"use-credentials\"" : "" }} />
+    <meta name="apple-mobile-web-app-title" content="TeenTix" />
+    <style>
+      body {
+        background-color: #79CAC9;
+        text-align: center;
+        font-family: sans-serif;
+      }
+      #pass {
+        background-color: #fff;
+        width: 240px;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      #qrcode img {
+      }
+      #pass p {
+        line-height: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pass">
+      <div id="logo"><img src="{{ siteUrl }}images/site/teentix-logo.png" alt="TeenTix Logo" /></div>
+      <div id="qrcode"></div>
+      {% include 'passes/_partials/qrcode'  with { 'pass' : pass.id } %}
+      <p>
+        <strong>{{ user.name }}</strong><br>
+        Expires {{ expiration|date('M j, Y') }}
+      </p>
+    </div>
+  
+  </body>
+</html>
+{% endcache %}

@@ -1,0 +1,15 @@
+contentColumnType: datetime
+fieldGroup: c4c09c27-bb9f-4773-90b5-120485d28e72 # Pass Usage
+handle: usageTimestamp
+instructions: ''
+name: 'Scan Timestamp'
+searchable: true
+settings:
+  max: null
+  min: null
+  minuteIncrement: '15'
+  showDate: true
+  showTime: true
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Date

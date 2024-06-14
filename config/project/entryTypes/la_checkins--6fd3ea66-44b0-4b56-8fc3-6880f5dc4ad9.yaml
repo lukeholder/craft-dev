@@ -1,0 +1,155 @@
+fieldLayouts:
+  b8948595-80e7-4f27-a0d2-fe6ced4b6d18:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 564b4a62-5026-4882-8773-c2f6bbb7cc5c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8b0828cb-f1af-4d35-a74a-ce937f8e99bd # User
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 24766e56-3778-4e97-a4d4-d7d31b6a7b42
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 48eb74de-92d8-4d65-8b05-06dcb60dc50d # Event
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 94be389a-194d-49f3-82ca-19dc8c7b1570
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1718532f-9c0b-4b5e-8a4c-91468adaea98 # Venue
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 09842a18-0c4b-42a8-a157-49f0eeed1d6d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ad344599-5214-4547-9cfa-ba883a0dea43 # Showtime
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0617e62e-8d6c-4106-b987-1ec2c76e70fe
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 22f15960-9f20-4eb1-9234-fe848b4bcb10 # Unlisted Showtime?
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ace416a5-fa87-4242-9728-d5e70805665a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b00923a3-6edc-40db-b9d4-c4d390c2abe9 # 2 for ?
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 65b8e630-75e4-4bcd-a317-4b0e9a282d5b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ce8c0355-8267-4664-bf52-1d74a6fe3ffe # Number of Guests
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 58db1114-5050-4b37-9ed1-202db20b5f85
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b81189a7-4d65-47e9-bf68-b5e97de1c1ae # Who’s with you?
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 32575059-b703-416b-b006-e8db1378d294
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: de6b6fca-d855-44ff-8557-3f044be49dab # Transportation
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e4af5cc2-e5ca-49a5-87ef-c38c71e96c57
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 61df9dea-aa9b-4bde-b094-c709dd6103c1
+        userCondition: null
+handle: la_checkins
+hasTitleField: false
+name: 'LA Check-Ins'
+section: d1e58700-f6dc-4d30-b20d-756b3b5148f5 # LA Check-Ins
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 2
+titleFormat: 'Check-In @ {checkinShowtime|datetime} (User {checkinUser|first.id})'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

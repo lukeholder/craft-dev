@@ -1,0 +1,33 @@
+contentColumnType: string
+fieldGroup: fd236ba0-1e89-4e9f-987a-b6574f8ba498 # Passes
+handle: passFormat
+instructions: ''
+name: Format
+searchable: true
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Digital
+        -
+          - value
+          - digital
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Physical
+        -
+          - value
+          - physical
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\RadioButtons

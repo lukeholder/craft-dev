@@ -1,0 +1,20 @@
+columnSuffix: ziymmgzu
+contentColumnType: 'decimal(5,2)'
+fieldGroup: 4f2d0446-809a-4896-9a97-3b5409c32324 # Global
+handle: venueMapLongitude
+instructions: 'Sets the longitude used for the center point of the Venue Map. '
+name: 'Venue Map (Longitude)'
+searchable: false
+settings:
+  decimals: 2
+  defaultValue: null
+  max: 180.0
+  min: -180.0
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  suffix: °
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Number

@@ -1,0 +1,31 @@
+handle: la_sidebarSupport
+instructions: ''
+maxNodes: ''
+name: 'LA Sidebar Support'
+permissions:
+  craft\elements\Asset:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Category:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Entry:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Tag:
+    enabled: ''
+    permissions: '*'
+  verbb\navigation\nodetypes\CustomType:
+    enabled: '1'
+  verbb\navigation\nodetypes\PassiveType:
+    enabled: '1'
+  verbb\navigation\nodetypes\SiteType:
+    enabled: '1'
+propagationMethod: none
+siteSettings:
+  7d81a2c3-37f0-4c8e-ae20-7d3ab5055184: # TeenTix LA
+    enabled: '1'
+sortOrder: 10
+structure:
+  maxLevels: null
+  uid: 1df719a7-1865-4f5a-9fb5-7da00907e6e8

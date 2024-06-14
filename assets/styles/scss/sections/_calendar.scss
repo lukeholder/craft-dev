@@ -1,0 +1,369 @@
+.calendar.list {
+  .page-header {
+    text-align: center;
+  }
+}
+
+#calendar-nav {
+  margin-bottom: .75rem;
+
+  li {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid $medium-gray;
+  }
+
+  li.active {
+    border: 1px solid $medium-gray;
+    border-bottom: none;
+    border-radius: 1rem 1rem 0 0;
+
+    a {
+      background-color: transparent;
+      color: $black;
+    }
+
+  }
+
+  .menu li a {
+    margin-top: .5rem;
+  }
+
+  #calendar-search {
+    margin-bottom: .5rem;
+    @include breakpoint(medium) {
+      padding-left: .5rem;
+    }
+
+    input {
+      line-height: 1em;
+    }
+
+  }
+
+}
+
+.mini-calendar {
+
+  table {
+
+    thead, tbody, tfoot {
+      td, th {
+        padding: .25rem;
+      }
+    }
+
+    thead th {
+      font-size: rem-calc(14);
+      text-align: center;
+    }
+
+    tbody {
+      td {
+        vertical-align: top;
+        color: $dark-gray;
+      }
+    }
+
+  }
+
+  td {
+    background: #f6f6f6;
+  }
+
+  td.calendar-pad {
+    background-color: $white;
+  }
+
+  td.calendar-pad.has-events:hover {
+    background-color: $light-gray;
+    cursor: pointer;
+  }
+
+  td.calendar-pad.today,
+  td.calendar-pad.today:hover {
+    background-color: $green;
+    color: $white;
+
+    a {
+      color: $white;
+    }
+
+  }
+
+  td.calendar-pad.active,
+  td.calendar-pad.active:hover {
+    background-color: $blue;
+    color: $white;
+
+    a {
+      color: $white;
+    }
+
+  }
+
+  .calendar-date {
+    font-size: rem-calc(12);
+  }
+
+  .calendar-date-events {
+    font-size: rem-calc(18);
+    text-align: center;
+    line-height: 1.3em;
+
+    .calendar-label {
+      display: block;
+      font-size: rem-calc(12);
+      font-weight: normal;
+    }
+
+  }
+
+}
+
+#calendarHeader {
+  border-bottom: 1px solid $medium-gray;
+  margin-bottom: 1rem;
+}
+
+#calendarFooter {
+  margin-top: 1rem;
+}
+
+#calFilters {
+  @include breakpoint(small) {
+    margin-bottom: 1rem;
+
+    label {
+      font-size: rem-calc(14);
+    }
+
+    .cell {
+      margin-bottom: 0.5rem;
+    }
+
+    select {
+      padding: .5rem;
+      margin-bottom: 0rem;
+      height: 40px;
+    }
+
+    .help-text {
+      margin-top: 0rem;
+      margin-bottom: 0rem;
+      margin-left: 0.5rem;
+    }
+
+  }
+
+  select.selected {
+    font-weight: bold;
+  }
+
+}
+
+#calMobileNav {
+  padding-top: 1rem;
+
+  h3 {
+    text-align: center;
+  }
+
+}
+
+#calEventsListings {
+  position: relative;
+
+  #calLoader {
+    background-color: $white;
+    padding: 4px 10px;
+    box-shadow: 0 0 5px rgba($black, .2);
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+    border-radius: 2px;
+    display: none;
+  }
+
+  .event-image {
+    width: 350px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .checkin-item {
+    margin-bottom: 2rem;
+    border-bottom: 2px dotted $dark-blue;
+  }
+
+  &.loading {
+
+    #calList {
+      opacity: .1;
+    }
+
+    #calLoader {
+      display: block;
+    }
+
+  }
+
+}
+
+#monthlyCalendar {
+
+  .day-calendar {
+    border: 1px solid $light-gray;
+    padding: 1rem;
+  }
+
+  .donation-prompt {
+    top-margin: 0rem;
+  }
+
+}
+
+#weeklyCalendar {
+
+  .event-venue {
+    font-weight: 700;
+  }
+
+}
+
+#dailyCalendar,
+#searchCalendar {
+  min-height: 300px;
+
+  .calendar-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid $light-gray;
+
+    .event-date,
+    .event-time,
+    .event-category,
+    .event-name {
+      margin: 0;
+    }
+
+    .event-time {
+      margin-top: .25rem;
+    }
+
+    .event-time,
+    .event-category,
+    .event-name,
+    .event-venue {
+      @include breakpoint(small only) {
+        text-align: center;
+      }
+    }
+
+    .event-time,
+    .event-name {
+      font-weight: bold;
+    }
+
+    .event-image {
+      @include breakpoint(small only) {
+        margin: 1rem auto;
+        text-align: center;
+      }
+    }
+
+  }
+
+}
+
+#event-single {
+
+  .page-header {
+    margin-bottom: 1.5rem;
+    @include breakpoint(small only) {
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    h2 {
+      font-size: rem-calc(18);
+      font-weight: 700;
+    }
+
+  }
+
+  #event-info,
+  #event-location {
+
+    .section-head {
+      font-weight: 700;
+      font-size: rem-calc(20);
+    }
+
+  }
+
+  .entry-gallery {
+    margin: 1.5rem 0;
+  }
+
+}
+
+.event-categories .button.small,
+.category.button.small {
+  margin-bottom: 0;
+  padding: .0rem .5rem .2rem;
+  background-color: $green;
+  color: $white;
+  font-family: $font-slab;
+  font-size: 13px;
+  border-radius: 5px;
+  transition: background 500ms;
+  &:hover {
+    background-color: $light-green;
+  }
+}
+
+.welcome-banner {
+  background-color: $dark-blue;
+  color: $white;
+  text-align: left;
+  padding: 1rem;
+  margin: 1.5rem -1rem;
+
+  h1 {
+    font-family: $font-header;
+    margin: 1rem 0;
+    line-height: 1em;
+  }
+
+  p {
+    font-weight: 500;
+    margin-bottom: 0rem;
+  }
+
+  .button {
+    margin: 1rem;
+    min-width: 10rem;
+  }
+
+  @include breakpoint(medium) {
+    margin: 2rem 0 2rem -2rem;
+    border-radius: 0 1rem 1rem 0;
+    padding: 1.5rem 2rem;
+
+    .call-to-action {
+      text-align: right;
+    }
+
+  }
+
+}
+
+#main-content .welcome-banner:first-child {
+  margin-top: 0px;
+}

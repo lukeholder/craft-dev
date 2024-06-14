@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 61cb854e-4648-46e6-aa10-5c8caea1d4fe # Partners
+handle: partnerEmailAddresses
+instructions: ''
+name: 'Email Addresses'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_partneremailaddresses}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

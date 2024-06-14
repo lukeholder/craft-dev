@@ -1,0 +1,17 @@
+columnSuffix: vipallap
+contentColumnType: datetime
+fieldGroup: 243aa178-cda7-4f1a-8094-268c903002ed # Check Ins
+handle: checkinShowtime
+instructions: 'The showtime for the Event the Member has checked into. '
+name: Showtime
+searchable: true
+settings:
+  max: null
+  min: null
+  minuteIncrement: 30
+  showDate: true
+  showTime: true
+  showTimeZone: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Date

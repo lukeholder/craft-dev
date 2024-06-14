@@ -1,0 +1,5 @@
+{# SINGLE ENTRY PAGINATION #}
+<nav class="paginate">
+  {% if prev %}<p class="prev">Older: <a href="{{ prev.url }}"> {{ prev.title }}</a></p>{% endif %}
+  {% if next %}<p class="next">Newer: <a href="{{ next.url }}"> {{ next.title }}</a></p>{% endif %}
+</nav>

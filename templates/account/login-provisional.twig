@@ -1,0 +1,55 @@
+{# PROVIONAL MEMBER LOGIN #}
+
+{# SET FILTERS FROM QUERY STRING #}
+{% set email                    = craft.app.request.getQueryParam('email') %}
+{% set signInToken              = craft.app.request.getQueryParam('accountToken') %}
+
+{# VALIDATE INPUT #}
+{% if not email or not signInToken %}
+  {% exit 401 %}
+{% endif %}
+
+{# VALIDATE USER #}
+{% set user                     = craft.users.username(email).one() %}
+
+{% if not user or not user.userIsProvisional %}
+  {% exit 401 %}
+{% endif %}
+
+{% set encodedDateCreated       = user.dateCreated|date("FWzl") %}
+{% set temporaryPassword        = encodedDateCreated|hash %}
+
+{% if temporaryPassword|replace(encodedDateCreated) != signInToken %}
+  {% exit 401 %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TeenTix Login</title>
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+
+  <form id="loginForm" method="post" accept-charset="UTF-8">
+    {{ csrfInput() }}
+    {{ actionInput('users/login') }}
+    {{ redirectInput('/account/new/finish') }}
+    {{ hiddenInput('loginName', email) }}
+    {{ hiddenInput('password', temporaryPassword) }}
+  </form>
+
+  {% if errorMessage is defined %}
+    {{ errorMessage }}
+  {% else %}
+    <script>
+      function formAutoSubmit() {
+        document.getElementById("loginForm").submit();
+      }
+      window.onload = formAutoSubmit;
+    </script>
+  {% endif %}
+
+</body>
+</html>

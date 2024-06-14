@@ -1,0 +1,14 @@
+columnSuffix: qrlgivyz
+contentColumnType: string(255)
+fieldGroup: 61cb854e-4648-46e6-aa10-5c8caea1d4fe # Partners
+handle: equityStatementUrl
+instructions: 'If the partner has published an equity statement, provide a URL for that equity statement so that the partner page can link to the full text.'
+name: 'Equity Statement URL'
+searchable: true
+settings:
+  maxLength: 255
+  types:
+    - url
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

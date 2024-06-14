@@ -1,0 +1,32 @@
+{# CALENDAR NAV #}
+
+{# GET QUERY STRING VARIABLES #}
+{% set searchTerm               = craft.app.request.getParam("q") %}
+
+{% include "_ads/calendar-top" %}
+
+<div id="calendar-nav">
+  <ul class="menu expanded">
+    <li class="{% if segment1 is defined and (segment1 == 'month' or segment1 =="") %}active{% endif %} show-for-medium">
+      <a href="{{ siteUrl }}calendar/month">Monthly</a>
+    </li>
+    <li class="{% if segment1 is defined and segment1 == 'day' %}active{% endif %} show-for-medium">
+      <a href="{{ siteUrl }}calendar/day">Daily</a>
+    </li>
+    <li class="">
+      <form action="{{ url('calendar/search') }}" method="get">
+        <div id="calendar-search" class="input-group">
+          <input type="text"
+            name="q"
+            class="input-group-field"
+            placeholder="Search events"
+            value="{{ searchTerm }}"
+          />
+          <div class="input-group-button">
+            <input type="submit" value="GO" class="submit button">
+          </div>
+        </div>
+      </form>
+    </li>
+  </ul>
+</div>

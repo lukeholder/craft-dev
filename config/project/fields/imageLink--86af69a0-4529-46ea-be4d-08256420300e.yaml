@@ -1,0 +1,12 @@
+contentColumnType: string(255)
+fieldGroup: aa4c696b-cfb5-41a6-b9cf-7d081747dc4c # Assets
+handle: imageLink
+instructions: ''
+name: 'Image Link'
+searchable: true
+settings:
+  maxLength: 255
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

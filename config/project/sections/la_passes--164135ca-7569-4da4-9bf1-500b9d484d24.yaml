@@ -1,0 +1,23 @@
+enableVersioning: true
+handle: la_passes
+name: 'LA Passes'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  7d81a2c3-37f0-4c8e-ae20-7d3ab5055184: # TeenTix LA
+    enabledByDefault: true
+    hasUrls: true
+    template: passes/_entry
+    uriFormat: 'pass/{id}'
+type: channel

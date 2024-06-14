@@ -1,0 +1,46 @@
+fieldLayouts:
+  2aeb22ad-47ea-47c9-9204-46292f817f40:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: bed714ec-26db-4b95-ba3c-094b2795869c
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 8869694c-9096-4403-a3a9-b22227925263
+handle: blogCategory
+name: 'Blog Category'
+siteSettings:
+  0e7592e9-74d0-48f7-a1d7-2bf18b97d6a0: # TeenTix
+    hasUrls: false
+    template: null
+    uriFormat: null
+  7d81a2c3-37f0-4c8e-ae20-7d3ab5055184: # TeenTix LA
+    hasUrls: false
+    template: null
+    uriFormat: null
+structure:
+  maxLevels: null
+  uid: 7f2ecc35-8cb3-4004-9bdf-635decf30c65

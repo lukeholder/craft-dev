@@ -1,0 +1,30 @@
+{# ACCOUNT PRIVACY PAGE PASS #}
+{% requireLogin %}
+{% extends "_layout" %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Account" %}
+{% set class                    = "account" %}
+
+{# SET SEO VALUES #}
+{% do seomatic.meta.seoTitle( "Privacy Policy" ) %}
+
+{# SET PAGE ENTRY #}
+{% set entry                    = craft.entries().slug('privacy').one() %}
+
+{% block content %}
+  
+  {% include 'account/_partials/account-header' %}
+  
+  <div class="grid-x grid-margin-x">
+  
+    {% include 'account/_partials/nav-sidebar' %}
+  
+    <div class="main large-7 medium-order-1 cell">
+      <h2>{{ entry.title }}</h2>
+      {{ entry.body }}
+    </div>
+  
+  </div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{# SINGLE PAGE TEMPLATE #}
+{% extends "_layout" %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "#{ entry.title }" %}
+{% set class                    = "pages #{ entry.type }" %}
+
+{% block content %}
+{% cache %}
+
+  {% include "pages/_types/" ~ entry.type %}
+
+{% endcache %}
+
+  {% include "_partials/edit-link" %}
+
+{% endblock %}

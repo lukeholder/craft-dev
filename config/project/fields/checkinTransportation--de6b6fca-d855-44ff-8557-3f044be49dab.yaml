@@ -1,0 +1,79 @@
+columnSuffix: jomktaij
+contentColumnType: string
+fieldGroup: 243aa178-cda7-4f1a-8094-268c903002ed # Check Ins
+handle: checkinTransportation
+instructions: 'How did you get here?'
+name: Transportation
+searchable: true
+settings:
+  columnType: 'string,'
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Walked
+        -
+          - value
+          - walk
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Biked/Scooted
+        -
+          - value
+          - bike
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Took public transportation'
+        -
+          - value
+          - publicTransport
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Took a ride share'
+        -
+          - value
+          - rideShare
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Driven by a friend or family'
+        -
+          - value
+          - companion
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Drove myself'
+        -
+          - value
+          - car
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\RadioButtons

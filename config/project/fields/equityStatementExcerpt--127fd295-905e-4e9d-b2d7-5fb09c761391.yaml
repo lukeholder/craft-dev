@@ -1,0 +1,19 @@
+columnSuffix: nahlwooc
+contentColumnType: text
+fieldGroup: 61cb854e-4648-46e6-aa10-5c8caea1d4fe # Partners
+handle: equityStatementExcerpt
+instructions: 'If the partner has published an equity statement, provide a brief one to two sentence excerpt that will be quoted on their partner page. '
+name: 'Equity Statement Excerpt'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: text
+  initialRows: 4
+  multiline: true
+  placeholder: null
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

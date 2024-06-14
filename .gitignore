@@ -1,6 +1,22 @@
+.DS_Store
 /.env
 /.idea
 /vendor
-.DS_Store
-.ddev/docker-compose.local.yaml
-config/license.key
+/node_modules
+/.nova
+
+/env_staging
+/env_production
+/env_production_archive
+
+/html/assets/calendar-demo
+/html/assets/freeform-demo
+/html/images
+/html/import
+/html/info.php
+
+# Craft Storage (cache) [http://buildwithcraft.com/help/craft-storage-gitignore]
+/config/project-bak/
+/storage/*
+/craft/storage/*
+!/craft/storage/logo/*

@@ -1,0 +1,22 @@
+<div class="search-filter">
+  <form  action="{{ url('passes/results-users') }}">
+    <div class="grid-x align-right align-middle">
+      <div class="medium-8 cell">
+        <p>
+          <strong>Total passholders: {{ results }}</strong>
+          {% if craft.app.request.getSegment(2) == "results-users" %}
+            <a href="{{ siteUrl }}passes/users">Clear search</a>
+          {% endif %}
+        </p>
+      </div>
+      <div class="medium-4 cell">
+        <div class="input-group">
+          <input id="pass-search" class="input-group-field" type="text" name="q" value="{{ query }}" placeholder="Search users">
+          <div class="input-group-button">
+            <input type="submit" class="button" value="Submit">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

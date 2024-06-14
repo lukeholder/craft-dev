@@ -1,0 +1,12 @@
+contentColumnType: string(255)
+fieldGroup: 261d2164-7376-4ca2-acf0-4ea3a0f16d84 # Ads
+handle: adBannerLink
+instructions: ''
+name: 'Banner Link'
+searchable: true
+settings:
+  maxLength: 255
+  placeholder: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Url

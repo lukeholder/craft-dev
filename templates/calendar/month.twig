@@ -1,0 +1,231 @@
+{# CALENDAR MONTH VIEW #}
+{% extends "_layout" %}
+
+{# SET CALENDAR BY SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set calendars                = [sitePrefix ~ "events", sitePrefix ~ "eventsAdditional"] %}
+
+{# ACQUIRE URL SEGMENTS #}
+{% set baseUrlSegments          = 1 %}
+{% set segment1                 = craft.app.request.segment(baseUrlSegments + 1) %}
+
+{# SET ROUTE VARIABLE DEFAULTS #}
+{% set year                     = year?? now|date("Y") %}
+{% set month                    = month?? now|date("m") %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Calendar" %}
+{% set class                    = "calendar list" %}
+
+{# SET CALENDAR DATE #}
+{% set targetDate               = now|date("M d, Y") %}
+{% if month != now|date("m") %}
+  {% set targetDate             = year~"-"~month~"-01" %}
+{% endif %}
+
+{# SET FILTERS FROM QUERY STRING #}
+{% set query                    = craft.app.request.getQueryStringWithoutPath %}
+{% set searchIsFree             = craft.app.request.getQueryParam('isFree') %}
+{% set searchGenre              = craft.app.request.getQueryParam('genre') %}
+{% set searchCat                = craft.app.request.getQueryParam('cat') %}
+{% set searchPartner            = craft.app.request.getQueryParam('partner') %}
+{% set searchVenue              = craft.app.request.getQueryParam('venue') %}
+{% set relationParam            = ['and'] %}
+{% if searchIsFree %}
+  {% set relationParam          = relationParam|merge([{ targetElement: 63 }]) %}
+{% endif %}
+{% if searchCat %}
+  {% set relationParam          = relationParam|merge([{ targetElement: searchCat }]) %}
+{% endif %}
+{% if searchVenue %}
+  {% set relationParam          = relationParam|merge([{ targetElement: searchVenue }]) %}
+{% endif %}
+{% if searchGenre %}
+  {% if "x" in searchGenre %}
+    {% set relationParam        = relationParam|merge([("or" ~ searchGenre)|split("x")]) %}
+  {% else %}
+    {% set relationParam        = relationParam|merge([{ targetElement: searchGenre }]) %}
+  {% endif %}
+{% endif %}
+{% if searchPartner %}
+  {% set relationParam          = relationParam|merge([{ targetElement: searchPartner }]) %}
+{% endif %}
+
+{# SET CALENDAR VARIABLES #}
+{% set month                    = craft.calendar.month({
+  date                          : targetDate,
+  relatedTo                     : relationParam|filter|length > 1? relationParam : null,
+  calendar                      : calendars
+}) %}
+
+{# GET IDS OF THIS MONTH'S EVENTS #}
+{% set eventIds                 = month.events|values|column("id") %}
+
+{# SET SEO VALUES #}
+{% set monthLabel               = " - " ~ month.date.format('F Y') %}
+{% do seomatic.meta.seoTitle( siteName ~ " Events Calendar" ~ monthLabel ) %}
+{% do seomatic.meta.seoDescription( "Monthly calendar of TeenTix eligible events" ~ monthLabel ) %}
+
+{% block content %}
+  
+  {# % cache globally using key craft.app.request.getQueryString % #}
+
+  <div id="main">
+  
+    <header class="page-header">
+      <h1 class="page-title">{{ siteName }} Events Calendar</h1>
+      {% if calendar.subhead %}<div class="subheader">{{ calendar.subhead }}</div>{% endif %}
+    </header>
+  
+    {% include 'calendar/_partials/calendar-view-nav' %}
+  
+    <div id="monthlyCalendar">
+  
+      <div id="calendarHeader" class="grid-x align-middle">
+        <div class="cell auto">
+          <div>
+            <a href="{{ siteUrl }}calendar/month/{{ month.previousDate.format('Y/m') }}{{ query? "?"~query : "" }}">
+              <i class="fas fa-caret-left"></i> {{ month.previousDate.format('F') }}
+            </a>
+          </div>
+        </div>
+        <div class="cell auto">
+          <h3 class="text-center">{{ month.date.format('F Y') }}</h3>
+        </div>
+        <div class="cell auto">
+          <div class="text-right">
+            <a href="{{ siteUrl }}calendar/month/{{ month.nextDate.format('Y/m') }}{{ query? "?"~query : "" }}">
+              {{ month.nextDate.format('F') }}
+              <i class="fas fa-caret-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="grid-x grid-margin-x">
+  
+        <div id="sidebar" class="large-6 cell">
+  
+          <div class="grid-x grid-margin-x">
+  
+            <div class="medium-8 cell medium-order-2">
+              <div class="mini-calendar">
+                <table id="calPicker" class="unstriped">
+                  <thead>
+                    <tr class="calendar-header">
+                      {% for day in month|first %}
+                        <th>{{ day.date.format('D')|first }}</th>
+                      {% endfor %}
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for week in month %}
+                    <tr>
+                      {% for day in week %}
+                        <td class="
+                          {{ month.containsDate(day.date) ? "calendar-pad"}}
+                          {{ day.eventCount ? "has-events" }}
+                          {{ day.date.format('Y-m-d') == now.format('Y-m-d') ? "today" }}"
+                          data-site="{{ currentSite.handle }}"
+                          data-date="{{ day.date.format('Y-m-d') }}"
+                          data-date-label="{{ day.date.format('l, F j, Y') }}"
+                          data-event-count="{{ day.eventCount }}"
+                          >
+                          <div class="calendar-date">
+                            {{ day.date.format('j') }}
+                          </div>
+                          <div class="calendar-date-events">
+                            {% if month.containsDate(day.date) %}
+                              {% if day.eventCount %}
+                                <strong>
+                              {% endif %}
+                              {{ day.eventCount }}
+                              {% if day.eventCount %}
+                                </strong>
+                              {% endif %}
+                              <span class="calendar-label">event{{ day.eventCount != 1 ? "s" }}</span>
+                            {% endif %}
+                          </div>
+                        </td>
+                      {% endfor %}
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+
+              {% if calendar.calendarDonationPrompt %}
+                <div class="help-text donation-prompt">
+                  {{ calendar.calendarDonationPrompt }}
+                </div>
+              {% endif %}
+
+            </div>
+  
+            <div class="medium-4 cell medium-order-1">
+              {% include 'calendar/_partials/calendar-filters' %}
+            </div>
+  
+          </div>
+  
+          {% include "_ads/calendar-sidebar" %}
+  
+        </div>
+  
+        <div class="large-6 cell">
+
+          {% set day            = craft.calendar.day({
+            date                : targetDate,
+            relatedTo           : relationParam|filter|length > 1? relationParam : null,
+            calendar            : calendars
+          }) %}
+
+          {% set allday         = craft.calendar.day({
+            date                : targetDate,
+            allDay              : true,
+            orderBy             : "title ASC",
+            relatedTo           : relationParam|filter|length > 1? relationParam : null,
+            calendar            : calendars
+          }) %}
+
+          <div id="calEvents" class="day-calendar">
+  
+            <div class="header clearfix">
+              <h3 id="calEventsDate">{{ day.date.format('l, F j, Y') }}</h3>
+              <p id="calEventsCount">{{ day.eventCount }} event{{ day.eventCount > 1 or day.eventCount == 0 ? "s" }}</p>
+            </div>
+  
+            <div id="calEventsListings">
+              <div id="calList">
+
+                {% for entry in day.events %}
+                  {% if not entry.allDay %}
+                    {% set time = entry.startDate.format('g:ia') %}
+                    {% include 'calendar/_partials/day-listing' with {'time': time} %}
+                  {% endif %}
+                {% endfor %}
+
+                {% for entry in allday.events %}
+                  {% include 'calendar/_partials/day-listing' with {'time': 'All Day'} %}
+                {% endfor %}
+
+              </div>
+              <div id="calLoader">
+                <div class="fa-2x"><i class="fas fa-spinner fa-pulse"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      {# add_event #}
+  
+    </div><!-- end #monthly_calendar -->
+  
+    {% include 'calendar/_partials/calendar-mobile-nav' %}
+  
+  </div><!-- end #main -->
+  
+  {# % endcache % #}
+
+{% endblock %}

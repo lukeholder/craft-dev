@@ -1,0 +1,5 @@
+{# CHECK FOR EXISTING EMAILS IN USERS #}
+{% set emailcheck               = craft.app.request.segment(3) %}
+{% set myUserQuery              = craft.users().username(emailcheck).all() %}
+
+{{ myUserQuery|length }}

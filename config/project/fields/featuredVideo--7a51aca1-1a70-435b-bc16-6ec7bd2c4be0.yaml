@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: e823674a-d2fc-4023-89dd-2bfacf7bc359 # Common
+handle: featuredVideo
+instructions: ''
+name: 'Featured Video Embed Code'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: '1'
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

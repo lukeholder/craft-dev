@@ -1,0 +1,105 @@
+{
+    "name": "TeenTix",
+    "description": "",
+    "short_name": "TeenTix",
+    "theme_color": "#79cac9",
+    "background_color": "#e6e6e6",
+    "display": "standalone",
+    "display_override": ["minimal-ui"],
+    "scope": "/",
+    "id": "/calendar",
+    "start_url": "/calendar",
+    "shortcuts": [{
+        "name": "Homepage",
+        "short_name": "Home",
+        "url": "/",
+        "icons": [{
+            "src": "/webmanifest/icons/pwa/sc-home-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }]
+    }, {
+        "name": "Blog",
+        "short_name": "Blog",
+        "url": "/blog",
+        "icons": [{
+            "src": "/webmanifest/icons/pwa/sc-blog-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }]
+    }, {
+        "name": "Calendar",
+        "short_name": "Calendar",
+        "url": "/calendar",
+        "icons": [{
+            "src": "/webmanifest/icons/pwa/sc-calendar-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        }]
+    }],
+    "icons": [{
+        "src": "/webmanifest/icons/apple-touch-icon.png",
+        "type": "image/png",
+        "sizes": "57x57"
+    }, {
+        "src": "/webmanifest/icons/apple-touch-icon-72x72.png",
+        "type": "image/png",
+        "sizes": "72x72"
+    }, {
+        "src": "/webmanifest/icons/apple-touch-icon-114x114.png",
+        "type": "image/png",
+        "sizes": "114x114"
+    }, {
+        "src": "/webmanifest/icons/apple-touch-icon-120x120.png",
+        "type": "image/png",
+        "sizes": "120x120"
+    }, {
+        "src": "/webmanifest/icons/apple-touch-icon-144x144.png",
+        "type": "image/png",
+        "sizes": "144x144"
+    }, {
+        "src": "/webmanifest/icons/apple-touch-icon-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+    }, {
+        "src": "/webmanifest/icons/apple-touch-icon-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+    }, {
+        "src": "/webmanifest/icons/apple-touch-icon-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose":"maskable"
+    }],
+    "screenshots": [{
+        "src": "/webmanifest/screenshots/home-mobile.png",
+        "type": "image/png",
+        "sizes": "1170x2532",
+        "form_factor": "narrow"
+    }, {
+        "src": "/webmanifest/screenshots/calendar-mobile.png",
+        "type": "image/png",
+        "sizes": "1170x2532",
+        "form_factor": "narrow"
+    }, {
+        "src": "/webmanifest/screenshots/pass-mobile.png",
+        "type": "image/png",
+        "sizes": "1170x2532",
+        "form_factor": "narrow"
+    }, {
+        "src": "/webmanifest/screenshots/home-desktop.png",
+        "type": "image/png",
+        "sizes": "1649x840",
+        "form_factor": "wide"
+    }, {
+        "src": "/webmanifest/screenshots/calendar-desktop.png",
+        "type": "image/png",
+        "sizes": "1649x840",
+        "form_factor": "wide"
+    }, {
+        "src": "/webmanifest/screenshots/pass-desktop.png",
+        "type": "image/png",
+        "sizes": "1649x840",
+        "form_factor": "wide"
+    }]
+  }

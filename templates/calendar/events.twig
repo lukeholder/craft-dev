@@ -1,0 +1,141 @@
+{# UPCOMING EVENTS VIEW #}
+{% extends "_layout" %}
+
+{# SET CALENDAR BY SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set calendars                = [sitePrefix ~ "events", sitePrefix ~ "eventsAdditional"] %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Upcoming Events" %}
+{% set class                    = "calendar list" %}
+
+{# SET FILTERS FROM QUERY STRING #}
+{% set query                    = craft.app.request.getQueryStringWithoutPath %}
+{% set searchIsFree             = craft.app.request.getQueryParam('isFree') %}
+{% set searchGenre              = craft.app.request.getQueryParam('genre') %}
+{% set searchCat                = craft.app.request.getQueryParam('cat') %}
+{% set searchPartner            = craft.app.request.getQueryParam('partner') %}
+{% set searchVenue              = craft.app.request.getQueryParam('venue') %}
+{% set relationParam            = ['and'] %}
+{% if searchIsFree %}
+  {% set relationParam          = relationParam|merge([{ targetElement: 63 }]) %}
+{% endif %}
+{% if searchCat %}
+  {% set relationParam          = relationParam|merge([{ targetElement: searchCat }]) %}
+{% endif %}
+{% if searchVenue %}
+  {% set relationParam          = relationParam|merge([{ targetElement: searchVenue }]) %}
+{% endif %}
+{% if searchGenre %}
+  {% if "x" in searchGenre %}
+    {% set relationParam        = relationParam|merge([("or" ~ searchGenre)|split("x")]) %}
+  {% else %}
+    {% set relationParam        = relationParam|merge([{ targetElement: searchGenre }]) %}
+  {% endif %}
+{% endif %}
+{% if searchPartner %}
+  {% set relationParam          = relationParam|merge([{ targetElement: searchPartner }]) %}
+{% endif %}
+
+{# SET CALENDAR VARIABLES #}
+{% set events                   = craft.calendar.events({
+  rangeStart                    : now,
+  relatedTo                     : relationParam|filter|length > 1? relationParam : null,
+  loadOccurrences               : "next",
+  calendar                      : calendars
+}).all() %}
+
+{# GET IDS OF UPCOMING EVENTS #}
+{% set eventIds                 = events|values|column("id") %}
+
+{# GROUP EVENTS #}
+{% set events                   = events|group(e => e.eventRelated and e.eventRelated.one()? e.eventRelated.one().id : e.id) %}
+
+{# SET SEO VALUES #}
+{% do seomatic.meta.seoTitle(siteName ~ " Upcoming Events") %}
+{% do seomatic.meta.seoDescription("TeenTix eligible upcoming events") %}
+
+{% block content %}
+  
+  <div id="main">
+  
+    <header class="page-header">
+      <h1 class="page-title">{{ siteName }} Upcoming Events</h1>
+    </header>
+  
+    {% include 'calendar/_partials/calendar-view-nav' %}
+  
+    <div id="dailyCalendar">
+  
+      <div class="grid-x grid-margin-x">
+  
+        <div id="sidebar" class="large-2 cell">
+          {% include 'calendar/_partials/calendar-filters' %}
+          {% include "_ads/calendar-sidebar" %}
+        </div>
+
+        <div id="sidebar" class="large-1 cell"></div>
+  
+        <div class="large-9 cell">
+
+          <div class="calendar-listing">
+    
+            {% if events|length > 0 %}
+              {% for eventId, showtimes in events %}
+                {% set entry = showtimes|first %}
+                {% set entry = entry.eventRelated and entry.eventRelated.one()? entry.eventRelated.one() : entry %}
+
+                <div class="calendar-item">
+                  <div class="grid-x grid-margin-x">
+
+                    <div class="medium-2 cell medium-order-2">
+                      {% set image = entry.eventGallery? entry.eventGallery.one() %}
+                      {% if image %}
+                        <div class="event-image"><a href="{{ siteUrl }}calendar/event/{{ entry.slug }}"><img src="{{ image.getUrl('max300') }}" alt="{{ image.title }}"></a></div>
+                      {% endif %}
+                    </div>
+
+                    <div class="medium-10 cell medium-order-1">
+                      <h4 class="event-name">
+                        <a href="{{ siteUrl }}calendar/event/{{ entry.slug }}">{{ entry.title }}</a>
+                        {% if entry.eventCategory.id(63).exists() %}
+                          <a href="/calendar?cat=63" class="category button small">Free</a>
+                        {% endif %}
+                      </h4>
+
+                      <p class="event-venue">
+                        Next Up: {{ entry.startDate.format('l, F j') ~ " | " ~ (entry.allDay? 'All Day' : entry.startDate.format('g:ia')) }}
+                        {% if entry.eventVenue|length %}
+                          {% for venue in entry.eventVenue.all() %}
+                            | <a href="{{ venue.url }}">{{ venue.title }}</a>
+                          {% endfor %}
+                        {% endif %}
+                      </p>
+
+                      {% if entry.body %}
+                        <p class="event-excerpt">{{ entry.body | chop(limit=40, unit='w', append="…", allowedTags="") }}</p>
+                      {% endif %}
+
+                    </div>
+
+                  </div>
+                </div>
+
+              {% endfor %}
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+
+      {# add_event #}
+  
+    </div><!-- end #monthly_calendar -->
+  
+    {% include 'calendar/_partials/calendar-mobile-nav' %}
+  
+  </div><!-- end #main -->
+  
+  {# % endcache % #}
+
+{% endblock %}

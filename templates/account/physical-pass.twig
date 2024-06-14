@@ -1,0 +1,134 @@
+{# ACCOUNT REQUEST PHYSICAL PASS #}
+{% requireLogin %}
+{% extends "_layout" %}
+
+{# SET ACCOUNT PROPERTIES #}
+{% set isProvisional            = currentUser and currentUser.userIsProvisional %}
+
+{# HANDLE MISSING DEPENDENCIES #}
+{% if isProvisional %}
+  {% redirect "account" %}
+{% endif %}
+
+{# SET PHYSICAL FORM BY SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set passForm                 = sitePrefix ~ "physicalPass" %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Account" %}
+{% set class                    = "account" %}
+
+{# SET SEO VALUES #}
+{% do seomatic.meta.seoTitle( "Get a physical TeenTix pass" ) %}
+
+{# CHECK FOR FORM SUMMIT SUCCESS #}
+{% set successParam             = craft.app.request.getParam('success') %}
+
+{% block content %}
+  
+  {% include 'account/_partials/account-header' %}
+  
+  <div class="grid-x grid-margin-x">
+  
+    {% include 'account/_partials/nav-sidebar' %}
+  
+    <div class="main large-7 medium-order-1 cell">
+      <h2>Get a Physical Pass</h2>
+  
+      {% if successParam is not null %}
+        <div class="form-message">
+          {{ account.physicalPassSubmission }}
+        </div>
+      {% else %}
+
+        <div class="form-group">
+
+          {% macro errorList(errors) %}
+            {% if errors %}
+              {% for error in errors %}
+                <div class="error icon-cancel-circled">{{ error }}</div>
+              {% endfor %}
+            {% endif %}
+          {% endmacro %}
+
+          {% from _self import errorList %}
+
+          {% set form = craft.freeform.form(passForm) %}
+
+          {{ form.render({
+            labelClass: "",
+            inputClass: "",
+            instructionsBelowField: true,
+            submitClass: "button large success",
+            rowClass: "grid-x grid-margin-x",
+            columnClass: "cell",
+            useRequiredAttribute: true,
+            formAttributes: {  },
+            overrideValues: { userId: currentUser.id, userEmail: currentUser.email, userName: currentUser.fullName },
+            dynamicNotification: { recipients: currentUser.email, template: "physicalPassConfirmation" }
+          }) }}
+
+          {% if form.hasErrors %}
+            <div class="callout alert">
+              {{ "There was an error submitting this form"|t }}
+
+              {% if form.errors|length %}
+                <ul>
+                    {% for error in form.errors %}
+                      <li>{{ error }}</li>
+                    {% endfor %}
+                  </ul>
+              {% endif %}
+
+            </div>
+          {% endif %}
+
+        </div>
+      {% endif %}
+  
+    </div>
+  
+  </div>
+  
+  <script>
+    window.renderFormSuccess = function (form) {
+      const successMessage = document.createElement("div");
+      successMessage.classList.add("callout", "success");
+
+      const paragraph = document.createElement("p");
+      paragraph.classList.add("lead");
+      paragraph.appendChild(document.createTextNode("{{ "Thank you for your pass request. You should receive your physical TeenTix pass in 2-3 weeks." }}"));
+
+      successMessage.appendChild(paragraph);
+
+      form.insertBefore(successMessage, form.childNodes[0]);
+    };
+  
+    window.renderFormErrors = (errors, form) => {
+      const errorBlock = document.createElement("div");
+      errorBlock.classList.add("callout", "error");
+  
+      const paragraph = document.createElement("p");
+      paragraph.appendChild(document.createTextNode("{{ "There was an issue with your submission! Please review the form and try submitting again." }}"));
+      paragraph.classList.add("lead");
+      errorBlock.appendChild(paragraph);
+  
+      if (errors.length) {
+        const errorsList = document.createElement("ul");
+        for (let messageIndex = 0; messageIndex < errors.length; messageIndex++) {
+          const message = errors[messageIndex];
+          const listItem = document.createElement("li");
+  
+          listItem.appendChild(document.createTextNode(message));
+          errorsList.appendChild(listItem);
+        }
+  
+        errorBlock.appendChild(errorsList);
+      }
+  
+      form.insertBefore(errorBlock, form.childNodes[0]);
+    };
+  
+  </script>
+
+{% endblock %}

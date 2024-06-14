@@ -1,0 +1,167 @@
+field: 0de665c4-25e6-4fba-8588-a347682f358f # Featured Events
+fieldLayouts:
+  8f490817-8cbc-49df-8cbc-a079d38b279b:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 62bb6ffb-8b09-4fec-a98f-4804f1ea8b9c # Featured Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2ae82cdb-89e8-470d-bc5c-127e28d90cf2
+            warning: null
+            width: 100
+          -
+            fieldUid: a6fcee8c-d6c6-4cf9-b583-6b0286a0e586 # Featured Headline
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 44bde479-e6d9-4053-bdc6-a66474a02966
+            warning: null
+            width: 100
+          -
+            fieldUid: db0c51d2-2510-4daa-873b-61d976f51c01 # Link URL
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bfbf682a-d739-4ebb-8f13-4388f8f587e8
+            warning: null
+            width: 100
+          -
+            fieldUid: c1fc48a7-4033-4ac5-a541-8bbb03e2ab8f # Dates
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d87c8751-ff50-4410-a2da-e35189520dbb
+            warning: null
+            width: 100
+          -
+            fieldUid: 3ef356cf-810a-429b-a5fd-2ae13946ec02 # Copy
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 12a7c42f-a81f-4f8e-b6fd-db2bad88387e
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 3af4b691-b85b-4aeb-8d53-aab6acacc6ef
+fields:
+  3ef356cf-810a-429b-a5fd-2ae13946ec02: # Copy
+    contentColumnType: text
+    fieldGroup: null
+    handle: copy
+    instructions: ''
+    name: Copy
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: '1'
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  62bb6ffb-8b09-4fec-a98f-4804f1ea8b9c: # Featured Image
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: 'Recommended image size: 1200W X 500H'
+    name: 'Featured Image'
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowUploads: false
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+        - 'volume:d8052c64-2464-4aa2-8b41-9f106bc1d1f6' # LA General Images
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  a6fcee8c-d6c6-4cf9-b583-6b0286a0e586: # Featured Headline
+    contentColumnType: text
+    fieldGroup: null
+    handle: headline
+    instructions: ''
+    name: 'Featured Headline'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  c1fc48a7-4033-4ac5-a541-8bbb03e2ab8f: # Dates
+    contentColumnType: text
+    fieldGroup: null
+    handle: dates
+    instructions: ''
+    name: Dates
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  db0c51d2-2510-4daa-873b-61d976f51c01: # Link URL
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: linkUrl
+    instructions: ''
+    name: 'Link URL'
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: featured
+name: Featured
+sortOrder: 1

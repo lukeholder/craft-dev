@@ -1,0 +1,62 @@
+{% extends "passes/_layout" %}
+
+{# SET QUERY STRING PARAMETERS #}
+{% set querystring              = craft.app.request.queryStringWithoutPath %}
+{% set query                    = craft.app.request.getParam('q') %}
+{% set q                        = '*' ~ query ~ '*' %}
+
+{# SET RESULTS BY SITE #}
+{% set results                  = craft.users().group('teens').userSite(currentSite.handle).orderBy('score').limit(10).search(q) %}
+
+{% paginate results as pageInfo, users %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = siteName ~ " Passholders" %}
+{% set class                    = "passes users list" %}
+
+{% block content %}
+  
+  <header class="page-header">
+    <h1 class="page-title">{{ siteName }} Passholders</h1>
+  </header>
+  
+  {% include 'passes/_partials/filter-users' with { 'query' : query, 'results' : results|length } %}
+  
+  <div class="grid-x grid-margin-x">
+  
+    <div class="main small-12 cell">
+  
+      <table>
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Account Created</th>
+            <th>Birthdate</th>
+            <th>School</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="pass-results">
+
+          {% for user in users %}
+            {% include 'passes/_partials/results-users' %}
+          {% endfor %}
+
+          {% if users|length == 0 %}
+            <tr><td colspan="4">There are no results</td></tr>
+          {% endif %}
+
+        </tbody>
+      </table>
+
+      {% if users|length > 0 %}
+        {% include '_partials/paginate-list' %}
+      {% endif %}
+  
+    </div>
+  
+  </div>
+
+{% endblock %}

@@ -1,0 +1,225 @@
+field: 019bfad1-7fee-4969-a0ce-4106539e4f9b # Flexible Content
+fieldLayouts:
+  2b38dfa5-9cf8-4e2d-90f7-063efc457b03:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 0e2cedc1-21a7-4696-a999-92b8b3552254 # Header
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 619f7000-6a40-4a8f-ba78-1b7c88b1c980
+            warning: null
+            width: 100
+          -
+            fieldUid: 23cd7ff8-6ed9-48df-8bbe-d250e1c80e26 # Copy
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9ff4fcdd-77f5-4631-a0f9-855ce1151e53
+            warning: null
+            width: 100
+          -
+            fieldUid: 336bc69c-8dd6-4d03-9601-a992c0a06862 # Background Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b2685756-e3b3-4221-bf6a-1047ce86590d
+            warning: null
+            width: 100
+          -
+            fieldUid: c6dbe416-bf37-43d4-a18d-1db8c8324319 # Video Position
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e66b7e20-3568-4f8a-8b8e-a102b12f88f4
+            warning: null
+            width: 100
+          -
+            fieldUid: 26c17f79-dc84-458e-b911-cccfaa260ae1 # Embed Code
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 210bca72-cab8-44be-941b-76f53cec1d24
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 13e49891-b2d7-485c-a359-10d9462c86b8
+fields:
+  0e2cedc1-21a7-4696-a999-92b8b3552254: # Header
+    contentColumnType: text
+    fieldGroup: null
+    handle: header
+    instructions: ''
+    name: Header
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  23cd7ff8-6ed9-48df-8bbe-d250e1c80e26: # Copy
+    contentColumnType: text
+    fieldGroup: null
+    handle: copy
+    instructions: ''
+    name: Copy
+    searchable: true
+    settings:
+      availableTransforms: ''
+      availableVolumes: ''
+      ckeConfig: 37036a58-d782-4f1e-b28d-d76b77295540 # Default
+      columnType: text
+      defaultTransform: ''
+      enableSourceEditingForNonAdmins: true
+      purifierConfig: ''
+      purifyHtml: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: true
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  26c17f79-dc84-458e-b911-cccfaa260ae1: # Embed Code
+    contentColumnType: text
+    fieldGroup: null
+    handle: embedCode
+    instructions: ''
+    name: 'Embed Code'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: '1'
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  336bc69c-8dd6-4d03-9601-a992c0a06862: # Background Color
+    contentColumnType: string
+    fieldGroup: null
+    handle: backgroundColor
+    instructions: ''
+    name: 'Background Color'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - none
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Green
+            -
+              - value
+              - green
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Blue
+            -
+              - value
+              - blue
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Gray
+            -
+              - value
+              - gray
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  c6dbe416-bf37-43d4-a18d-1db8c8324319: # Video Position
+    contentColumnType: string
+    fieldGroup: null
+    handle: contentAlign
+    instructions: ''
+    name: 'Video Position'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Left
+            -
+              - value
+              - left
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Center
+            -
+              - value
+              - center
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Right
+            -
+              - value
+              - right
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: video
+name: Video
+sortOrder: 6

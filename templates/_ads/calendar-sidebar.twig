@@ -1,0 +1,15 @@
+{# CALENDAR SIDEBAR AD SPACE #}
+
+{# SET ADS SECTION BY CURRENT SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set ad                       = craft.entries.section(sitePrefix ~ 'ads').search('calendar300wX250h').orderBy('RAND()').one() %}
+{% set cssClass                 = "ad-calendar-sidebar" %}
+
+{% if ad|length %}
+
+  {# SET ADS IMAGES #}
+  {% set banner                 = ad.adBanner300X250.one() %}
+
+  {% include "_ads/ad" %}
+
+{% endif %}

@@ -1,0 +1,180 @@
+{# VENUE SINGLE PAGE #}
+{% extends "_layout" %}
+
+{# SET PARTNERS BY SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set partners                 = craft.entries.section(sitePrefix ~ 'partners').relatedTo(entry).all() %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "#{ entry.title }" %}
+{% set class                    = "venues single" %}
+
+{# SET VENUE VARIABLES #}
+{% set website                  = entry.partnerWebsite %}
+{% set address                  = entry.partnerAddress %}
+{% set phone                    = entry.partnerPhone %}
+{% set emails                   = entry.partnerEmailAddresses.all() %}
+{% set hours                    = entry.partnerHours %}
+{% set travel                   = entry.partnerTravel %}
+{% set boxOffice                = entry.partnerBoxOffice %}
+{% set isPartnerAffiliated      = entry.venueIsAffiliated %}
+{% set gallery                  = entry.partnerGallery.all() %}
+
+{% block content %}
+{% cache %}
+
+  <article id="venue-single" class="entry">
+  
+    <header class="page-header">
+      <p class="entry-section"><a href="{{ siteUrl }}venues">Venue</a></p>
+      <h1 class="entry-title">{{ entry.title }}</h1>
+      {% if address is not empty %}
+        <p class="venue-address">
+          {% if address.parts['neighborhood'] is defined %}
+            <strong>{{ address.parts.neighborhood }}</strong>
+          {% endif %}
+          {{ address.parts.number }} {{ address.parts.address }}, {{ address.parts.city }} {{ address.parts.postcode }}
+        </p>
+      {% endif %}
+    </header>
+  
+    <div class="grid-x grid-margin-x">
+      <div class="main large-8 cell">
+  
+        {% if address is not empty %}
+          <div id="map" class="responsive-embed widescreen"></div>
+
+          <script>
+            var map;
+            function initMap() {
+              // Display the map
+              map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                  lat: {{ address.lat }},
+                  lng: {{ address.lng }}
+                },
+                zoom: 14
+              });
+
+              // Display the marker
+              var marker = new google.maps.Marker({
+                position: {
+                  lat: {{ address.lat }},
+                  lng: {{ address.lng }}
+                },
+                // A custom icon can be defined here, if desired
+                // icon: '/path/to/custom/icon.png',
+                map: map
+              });
+            }
+          </script>
+
+          <div id="venue-map-link"><a href="https://maps.google.com/?ll={{ address.lat }},{{ address.lng }}" class="button hollow expanded" target="_blank">Open in Google Maps</a></div>
+        {% endif %}
+  
+        <div class="entry-content">
+          {{ entry.body }}
+        </div>
+
+        {% if partners | length %}
+          <div id="venue-partners" class="section">
+            <h3 class="section-head sans">Partners</h3>
+            <ul class="simple-list">
+              {% for entry in partners %}
+                <li><strong><a href="{{ entry.url }}">{{ entry.title }}</a></strong></li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        <div id="venue-events" class="section">
+          <h3 class="section-head sans">Upcoming Events</h3>
+          {% include 'calendar/_partials/upcoming-listings' with {'includeVenue': false} %}
+        </div>
+
+      </div>
+  
+      <div class="sidebar large-4 cell">
+  
+        {% include '_partials/partner-gallery' %}
+
+        {% if website or phone or emails|length %}
+          <div id="venue-contact" class="section">
+            <h4 class="section-head sans">Contact Info</h4>
+
+            {% if website is not empty %}
+              <p class="venue-website"><a href="{{ website }}" target="_blank">{{ website }}</a></p>
+            {% endif %}
+
+            {% if phone is not empty %}
+              <p class="venue-phone"><a href="tel:{{ phone|replace('/[^0-9]/', '') }}">{{ phone }}</a></p>
+            {% endif %}
+
+            {% if emails | length %}
+              {% for block in emails %}
+                <p class="venue-email">
+                  {% if block.type == "email" %}
+                    {% if block.nameType is not empty %}{{ block.nameType }}: {% endif %}
+                    {% if block.emailAddress %}
+                      <a href="mailto:{{block.emailAddress}}">{{ block.emailAddress }}</a>
+                    {% endif %}
+                  {% endif %}
+                </p>
+              {% endfor %}
+            {% endif %}
+
+          </div>
+        {% endif %}
+
+        {% if hours %}
+          <div id="venue-hours" class="section">
+            <h4 class="section-head sans">Hours</h4>
+            {{ hours }}
+          </div>
+        {% endif %}
+
+        {% if travel %}
+          <div id="venue-hours" class="section">
+            <h4 class="section-head sans">How to Get Here</h4>
+            {{ travel }}
+          </div>
+        {% endif %}
+
+        {% if boxOffice %}
+          <div id="venue-box-office" class="section">
+            <h4 class="section-head sans">Box Office Info</h4>
+            {{ boxOffice }}
+          </div>
+        {% endif %}
+
+        {% if partners | length > 1 or not isPartnerAffiliated %}
+          <div id="venue-is-affiliated" class="section">
+            <h4 class="section-head sans">{{ (isPartnerAffiliated? "Affiliated" : "Unaffiliated") ~ " Venue" }}</h4>
+            {% if isPartnerAffiliated %}
+              {{ calendar.venueIsAffiliatedMessage }}
+            {% else %}
+              {{ calendar.venueIsNotAffiliatedMessage }}
+            {% endif %}
+          </div>
+        {% endif %}
+  
+      </div>
+  
+    </div>
+  
+  </article>
+
+{% endcache %}
+
+{% include "_partials/edit-link" %}
+
+{# ADMIN LINK TO QR CODE #}
+{% if currentUser.can('accessCp') ?? false %}
+  <a class="edit-link button small hollow alert" href="/venues/{{ entry.slug }}/qrcode" target="_blank">Get QR Code for Venue</a>
+{% endif %}
+
+{% endblock %}
+
+{% block footerJs %}
+  <script src="https://maps.googleapis.com/maps/api/js?key={{ craft.maps.mapToken }}&callback=initMap" async defer></script>
+{% endblock %}

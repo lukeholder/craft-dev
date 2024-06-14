@@ -1,0 +1,104 @@
+allowRepeatingEvents: true
+color: '#cc0000'
+description: ''
+descriptionFieldHandle: '0'
+fieldLayout:
+  tabs:
+    -
+      elementCondition: null
+      elements:
+        -
+          elementCondition: null
+          fieldUid: 7bc6a511-10a7-4729-b23e-340511a91a7c # Related Event
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 07c84864-3ff5-4382-931c-e765ac135d33
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: edd758f8-e0ec-4ef3-86af-51690335ece7 # Event Genre
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 01551520-753e-41fc-b320-c0e4c3540d3c
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 9e9abb47-ea9a-4f12-96b5-d915fab1218f # Event Category
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: 8a19e484-9f8a-4276-b12b-3189d5b3e228
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: 0968ba9e-9a4c-4238-a65b-ad3a323f8cca # Event Partner
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: b88e6d04-80f4-4e15-b180-7d16c8131f5a
+          userCondition: null
+          warning: null
+          width: 100
+        -
+          elementCondition: null
+          fieldUid: b0a408b3-9d0d-409e-b9a9-564c0ecb283c # Venue
+          instructions: null
+          label: null
+          required: false
+          tip: null
+          type: craft\fieldlayoutelements\CustomField
+          uid: b356d9ec-a7dd-4c2b-895b-e95ec0884bfc
+          userCondition: null
+          warning: null
+          width: 100
+      name: Content
+      uid: f4999718-7c9b-4f22-87c4-f98c2f0bf58e
+      userCondition: null
+    -
+      elementCondition: null
+      elements:
+        -
+          dismissible: false
+          elementCondition: null
+          style: tip
+          tip: "## Events with Multiple Start Times\r\nIf the event has multiple start times (for example: 2pm showing and 7pm showing or weekends at 7pm with a sunday matinee) you will need to add the additional start times as a separate entry under \"Calendar: Events Additional Time\".\r\n\r\n**Event Title**\r\nThe title is for internal use only, so it is recommended to use the event name and start time of the event.\r\n\r\n**Event Dates**\r\nEnter the first date and start time of the additional event time and select repeat rules.\r\n\r\n**Related Event**\r\nYou must select the original event that this additional time is related to. Many events have the same name, so double check the event date and location of the event you are selecting to make sure it is the correct one.\r\n\r\n**Event Genre, Category, Partner and Venue**\r\nIn order for the additional times to display in the filtered monthly calendars, and on Partner and Venue pages, you need to select the corresponding Event Genre, Category, Partner and Venue. The rest of the event information will be pulled from the event you selected under **Related Event**."
+          type: craft\fieldlayoutelements\Tip
+          uid: 2e12ea50-4d44-4bc0-af57-e20db8ba1196
+          userCondition: null
+      name: Help
+      uid: 904db75f-71c2-4d9e-8967-904d18521c0f
+      userCondition: null
+  uid: bdb0ebc0-cd0e-4365-9708-3a194679a5cd
+handle: la_eventsAdditional
+hasTitleField: true
+icsHash: null
+icsTimezone: floating
+locationFieldHandle: '0'
+name: 'LA Events Additional Time'
+siteSettings:
+  bb76cdec-208a-494d-9b05-53e17fb86d0b:
+    enabledByDefault: true
+    hasUrls: false
+    siteId: 7d81a2c3-37f0-4c8e-ae20-7d3ab5055184 # TeenTix LA
+    template: null
+    uriFormat: null
+titleFormat: ''
+titleLabel: Title
+titleTranslationKeyFormat: ''
+titleTranslationMethod: site

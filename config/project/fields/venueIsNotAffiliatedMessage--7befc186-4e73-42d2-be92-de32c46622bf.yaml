@@ -1,0 +1,21 @@
+columnSuffix: lcblemkl
+contentColumnType: text
+fieldGroup: 61cb854e-4648-46e6-aa10-5c8caea1d4fe # Partners
+handle: venueIsNotAffiliatedMessage
+instructions: 'If a Venue is unaffiliated with TeenTix or any single TeenTix Partner, display this message on the Venue entry page to warn Members that the Venue may not accept TeenTix Passes, depending on the Partner associated with the show.  '
+name: 'Unaffiliated Venue Message'
+searchable: false
+settings:
+  availableTransforms: ''
+  availableVolumes: ''
+  ckeConfig: 9eceeb25-5e29-4263-84f0-53203f894c30 # Simple 2
+  columnType: text
+  defaultTransform: ''
+  enableSourceEditingForNonAdmins: true
+  purifierConfig: null
+  purifyHtml: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: site
+type: craft\ckeditor\Field

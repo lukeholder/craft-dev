@@ -1,0 +1,178 @@
+description: ''
+handle: la_admin
+name: 'LA Admin'
+permissions:
+  - accesscp
+  - accesscpwhensystemisoff
+  - accessplugin-calendar
+  - accessplugin-freeform
+  - accessplugin-navigation
+  - accesssitewhensystemisoff
+  - 'assignusergroup:7fe338e4-2b40-4fc5-b4b3-f7d932392c07' # LA Editors
+  - 'assignusergroup:a493105f-dcc7-4ac7-acbe-c29085d5b04c' # Teens
+  - 'assignusergroup:e00c261a-e462-4ceb-a892-0311b7eb39ea' # LA Admin
+  - calendar-manageevents
+  - 'calendar-manageeventsfor:d6819f20-e8ed-4e24-9e34-e5b494d72f4e' # LA Events Additional Time
+  - 'calendar-manageeventsfor:dc197434-bc80-4945-8419-c80349589bfc' # LA Events
+  - 'createentries:164135ca-7569-4da4-9bf1-500b9d484d24' # LA Passes
+  - 'createentries:34eff12f-2a0d-4a7f-a878-0707280412be' # LA Blog
+  - 'createentries:452b1ee2-d2bb-4dbd-8ce6-7c35b24dde49' # LA Venues
+  - 'createentries:8fb5378a-f891-4bd6-9a91-f45144eecd29' # LA Partners
+  - 'createentries:b86fb5af-a8ca-4f4c-8aca-22840feda647' # LA Pass Usage
+  - 'createentries:bb1f6d32-2807-499e-991a-56a2838216dc' # LA Ads
+  - 'createentries:f717a6d2-043d-41cd-987f-4d177515e12f' # LA Pages
+  - 'createfolders:0543ea8d-9bf0-4033-bb9a-bae51d9860cf' # LA Partner Images
+  - 'createfolders:5ec9bf08-ecd8-45fc-9476-42230de4ea06' # LA Sponsor Logos
+  - 'createfolders:7f7bf724-7909-4699-b70a-5cd496c314bb' # LA Page Images
+  - 'createfolders:a6e1f43e-7d92-4454-b86e-9b57856d3c34' # LA Ad Images
+  - 'createfolders:d8052c64-2464-4aa2-8b41-9f106bc1d1f6' # LA General Images
+  - 'deleteassets:0543ea8d-9bf0-4033-bb9a-bae51d9860cf' # LA Partner Images
+  - 'deleteassets:5ec9bf08-ecd8-45fc-9476-42230de4ea06' # LA Sponsor Logos
+  - 'deleteassets:7f7bf724-7909-4699-b70a-5cd496c314bb' # LA Page Images
+  - 'deleteassets:a6e1f43e-7d92-4454-b86e-9b57856d3c34' # LA Ad Images
+  - 'deleteassets:d8052c64-2464-4aa2-8b41-9f106bc1d1f6' # LA General Images
+  - 'deleteentries:164135ca-7569-4da4-9bf1-500b9d484d24' # LA Passes
+  - 'deleteentries:34eff12f-2a0d-4a7f-a878-0707280412be' # LA Blog
+  - 'deleteentries:452b1ee2-d2bb-4dbd-8ce6-7c35b24dde49' # LA Venues
+  - 'deleteentries:8fb5378a-f891-4bd6-9a91-f45144eecd29' # LA Partners
+  - 'deleteentries:b86fb5af-a8ca-4f4c-8aca-22840feda647' # LA Pass Usage
+  - 'deleteentries:bb1f6d32-2807-499e-991a-56a2838216dc' # LA Ads
+  - 'deleteentries:f717a6d2-043d-41cd-987f-4d177515e12f' # LA Pages
+  - 'deletepeerassets:0543ea8d-9bf0-4033-bb9a-bae51d9860cf' # LA Partner Images
+  - 'deletepeerassets:5ec9bf08-ecd8-45fc-9476-42230de4ea06' # LA Sponsor Logos
+  - 'deletepeerassets:7f7bf724-7909-4699-b70a-5cd496c314bb' # LA Page Images
+  - 'deletepeerassets:a6e1f43e-7d92-4454-b86e-9b57856d3c34' # LA Ad Images
+  - 'deletepeerassets:d8052c64-2464-4aa2-8b41-9f106bc1d1f6' # LA General Images
+  - 'deletepeerentries:164135ca-7569-4da4-9bf1-500b9d484d24' # LA Passes
+  - 'deletepeerentries:34eff12f-2a0d-4a7f-a878-0707280412be' # LA Blog
+  - 'deletepeerentries:452b1ee2-d2bb-4dbd-8ce6-7c35b24dde49' # LA Venues
+  - 'deletepeerentries:8fb5378a-f891-4bd6-9a91-f45144eecd29' # LA Partners
+  - 'deletepeerentries:b86fb5af-a8ca-4f4c-8aca-22840feda647' # LA Pass Usage
+  - 'deletepeerentries:bb1f6d32-2807-499e-991a-56a2838216dc' # LA Ads
+  - 'deletepeerentries:f717a6d2-043d-41cd-987f-4d177515e12f' # LA Pages
+  - 'deletepeerentrydrafts:164135ca-7569-4da4-9bf1-500b9d484d24' # LA Passes
+  - 'deletepeerentrydrafts:34eff12f-2a0d-4a7f-a878-0707280412be' # LA Blog
+  - 'deletepeerentrydrafts:452b1ee2-d2bb-4dbd-8ce6-7c35b24dde49' # LA Venues
+  - 'deletepeerentrydrafts:494afe00-636f-479f-83cc-a0308c6bf0cb' # LA Venues Index
+  - 'deletepeerentrydrafts:52d4dc08-82de-4335-873c-84ed0ed6d8f2' # LA Partners Index
+  - 'deletepeerentrydrafts:8fb5378a-f891-4bd6-9a91-f45144eecd29' # LA Partners
+  - 'deletepeerentrydrafts:a650395a-f64f-490e-a903-a388b4c2cad8' # LA Home
+  - 'deletepeerentrydrafts:b86fb5af-a8ca-4f4c-8aca-22840feda647' # LA Pass Usage
+  - 'deletepeerentrydrafts:bb1f6d32-2807-499e-991a-56a2838216dc' # LA Ads
+  - 'deletepeerentrydrafts:f717a6d2-043d-41cd-987f-4d177515e12f' # LA Pages
+  - 'editglobalset:0ae85203-f862-4d8f-a722-6e80a5ab1268' # Calendar
+  - 'editglobalset:163af3ab-7cd6-4e72-a1fc-a1f8dc965139' # Account
+  - 'editglobalset:59f1cb97-1093-4f93-b6dd-7687cca0dd28' # Emails
+  - 'editglobalset:81fc0592-3752-4346-a2a4-4a7b5018b4b4' # Schools
+  - 'editglobalset:c83433fa-2eba-4741-bcbe-66ef7d030672' # Footer
+  - 'editimages:0543ea8d-9bf0-4033-bb9a-bae51d9860cf' # LA Partner Images
+  - 'editimages:5ec9bf08-ecd8-45fc-9476-42230de4ea06' # LA Sponsor Logos
+  - 'editimages:7f7bf724-7909-4699-b70a-5cd496c314bb' # LA Page Images
+  - 'editimages:a6e1f43e-7d92-4454-b86e-9b57856d3c34' # LA Ad Images
+  - 'editimages:d8052c64-2464-4aa2-8b41-9f106bc1d1f6' # LA General Images
+  - 'editpeerimages:0543ea8d-9bf0-4033-bb9a-bae51d9860cf' # LA Partner Images
+  - 'editpeerimages:5ec9bf08-ecd8-45fc-9476-42230de4ea06' # LA Sponsor Logos
+  - 'editpeerimages:7f7bf724-7909-4699-b70a-5cd496c314bb' # LA Page Images
+  - 'editpeerimages:a6e1f43e-7d92-4454-b86e-9b57856d3c34' # LA Ad Images
+  - 'editpeerimages:d8052c64-2464-4aa2-8b41-9f106bc1d1f6' # LA General Images
+  - 'editsite:7d81a2c3-37f0-4c8e-ae20-7d3ab5055184' # TeenTix LA
+  - editusers
+  - freeform-access-quick-export
+  - freeform-submissionsaccess
+  - 'freeform-submissionsmanage:4'
+  - 'freeform-submissionsmanage:5'
+  - 'freeform-submissionsmanage:6'
+  - freeform-submissionsmanageindividual
+  - 'freeform-submissionsread:4'
+  - 'freeform-submissionsread:5'
+  - 'freeform-submissionsread:6'
+  - freeform-submissionsreadindividual
+  - 'navigation-managenav:08574ff6-94a2-47f1-ba9e-253d13017204' # LA Sidebar Support
+  - 'navigation-managenav:277b4f6b-9c36-40cb-86e9-ca7a4867e059' # LA Main Nav
+  - 'navigation-managenav:90ffc9f2-cc58-445d-b0e5-40ccdcc8e3d5' # LA Footer Nav
+  - 'navigation-managenav:ae90256b-0669-43a0-a7cc-3469bad479cc' # LA Sidebar About
+  - registerusers
+  - 'replacefiles:0543ea8d-9bf0-4033-bb9a-bae51d9860cf' # LA Partner Images
+  - 'replacefiles:5ec9bf08-ecd8-45fc-9476-42230de4ea06' # LA Sponsor Logos
+  - 'replacefiles:7f7bf724-7909-4699-b70a-5cd496c314bb' # LA Page Images
+  - 'replacefiles:a6e1f43e-7d92-4454-b86e-9b57856d3c34' # LA Ad Images
+  - 'replacefiles:d8052c64-2464-4aa2-8b41-9f106bc1d1f6' # LA General Images
+  - 'replacepeerfiles:0543ea8d-9bf0-4033-bb9a-bae51d9860cf' # LA Partner Images
+  - 'replacepeerfiles:5ec9bf08-ecd8-45fc-9476-42230de4ea06' # LA Sponsor Logos
+  - 'replacepeerfiles:7f7bf724-7909-4699-b70a-5cd496c314bb' # LA Page Images
+  - 'replacepeerfiles:a6e1f43e-7d92-4454-b86e-9b57856d3c34' # LA Ad Images
+  - 'replacepeerfiles:d8052c64-2464-4aa2-8b41-9f106bc1d1f6' # LA General Images
+  - 'saveassets:0543ea8d-9bf0-4033-bb9a-bae51d9860cf' # LA Partner Images
+  - 'saveassets:5ec9bf08-ecd8-45fc-9476-42230de4ea06' # LA Sponsor Logos
+  - 'saveassets:7f7bf724-7909-4699-b70a-5cd496c314bb' # LA Page Images
+  - 'saveassets:a6e1f43e-7d92-4454-b86e-9b57856d3c34' # LA Ad Images
+  - 'saveassets:d8052c64-2464-4aa2-8b41-9f106bc1d1f6' # LA General Images
+  - 'saveentries:164135ca-7569-4da4-9bf1-500b9d484d24' # LA Passes
+  - 'saveentries:34eff12f-2a0d-4a7f-a878-0707280412be' # LA Blog
+  - 'saveentries:452b1ee2-d2bb-4dbd-8ce6-7c35b24dde49' # LA Venues
+  - 'saveentries:494afe00-636f-479f-83cc-a0308c6bf0cb' # LA Venues Index
+  - 'saveentries:52d4dc08-82de-4335-873c-84ed0ed6d8f2' # LA Partners Index
+  - 'saveentries:8fb5378a-f891-4bd6-9a91-f45144eecd29' # LA Partners
+  - 'saveentries:a650395a-f64f-490e-a903-a388b4c2cad8' # LA Home
+  - 'saveentries:b86fb5af-a8ca-4f4c-8aca-22840feda647' # LA Pass Usage
+  - 'saveentries:bb1f6d32-2807-499e-991a-56a2838216dc' # LA Ads
+  - 'saveentries:f717a6d2-043d-41cd-987f-4d177515e12f' # LA Pages
+  - 'savepeerassets:0543ea8d-9bf0-4033-bb9a-bae51d9860cf' # LA Partner Images
+  - 'savepeerassets:5ec9bf08-ecd8-45fc-9476-42230de4ea06' # LA Sponsor Logos
+  - 'savepeerassets:7f7bf724-7909-4699-b70a-5cd496c314bb' # LA Page Images
+  - 'savepeerassets:a6e1f43e-7d92-4454-b86e-9b57856d3c34' # LA Ad Images
+  - 'savepeerassets:d8052c64-2464-4aa2-8b41-9f106bc1d1f6' # LA General Images
+  - 'savepeerentries:164135ca-7569-4da4-9bf1-500b9d484d24' # LA Passes
+  - 'savepeerentries:34eff12f-2a0d-4a7f-a878-0707280412be' # LA Blog
+  - 'savepeerentries:452b1ee2-d2bb-4dbd-8ce6-7c35b24dde49' # LA Venues
+  - 'savepeerentries:8fb5378a-f891-4bd6-9a91-f45144eecd29' # LA Partners
+  - 'savepeerentries:b86fb5af-a8ca-4f4c-8aca-22840feda647' # LA Pass Usage
+  - 'savepeerentries:bb1f6d32-2807-499e-991a-56a2838216dc' # LA Ads
+  - 'savepeerentries:f717a6d2-043d-41cd-987f-4d177515e12f' # LA Pages
+  - 'savepeerentrydrafts:164135ca-7569-4da4-9bf1-500b9d484d24' # LA Passes
+  - 'savepeerentrydrafts:34eff12f-2a0d-4a7f-a878-0707280412be' # LA Blog
+  - 'savepeerentrydrafts:452b1ee2-d2bb-4dbd-8ce6-7c35b24dde49' # LA Venues
+  - 'savepeerentrydrafts:494afe00-636f-479f-83cc-a0308c6bf0cb' # LA Venues Index
+  - 'savepeerentrydrafts:52d4dc08-82de-4335-873c-84ed0ed6d8f2' # LA Partners Index
+  - 'savepeerentrydrafts:8fb5378a-f891-4bd6-9a91-f45144eecd29' # LA Partners
+  - 'savepeerentrydrafts:a650395a-f64f-490e-a903-a388b4c2cad8' # LA Home
+  - 'savepeerentrydrafts:b86fb5af-a8ca-4f4c-8aca-22840feda647' # LA Pass Usage
+  - 'savepeerentrydrafts:bb1f6d32-2807-499e-991a-56a2838216dc' # LA Ads
+  - 'savepeerentrydrafts:f717a6d2-043d-41cd-987f-4d177515e12f' # LA Pages
+  - 'viewassets:0543ea8d-9bf0-4033-bb9a-bae51d9860cf' # LA Partner Images
+  - 'viewassets:5ec9bf08-ecd8-45fc-9476-42230de4ea06' # LA Sponsor Logos
+  - 'viewassets:7f7bf724-7909-4699-b70a-5cd496c314bb' # LA Page Images
+  - 'viewassets:a6e1f43e-7d92-4454-b86e-9b57856d3c34' # LA Ad Images
+  - 'viewassets:d8052c64-2464-4aa2-8b41-9f106bc1d1f6' # LA General Images
+  - 'viewentries:164135ca-7569-4da4-9bf1-500b9d484d24' # LA Passes
+  - 'viewentries:34eff12f-2a0d-4a7f-a878-0707280412be' # LA Blog
+  - 'viewentries:452b1ee2-d2bb-4dbd-8ce6-7c35b24dde49' # LA Venues
+  - 'viewentries:494afe00-636f-479f-83cc-a0308c6bf0cb' # LA Venues Index
+  - 'viewentries:52d4dc08-82de-4335-873c-84ed0ed6d8f2' # LA Partners Index
+  - 'viewentries:8fb5378a-f891-4bd6-9a91-f45144eecd29' # LA Partners
+  - 'viewentries:a650395a-f64f-490e-a903-a388b4c2cad8' # LA Home
+  - 'viewentries:b86fb5af-a8ca-4f4c-8aca-22840feda647' # LA Pass Usage
+  - 'viewentries:bb1f6d32-2807-499e-991a-56a2838216dc' # LA Ads
+  - 'viewentries:f717a6d2-043d-41cd-987f-4d177515e12f' # LA Pages
+  - 'viewpeerassets:0543ea8d-9bf0-4033-bb9a-bae51d9860cf' # LA Partner Images
+  - 'viewpeerassets:5ec9bf08-ecd8-45fc-9476-42230de4ea06' # LA Sponsor Logos
+  - 'viewpeerassets:7f7bf724-7909-4699-b70a-5cd496c314bb' # LA Page Images
+  - 'viewpeerassets:a6e1f43e-7d92-4454-b86e-9b57856d3c34' # LA Ad Images
+  - 'viewpeerassets:d8052c64-2464-4aa2-8b41-9f106bc1d1f6' # LA General Images
+  - 'viewpeerentries:164135ca-7569-4da4-9bf1-500b9d484d24' # LA Passes
+  - 'viewpeerentries:34eff12f-2a0d-4a7f-a878-0707280412be' # LA Blog
+  - 'viewpeerentries:452b1ee2-d2bb-4dbd-8ce6-7c35b24dde49' # LA Venues
+  - 'viewpeerentries:8fb5378a-f891-4bd6-9a91-f45144eecd29' # LA Partners
+  - 'viewpeerentries:b86fb5af-a8ca-4f4c-8aca-22840feda647' # LA Pass Usage
+  - 'viewpeerentries:bb1f6d32-2807-499e-991a-56a2838216dc' # LA Ads
+  - 'viewpeerentries:f717a6d2-043d-41cd-987f-4d177515e12f' # LA Pages
+  - 'viewpeerentrydrafts:164135ca-7569-4da4-9bf1-500b9d484d24' # LA Passes
+  - 'viewpeerentrydrafts:34eff12f-2a0d-4a7f-a878-0707280412be' # LA Blog
+  - 'viewpeerentrydrafts:452b1ee2-d2bb-4dbd-8ce6-7c35b24dde49' # LA Venues
+  - 'viewpeerentrydrafts:494afe00-636f-479f-83cc-a0308c6bf0cb' # LA Venues Index
+  - 'viewpeerentrydrafts:52d4dc08-82de-4335-873c-84ed0ed6d8f2' # LA Partners Index
+  - 'viewpeerentrydrafts:8fb5378a-f891-4bd6-9a91-f45144eecd29' # LA Partners
+  - 'viewpeerentrydrafts:a650395a-f64f-490e-a903-a388b4c2cad8' # LA Home
+  - 'viewpeerentrydrafts:b86fb5af-a8ca-4f4c-8aca-22840feda647' # LA Pass Usage
+  - 'viewpeerentrydrafts:bb1f6d32-2807-499e-991a-56a2838216dc' # LA Ads
+  - 'viewpeerentrydrafts:f717a6d2-043d-41cd-987f-4d177515e12f' # LA Pages

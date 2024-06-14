@@ -1,0 +1,28 @@
+handle: sidebarAbout
+instructions: ''
+maxNodes: ''
+name: 'Sea Sidebar About'
+permissions:
+  craft\elements\Asset:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Category:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Entry:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Tag:
+    enabled: ''
+    permissions: '*'
+  verbb\navigation\nodetypes\CustomType:
+    enabled: '1'
+  verbb\navigation\nodetypes\PassiveType:
+    enabled: '1'
+  verbb\navigation\nodetypes\SiteType:
+    enabled: '1'
+propagationMethod: none
+sortOrder: 5
+structure:
+  maxLevels: '1'
+  uid: 6f8918d5-1304-46b0-ab4d-7cd80053c1a9

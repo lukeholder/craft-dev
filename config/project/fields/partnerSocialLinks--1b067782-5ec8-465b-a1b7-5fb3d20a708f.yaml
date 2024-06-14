@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 61cb854e-4648-46e6-aa10-5c8caea1d4fe # Partners
+handle: partnerSocialLinks
+instructions: ''
+name: 'Social Links'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_partnersociallinks}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

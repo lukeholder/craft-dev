@@ -1,0 +1,80 @@
+fieldLayouts:
+  6a45f078-6e6d-43b6-b11e-9c6b89e405b7:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 4cee2a4f-1e7c-4021-84e9-e2ebe9063b61
+            warning: null
+            width: 100
+          -
+            fieldUid: 6e41e820-726f-41e3-accc-bcc17213deb8 # Top Image
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 248c6e4c-449f-4c9d-82bc-4dd806c6ac3c
+            warning: null
+            width: 100
+          -
+            fieldUid: 3e08096d-5243-4d61-9e01-b983bd73a42e # Top Image Header
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 50312233-e193-47c3-9609-ce8649ea76d0
+            warning: null
+            width: 100
+          -
+            fieldUid: 4909882b-caa0-440b-b080-55a976d6ff41 # Top Image Copy
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e4694bac-ecde-4f6e-9ed3-5437a6cb6e65
+            warning: null
+            width: 100
+          -
+            fieldUid: 019bfad1-7fee-4969-a0ce-4106539e4f9b # Flexible Content
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7eeaae14-df37-4d40-9796-274bcef8a91e
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: ffa6c42e-08ea-449d-8150-3867ef7e8e22
+handle: flexible
+hasTitleField: true
+name: Flexible
+section: ea460316-fa92-49f2-824c-ab3a7284aeeb # SEA Pages
+sortOrder: 2
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

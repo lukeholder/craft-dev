@@ -1,0 +1,14 @@
+columnSuffix: gjylwvwt
+contentColumnType: boolean
+fieldGroup: 4f2d0446-809a-4896-9a97-3b5409c32324 # Global
+handle: hasLocalPressCorps
+instructions: 'If checked, a banner ad will be placed on the sidebar of the blog encouraging teens to join the TeenTix Press Corps—assuming no other advertisement is slated for that spot.'
+name: 'Local Press Corps?'
+searchable: false
+settings:
+  default: false
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Lightswitch

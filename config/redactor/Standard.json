@@ -1,0 +1,78 @@
+{
+  "buttons": ["html","formatting", "bold", "italic", "underline","line","unorderedlist", "orderedlist", "link", "image", "file", "video"],
+  "plugins": ["video","widget","alignment"],
+  "linkNewTab": true,
+  "toolbarFixed": true,
+  "imageResizable": true,
+  "imageFigure": true,
+  "imagePosition": {
+    "left": "image-left",
+    "right": "image-right",
+    "center": "image-center"
+  },
+  "imageFloatMargin": "20px",
+  "formattingAdd": {
+    "caption": {
+      "title": "Caption",
+      "api": "module.block.format",
+      "args": {
+        "tag": "p",
+        "class": "caption"
+      }
+    },
+    "green-p-add": {
+      "title": "Green Button",
+      "api": "module.block.format",
+      "args": {
+        "tag": "p",
+        "class": "btn green"
+      }
+    },
+    "blue-p-add": {
+      "title": "Blue Button",
+      "api": "module.block.format",
+      "args": {
+        "tag": "p",
+        "class": "btn blue"
+      }
+    },
+    "red-p-add": {
+      "title": "Red Button",
+      "api": "module.block.format",
+      "args": {
+        "tag": "p",
+        "class": "btn red"
+      }
+    },
+    "yellow-p-add": {
+      "title": "Yellow Button",
+      "api": "module.block.format",
+      "args": {
+        "tag": "p",
+        "class": "btn yellow"
+      }
+    }
+  },
+  "customStyles": {
+    "style": {
+      "dropdown": {
+        "quote": {
+          "args": "q"
+        },
+        "sourceCitation": {
+          "args": "cite"
+        },
+
+        "deleted": {
+          "args": "del"
+        },
+        "smallPrint": {
+          "args": "small"
+        },
+        "clearStyles": {
+          "api": "module.inline.clearformat"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,180 @@
+{# SINGLE PAGE FLEXIBLE TEMPLATE #}
+
+{# SET PAGE VARIABLES #}
+{% set topImage                 = entry.topImage.one() %}
+{% set topImageHeader           = entry.topImageHeader %}
+{% set topImageCopy             = entry.topImageCopy %}
+{% set content                  = entry.flexibleContent %}
+
+{% if topImage %}
+  <div id="top-featured">
+    <div class="featured-image">
+      <img src="{{ topImage.getUrl('topImage') }}" alt="{{ topImage.imageAlt }}">
+    </div>
+    <div class="featured-content shadow">
+      <h1>{% if topImageHeader %}{{ topImageHeader }}{% else %}{{ entry.title }}{% endif %}</h1>
+      {{ topImageCopy }}
+    </div>
+  </div>
+{% else %}
+  <header class="page-header">
+    <h1 class="page-title">{{ entry.title }}</h1>
+  </header>
+{% endif %}
+
+{% if content | length %}
+  <div class="main">
+    {% for block in content.all() %}
+
+      {% if block.type == "contentSidebar" %}
+        {% set header = block.header %}
+        {% set position = block.contentPosition %}
+        <div id="section-{{ loop.index }}" class="section content-sidebar bkg-none">
+          {% if header %}
+            <h2>{{ block.header }}</h2>
+          {% endif %}
+          <div class="grid-x grid-margin-x">
+            <div class="medium-8 cell {% if position == 'right' %}medium-order-2{% endif %}">
+              {{ block.contentMain }}
+            </div>
+            <div class="medium-4 cell {% if position == 'right' %}medium-order-1{% endif %}">
+              <div class="sidebar bkg-{{ block.sidebarBackground }}">
+              {{ block.contentSidebar }}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.type == "contentOneCol" %}
+        {% set header = block.header %}
+        <div id="section-{{ loop.index }}" class="section content-one-col bkg-{{ block.backgroundColor }}">
+          <div class="grid-x align-{{ block.contentAlign }}">
+            <div class="medium-10 large-8 cell">
+            {% if header %}
+              <h2>{{ block.header }}</h2>
+            {% endif %}
+            {{ block.contentMain }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.type == "contentTwoCol" %}
+        {% set header = block.header %}
+        <div id="section-{{ loop.index }}" class="section content-two-col bkg-{{ block.backgroundColor }}">
+          {% if header %}
+            <h2>{{ block.header }}</h2>
+          {% endif %}
+          <div class="grid-x grid-margin-x">
+            <div class="medium-6 cell">
+              {{ block.contentMain }}
+            </div>
+            <div class="medium-6 cell">
+              {{ block.contentMain2 }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.type == "imageGallery" %}
+        {% set align = block.contentAlign %}
+        {% set images = block.images.all() %}
+        <div id="section-{{ loop.index }}" class="section image-gallery bkg-{{ block.backgroundColor }}">
+          <div class="grid-x grid-margin-x align-{{ block.contentAlign }}">
+            {% if align == "center" %}
+              <div class="small-12 large-10 text-center">
+                {% if header %}
+                  <h2>{{ block.header }}</h2>
+                {% endif %}
+                {{ block.copy }}
+                <div class="slick slick-gallery">
+                  {% for image in images %}
+                    <div class="slide">
+                      <img src="{{ image.getUrl('gallery') }}" alt="{{ image.title }}">
+                      {% if image.imageCaption %}
+                        <p class="caption">{{ image.imageCaption }}</p>
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% else %}
+              <div class="medium-4 cell {% if align == 'left' %}medium-order-2{% endif %}">
+                {% if header %}
+                  <h2>{{ block.header }}</h2>
+                {% endif %}
+                {{ block.copy }}
+              </div>
+              <div class="medium-8 cell {% if align == 'left' %}medium-order-1{% endif %}">
+                <div class="slick slick-gallery">
+                  {% for image in images %}
+                    <div class="slide">
+                      <img src="{{ image.getUrl('gallery') }}" alt="{{ image.title }}">
+                      {% if image.imageCaption %}
+                        <p class="caption">{{ image.imageCaption }}</p>
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+      {% endif %}
+
+      {% if block.type == "imageGrid" %}
+        {% set header = block.header %}
+        {% set images = block.images.all() %}
+        <div id="section-{{ loop.index }}" class="section image-grid bkg-none">
+          {% if header %}
+            <h2>{{ block.header }}</h2>
+          {% endif %}
+          {{ block.copy }}
+          <div class="grid-x grid-margin-x small-up-1 medium-up-{{ block.gridCount }} align-middle">
+            {% for image in images %}
+              <div class="cell">
+                {% if image.imageLink %}
+                  <a href="{{ image.imageLink }}" target="_blank">
+                {% endif %}
+                <img src="{{ image.getUrl('max300') }}" alt="{{ image.title }} ">
+                {% if image.imageLink %}
+                  </a>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if block.type == "video" %}
+        {% set align = block.contentAlign %}
+        <div id="section-{{ loop.index }}" class="section content-video bkg-{{ block.backgroundColor }}">
+          <div class="grid-x grid-margin-x align-{{ block.contentAlign }}">
+            {% if align == "center" %}
+              <div class="small-12 large-10 text-center">
+                {% if header %}
+                  <h2>{{ block.header }}</h2>
+                {% endif %}
+                {{ block.copy }}
+                {{ block.embedCode|raw }}
+              </div>
+            {% else %}
+              <div class="medium-4 cell {% if align == 'left' %}medium-order-2{% endif %}">
+                {% if header %}
+                  <h2>{{ block.header }}</h2>
+                {% endif %}
+                {{ block.copy }}
+              </div>
+              <div class="medium-8 cell {% if align == 'left' %}medium-order-1{% endif %}">
+                {{ block.embedCode|raw }}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+    {% endfor %}
+  </div>
+{% endif %}

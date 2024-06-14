@@ -1,0 +1,214 @@
+{% extends "passes/_layout" %}
+
+{# SET USER #}
+{% set user                     = craft.users.id(userid).one() %}
+
+{# SET SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set digitalpass              = user? craft.entries().section(sitePrefix ~ 'passes').passFormat('digital').passUser(user.id).orderBy('elements.id desc').all(): [] %}
+{% set physicalpass             = user? craft.entries().section(sitePrefix ~ 'passes').passFormat('physical').passUser(user.id).orderBy('elements.id desc').all(): [] %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "TeenTix User" %}
+{% set class                    = "passes user" %}
+
+{% block content %}
+
+  <a href="{{ user.cpEditUrl }}" class="button secondary float-right" target="_blank">Edit user</a>
+  <h1>Passholder Profile</h1>
+  
+  {% if user %}
+
+    <hr>
+
+    <h3>Passholder Info</h3>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-4 cell">
+        <p><strong>Name</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{{ user.fullName }}</p>
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>Email</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p><a href="mailto:{{ user.email }}"><strong>{{ user.email }}</strong></a></p>
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>Birthdate</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        {% if user.userBirthdate %}
+          <p>{{ user.userBirthdate.format('F j, Y') }}</p>
+        {% endif %}
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>Best Contact Phone Number</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{{ user.userPhone }}</p>
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>School</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{{ user.userSchool }}</p>
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>Interests</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{% for option in user.userInterests %}{{ option.label|raw }}{% if not loop.last %}, {% endif %}{% endfor %}</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>Account Info</h3>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-4 cell">
+        <p><strong>User ID</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{{ user.id }}</p>
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>User Groups</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{% if user.admin %}<span>Admin</span>{% endif %}
+        {% for group in user.groups %}<span>{{ group.name }}</span> {% endfor %}</p>
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>Account Created</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{{ user.dateCreated | date('F j, Y') }}</p>
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>Last Login</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{{ user.lastLoginDate | date('F j, Y') }}</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>Demographic Info</h3>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-4 cell">
+        <p><strong>Where do you live?</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{{ user.userCity }}, {{ user.userState }} {{ user.userZipcode }}, {{ user.userCountry }}</p>
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>What is your ethnic/racial background?</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{% for option in user.userDemoEthnicity %}{{ option.label|raw }}{% if not loop.last %}, {% endif %}{% endfor %}</p>
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>What languages are spoken in your home?</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{% for option in user.userDemoLanguage %}{{ option.label|raw }}{% if not loop.last %}, {% endif %}{% endfor %} {{ user.userDemoLanguageOther }}</p>
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>Do you identify as LGBTQ?</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{{ user.userDemoLgbtq.label|raw }}</p>
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>What is your gender?</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{{ user.userDemoGender.label|raw }} {{ user.userDemoGenderOther }}</p>
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>Do you or your family qualify for free or reduced priced meals?</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{% if user.userFreeReducedEligible %}Yes{% else %}No{% endif %}</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>Adult Applicant Info</h3>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-4 cell">
+        <p><strong>Applicant Type</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{{ user.userApplicantType.label }}</p>
+      </div>
+      {% if user.userApplicantType == "adult" %}
+        <div class="medium-4 cell">
+          <p><strong>Adult Applicant Name</strong></p>
+        </div>
+        <div class="medium-8 cell">
+          <p>{{ user.userAdultName }}</p>
+        </div>
+        <div class="medium-4 cell">
+          <p><strong>Adult Applicant Email Address</strong></p>
+        </div>
+        <div class="medium-8 cell">
+          <p><a href="mailto:{{ user.userAdultEmailAddress }}"><strong>{{ user.userAdultEmailAddress }}</strong></a></p>
+        </div>
+      {% endif %}
+    </div>
+
+    <hr>
+
+    <h3>Other Info</h3>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-4 cell">
+        <p><strong>How did you hear about TeenTix?</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{{ user.userHearAbout.label }}</p>
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>Who referred you to TeenTix?</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{{ user.userReferred }}</p>
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>TeenTix Newsletter</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <p>{% if user.userNewsletter %}Yes{% else %}No{% endif %}</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>Passes</h3>
+    <div class="grid-x grid-margin-x">
+      {% for pass in digitalpass %}
+        {% set usage = craft.entries.section(['passUsage', 'la_passUsage']).usagePass(pass.id).all()  %}
+        <div class="medium-4 cell">
+          <p><strong>Digital Pass</strong></p>
+        </div>
+        <div class="medium-8 cell">
+          <p><a href="{{ siteUrl }}pass/{{ pass.id }}"><strong>{{ pass.id }}</strong></a> (Total Events: {{ usage|length }})</p>
+        </div>
+      {% endfor %}
+      {% for pass in physicalpass %}
+        {% set usage = craft.entries.section(['passUsage', 'la_passUsage']).usagePass(pass.id).all()  %}
+        <div class="medium-4 cell">
+          <p><strong>Physical Pass</strong></p>
+        </div>
+        <div class="medium-8 cell">
+          <p><a href="{{ siteUrl }}pass/{{ pass.id }}">{{ pass.id }}</a> (Total Events: {{ usage|length }})</p>
+        </div>
+      {% endfor %}
+    </div>
+
+  {% endif %}
+{% endblock %}

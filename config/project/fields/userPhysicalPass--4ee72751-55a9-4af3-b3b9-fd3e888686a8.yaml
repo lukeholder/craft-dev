@@ -1,0 +1,13 @@
+contentColumnType: boolean
+fieldGroup: 1ea0247b-17e7-419a-8029-d57f032f4ed0 # Users
+handle: userPhysicalPass
+instructions: ''
+name: 'Physical Pass'
+searchable: true
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

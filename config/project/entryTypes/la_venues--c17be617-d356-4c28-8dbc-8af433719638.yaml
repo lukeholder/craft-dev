@@ -1,0 +1,182 @@
+fieldLayouts:
+  9c70ae16-f0df-44c1-88e9-a63a46a0ffa7:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 4dfb82bd-d2eb-435c-b726-4e056a36846a
+            warning: null
+            width: 100
+          -
+            fieldUid: b045a639-84ef-4a2b-a0a6-b67509c6b17f # Short Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a6705bb9-d2a6-41fb-b1f0-8b81bdc345b5
+            warning: null
+            width: 100
+          -
+            fieldUid: 5764896d-54f2-425b-b36e-4278f5440071 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2e707fd6-eef0-41fe-9205-ad2eccd27f98
+            warning: null
+            width: 100
+          -
+            fieldUid: 6e290fc3-f22c-429b-a097-33ad83ee2ebf # Logo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5d385752-02a4-4012-b393-cb028292de84
+            warning: null
+            width: 100
+          -
+            fieldUid: 6bfc4b23-14c0-4271-ad9a-23fd5bb39c1a # Image Gallery
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d6098481-01ee-463c-8e40-ed6014ddea2c
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 295bbd16-ea50-42cf-958e-360b165363c9 # Partner Affiliated?
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 49d16cd5-fb6a-42ec-a463-07facaea2b94
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            fieldUid: c0519cb6-b643-4026-a4d3-d6afc4f8fbcb # Hours
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a811147c-ad93-448a-9044-deacaf8c2d02
+            warning: null
+            width: 100
+          -
+            fieldUid: 3cff5d98-b9cf-41a4-be79-397bccd0c60b # Travel Information
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b54bc6c8-9519-40bd-8ceb-2579b67f4e5b
+            warning: null
+            width: 100
+          -
+            fieldUid: cde5030f-e1a4-496d-b344-f73099d63efb # Box Office Info
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4d60c7db-d918-454c-a51d-bd24c496e8ab
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: cd606da6-2120-41c7-bfb2-0455ae1051fe
+      -
+        elements:
+          -
+            fieldUid: bc5e0113-41e9-4c4f-b4d2-85eb6b97deb0 # Address
+            instructions: ''
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fd5189d3-a468-4393-b93e-3f89d23c3416
+            warning: null
+            width: 100
+          -
+            fieldUid: 4c6edd80-f445-4879-afe0-3e94039bb6d1 # Phone
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a2d0453b-8769-44e8-8c6b-121349d8c640
+            warning: null
+            width: 100
+          -
+            fieldUid: a483d640-ec16-4b2d-9596-db9991b19cfd # Website
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 96fe0b36-6071-44f0-ba47-4cb794580e95
+            warning: null
+            width: 100
+          -
+            fieldUid: 80d49d25-87d4-479c-9277-ae40762c6019 # Email Addresses
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a3916e61-4cf9-4bba-8aea-17d7b96f58d7
+            warning: null
+            width: 100
+        name: Contact
+        sortOrder: 2
+        uid: 703ed94f-4e2b-4b93-b5f5-0721e3c42837
+      -
+        elements:
+          -
+            fieldUid: 12f0e18b-8472-48c3-b1ea-8d447c21c8ec
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 500a4b69-221c-47ae-95e9-7fca9f5513dd
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 3
+        uid: 584869c8-019c-40ff-958e-845f8f569202
+handle: la_venues
+hasTitleField: true
+name: 'LA Venues'
+section: 452b1ee2-d2bb-4dbd-8ce6-7c35b24dde49 # LA Venues
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

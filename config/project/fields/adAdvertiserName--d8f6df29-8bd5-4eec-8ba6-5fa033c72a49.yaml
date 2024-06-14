@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 261d2164-7376-4ca2-acf0-4ea3a0f16d84 # Ads
+handle: adAdvertiserName
+instructions: ''
+name: 'Advertiser Name'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

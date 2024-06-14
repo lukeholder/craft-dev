@@ -1,0 +1,60 @@
+fieldLayouts:
+  13dfea4b-48d1-40c9-83df-6c5a912bcc8d:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: db0e01f6-3291-45fb-96ab-5d280f2d14c0
+            warning: null
+            width: 100
+          -
+            fieldUid: 24a9e9d6-7048-41e2-89f9-b07ce4eb2457 # Alt Tag
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 41ca4a6c-867f-4534-95f0-7c9e4e7b8758
+            warning: null
+            width: 100
+          -
+            fieldUid: 3b35de68-31ec-45e8-91f3-f55c9ab8d974 # Caption
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 029e4b4a-fdf0-43a7-89bf-26d72baaa37d
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: d3f1f7cd-94b5-4d9c-aa4e-0aa86ef7706b
+fs: partnerImages
+handle: partnerImages
+hasUrls: true
+name: 'SEA Partner Images'
+sortOrder: 0
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+url: '@assetsUrl'

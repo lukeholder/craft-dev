@@ -1,0 +1,35 @@
+{# ACCOUNT PAGE SELECT TYPE #}
+{% if currentUser %}{% redirect "account" %}{% endif %}
+{% extends "_layout" %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Account" %}
+{% set class                    = "account" %}
+
+{# SET SEO VALUES #}
+{% do seomatic.meta.seoTitle( "Sign Up for a TeenTix Pass" ) %}
+
+{% block content %}
+
+  <header class="page-header text-center">
+    <h1 class="page-title">Sign up for a TeenTix Pass</h1>
+  </header>
+  
+  <div class="grid-x grid-margin-x align-center">
+    <div class="medium-6 cell">
+      <div class="applicant-type">
+        <h2>I am a teen!</h2>
+        <p>&nbsp;</p>
+        <a class="button success large expanded" href="{{ siteUrl }}account/new/teen">Sign Up</a>
+      </div>
+    </div>
+    <div class="medium-6 cell">
+      <div class="applicant-type">
+        <h2>I am an adult!</h2>
+        <p>I am applying for a teen.</p>
+        <a class="button success large expanded" href="{{ siteUrl }}account/new/adult">Sign Up</a>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

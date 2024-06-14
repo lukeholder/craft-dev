@@ -1,0 +1,45 @@
+.passes {
+
+  table {
+
+    .button {
+      margin: 0;
+    }
+
+  }
+
+  .reveal {
+    padding: 1.5rem;
+
+    h2 {
+      margin-bottom: 1.5rem;
+      color: $teal;
+    }
+
+    form {
+      max-width: 300px;
+      margin: 1rem auto;
+    }
+
+  }
+
+  #qrcode img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  form {
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+  }
+
+  #footer-credits {
+    border-top: 1px solid $light-gray;
+  }
+
+}

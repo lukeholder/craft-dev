@@ -1,0 +1,14 @@
+columnSuffix: toochabk
+contentColumnType: boolean
+fieldGroup: 243aa178-cda7-4f1a-8094-268c903002ed # Check Ins
+handle: checkinShowtimeIsUnlisted
+instructions: 'The showtime that the Member checked into is unlisted in the Events '
+name: 'Unlisted Showtime?'
+searchable: true
+settings:
+  default: false
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

@@ -1,0 +1,20 @@
+{# MEMBER CHECK-IN FORM #}
+{# checkin is set in config/routes.php #}
+{% extends "tools/_layout" %}
+{% requireLogin %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Testing Grounds" %}
+{% set class                    = "checkin" %}
+
+{% block content %}
+
+  <header class="page-header text-center">
+    <h1 class="page-title">Testing Grounds</h1>
+  </header>
+
+  <div class="section">
+
+  </div>
+
+{% endblock %}

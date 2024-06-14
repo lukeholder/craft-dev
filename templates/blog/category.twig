@@ -1,0 +1,41 @@
+{# BLOG CATEGORY PAGE #}
+{% extends "_layout" %}
+
+{# SET CATEGORY FROM URL #}
+{% set cat                      = craft.categories().slug(category).one() %}
+
+{# SET BLOG SECTION BY CURRENT SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% paginate craft.entries.section(sitePrefix ~ 'blog').relatedTo(cat).limit(20) as pageInfo, blog %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Blog" %}
+{% set class                    = "blog list" %}
+
+{# SET SEO VALUES #}
+{% do seomatic.meta.seoTitle( siteName ~ " Blog - " ~ cat.title ) %}
+
+{% block content %}
+{% cache %}
+  
+  <header class="page-header">
+    <h1 class="page-title"><a href="{{ siteUrl }}blog">{{ siteName }} Blog</a> <span class="sub-title">{{cat.title}}</span></h1>
+  </header>
+  
+  <div class="grid-x grid-margin-x">
+    <div class="main large-7 cell">
+
+      {% for entry in blog %}
+        {% include '_partials/blog-excerpt' %}
+      {% endfor %}
+
+      {% include '_partials/paginate-list' %}
+
+    </div>
+  
+    {% include 'blog/_sidebar' %}
+  
+  </div>
+
+{% endcache %}
+{% endblock %}

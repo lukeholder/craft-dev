@@ -1,0 +1,20 @@
+contentColumnType: text
+fieldGroup: e823674a-d2fc-4023-89dd-2bfacf7bc359 # Common
+handle: topImageCopy
+instructions: ''
+name: 'Top Image Copy'
+searchable: true
+settings:
+  availableTransforms: ''
+  availableVolumes: ''
+  ckeConfig: 37036a58-d782-4f1e-b28d-d76b77295540 # Default
+  columnType: text
+  defaultTransform: ''
+  enableSourceEditingForNonAdmins: true
+  purifierConfig: ''
+  purifyHtml: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: c4c09c27-bb9f-4773-90b5-120485d28e72 # Pass Usage
+handle: teencompanioninfo
+instructions: 'Information about the companions the teenager attended event with.'
+name: TeenCompanionInfo
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: '32768'
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

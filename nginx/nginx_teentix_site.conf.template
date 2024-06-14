@@ -1,0 +1,132 @@
+server {
+    listen 80;
+    root /app/html;
+    server_name TeenTix;
+
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    add_header X-XSS-Protection          "1; mode=block" always;
+    add_header X-Content-Type-Options    "nosniff" always;
+    add_header Referrer-Policy           "no-referrer-when-downgrade" always;
+
+    # if auth/basic.conf exists, include it
+    include auth/basic[.]conf;
+
+    index index.php index.html index.htm;
+
+    client_max_body_size 1024m;
+
+    # 404 error handler
+    error_page 404 /index.php?$query_string;
+
+    # 301 Redirect URLs with trailing /'s as per https://webmasters.googleblog.com/2010/04/to-slash-or-not-to-slash.html
+    rewrite ^/(.*)/$ /$1 permanent;
+
+    # Change // -> / for all URLs, so it works for our php location block, too
+    merge_slashes off;
+    rewrite (.*)//+(.*) $1/$2 permanent;
+
+    # Root directory location handler
+    location / {
+        try_files $uri/index.html $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /robots.txt {
+        try_files $uri /index.php?$query_string;
+        log_not_found off;
+        access_log    off;
+    }
+
+    location /images/ {
+        proxy_set_header        Authorization "";
+        proxy_set_header        Cookie "";
+        proxy_set_header        Connection "";
+        proxy_hide_header       accept-ranges;
+        proxy_hide_header       alternate-protocol;
+        proxy_hide_header       Cache-Control;
+        proxy_hide_header       Expires;
+        proxy_hide_header       Set-Cookie;
+        proxy_hide_header       x-guploader-uploadid;
+        proxy_hide_header       x-xss-protection;
+        proxy_ignore_headers    Set-Cookie;
+        proxy_http_version      1.1;
+        proxy_intercept_errors  on;
+        proxy_method            GET;
+        proxy_pass_request_body off;
+        proxy_pass ${AZURE_BLOB_IMAGES_URL}/images/;
+    }
+
+    location /assets/ {
+        try_files $uri /index.php?$query_string;
+        expires    7d;
+        access_log off;
+    }
+
+    # gzip
+    gzip              on;
+    gzip_vary         on;
+    gzip_proxied      any;
+    gzip_comp_level   6;
+    gzip_types        text/plain text/css text/xml application/json application/javascript application/rss+xml application/atom+xml image/svg+xml;
+
+    # # brotli
+    # brotli            on;
+    # brotli_comp_level 6;
+    # brotli_types      text/plain text/css text/xml application/json application/javascript application/rss+xml application/atom+xml image/svg+xml;
+
+    # Craft-specific location handlers to ensure AdminCP requests route through index.php
+    # If you change your `cpTrigger`, change it here as well
+    location ^~ /admin {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+    location ^~ /cpresources {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    # php-fpm configuration
+    location ~ [^/]\.php(/|$) {
+        # 404
+        try_files                     $fastcgi_script_name =404;
+
+        # default fastcgi_params
+        include                       fastcgi_params;
+
+        # fastcgi settings
+        fastcgi_pass                  127.0.0.1:9000;
+        fastcgi_index                 index.php;
+        fastcgi_buffers               8 16k;
+        fastcgi_buffer_size           32k;
+
+        # fastcgi params
+        fastcgi_param DOCUMENT_ROOT   $realpath_root;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+
+        # try_files $uri $uri/ /index.php?$query_string $fastcgi_script_name;
+
+        # regex to split $uri to $fastcgi_script_name and $fastcgi_path
+        # fastcgi_split_path_info ^(.+\.php)(/.+)$;
+
+        # Bypass the fact that try_files resets $fastcgi_path_info
+        # see: http://trac.nginx.org/nginx/ticket/321
+        # set $path_info $fastcgi_path_info;
+        # fastcgi_param PATH_INFO $path_info;
+
+        # fastcgi_index index.php;
+        # include fastcgi.conf;
+
+        # fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+    }
+
+
+#        location ~ \.php$ {
+#                include snippets/fastcgi-php.conf;
+#                fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
+#        }
+
+    location ~ /\.ht {
+            deny all;
+    }
+
+    location ~ /\.(?!well-known) {
+        deny all;
+    }
+}

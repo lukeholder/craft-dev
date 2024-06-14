@@ -1,0 +1,88 @@
+{# SINGLE PAGE CONTANCT FORM #}
+
+{# Set form from entry #}
+{% set form = entry.entryForm %}
+
+<header class="page-header">
+  <h1 class="page-title">{{ entry.title }}</h1>
+</header>
+
+<div class="grid-x grid-margin-x">
+  <div class="main large-7 cell">
+    {{ entry.body }}
+    <div class="form-group">
+
+      {{ form.render({
+        labelClass: "",
+        inputClass: "",
+        instructionsBelowField: true,
+        submitClass: "button large success",
+        rowClass: "grid-x grid-margin-x",
+        columnClass: "cell",
+        useRequiredAttribute: true,
+        formAttributes: {  }
+      }) }}
+
+      {% if form.hasErrors %}
+        <div class="callout alert">
+          {{ "There was an error submitting this form"|t }}
+
+          {% if form.errors|length %}
+            <ul>
+              {% for error in form.errors %}
+                <li>{{ error }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+
+  <div class="sidebar large-4 large-offset-1 cell">
+    {{ entry.sidebar }}
+  </div>
+
+</div>
+
+<script>
+  window.renderFormSuccess = function (form) {
+    const successMessage = document.createElement("div");
+    successMessage.classList.add("callout", "success");
+
+    const paragraph = document.createElement("p");
+    paragraph.classList.add("lead");
+    paragraph.appendChild(document.createTextNode("{{ "Thank you for getting in touch. We will get back to you shortly." }}"));
+
+    successMessage.appendChild(paragraph);
+
+    form.insertBefore(successMessage, form.childNodes[0]);
+  };
+
+  window.renderFormErrors = (errors, form) => {
+    const errorBlock = document.createElement("div");
+    errorBlock.classList.add("callout", "error");
+
+    const paragraph = document.createElement("p");
+    paragraph.appendChild(document.createTextNode("{{ "There was an issue with your submission! Please review the form and try submitting again." }}"));
+    paragraph.classList.add("lead");
+    errorBlock.appendChild(paragraph);
+
+    if (errors.length) {
+      const errorsList = document.createElement("ul");
+      for (let messageIndex = 0; messageIndex < errors.length; messageIndex++) {
+        const message = errors[messageIndex];
+        const listItem = document.createElement("li");
+
+        listItem.appendChild(document.createTextNode(message));
+        errorsList.appendChild(listItem);
+      }
+
+      errorBlock.appendChild(errorsList);
+    }
+
+    form.insertBefore(errorBlock, form.childNodes[0]);
+  };
+
+</script>

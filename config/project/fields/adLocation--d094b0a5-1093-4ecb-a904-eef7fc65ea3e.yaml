@@ -1,0 +1,56 @@
+contentColumnType: string
+fieldGroup: 261d2164-7376-4ca2-acf0-4ea3a0f16d84 # Ads
+handle: adLocation
+instructions: ''
+name: 'Banner Location'
+searchable: true
+settings:
+  multi: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Homepage 600W x 500H'
+        -
+          - value
+          - homepage300wX250h
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Blog Sidebar 300W x Variable Height'
+        -
+          - value
+          - blogSidebar300w
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Calendar 300W x 250H'
+        -
+          - value
+          - calendar300wX250h
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Calendar 1000W x 50H'
+        -
+          - value
+          - calendar1000wX50h
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Checkboxes

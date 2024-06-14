@@ -1,0 +1,60 @@
+fieldLayouts:
+  345d71a5-b776-4281-bc89-7398a3676b8d:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 5885d6a5-b673-4c92-9b0d-06bed2a29c87
+            warning: null
+            width: 100
+          -
+            fieldUid: 24a9e9d6-7048-41e2-89f9-b07ce4eb2457 # Alt Tag
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9ce5a432-d01b-46d9-bff8-821333342de8
+            warning: null
+            width: 100
+          -
+            fieldUid: 86af69a0-4529-46ea-be4d-08256420300e # Image Link
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2d872732-6966-47ed-9c3f-90a020de9848
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 5197fc35-65d7-4cb8-ad6e-ffd050ba7dc8
+fs: sponsorLogos
+handle: sponsorLogos
+hasUrls: true
+name: 'SEA Sponsor Logos'
+sortOrder: 0
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+url: '@assetsUrl'

@@ -1,0 +1,50 @@
+fieldLayouts:
+  19f20b72-f066-4c97-b1ee-44ab83efc1ff:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 8902dc10-b166-477b-9aed-a440fc9ddaad
+            warning: null
+            width: 100
+          -
+            fieldUid: 24a9e9d6-7048-41e2-89f9-b07ce4eb2457 # Alt Tag
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7292eee4-5ba8-4e18-80db-67bdcdc903ad
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 56a79aa5-dcc9-4a17-a2d5-7846c36ceaf2
+fs: la_adImages
+handle: la_adImages
+hasUrls: true
+name: 'LA Ad Images'
+sortOrder: 0
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+url: '@assetsUrl'

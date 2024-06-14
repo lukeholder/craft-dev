@@ -1,0 +1,17 @@
+{# CALENDAR DAY ENTRY #}
+
+{# ENSURE ROOT EVENT #}
+{% set entry                    = entry.eventRelated? entry.eventRelated.one() : entry %}
+
+{% if entry %}
+  <p class="calendar-item">
+    <strong>{{ time }}</strong>
+    {% if entry.eventCategory.id(63).exists() %}
+      <a href="/calendar?cat=63" class="category button small">Free</a>
+    {% endif %}
+    <strong><a href="{{ siteUrl }}calendar/event/{{ entry.slug }}">{{ entry.title }}</a></strong>
+    {% if entry.eventVenue|length %}
+      <span>{{ entry.eventVenue.one().title }}</span>
+    {% endif %}
+  </p>
+{% endif %}

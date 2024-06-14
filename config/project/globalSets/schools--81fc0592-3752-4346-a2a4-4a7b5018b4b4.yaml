@@ -1,0 +1,21 @@
+fieldLayouts:
+  a08ac433-d6c9-4c7e-a9d6-9908aab02755:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 096f693b-0393-4f9c-a47d-63889f337b23 # School List
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c4f9e9b0-d072-4f30-88d8-daafc4078d71
+            warning: null
+            width: 100
+        name: 'Tab 1'
+        sortOrder: 1
+        uid: 1c9773e3-6c5e-4ed0-9f83-6c32f7cb2251
+handle: schools
+name: Schools
+sortOrder: 6

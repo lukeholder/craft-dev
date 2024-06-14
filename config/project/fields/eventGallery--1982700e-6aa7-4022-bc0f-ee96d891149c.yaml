@@ -1,0 +1,34 @@
+contentColumnType: string
+fieldGroup: 77d77e0d-cbd3-4972-b03e-ec05812e4b1b # Event
+handle: eventGallery
+instructions: ''
+name: 'Event Image Gallery'
+searchable: true
+settings:
+  allowSelfRelations: false
+  allowUploads: false
+  allowedKinds:
+    - image
+  defaultUploadLocationSource: 'volume:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+  defaultUploadLocationSubpath: ''
+  limit: ''
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: '1'
+  selectionLabel: ''
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  singleUploadLocationSource: 'volume:a16a3316-a22e-4c0f-82e4-fe841faf49ce' # SEA General Images
+  singleUploadLocationSubpath: ''
+  source: null
+  sources:
+    - 'volume:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+    - 'volume:7f7bf724-7909-4699-b70a-5cd496c314bb' # LA Page Images
+  targetSiteId: null
+  useSingleFolder: false
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

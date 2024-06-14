@@ -1,0 +1,59 @@
+fieldLayouts:
+  abf0b0d0-c3af-4e85-bcb8-f1f6be7177e9:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 49b4e0c9-6c91-43a7-acc9-cb68950599d2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5764896d-54f2-425b-b36e-4278f5440071 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7cd582f4-0a9a-427f-a129-aa0fd540f4d8
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 8b723806-4f4a-40bc-82eb-c2d8c2f44d8e
+        userCondition: null
+handle: venuesIndex
+hasTitleField: true
+name: 'SEA Venues Index'
+section: caf1f890-f6d8-4392-a708-d7db99a535e4 # SEA Venues Index
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

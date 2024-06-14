@@ -1,0 +1,17 @@
+{# ACCOUNT PAGE NAV #}
+
+{# SET ACCOUNT PROPERTIES #}
+{% set isProvisional            = isProvisional?? currentUser and currentUser.userIsProvisional %}
+
+<h2>Manage Account</h2>
+<ul class="menu vertical">
+  <li {% if path == "account/settings" %}class="is-active"{% endif %}><a href="{{ siteUrl }}account/settings">Settings</a></li>
+  <li {% if path == "account/profile" %}class="is-active"{% endif %}><a href="{{ siteUrl }}account/profile">Edit Profile</a></li>
+  {% if not isProvisional %}
+    <li {% if path == "account/physical-pass" %}class="is-active"{% endif %}><a href="{{ siteUrl }}account/physical-pass">Get a Physical Pass</a></li>
+  {% endif %}
+  <li {% if path == "account/terms" %}class="is-active"{% endif %}><a href="{{ siteUrl }}account/terms">Terms of Use</a></li>
+  <li {% if path == "account/privacy" %}class="is-active"{% endif %}><a href="{{ siteUrl }}account/privacy">Privacy</a></li>
+  <li><a href="{{ logoutUrl }}">Logout</a></li>
+  {#<li><a href="{{ siteUrl }}account/events">My Events</a></li>#}
+</ul>

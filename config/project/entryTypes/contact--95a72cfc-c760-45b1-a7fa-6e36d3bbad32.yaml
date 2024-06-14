@@ -1,0 +1,85 @@
+fieldLayouts:
+  887b7e56-3d9d-4b02-ae62-8ff73f470734:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 6c063dcc-899a-4c79-ae9c-c130e6059dea
+            warning: null
+            width: 100
+          -
+            fieldUid: 5764896d-54f2-425b-b36e-4278f5440071 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ed0b9a6f-b410-44a3-b9ee-96adb7308d3a
+            warning: null
+            width: 100
+          -
+            fieldUid: 03d3b7e5-9fca-4789-b7ba-ca374aa1b19d # Sidebar
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 802afaf6-79ef-4ba5-a4f3-a03f5e56b1e2
+            warning: null
+            width: 100
+          -
+            fieldUid: a90c52fa-0196-4670-b873-28510ea21097 # Form
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2aa9bd35-88d6-46c2-8902-39a0cf444771
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 7b7f8af1-4ec0-4e0d-a60c-3087509beb3b
+      -
+        elements:
+          -
+            fieldUid: 12f0e18b-8472-48c3-b1ea-8d447c21c8ec
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e5e25b50-3fce-4557-b130-44cd05d5f066
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 2
+        uid: b2e5c173-a231-44ca-b87e-64dce05aacb0
+handle: contact
+hasTitleField: true
+name: Contact
+section: f717a6d2-043d-41cd-987f-4d177515e12f # LA Pages
+sortOrder: 4
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

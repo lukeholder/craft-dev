@@ -1,0 +1,114 @@
+field: 8065e96a-f788-4d62-bfab-88e8a9ec7872 # Social Links
+fieldLayouts:
+  bb73933a-9189-46d7-9d42-1c5cca8ac9e3:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 1fd8f3ff-5b7b-45a5-86d0-5ad68c4e1636 # Website
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f1445c17-53b8-4e3e-aca7-dc8f24a11dcd
+            warning: null
+            width: 100
+          -
+            fieldUid: 9b58c022-443e-452c-acd2-fbc516d0d8d9 # URL
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1cf96bdf-00c3-48e5-9cae-092538bc9614
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: ce6c2a95-9805-427e-aa5d-1b92e2388c99
+fields:
+  1fd8f3ff-5b7b-45a5-86d0-5ad68c4e1636: # Website
+    contentColumnType: string
+    fieldGroup: null
+    handle: website
+    instructions: ''
+    name: Website
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - Facebook
+            -
+              - value
+              - facebook
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Twitter
+            -
+              - value
+              - twitter
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Youtube
+            -
+              - value
+              - youtube
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Vimeo
+            -
+              - value
+              - vimeo
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Instagram
+            -
+              - value
+              - instagram
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+  9b58c022-443e-452c-acd2-fbc516d0d8d9: # URL
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: websiteUrl
+    instructions: ''
+    name: URL
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: link
+name: Link
+sortOrder: 1

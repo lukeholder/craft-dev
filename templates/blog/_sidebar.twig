@@ -1,0 +1,63 @@
+{# BLOG SIDEBAR #}
+
+{# SET QUERY STRING PARAMETERS #}
+{% set searchTerm               = craft.app.request.getParam("q") %}
+
+{# SET BLOG CATEGORY OPTIONS #}
+{% set blogCategoryQuery        = craft.categories().group('blogCategory') %}
+{% set blogCategories           = blogCategoryQuery.all() %}
+{% set eventTypeQuery           = craft.categories().group('eventType') %}
+{% set eventTypes               = eventTypeQuery.all() %}
+
+<div class="sidebar large-4 large-offset-1 cell">
+
+  {% include "_ads/blog-sidebar" %}
+
+  <div class="blog-search">
+    <form action="{{ url('blog/search') }}" method="get">
+      <div id="blog-search" class="input-group">
+        <input type="text"
+          name="q"
+          class="input-group-field"
+          placeholder="Search blog"
+          value="{{ searchTerm }}"
+        />
+        <div class="input-group-button">
+          <input type="submit" value="GO" class="submit button">
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="blog-categories">
+
+    <h3 class="section-head sans">Articles</h3>
+    <ul class="simple-list">
+      {% nav category in blogCategories %}
+        <li>
+          <a href="/blog/category/{{ category.slug }}">{{ category.title }}</a>
+          {% ifchildren %}
+            <ul>
+              {% children %}
+            </ul>
+          {% endifchildren %}
+        </li>
+      {% endnav %}
+    </ul>
+
+    <h3 class="section-head sans">Genres</h3>
+    <ul class="simple-list">
+      {% nav category in eventTypes %}
+        <li>
+          <a href="/blog/category/{{ category.slug }}">{{ category.title }}</a>
+          {% ifchildren %}
+            <ul>
+              {% children %}
+            </ul>
+          {% endifchildren %}
+        </li>
+      {% endnav %}
+    </ul>
+
+  </div>
+</div>

@@ -1,0 +1,146 @@
+{% extends "passes/_layout" %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "TeenTix Pass" %}
+{% set class                    = "passes single" %}
+
+{# SET USAGE ENTRY #}
+{% set usage                    = craft.entries.section(['passUsage', 'la_passUsage']).usagePass(entry.id).all()  %}
+
+{% block content %}
+
+  <a href="{{ entry.cpEditUrl }}" class="button secondary float-right" target="_blank">Edit pass</a>
+  <h1>Pass Info</h1>
+
+  {% if entry %}
+
+    <hr>
+
+    <h3>Pass Details</h3>
+    <div class="grid-x grid-margin-x">
+      <div class="medium-4 cell">
+        <p><strong>Pass ID</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        {{ entry.id }}
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>Format</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        {{ entry.passFormat.label }}
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>Status</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        {{ entry.passStatus.label }}
+      </div>
+      <div class="medium-4 cell">
+        <p><strong>QR Code</strong></p>
+      </div>
+      <div class="medium-8 cell">
+        <div id="qrcode"></div>
+        {% include 'passes/_partials/qrcode'  with { 'pass' : entry.id } %}
+      </div>
+    </div>
+
+    <hr>
+
+    <h3>Passholder Info</h3>
+    {% if entry.passUser %}
+      {% set user = craft.users().id( entry.passUser ).one() %}
+      {% if user %}
+        {% set birthyear = user.userBirthdate.format('Y') %}
+        {% set expireyear = birthyear + 20 %}
+        <div class="grid-x grid-margin-x">
+          <div class="medium-4 cell">
+            <p><strong>Passholder Name</strong></p>
+          </div>
+          <div class="medium-8 cell">
+            <p><a href="{{ siteUrl }}passes/user/{{ user.id }}"><strong>{{ user.name }}</strong></a></p>
+          </div>
+          <div class="medium-4 cell">
+            <p><strong>User ID</strong></p>
+          </div>
+          <div class="medium-8 cell">
+            <p><a href="{{ siteUrl }}passes/user/{{ user.id }}"><strong>{{ user.id }}</strong></a></p>
+          </div>
+          <div class="medium-4 cell">
+            <p><strong>Birthday</strong></p>
+          </div>
+          <div class="medium-8 cell">
+            <p>{{ user.userBirthdate.format('n/j/Y') }}</p>
+          </div>
+          <div class="medium-4 cell">
+            <p><strong>Expiration</strong></p>
+          </div>
+          <div class="medium-8 cell">
+            <p>{{ user.userBirthdate.format('n/j/') }}{{ expireyear }}</p>
+          </div>
+        </div>
+      {% else %}
+        <p><em>User account has been deleted or disabled</em></p>
+      {% endif %}
+
+    {% else %}
+      <div class="grid-x grid-margin-x">
+        <div class="medium-4 cell">
+          <p><strong>Assign User ID</strong></p>
+        </div>
+        <div class="medium-4 cell">
+          <form class="assign-pass" method="post" accept-charset="UTF-8">
+            {{ csrfInput() }}
+            <input type="hidden" name="action" value="entries/save-entry">
+            <input type="hidden" name="entryId" value="{{ entry.id }}">
+            <input type="hidden" name="fields[passStatus]" value="assigned">
+            <div class="input-group">
+              <input class="input-group-field" id="user" type="number" name="fields[passUser]" value="" placeholder="User ID" required>
+              <div class="input-group-button">
+                <input type="submit" class="button" value="Save">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    {% endif %}
+
+    <hr>
+    <h3>Pass Usage</h3>
+
+    <p><strong>Total Events: {{ usage|length }}</strong></p>
+    {% if usage|length %}
+      <table>
+        <thead>
+        <tr>
+          <th>Timestamp</th>
+          <th>Event</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for use in usage %}
+          {% set event = craft.calendar.event(use.usageEvent) %}
+          {% set calendar = event.calendar.handle %}
+          <tr>
+            <td>{{ use.usageTimestamp|date('D Y-m-d g:i a') }}</td>
+            <td>
+              {% if calendar == "eventsAdditional" %}
+                {% set related = craft.calendar.events().relatedTo(event.id).one() %}
+                {% if related %}
+                  <strong><a target="_blank" href="{{ siteUrl }}calendar/event/{{ related.slug }}">{{ related.title }}</a></strong>
+                {% endif %}
+              {% else %}
+                <strong><a target="_blank" href="{{ siteUrl }}calendar/event/{{ event.slug }}">{{ event.title }}</a></strong>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+
+  {% else %}
+    <p>Pass not found</p>
+  {% endif %}
+
+{% endblock %}

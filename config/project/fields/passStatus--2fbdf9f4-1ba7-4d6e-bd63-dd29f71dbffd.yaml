@@ -1,0 +1,44 @@
+contentColumnType: string
+fieldGroup: fd236ba0-1e89-4e9f-987a-b6574f8ba498 # Passes
+handle: passStatus
+instructions: ''
+name: Status
+searchable: true
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - None
+        -
+          - value
+          - none
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Available
+        -
+          - value
+          - available
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Assigned
+        -
+          - value
+          - assigned
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\RadioButtons

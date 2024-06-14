@@ -1,0 +1,11 @@
+{# PARTNER 2 FOR $10 #}
+
+{% if (twoForTenDay is not empty) and (calendar.twoForTenDescription is not empty) %}
+  <div id="org-two-for-ten" class="section">
+    <h4 class="section-head sans">{{ '2 for $10 ' ~ twoForTenDay }}</h4>
+    {% if twoForTenPartner is not empty %}
+      <p><strong>{{ twoForTenPartner }}</strong></p>
+    {% endif %}
+    {{ calendar.twoForTenDescription|replace({ '{{ twoForTenDay }}': twoForTenDay })|raw }}
+  </div>
+{% endif %}

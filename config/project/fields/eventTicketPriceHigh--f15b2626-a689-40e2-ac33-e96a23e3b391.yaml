@@ -1,0 +1,17 @@
+columnSuffix: wnvbdqsx
+contentColumnType: integer(10)
+fieldGroup: 77d77e0d-cbd3-4972-b03e-ec05812e4b1b # Event
+handle: eventTicketPriceHigh
+instructions: 'If the venue offers a range of ticket prices—e.g., for preferred seating or VIP options—provide the cost for the highest advertised ticket price.'
+name: 'Guest Ticket Price (High)'
+searchable: false
+settings:
+  currency: USD
+  defaultValue: null
+  max: null
+  min: 0
+  showCurrency: true
+  size: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Money

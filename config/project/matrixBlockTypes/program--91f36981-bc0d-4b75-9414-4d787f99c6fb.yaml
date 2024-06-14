@@ -1,0 +1,150 @@
+field: 98d5f5a0-ba64-4ade-92ed-9ff9cbb75f81 # Featured Programs
+fieldLayouts:
+  18de7204-8daf-4182-82de-63452d0415ea:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 3361506e-4e0b-44b8-bb6f-03b0b917b6e8 # Logo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 72430322-3dc6-4830-a9a7-ac054a92ff7f
+            warning: null
+            width: 100
+          -
+            fieldUid: efea13ad-4689-4181-84ff-fa3be9993ba2 # Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 69141b1a-7d45-4a09-9760-10786969db8c
+            warning: null
+            width: 100
+          -
+            fieldUid: 49d4e220-e823-4cc4-9f40-597d55a53ca1 # Button Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ef77fd48-c234-461f-9aca-d41b07146f72
+            warning: null
+            width: 100
+          -
+            fieldUid: f2ba8d49-5b17-4b98-9ea6-b00195f84a4d # Button Text
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 51f06cb1-2192-4886-91f4-01d023e5e029
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 23a1c91f-da1f-4bf1-96af-77e696b3fa9c
+fields:
+  49d4e220-e823-4cc4-9f40-597d55a53ca1: # Button Link
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: buttonLink
+    instructions: ''
+    name: 'Button Link'
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  3361506e-4e0b-44b8-bb6f-03b0b917b6e8: # Logo
+    contentColumnType: string
+    fieldGroup: null
+    handle: logo
+    instructions: 'Recommended image size: 640W x 640H'
+    name: Logo
+    searchable: true
+    settings:
+      allowSelfRelations: false
+      allowUploads: false
+      allowedKinds: null
+      defaultUploadLocationSource: 'volume:bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb' # SEA Partner Images
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: ''
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+      singleUploadLocationSubpath: ''
+      source: null
+      sources:
+        - 'volume:ff4a3796-5f38-4dbb-8328-85026951b987' # SEA Page Images
+        - 'volume:7f7bf724-7909-4699-b70a-5cd496c314bb' # LA Page Images
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: large
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  efea13ad-4689-4181-84ff-fa3be9993ba2: # Text
+    contentColumnType: text
+    fieldGroup: null
+    handle: text
+    instructions: ''
+    name: Text
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes:
+        - ff4a3796-5f38-4dbb-8328-85026951b987 # SEA Page Images
+        - bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb # SEA Partner Images
+        - 834d8a22-ae60-4d04-9fd2-a0924a7e93f2 # SEA Ad Images
+        - a16a3316-a22e-4c0f-82e4-fe841faf49ce # SEA General Images
+        - d8eeb3df-3c65-4ed9-b943-c95348bd3f50 # SEA Sponsor Logos
+        - 7f7bf724-7909-4699-b70a-5cd496c314bb # LA Page Images
+        - 0543ea8d-9bf0-4033-bb9a-bae51d9860cf # LA Partner Images
+        - a6e1f43e-7d92-4454-b86e-9b57856d3c34 # LA Ad Images
+        - d8052c64-2464-4aa2-8b41-9f106bc1d1f6 # LA General Images
+        - 5ec9bf08-ecd8-45fc-9476-42230de4ea06 # LA Sponsor Logos
+      ckeConfig: 37036a58-d782-4f1e-b28d-d76b77295540 # Default
+      columnType: text
+      defaultTransform: ''
+      enableSourceEditingForNonAdmins: true
+      purifierConfig: ''
+      purifyHtml: '1'
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  f2ba8d49-5b17-4b98-9ea6-b00195f84a4d: # Button Text
+    contentColumnType: text
+    fieldGroup: null
+    handle: buttonText
+    instructions: ''
+    name: 'Button Text'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: 50
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: program
+name: Program
+sortOrder: 1

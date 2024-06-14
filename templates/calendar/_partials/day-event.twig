@@ -1,0 +1,48 @@
+{# CALENDAR DAY ENTRY #}
+
+{# ENSURE ROOT EVENT #}
+{% set entry                    = entry.eventRelated? entry.eventRelated.one() : entry %}
+
+{% if entry %}
+
+  <div class="calendar-item">
+
+    <div class="grid-x grid-margin-x">
+
+    <div class="medium-2 cell medium-order-3">
+      {% set image = entry.eventGallery.one() %}
+      {% if image %}
+        <div class="event-image"><a href="{{ siteUrl }}calendar/event/{{ entry.slug }}"><img src="{{ image.getUrl('max300') }}" alt="{{ image.title }}"></a></div>
+      {% endif %}
+    </div>
+
+    <div class="medium-3 cell medium-order-1">
+      <p class="event-time">{{ time }}</p>
+      {% if entry.eventType|length %}
+        <p class="event-category">
+          {% for type in entry.eventType.all() %}{{ type.title }}{{ not loop.last ? ' | ' }}{% endfor %}
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="medium-7 cell medium-order-2">
+      <h4 class="event-name"><a href="{{ siteUrl }}calendar/event/{{ entry.slug }}">{{ entry.title }}</a></h4>
+
+      {% if entry.eventVenue|length %}
+        <p class="event-venue">
+          {% for venue in entry.eventVenue.all() %}
+            <a href="{{ venue.url }}">{{ venue.title }}</a>
+          {% endfor %}
+        </p>
+      {% endif %}
+
+      {% if entry.body %}
+        <p class="event-excerpt">{{ entry.body | chop(limit=40, unit='w', append="…", allowedTags="") }}</p>
+      {% endif %}
+
+      </div>
+
+    </div>
+  </div>
+
+{% endif %}

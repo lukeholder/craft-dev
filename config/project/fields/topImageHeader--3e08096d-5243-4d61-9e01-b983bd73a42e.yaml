@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: e823674a-d2fc-4023-89dd-2bfacf7bc359 # Common
+handle: topImageHeader
+instructions: ''
+name: 'Top Image Header'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

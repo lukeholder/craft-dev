@@ -1,0 +1,15 @@
+{# CALENDAR PENCIL BAR AD SPACE #}
+
+{# SET ADS SECTION BY CURRENT SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set ad                       = craft.entries.section(sitePrefix ~ 'ads').search('calendar1000wX50h').orderBy('RAND()').one() %}
+{% set cssClass                 = "ad-calendar-top" %}
+
+{% if ad|length %}
+
+  {# SET ADS IMAGES #}
+  {% set banner                 = ad.adBanner1000X50.one() %}
+
+  {% include "_ads/ad" %}
+
+{% endif %}

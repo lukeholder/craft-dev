@@ -1,0 +1,38 @@
+{# PAGINATION NAV #}
+
+{# SET URL QUERY #}
+{% set querystring              = craft.app.request.queryStringWithoutPath %}
+
+{% if pageInfo.totalPages > 1 %}
+
+  <nav aria-label="Pagination">
+  
+    {# Page {{ pageInfo.currentPage }} of {{ pageInfo.totalPages }} pages: #}
+  
+    <ul class="pagination">
+
+      {% if pageInfo.prevUrl %}
+        {#<li class="pagination-previous"><a href="{{ pageInfo.firstUrl }}{% if querystring %}?{{ querystring }}{% endif %}">First</a></li>#}
+        <li class="pagination-previous"><a href="{{ pageInfo.prevUrl }}{% if querystring %}?{{ querystring }}{% endif %}">Previous</a></li>
+      {% endif %}
+
+      {% for page, url in pageInfo.getPrevUrls(5) %}
+        <li><a href="{{ url }}{% if querystring %}?{{ querystring }}{% endif %}">{{ page }}</a></li>
+      {% endfor %}
+
+      <li class="current">{{ pageInfo.currentPage }}</li>
+
+      {% for page, url in pageInfo.getNextUrls(5) %}
+        <li><a href="{{ url }}{% if querystring %}?{{ querystring }}{% endif %}">{{ page }}</a></li>
+      {% endfor %}
+
+      {% if pageInfo.nextUrl %}
+        <li class="pagination-next"><a href="{{ pageInfo.nextUrl }}{% if querystring %}?{{ querystring }}{% endif %}">Next</a></li>
+        {#<li class="pagination-next"><a href="{{ pageInfo.lastUrl }}{% if querystring %}?{{ querystring }}{% endif %}">Last</a></li>#}
+      {% endif %}
+
+    </ul>
+  
+  </nav>
+
+{% endif %}

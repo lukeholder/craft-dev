@@ -1,0 +1,16 @@
+{# PARTNERS GRID #}
+
+{# SET PARTNER VARIABLES #}
+{% set logo                     = entry.partnerLogo.one() %}
+{% set genres                   = entry.partnerGenre %}
+
+<div class="cell partner {{ partnerClass }}{% for genre in genres.all() %} {{ genre.slug }}{% endfor %}">
+  <div class="partner-logo">
+    {% if logo %}
+      <a href="{{ entry.url }}"><img src="{{ logo.getUrl('logo') }}" alt="{{ logo.title }}"></a>
+    {% else %}
+      <a href="{{ entry.url }}"><img src="https://www.teentix.org/images/made/images/partners/StrawshopLogo_140_31gray.jpg" alt=""></a>
+    {% endif %}
+  </div>
+  <h4 class="partner-name"><a href="{{ entry.url }}">{{ entry.title }}</a></h4>
+</div>

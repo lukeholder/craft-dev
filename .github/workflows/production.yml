@@ -1,0 +1,20 @@
+name: Production - Fly Deploy
+on:
+  push:
+    branches:
+      - master
+concurrency: 
+  group: ${{ github.workflow }}
+jobs:
+  deploy:
+      name: Deploy apps
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - uses: superfly/flyctl-actions/setup-flyctl@master
+        - env:
+            FLY_API_TOKEN: ${{ secrets.PRODUCTION_FLY_DEPLOY_TOKEN }}
+          run: make deploy-production FLY_DEPLOY_FLAGS=--remote-only
+        - env:
+            FLY_API_TOKEN: ${{ secrets.APEX_REDIRECT_FLY_DEPLOY_TOKEN }}
+          run: make deploy-apex-redirect FLY_DEPLOY_FLAGS=--remote-only

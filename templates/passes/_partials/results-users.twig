@@ -1,0 +1,15 @@
+<tr>
+  <td><a href="{{ siteUrl }}passes/user/{{ user.id }}"><strong>{{ user.id }}</strong></a></td>
+  <td>{{ user.name }}</td>
+  <td>{{ user.dateCreated | date('M j, Y') }}</td>
+  <td>
+    {% if user.userBirthdate %}
+      {{ user.userBirthdate.format('M j, Y') }}
+    {% endif %}
+  </td>
+  <td>
+    {% if user.userSchool %}
+      {{ user.userSchool }}
+    {% endif %}
+  <td class="text-right"><a class="button" href="{{ siteUrl }}passes/user/{{ user.id }}">View</a></td>
+</tr>

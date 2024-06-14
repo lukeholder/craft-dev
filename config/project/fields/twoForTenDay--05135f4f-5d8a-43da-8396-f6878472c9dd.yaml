@@ -1,0 +1,101 @@
+columnSuffix: tpbnkwjw
+contentColumnType: string(9)
+fieldGroup: 61cb854e-4648-46e6-aa10-5c8caea1d4fe # Partners
+handle: twoForTenDay
+instructions: 'Does the partner allow members to buy an extra ticket for $5—i.e., "2 for $10"? If so, on what day of the week?'
+name: '2 for $10 Day?'
+searchable: true
+settings:
+  columnType: null
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - ''
+        -
+          - value
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Monday
+        -
+          - value
+          - Monday
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Tuesday
+        -
+          - value
+          - Tuesday
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Wednesday
+        -
+          - value
+          - Wednesday
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Thursday
+        -
+          - value
+          - Thursday
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Friday
+        -
+          - value
+          - Friday
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Saturday
+        -
+          - value
+          - Saturday
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Sunday
+        -
+          - value
+          - Sunday
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

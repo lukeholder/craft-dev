@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+{# DEFINE COMMON STYLES #}
+{% set styleFont                = 'font-family:"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif' %}
+{% set styleNoSpace             = 'margin:0;padding:0' %}
+{% set styleContainer           = styleNoSpace ~ ';' ~ styleFont ~ ';border-spacing:0;width:100%' %}
+{% set styleContainerCell       = 'padding:0;' ~ styleFont ~ ';display:block;max-width:600px;margin:0 auto;clear:both' %}
+{% set styleContainerInner      = styleNoSpace ~ ';' ~ styleFont ~ ';border-style:solid;border-left-width:0px;border-right-width:0px;border-top-width:0;border-bottom-width:0;background-color:#FFFFFF;' %}
+{% set styleHeaderFooterBlock   = styleFont ~ ';padding:15px;max-width:600px;margin:0 auto;display:block;padding-left:5px;padding-right:5px;padding-bottom:5px;padding-top:0px' %}
+
+<html xmlns="https://www.w3.org/1999/xhtml" style='{{ styleNoSpace }};{{ styleFont }};background-color:#FFFFFF;font-size:18px;color:#202121'>
+<head style='{{ styleNoSpace }};'></head>
+
+<body bgcolor="#FFFFFF" style='{{ styleNoSpace }};{{ styleFont }};-webkit-text-size-adjust:none;-webkit-font-smoothing:antialiased;font-size:18px;height:100%;background-color:#FFFFFF;color:#202121;width:100%'>
+
+  <table class="main" style='{{ styleNoSpace }};{{ styleFont }};border-spacing:0;background-color:#FFFFFF;width:100%'>
+    <tr style='{{ styleNoSpace }};{{ styleFont }}'>
+      <td style='{{ styleNoSpace }};{{ styleFont }}'></td>
+      <td style='{{ styleContainerCell }}'>
+        <div class="content" style='{{ styleHeaderFooterBlock }}'>
+
+          <table class="logo" style='{{ styleNoSpace }};{{ styleFont }};border-spacing:0;margin-bottom:10px;margin-top:10px;width:100%'>
+            <tr style='{{ styleNoSpace }};{{ styleFont }}'>
+              <td style='{{ styleContainerCell }}'>
+                <div style='{{ styleHeaderFooterBlock }}'>
+                  <table style='{{ styleContainer }}'>
+                    <tr style='{{ styleNoSpace }};{{ styleFont }}'>
+                      <td style='{{ styleNoSpace }};{{ styleFont }};text-align:center;font-size:24px;font-weight:bold;'>
+                        <a href="{{ siteUrl }}"><img src="https://gallery.mailchimp.com/120742e4dc5e154c57db6825d/images/c976d469-e209-4c5e-97da-74b9a74f2a05.png" width="150" alt="TeenTix"></a>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </table>
+
+          <div style='{{ styleNoSpace }};{{ styleFont }}'>
+
+            <table class="space-info" style='{{ styleContainer }}'>
+              <tr style='{{ styleNoSpace }};{{ styleFont }}'>
+                <td style='{{ styleContainerCell }}'>
+                  <div style='{{ styleContainerInner }};padding-bottom:0;padding-top:0;'>
+                    <div style='margin:0;{{ styleFont }};padding:30px 10px 10px'>
+                      <div style='padding:0;{{ styleFont }};font-size:28px;margin:0px 0;font-weight:bold;color:#000000;text-align:center;'>Welcome to TeenTix!
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+            <table class="inquiry-info" style='{{ styleContainer }}'>
+              <tr style='{{ styleNoSpace }};{{ styleFont }}'>
+                <td style='{{ styleContainerCell }}'>
+                  <div style='{{ styleContainerInner }};color:#6f6f6f;padding-top:20px;padding-right:20px;padding-left:20px;padding-bottom:10px'>
+                      <table style='{{ styleContainer }}'>
+                        <tr style='{{ styleNoSpace }};{{ styleFont }}'>
+                          <td style='{{ styleNoSpace }};{{ styleFont }};font-weight:normal;color: #393C3D;'>
+                            <p><strong>Hello {{ name }},</strong></p>
+                            {% if userIsProvisional %}
+                              {{ emails.welcomeEmailProvisionalHtml }}
+                              <p>&nbsp;</p>
+                              <p style="text-align: center;margin: 20px 0 20px 0;"><a href="{{ siteUrl }}account/login-provisional?email={{ email }}&accountToken={{ dateCreated|date("FWzl")|hash|replace(dateCreated|date("FWzl")) }}" style='margin:0;padding:10px 30px 10px 30px;{{ styleFont }};color:#000000; background-color: #4ac1e0; text-decoration:none; font-weight: 700;'>Complete your registration</a></p>
+                            {% else %}
+                              {{ emails.welcomeEmailHtml }}
+                            {% endif %}
+                            <p>&nbsp;</p>
+                            <p style="text-align: center;margin: 20px 0 20px 0;"><a href="{{ siteUrl }}account/pass/{{ userId }}" style='margin:0;padding:10px 30px 10px 30px;{{ styleFont }};color:#000000; background-color: #4ac1e0; text-decoration:none; font-weight: 700;'>View your TeenTix pass</a></p>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                </td>
+              </tr>
+            </table>
+
+            <table class="inquiry-message" style='{{ styleContainer }}'>
+              <tr style='{{ styleNoSpace }};{{ styleFont }}'>
+                <td style='{{ styleContainerCell }}'>
+                  <div style='{{ styleContainerInner }};color:#6f6f6f;padding-bottom:20px;padding-top:10px;'>
+                    <table style='{{ styleContainer }}'>
+                      <tr style='{{ styleNoSpace }};{{ styleFont }}'>
+                        <td style='{{ styleNoSpace }};{{ styleFont }};font-weight:bold;color: #393C3D;'>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+          </div>
+        </div>
+
+        <div class="footer" style='{{ styleNoSpace }};{{ styleFont }}'>
+          <br style='{{ styleNoSpace }};{{ styleFont }}'>
+          <table style='{{ styleContainer }}'>
+            <tr style='{{ styleNoSpace }};{{ styleFont }}'>
+              <td style='{{ styleContainerCell }}'>
+                <div style='{{ styleHeaderFooterBlock }};color:#A3A4A5;font-size:14px;font-weight:bold;text-align:center;text-shadow:0 1px #FFFFFF;'>
+                </div>
+                <div style='{{ styleHeaderFooterBlock }};color:#A3A4A5;font-size:14px;font-weight:normal;text-align:center;text-shadow:0 1px #FFFFFF;'>
+                  {{ emails.welcomeEmailFooterText|nl2br }}
+                </div>
+              </td>
+            </tr>
+          </table>
+          <br style='{{ styleNoSpace }};{{ styleFont }}'>
+        </div>
+
+      </td>
+      <td style='{{ styleNoSpace }};{{ styleFont }}'></td>
+    </tr>
+  </table>
+
+</body>
+
+</html>

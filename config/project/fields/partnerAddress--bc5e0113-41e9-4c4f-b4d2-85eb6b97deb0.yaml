@@ -1,0 +1,33 @@
+contentColumnType: text
+fieldGroup: 61cb854e-4648-46e6-aa10-5c8caea1d4fe # Partners
+handle: partnerAddress
+instructions: ''
+name: Address
+searchable: true
+settings:
+  boundary: '""'
+  boundaryRestrictionNELat: ''
+  boundaryRestrictionNELng: ''
+  boundaryRestrictionSWLat: ''
+  boundaryRestrictionSWLng: ''
+  country: null
+  countryRestriction: ''
+  height: '400'
+  hideAddress: false
+  hideLatLng: ''
+  hideMap: ''
+  hideSearch: false
+  lat: '47.654013958620006'
+  lng: '-122.3174001780078'
+  maxZoom: 18
+  minZoom: 3
+  showCurrentLocation: false
+  showLatLng: false
+  showW3WField: false
+  showW3WGrid: false
+  size: normal
+  typeRestriction: ''
+  zoom: '9'
+translationKeyFormat: null
+translationMethod: none
+type: ether\simplemap\fields\MapField

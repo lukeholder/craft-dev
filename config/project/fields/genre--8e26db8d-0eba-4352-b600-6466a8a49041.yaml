@@ -1,0 +1,23 @@
+contentColumnType: string
+fieldGroup: e823674a-d2fc-4023-89dd-2bfacf7bc359 # Common
+handle: genre
+instructions: ''
+name: Genre
+searchable: true
+settings:
+  allowLimit: false
+  allowMultipleSources: false
+  allowSelfRelations: false
+  branchLimit: ''
+  limit: null
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: 'group:dc332cd7-e491-4e7f-a605-65a93f8e63e3' # Event Genre
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Categories

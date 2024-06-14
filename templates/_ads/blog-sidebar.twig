@@ -1,0 +1,23 @@
+{# BLOG SIDEBAR AD SPACE #}
+
+{# SET ADS SECTION BY CURRENT SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set ad                       = craft.entries.section(sitePrefix ~ 'ads').search('blogSidebar300w').orderBy('RAND()').one() %}
+{% set cssClass                 = "ad-blog-sidebar" %}
+
+{% if ad|length %}
+
+  {# SET ADS IMAGES #}
+  {% set banner300x600          = ad.adBanner300X600.one() %}
+  {% set banner300x250          = ad.adBanner300X250.one() %}
+  {% set banner                 = banner300x600|length? banner300x600 : banner300x250 %}
+
+  {% include "_ads/ad" %}
+
+{% elseif siteSettings.hasLocalPressCorps %}
+  <div class="{{ cssClass }} ad-space">
+    <div id="become-reviewer">
+      <a href="/press-corps"><img src="{{ siteUrl }}/images/general/teentix-reviewer.png" alt="Become a Teen Reviewer"></a>
+    </div>
+  </div>
+{% endif %}

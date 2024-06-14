@@ -1,0 +1,22 @@
+contentColumnType: text
+fieldGroup: 0066c35c-d64c-4398-b138-23b72223575d # Home
+handle: homeProgramCopy
+instructions: 'Display content above the programs blocks.'
+name: 'Program Copy'
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes:
+    - a16a3316-a22e-4c0f-82e4-fe841faf49ce # SEA General Images
+    - d8052c64-2464-4aa2-8b41-9f106bc1d1f6 # LA General Images
+  ckeConfig: 37036a58-d782-4f1e-b28d-d76b77295540 # Default
+  columnType: text
+  defaultTransform: ''
+  enableSourceEditingForNonAdmins: true
+  purifierConfig: ''
+  purifyHtml: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

@@ -1,0 +1,124 @@
+.partners {
+
+  .page-content {
+    margin-bottom: 2rem;
+  }
+
+}
+
+.partner-grid {
+  margin-bottom: 4rem;
+
+  > .grid-x {
+    border-top: 1px solid $light-gray;
+
+    > .cell {
+      border-bottom: 1px solid $light-gray;
+    }
+
+  }
+
+  .partner {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    &.disabled {
+      display: none;
+    }
+
+  }
+
+  .partner-logo {
+
+    a {
+      text-align: center;
+      height: 200px;
+      display: block;
+      position: relative;
+      padding: 1rem;
+    }
+
+    img {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+  }
+
+  .partner-name {
+    text-align: center;
+    font-size: rem-calc(16);
+    text-transform: uppercase;
+
+    a {
+      color: $gray;
+    }
+
+  }
+
+}
+
+#partner-single {
+
+  .page-header {
+    @include breakpoint(small only) {
+      text-align: center;
+    }
+  }
+
+  .partner-contact {
+    margin-bottom: 1rem;
+
+    p {
+      margin: 0;
+      font-size: rem-calc(18);
+    }
+
+  }
+
+  .org-logo {
+    text-align: center;
+    @include breakpoint(small only) {
+      margin-bottom: 1.5rem;
+
+      img {
+        //max-height: 120px;
+      }
+
+    }
+
+  }
+
+  .entry-gallery {
+    margin: 1.5rem 0;
+  }
+
+  .entry-content {
+
+  }
+
+  .org-events {
+    margin-top: 3rem;
+
+    h3 {
+      font-weight: 700;
+    }
+
+  }
+
+  .sidebar {
+    @include breakpoint(large) {
+      padding-left: 2rem;
+    }
+  }
+
+  #org-venues {
+
+    li {
+      font-weight: 700;
+    }
+
+  }
+
+}

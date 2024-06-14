@@ -1,0 +1,85 @@
+fieldLayouts:
+  779b217e-fc0d-4919-a319-26d492b70339:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 36378664-6022-4b07-82b8-1913fd2b82ba
+            warning: null
+            width: 100
+          -
+            fieldUid: 5764896d-54f2-425b-b36e-4278f5440071 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 667f986a-0cbf-4a7c-b48a-b988b9c1bdae
+            warning: null
+            width: 100
+          -
+            fieldUid: 4b8f39b9-62c4-48c9-a80f-e682dd677fed # Sidebar Navigation
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9575be9d-d1ef-4707-b15c-d199e6d39c67
+            warning: null
+            width: 100
+          -
+            fieldUid: 03d3b7e5-9fca-4789-b7ba-ca374aa1b19d # Sidebar
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: adc33db4-96a1-4186-b23f-8a7944df58d4
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: ccdb18a0-03eb-4fd6-ac71-cd8cf6f67367
+      -
+        elements:
+          -
+            fieldUid: 12f0e18b-8472-48c3-b1ea-8d447c21c8ec
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 66601d7f-3602-44b0-919f-73badb20e6c9
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 2
+        uid: b331c9c4-18dd-48a4-8ff4-3538f1e895ec
+handle: twoColumn
+hasTitleField: true
+name: 'Two Column'
+section: f717a6d2-043d-41cd-987f-4d177515e12f # LA Pages
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

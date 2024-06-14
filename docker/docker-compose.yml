@@ -1,0 +1,142 @@
+version: "3.8"
+services:
+
+  web:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      args:
+        CRAFTCMS_VERSION: 8.2-dev
+    image: teentix-org:local-dev
+    platform: linux/x86_64
+    ports:
+      - 4000:80
+    env_file: .env_local_docker
+    environment:
+      AZURE_BLOB_STORAGE_CREDENTIAL: $AZURE_BLOB_STORAGE_CREDENTIAL
+      NEW_RELIC_LICENSE_KEY: $NEW_RELIC_LICENSE_KEY
+      XDEBUG_CONFIG: client_host=host.docker.internal
+      XDEBUG_MODE: debug
+      PHP_IDE_CONFIG: serverName=teentix-local-cli
+    tty: true
+    depends_on:
+      db:
+        condition: service_healthy
+      cache:
+        condition: service_healthy
+    volumes:
+      - ../storage:/app/storage
+      - ../docker/log/newrelic:/var/log/newrelic
+      - ../config:/app/config
+      - ../craft:/app/craft
+      - ../html:/app/html
+      - ../modules:/app/modules
+      - ../templates:/app/templates
+      - ../scripts:/app/scripts
+      - ../composer.json:/app/composer.json
+      - ../composer.lock:/app/composer.lock
+      - ../vendor:/app/vendor
+    healthcheck:
+      test: ["CMD", "curl", "--fail-with-body", "http://localhost:80/actions/app/health-check"]
+      interval: 30s
+      timeout: 1s
+      retries: 5
+      start_interval: 1s
+      start_period: 300s
+
+  queue:
+    image: teentix-org:local-dev
+    command: queue-runner
+    platform: linux/x86_64
+    env_file: .env_local_docker
+    environment:
+      NEW_RELIC_LICENSE_KEY: $NEW_RELIC_LICENSE_KEY
+      XDEBUG_CONFIG: client_host=host.docker.internal
+      XDEBUG_MODE: debug
+      PHP_IDE_CONFIG: serverName=teentix-local-cli
+    tty: true
+    depends_on:
+      web:
+        condition: service_healthy
+      db:
+        condition: service_healthy
+      cache:
+        condition: service_healthy
+    volumes:
+      - ../storage:/app/storage
+      - ../docker/log/newrelic:/var/log/newrelic
+      - ../config:/app/config
+      - ../craft:/app/craft
+      - ../html:/app/html
+      - ../modules:/app/modules
+      - ../templates:/app/templates
+      - ../scripts:/app/scripts
+      - ../composer.json:/app/composer.json
+      - ../composer.lock:/app/composer.lock
+      - ../vendor:/app/vendor
+
+  db:
+    image: mysql:8.0
+    platform: linux/x86_64
+    ports:
+      - 4006:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ""
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+      MYSQL_DATABASE: teentix_craft
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./mysql/mysql.conf.d:/etc/mysql/mysql.conf.d
+      - ./mysql/logs:/var/log/mysql
+      - ./db_init_scripts:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD", "mysql", "-u", "teentix_admin", "-e", "select count(*) from widgets;", "teentix_craft"]
+      interval: 30s
+      timeout: 1s
+      retries: 5
+      start_interval: 1s
+      start_period: 300s
+
+  cache:
+    image: flyio/redis:6.2.6
+    platform: linux/x86_64
+    ports:
+      - 4009:6379
+    environment:
+      REDIS_PASSWORD: secretpassword1
+      APPENDONLY: "yes"
+      MAXMEMORY_POLICY: allkeys-lru
+    volumes:
+      - cache_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "--pass", "secretpassword1", "-e", "INFO"]
+      interval: 30s
+      timeout: 1s
+      retries: 5
+      start_interval: 1s
+      start_period: 5s
+
+  s3:
+    image: "quay.io/minio/minio:RELEASE.2024-03-07T00-43-48Z"
+    platform: linux/x86_64
+    command: "server --console-address ':9001' /data"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: "minioadmin"
+      MINIO_ROOT_PASSWORD: "minioadmin"
+    volumes:
+      - s3_data:/data
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 30s
+      timeout: 1s
+      retries: 5
+      start_interval: 1s
+      start_period: 5s
+
+volumes:
+  db_data:
+  cache_data:
+  s3_data:

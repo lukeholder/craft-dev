@@ -1,0 +1,76 @@
+{# ACCOUNT SETTINGS PAGE #}
+{% requireLogin %}
+{% extends "_layout" %}
+
+{# SET URL SEGMENT VARIABLES #}
+{% set segment2                 = craft.app.request.segment(2) %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Account" %}
+{% set class                    = "account" %}
+
+{# SET SEO VALUES #}
+{% do seomatic.meta.seoTitle( "Your TeenTix account settings" ) %}
+
+{% block content %}
+  
+  {% include 'account/_partials/account-header' %}
+  
+  <div class="grid-x grid-margin-x">
+  
+    {% include 'account/_partials/nav-sidebar' %}
+  
+    <div class="main large-7 medium-order-1 cell">
+  
+      <h2>My Settings</h2>
+  
+      {% macro errorList(errors) %}
+        {% if errors %}
+          {% for error in errors %}
+              <div class="error icon-cancel-circled">{{ error }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endmacro %}
+
+      {% from _self import errorList %}
+  
+      <form method="post" action="" id="action-form" accept-charset="UTF-8" data-abide novalidate>
+        {{ csrfInput() }}
+        <input type="hidden" name="action" value="users/save-user">
+        {{ redirectInput('account/settings') }}
+        <input type="hidden" name="userId" value="{{ currentUser.id }}">
+        
+        <div>
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" class="text" value="{{ currentUser.email }}"  aria-errormessage="emailError" required>
+          <span class="form-error" id="emailError">Please enter a valid email address.</span>
+          {% if account is defined %}
+            {{ errorList(account.getErrors('email')) }}
+          {% endif %}
+        </div>
+        
+        <div>
+          <label for="newPassword">New Password</label>
+          <input type="password" class="form-control" id="newPassword" name="newPassword" aria-errormessage="passwordError" pattern="minlength" required>
+          <span class="form-error" id="passwordError">Please enter a valid password.</span>
+          <p class="help-text" id="passwordHelpText">Your password must be at least 6 characters long.</p>
+          {% if account is defined %}
+            {{ errorList(account.getErrors('newPassword')) }}
+          {% endif %}
+        </div>
+        
+        <div>
+          <label for="currentPassword">Current Password</label>
+          <input type="password" class="form-control" id="currentPassword" name="password" aria-errormessage="currentPasswordError" required/>
+          <span class="form-error" id="currentPasswordError">Please enter a valid password.</span>
+          {% if account is defined %}
+            {{ errorList(account.getErrors('currentPassword')) }}
+          {% endif %}
+        </div>
+  
+        <input type="submit" class="button large success" value="Save Settings">
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 243aa178-cda7-4f1a-8094-268c903002ed # Check Ins
+handle: checkinUser
+instructions: 'The user who has checked into the event'
+name: User
+searchable: true
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: 1
+  selectionCondition:
+    __assoc__:
+      -
+        - elementType
+        - craft\elements\User
+      -
+        - fieldContext
+        - global
+      -
+        - class
+        - craft\elements\conditions\users\UserCondition
+  selectionLabel: null
+  showSiteMenu: true
+  sources:
+    - 'group:a493105f-dcc7-4ac7-acbe-c29085d5b04c' # Teens
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Users

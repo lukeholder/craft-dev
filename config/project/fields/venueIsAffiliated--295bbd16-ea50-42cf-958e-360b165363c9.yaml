@@ -1,0 +1,14 @@
+columnSuffix: xwnqtyik
+contentColumnType: boolean
+fieldGroup: 61cb854e-4648-46e6-aa10-5c8caea1d4fe # Partners
+handle: venueIsAffiliated
+instructions: 'Is the venue a partner, affiliated with a partner, or exclusively serves TeenTix partners? If not, uncheck this. In that scenario, standard text will be displayed on the venue page warning members that the venue will only accept TeenTix Passes for partner affiliated events.'
+name: 'Partner Affiliated?'
+searchable: true
+settings:
+  default: true
+  offLabel: Unaffiliated
+  onLabel: Affiliated
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

@@ -1,0 +1,65 @@
+fieldLayouts:
+  0706b8f1-275c-4209-a28b-9a2ab4b16178:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: be4145ad-58f1-461a-a11f-ba3050c885fd
+            warning: null
+            width: 100
+          -
+            fieldUid: 5764896d-54f2-425b-b36e-4278f5440071 # Body
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1cf5bce3-0228-4a7e-93fc-abce55d55d88
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 0ed8fc70-a4ee-4a8f-b677-05893a8c951b
+      -
+        elements:
+          -
+            fieldUid: 12f0e18b-8472-48c3-b1ea-8d447c21c8ec
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: db2f4eed-0a2f-4641-a753-b3859f47f9e4
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 2
+        uid: adf95e50-6e32-46f0-bd95-dd4489e155b9
+handle: centered
+hasTitleField: true
+name: Centered
+section: ea460316-fa92-49f2-824c-ab3a7284aeeb # SEA Pages
+sortOrder: 3
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

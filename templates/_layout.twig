@@ -1,0 +1,289 @@
+<!doctype html>
+
+{# SET SITE-BASED VARIABLES #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set mainNav                  = craft.navigation.nodes(sitePrefix ~ 'mainNav').all() %}
+{% set footerNav                = craft.navigation.nodes(sitePrefix ~ 'footerNav').all() %}
+
+{# SET ACCOUNT PROPERTIES #}
+{% set isTeen                   = currentUser and currentUser.userBirthdate and currentUser.userBirthdate.diff(now).days/360 < 20 %}
+{% set isProvisional            = isProvisional?? (currentUser and currentUser.userIsProvisional) %}
+{% set isExpired                = isProvisional and currentUser and currentUser.dateCreated.diff(now).days > 15 %}
+
+{# RETRIEVE SESSION-BASED FLASHES #}
+{% set flashes                  = craft.app.session.getAllFlashes(true) %}
+
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ siteUrl }}assets/styles/app.css?{{ now.getTimestamp }}">
+  <link rel="stylesheet" href="https://use.typekit.net/acz8ato.css">
+  <link rel="icon" href="{{ siteUrl }}favicon.png" type="image/x-icon">
+  <link rel="manifest" href="{{ siteUrl }}webmanifest/manifest.webmanifest" {{ craft.app.config.general.devMode? "crossorigin=\"use-credentials\"" : "" }} />
+  <meta name="theme-color" content="#79cac9" />
+  <meta name="apple-mobile-web-app-title" content="TeenTix" />
+  {% if siteSettings.givebutterAccount %}
+    <script async src="https://widgets.givebutter.com/latest.umd.cjs?acct={{ siteSettings.givebutterAccount }}&p=other"></script>
+  {% endif %}
+</head>
+
+<body class="{{ class is defined? class }}">
+
+  <div class="site-wrapper">
+    <!-- Header and Nav -->
+    <div id="site-header">
+      
+      <div class="mobile-nav-toggle hide-for-large">
+        {% if isTeen and not isExpired %}
+          {% if siteSettings.checkinEnabled %}
+            <a class="button rounded shadow" href="{{ siteUrl }}calendar/now">Check In</a>
+          {% else %}
+            <a class="button rounded shadow" href="{{ siteUrl }}account/pass/{{ currentUser.id }}">My Pass</a>
+          {% endif %}
+        {% endif %}
+        <button type="button" class="button success" data-toggle="mobile-menu"><i class="fas fa-bars"></i></button>
+      </div>
+
+      <div class="grid-x align-middle">
+        <div class="small-12 medium-shrink cell">
+          <div id="site-logo"><a href="{{ siteUrl }}"><img src="{{ siteUrl }}images/site/teentix-logo.png" alt="TeenTix" /></a></div>
+        </div>
+        <div class="small-12 medium-auto cell show-for-large">
+          <ul id="main-nav" class="dropdown menu" data-dropdown-menu>
+            {% nav node in mainNav %}
+              <li class="{{ node.classes }}">
+                {% if node.url is not empty %}
+                  {{ node.link }}
+                {% else %}
+                  {{ node.title }}
+                {% endif %}
+                {% ifchildren %}
+                  <ul class="menu">
+                    {% children %}
+                  </ul>
+                {% endifchildren %}
+              </li>
+            {% endnav %}
+          </ul>
+        </div>
+        <div class="small-12 medium-shrink cell show-for-large">
+          {% if currentUser %}
+            <ul id="account-nav" class="menu" data-alignment="right">
+              {% if isTeen and not isExpired %}
+                {% if siteSettings.checkinEnabled %}
+                  <li><a class="button rounded shadow" href="{{ siteUrl }}calendar/now">Check In</a></li>
+                {% else %}
+                  <li><a class="button rounded shadow" href="{{ siteUrl }}account/pass/{{ currentUser.id }}">My Pass</a></li>
+                {% endif %}
+              {% endif %}
+              <li><a class="button rounded shadow" href="{{ siteUrl }}account/profile">My Account</a></li>
+            </ul>
+          {% else %}
+            <ul id="login-nav" class="menu" data-alignment="right">
+              <li><a class="button shadow rounded" href="{{ siteUrl }}account/login">Login</a></li>
+              <li><a class="button shadow rounded" href="{{ siteUrl }}sign-up">Sign Up</a></li>
+            </ul>
+          {% endif %}
+        </div>
+      </div>
+
+    </div><!-- end #header -->
+
+    <div id="main-content">
+
+      {% if flashes | length %}
+        {% for level, flash in flashes %}
+          <div class="callout primary">
+            {{ flash }}
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      {% if isProvisional %}
+        <div class="welcome-banner">
+          <div class="grid-x grid-margin-x align-middle">
+            <div class="message medium-8 cell">
+              {{ isExpired? account.noticeProvisionalExpired : account.noticeProvisional }}
+            </div>
+            <div class="call-to-action medium-4 cell">
+              <a class="button large" href="/account/new/finish"><span class="no-break">Complete Sign Up</span></a>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% block content %}
+        <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+        <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+      {% endblock %}
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="site-footer">
+      <div class="grid-x grid-margin-x">
+        <div class="medium-3 cell">
+          <div id="footer-about">
+            {{ footer.footerAbout }}
+          </div>
+        </div>
+        <div class="medium-4 cell">
+          <div id="footer-utility-nav" class="footer-links">
+            <h4 class="section-head sans">Important Places</h4>
+            <div class="grid-x">
+              <div class="small-6 medium-12 large-6 cell">
+                <ul class="simple-list">
+                  {% nav node in footerNav %}
+                    <li>{{ node.link }}</li>
+                  {% endnav %}
+                </ul>
+              </div>
+              <div class="small-6 medium-12 large-6 cell">
+                <ul class="simple-list">
+                  {% if currentUser %}
+                    <li><a href="{{ siteUrl }}account">My Account</a></li>
+                    <li><a href="{{ siteUrl }}logout">Logout</a></li>
+                  {% else %}
+                    <li><a href="{{ siteUrl }}sign-up">Sign Up</a></li>
+                    <li><a href="{{ siteUrl }}account/login">Log in</a></li>
+                    <li><a href="{{ siteUrl }}account/password">Reset Your Password</a></li>
+                  {% endif %}
+                  <li><a href="{{ siteUrl }}newsletter">TeenTix Newsletter</a></li>
+                  <li><a href="{{ siteUrl }}terms">Terms of Use</a></li>
+                  <li><a href="{{ siteUrl }}privacy">Privacy</a></li>
+                  <li><a href="{{ siteUrl }}contact">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="medium-4 cell">
+          <div class="grid-x">
+            <div class="small-6 medium-12 large-6 cell">
+              {% if footer.footerSocialLinks | length %}
+                <div id="footer-social" class="footer-links">
+                  <h4 class="section-head sans">Social Links</h4>
+                  <ul class="simple-list social-links">
+                    {% for block in footer.footerSocialLinks.all()  %}
+                      {% if block.type == "link" %}
+                        <li><a href="{{ block.websiteUrl }}" target="_blank">{{ block.website }}</a></li>
+                      {% endif %}
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
+            </div>
+            <div class="small-6 medium-12 large-6 cell">
+              {% if footer.footerContact %}
+                <div id="footer-contact" class="footer-links">
+                  <h4 class="section-head sans">Contact Info</h4>
+                  {{ footer.footerContact }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="footer-credits">
+      {#% if footer.footerLogos | length %}
+        <div id="footer-logos" class="grid-x grid-margin-x small-up-3 medium-up-6 large-up-8 align-middle">
+        {% for logo in footer.footerLogos.all() %}
+          <div class="footer-logo cell">
+            <img src="{{ logo.url }}" alt="{{ logo.title }}">
+          </div>
+        {% endfor %}
+        </div>
+        <hr>
+      {% endif %#}
+      <div class="site-copyright">
+        {{ include(template_from_string(footer.footerCopyright)|raw) }}
+      </div>
+    </div>
+
+  </div>
+
+  
+  <div id="mobile-menu" class="reveal full" data-reveal>
+    <div class="site-name">
+      <a href="{{ siteUrl }}"><img src="{{ siteUrl }}images/site/teentix-logo.png" alt="TeenTix Logo" /></a>
+    </div>
+    {% if not currentUser %}
+      <div>
+        <a class="button primary expanded" href="{{ siteUrl }}account/login">Login</a>
+      </div>
+      <div>
+        <a class="button primary expanded" href="{{ siteUrl }}sign-up">Sign Up</a>
+      </div>
+    {% endif %}
+
+    <ul class="vertical menu accordion-menu" data-accordion-menu>
+      {% nav node in mainNav %}
+        <li class="{{ node.classes }}">
+          {% if node.url is not empty %}{{ node.link }}{% else %}{{ node.title }}{% endif %}
+          {% ifchildren %}
+            <ul class="menu">
+              {% children %}
+            </ul>
+          {% endifchildren %}
+        </li>
+      {% endnav %}
+    </ul>
+    {% if currentUser %}
+      <div>
+        <a class="button primary expanded" href="{{ siteUrl }}account">My Account</a>
+      </div>
+      <div>
+        <a class="button primary expanded" href="{{ logoutUrl }}">Logout</a>
+      </div>
+    {% endif %}
+
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div id="loginModal" class="reveal" data-reveal>
+    <h3>Login</h3>
+    <div id="modal-login">
+      <form method="post" accept-charset="UTF-8">
+
+        {{ csrfInput() }}
+
+        <input type="hidden" name="action" value="users/login">
+        <label for="username" class="show-for-sr">Email Address:</label>
+        <input type="text" name="loginName" value="{{ craft.app.user.rememberedUsername }}" placeholder="Email address" required />
+        <label for="password" class="show-for-sr">Password:</label>
+        <input type="password" name="password" placeholder="Password" required />
+        <input type="submit" name="submit" value="Login" class="button expanded" />
+  
+        {% if errorMessage is defined %}
+          <p>{{ errorMessage }}</p>
+        {% endif %}
+
+      </form>
+    </div>
+
+    <p><a href="{{ siteUrl }}account/new">Create an account</a> | <a href="/account/password">Reset your password</a></p>
+  
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+  </div>
+
+  <script src="{{ siteUrl }}assets/scripts/scripts.js?{{ now.getTimestamp }}"></script>
+
+  {% if siteSettings.givebutterWidgetId %}
+    <givebutter-widget id="{{ siteSettings.givebutterWidgetId }}"></givebutter-widget>
+  {% endif %}
+
+  {% block footerJs %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+fieldLayouts:
+  01b00adb-ee50-444d-8289-3a75524c0029:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 5a87a1da-d24b-4a51-8d31-16b5254c71ac
+            warning: null
+            width: 100
+          -
+            fieldUid: 5764896d-54f2-425b-b36e-4278f5440071 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 39b362ea-979b-46a4-a9c4-37ba803dfead
+            warning: null
+            width: 100
+          -
+            fieldUid: a90c52fa-0196-4670-b873-28510ea21097 # Form
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 569b453d-6a87-41be-b81c-d6f52dd76b30
+            warning: null
+            width: 100
+          -
+            fieldUid: 03d3b7e5-9fca-4789-b7ba-ca374aa1b19d # Sidebar
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 96a6e3e9-6070-4356-8b91-201fab8616eb
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 8c0f4c9e-f8a9-4409-b577-c3e070be38ce
+      -
+        elements:
+          -
+            fieldUid: 12f0e18b-8472-48c3-b1ea-8d447c21c8ec
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cd47bb44-53b4-4dd0-be56-48a888bfa18c
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 2
+        uid: 1a38f50e-bce3-45c7-9674-0175dd6054ff
+handle: newsletter
+hasTitleField: true
+name: Newsletter
+section: f717a6d2-043d-41cd-987f-4d177515e12f # LA Pages
+sortOrder: 5
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

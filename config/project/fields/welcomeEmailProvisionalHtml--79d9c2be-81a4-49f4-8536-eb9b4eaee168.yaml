@@ -1,0 +1,21 @@
+columnSuffix: chapiiqb
+contentColumnType: text
+fieldGroup: a51ba621-81f3-4260-a89b-f7dc5e425ee4 # Emails
+handle: welcomeEmailProvisionalHtml
+instructions: 'The Welcome Email to send users who signed up using the Quick Sign-Up, and are thus a Provisional Member without full access to Membership benefits.'
+name: 'Welcome Email (Provisional) (HTML)'
+searchable: true
+settings:
+  availableTransforms: ''
+  availableVolumes: ''
+  ckeConfig: 37036a58-d782-4f1e-b28d-d76b77295540 # Default
+  columnType: text
+  defaultTransform: ''
+  enableSourceEditingForNonAdmins: false
+  purifierConfig: null
+  purifyHtml: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: site
+type: craft\ckeditor\Field

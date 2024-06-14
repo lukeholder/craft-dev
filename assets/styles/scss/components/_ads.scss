@@ -1,0 +1,32 @@
+.ad-space {
+  margin-bottom: 1rem;
+
+  .ad-copy {
+    text-align: center;
+    font-size: rem-calc(11);
+    text-transform: uppercase;
+    margin: .5em 0px;
+
+    a {
+      color: $gray;
+    }
+
+  }
+
+}
+
+.ad-blog-sidebar {
+  max-width: 300px;
+  margin: 0 auto 2rem auto;
+}
+
+.ad-calendar-sidebar {
+  max-width: 300px;
+  margin: 1rem auto;
+}
+
+.ad-calendar-top {
+  max-width: 1200px;
+  margin: 1rem auto;
+  text-align: center;
+}

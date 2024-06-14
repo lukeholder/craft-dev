@@ -1,0 +1,210 @@
+fieldLayouts:
+  8e0dca14-942a-46f1-be81-3c461061e69b:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 0f9803f1-0eca-4208-8957-c1775f1d4c96
+            warning: null
+            width: 100
+          -
+            fieldUid: 9e61e4c1-5b33-42dd-aa7c-b3d11d23b351 # Partner Type
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 10ed6c69-f264-4f45-9244-a23dba735a0b
+            warning: null
+            width: 100
+          -
+            fieldUid: 1fd3c0c4-b7ef-4705-b2f4-cf2f3589dd03 # Partner Genre
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: eb871262-2114-4e38-87a3-0709aae5d368
+            warning: null
+            width: 100
+          -
+            fieldUid: 6e290fc3-f22c-429b-a097-33ad83ee2ebf # Logo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0bb97ccd-d78d-49a3-b467-0a5471554e3b
+            warning: null
+            width: 100
+          -
+            fieldUid: 6bfc4b23-14c0-4271-ad9a-23fd5bb39c1a # Image Gallery
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cabdaebe-04a2-4a92-982f-233c039f0b36
+            warning: null
+            width: 100
+          -
+            fieldUid: 5764896d-54f2-425b-b36e-4278f5440071 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 787ba371-e7a2-4cae-adfd-9669a90fc54b
+            warning: null
+            width: 100
+          -
+            fieldUid: 3b2f6fe3-2a5e-4e3b-b7d5-eb08348ff0fb # Venues
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 498b0e4d-8107-4e26-81d4-dac327a4f33e
+            warning: null
+            width: 100
+          -
+            fieldUid: c0519cb6-b643-4026-a4d3-d6afc4f8fbcb # Hours
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d5fe7403-d6ec-4486-b9ef-01264b3d520c
+            warning: null
+            width: 100
+          -
+            fieldUid: cde5030f-e1a4-496d-b344-f73099d63efb # Box Office Info
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 08568073-21ae-49e2-af15-3bfd4270d189
+            warning: null
+            width: 100
+          -
+            fieldUid: 127fd295-905e-4e9d-b2d7-5fb09c761391 # Equity Statement Excerpt
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 497c0b7b-c379-403a-9c5b-cb1292310cc5
+            warning: null
+            width: 100
+          -
+            fieldUid: 3f4bdcee-5f68-4b73-8010-0bf80e558472 # Equity Statement URL
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2deca592-5909-4291-a76c-9a2cc987a3aa
+            warning: null
+            width: 100
+          -
+            fieldUid: 05135f4f-5d8a-43da-8396-f6878472c9dd # 2 for  Day?
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2dcbbbb9-d248-4da2-b1ee-e0a4654560eb
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: cf60b23e-4853-4d14-97a0-0e3add7f2df4
+      -
+        elements:
+          -
+            fieldUid: 4c6edd80-f445-4879-afe0-3e94039bb6d1 # Phone
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ce9998cb-cf27-4551-aecf-203cf8b94323
+            warning: null
+            width: 100
+          -
+            fieldUid: a483d640-ec16-4b2d-9596-db9991b19cfd # Website
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cfce1887-a1ca-412a-a783-ffdfd535dd22
+            warning: null
+            width: 100
+          -
+            fieldUid: 80d49d25-87d4-479c-9277-ae40762c6019 # Email Addresses
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6a19acbe-dad0-442e-9b7d-908b9d8e6d42
+            warning: null
+            width: 100
+          -
+            fieldUid: 1b067782-5ec8-465b-a1b7-5fb3d20a708f # Social Links
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bdeca0c5-29d0-4dd6-8890-fbc77aa7bba6
+            warning: null
+            width: 100
+        name: Contact
+        sortOrder: 2
+        uid: 3be05eb0-f4b6-478f-b856-fe156a97f42b
+      -
+        elements:
+          -
+            fieldUid: 12f0e18b-8472-48c3-b1ea-8d447c21c8ec
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 574d91fe-edf7-465d-84b6-dbfcca01592d
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 3
+        uid: 022b99b9-d27f-4b73-ad58-0be940b899cd
+handle: la_partners
+hasTitleField: true
+name: 'LA Partners'
+section: 8fb5378a-f891-4bd6-9a91-f45144eecd29 # LA Partners
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

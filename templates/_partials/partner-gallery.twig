@@ -1,0 +1,40 @@
+{# PARTNER PAGE IMAGE GALLERY #}
+{% if gallery %}
+  <div class="entry-gallery">
+    <div class="orbit" role="region" aria-label="" data-orbit>
+      <div class="orbit-wrapper">
+
+        {% if gallery | length > 1 %}
+          <div class="orbit-controls">
+            <button class="orbit-previous"><span class="show-for-sr">Previous</span>&#9664;&#xFE0E;</button>
+            <button class="orbit-next"><span class="show-for-sr">Next</span>&#9654;&#xFE0E;</button>
+          </div>
+        {% endif %}
+
+        <ul class="orbit-container">
+          {% for image in gallery %}
+            <li class="{% if loop.index0 == 0 %}is-active{% endif %} orbit-slide">
+              <figure class="orbit-figure">
+                <img class="orbit-image" src="{{ image.getUrl('gallery') }}" alt="{{ image.title }}">
+                {% if image.imageCaption %}
+                  <figcaption class="orbit-caption">{{ image.imageCaption }}</figcaption>
+                {% endif %}
+              </figure>
+            </li>
+          {% endfor %}
+        </ul>  
+
+      </div>
+      
+      {% if gallery | length > 1 %}
+        <nav class="orbit-bullets">
+          {% for image in gallery %}
+            <button class="{% if loop.index0 == 0 %}is-active{% endif %}" data-slide="{{loop.index0}} "></button>
+          {% endfor %}
+        </nav>
+      {% endif %}
+
+    </div>
+
+  </div>
+{% endif %}

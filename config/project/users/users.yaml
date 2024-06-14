@@ -1,0 +1,6 @@
+allowPublicRegistration: true
+deactivateByDefault: false
+defaultGroup: a493105f-dcc7-4ac7-acbe-c29085d5b04c # Teens
+photoSubpath: ''
+photoVolumeUid: 3da310b3-4824-49c4-acde-7b2f840beb43 # User Photos
+requireEmailVerification: false

@@ -1,0 +1,5 @@
+# azurite container storage
+/azblobstorage
+/db_init_scripts/*teentix_*.sql.gz
+/log
+/mysql/logs

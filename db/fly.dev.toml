@@ -1,0 +1,20 @@
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+
+app = "dev-teentix-mysql"
+primary_region = "sea"
+kill_signal = "SIGINT"
+kill_timeout = "5s"
+
+[mount]
+  source = "dev_teentix_mysql"
+  destination = "/data"
+
+[env]
+  MYSQL_DATABASE = "teentix_dev"
+  MYSQL_USER = "teentixadmin"
+
+[build]
+  image = "mysql:8.0"
+
+[experimental]
+  cmd = ["--datadir=/data/mysql", "--max-execution-time=15000"]

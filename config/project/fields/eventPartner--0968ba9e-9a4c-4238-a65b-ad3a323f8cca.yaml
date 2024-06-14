@@ -1,0 +1,22 @@
+contentColumnType: string
+fieldGroup: 77d77e0d-cbd3-4972-b03e-ec05812e4b1b # Event
+handle: eventPartner
+instructions: 'You may select multiple arts or community partners.'
+name: 'Event Partner'
+searchable: true
+settings:
+  allowSelfRelations: false
+  limit: ''
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'section:8fb5378a-f891-4bd6-9a91-f45144eecd29' # LA Partners
+    - 'section:58ddfcec-fc33-455c-9bc5-918e692e49f8' # SEA Partners
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Entries

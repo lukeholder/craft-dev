@@ -1,0 +1,233 @@
+.home {
+
+  #main-content {
+    @include breakpoint(medium down) {
+      margin-top: 0;
+    }
+  }
+
+}
+
+#home-featured {
+  margin: 0 -1rem 2rem -1rem;
+
+  @include breakpoint(small only) {
+    background-color: $blue;
+  }
+
+  @include breakpoint(medium) {
+    margin: 0 -2rem 2rem -2rem;
+  }
+
+  .slide {
+    position: relative;
+
+    @include breakpoint(small only) {
+      .shadow {
+        box-shadow: none;
+      }
+    }
+
+    .slide-image {
+      background-color: $black;
+      text-align: center;
+
+      a {
+        display: block;
+      }
+
+      @include breakpoint(large) {
+        min-height: 480px;
+        margin-right: 2rem;
+        border-radius: 0 1rem 1rem 0;
+        overflow: hidden;
+
+        img {
+          margin: auto;
+        }
+
+      }
+
+    }
+
+    .slide-content {
+      padding: 1.5rem;
+      background-color: $blue;
+      color: $dark-teal;
+      font-weight: 500;
+
+      a {
+        transition: all 500ms;
+        &:hover {
+          color: $teal;
+        }
+      }
+
+      @include breakpoint(medium) {
+        padding: 1.5rem 2rem;
+      }
+
+      @include breakpoint(large) {
+        border-radius: 1rem 0 0 1rem;
+        position: absolute;
+        width: 40%;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      a {
+        color: $dark-teal;
+      }
+
+      .event-title {
+        @extend h1;
+        margin: 0 0 .5rem 0;
+        line-height: 1em;
+      }
+
+      .event-date {
+        font-size: rem-calc(20);
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .event-description {
+
+        p {
+          margin: 0;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+#home-programs {
+  margin-bottom: 2rem;
+
+  header {
+    text-align: center;
+    margin: 1rem 0;
+
+    @include breakpoint(large) {
+      margin: 3rem 0 2rem 0;
+    }
+
+    h2 {
+      @extend h1;
+      line-height: 1em;
+      color: $teal;
+      text-transform: none;
+    }
+
+  }
+
+  .entry-container {
+    text-align: center;
+    border: 1px solid $medium-gray;
+    margin-bottom: 1rem;
+
+    @include breakpoint(large) {
+      border-radius: 1rem;
+    }
+
+  }
+
+  .entry-image {
+
+  }
+
+  .entry-copy {
+    padding: 1rem 1rem .5rem 1rem;
+  }
+
+}
+
+#home-ads {
+  padding: 2rem;
+  margin: 0 -1rem 2rem -1rem;
+  background-color: $light-green;
+  color: $black;
+  
+  a {
+    color: $black;
+    text-decoration: underline;
+    transition: all .5s;
+    &:hover {
+      color: $dark-teal;
+      text-decoration: none;
+    }
+  }
+
+  @include breakpoint(medium) {
+    margin: 0 -2rem 2rem -2rem;
+  }
+
+  @include breakpoint(large) {
+    padding: 2rem 3rem;
+    margin: 0 -2rem 2rem 0;
+    border-radius: 1rem 0 0 1rem;
+  }
+
+  .slick-dots {
+    text-align: left;
+    bottom: 20px;
+
+    li,
+    li.slick-active  {
+
+      button:before {
+        font-size: 20px;
+        color: $white;
+      }
+
+    }
+
+    @include breakpoint(small only) {
+      position: relative;
+      bottom: 0;
+    }
+
+  }
+
+}
+
+#home-blog {
+
+  header {
+    text-align: center;
+    margin: 1rem 0;
+
+    h2 {
+      @extend h1;
+      color: $teal;
+      text-transform: none;
+    }
+
+  }
+
+  .entry-container {
+    text-align: center;
+    margin-bottom: 1rem;
+    @include breakpoint(medium only) {
+      text-align: left;
+    }
+  }
+
+  .entry-image {
+    margin-bottom: 1rem;
+  }
+
+  .entry-copy {
+    padding: 0 1rem;
+  }
+
+  .entry-date {
+    font-weight: 700;
+  }
+
+}

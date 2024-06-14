@@ -1,0 +1,58 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ siteUrl }}assets/styles/app.css?{{ now.getTimestamp }}">
+
+  <link rel="stylesheet" href="https://use.typekit.net/acz8ato.css">
+
+  <link rel="icon" href="{{ siteUrl }}favicon.png" type="image/x-icon">
+  <link rel="manifest" href="{{ siteUrl }}webmanifest/manifest.webmanifest" {{ craft.app.config.general.devMode? "crossorigin=\"use-credentials\"" : "" }} />
+  <meta name="apple-mobile-web-app-title" content="TeenTix" />
+
+</head>
+
+<body class="coming-soon">
+
+  <div class="site-wrapper">
+    <!-- Header and Nav -->
+
+    <div id="main-content">
+
+      {% block content %}
+        <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+        <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+      {% endblock %}
+
+    </div>
+
+    <!-- Footer -->
+
+    <div id="footer-credits">
+      {#% if footer.footerLogos | length %}
+        <div id="footer-logos" class="grid-x grid-margin-x small-up-3 medium-up-6 large-up-8 align-middle">
+        {% for logo in footer.footerLogos.all() %}
+          <div class="footer-logo cell">
+            <img src="{{ logo.url }}" alt="{{ logo.title }}">
+          </div>
+        {% endfor %}
+        </div>
+        <hr>
+      {% endif %#}
+      <div class="site-copyright">
+        {{ include(template_from_string(footer.footerCopyright)|raw) }}
+      </div>
+    </div>
+
+  </div>
+
+  <script src="{{ siteUrl }}assets/scripts/scripts.js?{{ now.getTimestamp }}"></script>
+
+  {% block footerJs %}{% endblock %}
+
+</body>
+</html>

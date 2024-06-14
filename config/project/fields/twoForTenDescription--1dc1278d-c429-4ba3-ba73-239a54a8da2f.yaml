@@ -1,0 +1,21 @@
+columnSuffix: xbhfwiwq
+contentColumnType: text
+fieldGroup: 4f2d0446-809a-4896-9a97-3b5409c32324 # Global
+handle: twoForTenDescription
+instructions: 'Provides a description for the 2 for $10 days on the partner and event details pages.'
+name: '2 for $10 Description'
+searchable: false
+settings:
+  availableTransforms: '*'
+  availableVolumes: ''
+  ckeConfig: 37036a58-d782-4f1e-b28d-d76b77295540 # Default
+  columnType: text
+  defaultTransform: ''
+  enableSourceEditingForNonAdmins: true
+  purifierConfig: null
+  purifyHtml: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: site
+type: craft\ckeditor\Field

@@ -1,0 +1,347 @@
+{# MEMBER CHECK-IN FORM #}
+{# checkin is set in config/routes.php #}
+{% extends "_layout" %}
+{% requireLogin %}
+
+{# SET VARIABLES FROM URL #}
+{% set event                    = craft.calendar.event(eventSlug) %}
+{% set venueId                  = craft.app.request.getQueryParam('venue') %}
+
+{# SET ACCOUNT PROPERTIES #}
+{% set isTeen                   = currentUser and currentUser.userBirthdate.diff(now).days/360 < 20 %}
+{% set isExpired                = currentUser and currentUser.userIsProvisional and currentUser.dateCreated.diff(now).days > 15 %}
+
+{# HANDLE MISSING DEPENDENCIES #}
+{% if not isTeen or isExpired %}
+  {% redirect "account" %}
+{% endif %}
+{% if not event %}
+  {% redirect "/calendar/event" %}
+{% endif %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Check in to " ~ event.title %}
+{% set class                    = "checkin" %}
+
+{# SET SECTION #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set section                  = craft.app.sections.getSectionByHandle(sitePrefix ~ 'checkins') %}
+
+{# DETERMINE POPULARITY #}
+{% set isPopular                = craft.entries().sectionId(section.id).relatedTo(event.id).count() > 7 %}
+
+{# SET DEFAULT TIMEZONE #}
+{% set timezone = 'America/Los_Angeles' %}
+
+{# SET TIME RANGE #}
+{% set timeStart                = now %}
+{% set timeEnd                  = now|date_modify('+2 hours +15 min') %}
+
+{# SET UNLISTED TIME RANGE #}
+{% set timeUnlistedStart        = (timeStart|date_modify('-1 hour -15 minutes')|date('U')/(15*60))|round*(15*60) %}
+{% set timeUnlistedEnd          = timeUnlistedStart|date_modify("+3 hours + 30 min") %}
+
+{# SET EVENT LISTS #}
+
+{% set related = craft.calendar.events({
+  relatedTo                     : event.id,
+  rangeStart                    : timeStart,
+  rangeEnd                      : timeEnd
+}).all() %}
+
+{% set occurrences = craft.calendar.events({
+  id                            : event.id,
+  rangeStart                    : timeStart,
+  rangeEnd                      : timeEnd
+}).all() %}
+
+{% set datearray                = occurrences|merge(related) %}
+{% set showtimes                = datearray | supersort('sortAs', '{{ object.startDate }}') %}
+
+{# DETERMINE IF IT'S A 2 FOR $10 DAY #}
+{% set isTwoForTenDay           = false %}
+
+{% for partner in event.eventPartner.all() %}
+  {% if partner.twoForTenDay is not empty %}
+    {% if partner.twoForTenDay == now|date('l') %}
+      {% set isTwoForTenDay = true %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{# SET FORM FIELDS FROM CRAFT APP #}
+{% set fieldUser                = craft.app.fields.getFieldByHandle('checkinUser') %}
+{% set fieldEvent               = craft.app.fields.getFieldByHandle('checkinEvent') %}
+{% set fieldVenue               = craft.app.fields.getFieldByHandle('checkinVenue') %}
+{% set fieldShowtime            = craft.app.fields.getFieldByHandle('checkinShowtime') %}
+{% set fieldShowtimeIsUnlisted  = craft.app.fields.getFieldByHandle('checkinShowtimeIsUnlisted') %}
+{% set fieldIsTwoForTen         = craft.app.fields.getFieldByHandle('checkinIsTwoForTen') %}
+{% set fieldGuestCount          = craft.app.fields.getFieldByHandle('checkinGuestCount') %}
+{% set fieldGuestTypes          = craft.app.fields.getFieldByHandle('checkinGuestTypes') %}
+{% set fieldTransportation      = craft.app.fields.getFieldByHandle('checkinTransportation') %}
+
+{# ENSURE ENTRY IS SET #}
+{% if entry is not defined %}
+  {% set entry = craft.entries()
+    .section(section)
+    .relatedTo(event)
+    .andRelatedTo(currentUser)
+    .dateCreated("> today")
+    .one() %}
+{% endif %}
+
+{% set entry                    = entry ?? create('craft\\elements\\Entry') %}
+
+{% set currentShowtime          = entry.checkinShowtime|datetime("Y-m-d H:i") %}
+
+{% block footerJs %}
+  <script>
+    dataLayer = dataLayer || [];
+    dataLayer.push({
+      'event': 'checkin_event',
+      'venue_name': '{{ event.eventVenue|length? event.eventVenue.one().title }}',
+      'partner_name': '{{ event.eventPartner|length? event.eventPartner.one().title }}',
+      'event_name': '{{ event.title }}',
+      'event_city': '{{ event.eventVenue|length? event.eventVenue.one().partnerAddress.parts.city }}',
+      'checkin_is_popular': '{{ isPopular? 'true' : 'false' }}',
+      'checkin_is_twofortenday': '{{ isTwoForTenDay? 'true' : 'false' }}',
+      'user_age': '{{ currentUser.userIsProvisional? '' : (currentUser.userBirthdate.diff(now).days/360)|round }}',
+      'user_is_provisional': '{{ currentUser.userIsProvisional? 'true' : 'false' }}'
+    });
+  </script>
+{% endblock %}
+
+{% block content %}
+
+  <header class="page-header text-center">
+    <h1 class="page-title">Check-In to {{ event.title }}</h1>
+  </header>
+  
+  <div class="grid-x grid-margin-x">
+  
+    <div class="sidebar large-4 cell">
+      Before you can buy a ticket at the box office, you must first check in. Checking in is quick! Just answer a few questions.
+    </div>
+
+    <div class="main large-8 cell">
+
+      {% if isPopular %}
+        <div class="callout success">
+          <strong>Reminder!</strong> TeenTix tickets are first-come, first-serve—and this event is popular! Always call the box office before the event to check availability.
+        </div>
+      {% endif %}
+
+      <form id="form-checkin" method="post" accept-charset="UTF-8" data-abide novalidate>
+
+        {{ csrfInput() }}
+        {{ actionInput('entries/save-entry') }}
+        {{ redirectInput('checkin/pass/{id}') }}
+        {{ hiddenInput('sectionId', section.id) }}
+        {{ hiddenInput('enabled', true) }}
+
+        {{ hiddenInput('fields[' ~ fieldUser.handle ~ '][]', currentUser.id) }}
+        {{ hiddenInput('fields[' ~ fieldEvent.handle ~ '][]', event.id) }}
+
+        {% if venueId is not empty %}
+          {{ hiddenInput('fields[' ~ fieldVenue.handle ~ '][]', venueId) }}
+        {% endif %}
+
+        {% if entry.id %}
+          {{ hiddenInput('entryId', entry.id) }}
+        {% endif %}
+
+        {% macro errorList(errors) %}
+          {% if errors %}
+            {% for error in errors %}
+              <span class="form-error">{{ error }}</span>
+            {% endfor %}
+          {% endif %}
+        {% endmacro %}
+
+        {% from _self import errorList %}
+
+        <div class="form-group">
+
+          <div class="section-instructions">
+          </div>
+
+          {{ _self.errorList(entry.getErrorSummary(true)) }}
+
+          {% if showtimes|length == 0 or not showtimes|first.allDay %}
+            {{ hiddenInput("fields[" ~ fieldShowtime.handle ~ "][timezone]", timezone) }}
+            {{ hiddenInput("fields[" ~ fieldShowtime.handle ~ "][datetime]", currentShowtime, { id: 'field-showtime'}) }}
+            {{ hiddenInput("fields[" ~ fieldShowtimeIsUnlisted.handle ~ "]", showtimes|length == 0? "1" : entry.checkinShowtimeIsUnlisted? "1" : "0", { id: 'field-showtime-unlisted'}) }}
+            <fieldset id="checkin-showtimes">
+              <legend class="require">Showtime</legend>
+              <div class="checkbox-group grid-x grid-margin-x small-up-1" data-abide-validator-min="1" aria-errormessage="showtimeError">
+                {% for showtime in showtimes %}
+                  <div class="cell">
+                    <label for="field-showtimes-{{ showtime.id }}">
+                      {{ input("radio", "showtimes", showtime.startDate.format("Y-m-d H:i"), {
+                        id                      : "field-showtimes-" ~ showtime.id,
+                        checked                 : currentShowtime == showtime.startDate.format("Y-m-d H:i"),
+                        data: {
+                          validator             : "require-checkbox"
+                        },
+                        aria: {
+                          invalid               : entry.hasErrors(fieldShowtime.handle),
+                          errormessage          : "showtimeError"
+                        }
+                      })}}
+                      {{ showtime.startDate.format("g:ia") }}
+                    </label>
+                  </div>
+                {% endfor %}
+                {% if showtimes|length > 0 %}
+                  <div class="cell">
+                    <label for="field-showtimes-unlisted">
+                      {{ input("radio", "showtimes", "unlisted", {
+                        id                      : "field-showtimes-unlisted",
+                        checked                 : entry.checkinShowtimeIsUnlisted,
+                        data: {
+                          validator             : "require-checkbox"
+                        },
+                        aria: {
+                          invalid               : entry.hasErrors(fieldShowtime.handle),
+                          errormessage          : "showtimeError"
+                        }
+                      })}}
+                      Unlisted
+                    </label>
+                  </div>
+                {% else %}
+                  <div class="cell instructions">
+                    There are no current showtimes registered for this event. You will be able to check in up to two hours prior to the event’s start time. If we are missing a showtime, please choose the event's start time below to check in.
+                  </div>
+                {% endif %}
+                <div class="small-4 medium-3 cell">
+                  {% set isUnlistedRequired = showtimes|length == 0 or entry.checkinShowtimeIsUnlisted %}
+                  <select style="display: {{ isUnlistedRequired? "block" : "none" }}" class="{{ isUnlistedRequired? "" : "disabled" }}" name="showtimes-unlisted" id="field-showtimes-unlisted-options" aria-errormessage="showtimeUnlistedError" {{ isUnlistedRequired? "required" : "disabled" }}>
+                    <option value="">What time does the event begin?</option>
+                    {% for showtime in range(timeUnlistedStart|date('U'), timeUnlistedEnd|date('U'), 15*60) %}
+                      <option {{ showtime|datetime("Y-m-d H:i") == currentShowtime? "selected" }} value="{{ showtime|datetime("Y-m-d H:i") }}">{{ showtime|datetime('g:ia') }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+                <span class="form-error" id="showtimeError">Please select a showtime</span>
+                <span class="form-error" id="showtimeUnlistedError">If your showtime is unlisted, please select a showtime from the "Unlisted" list</span>
+                {{ _self.errorList(entry.getErrors(fieldShowtime.handle)) }}
+              </div>
+            </fieldset>
+          {% else %}
+            {{ hiddenInput("fields[" ~ fieldShowtime.handle ~ "]", now|datetime("Y-m-d H:i")) }}
+          {% endif %}
+
+          {% if isTwoForTenDay %}
+            <fieldset id="checkin-istwoforten">
+              <legend>Today is a 2 for $10 day! Do you have a companion with you?</legend>
+              <p>If so, they are <em>also</em> eligible for a $5 ticket—even if they're not a TeenTix member!</p>
+              <div class="switch large">
+                {{ input("checkbox", "fields[" ~fieldIsTwoForTen.handle ~ "]", "1", {
+                  id                            : "field-istwoforten",
+                  checked                       : entry.checkinIsTwoForTen,
+                  class                         : "switch-input",
+                  aria: {
+                    invalid                     : entry.hasErrors(fieldIsTwoForTen.handle),
+                    errormessage                : "isTwoForTenError"
+                  }
+                })}}
+                <label class="switch-paddle" for="field-istwoforten">
+                  <span class="show-for-sr">2 for $10 Day</span>
+                  <span class="switch-inactive" aria-hidden="true">No</span>
+                  <span class="switch-active" aria-hidden="true">Yes</span>
+                </label>
+              </div>
+             {{ _self.errorList(entry.getErrors(fieldIsTwoForTen.handle)) }}
+            </fieldset>
+          {% endif %}
+
+          <div id="checkin-guest-count">
+            <label for="field-guest-count">How many guests are attending with you?</label>
+            {{ input("number", "fields[" ~ fieldGuestCount.handle ~ "]", entry.checkinGuestCount?? 0, {
+              id                                : "field-guest-count",
+              min                               : 0,
+              max                               : 50,
+              pattern                           : "integer",
+              aria: {
+                invalid                         : entry.hasErrors(fieldGuestCount.handle),
+                errormessage                    : "guestCountError"
+              }
+            })}}
+            <span class="form-error" id="guestCountError">Please provide the number of guests</span>
+            {{ _self.errorList(entry.getErrors(fieldGuestCount.handle)) }}
+          </div>
+
+          <fieldset id="checkin-guest-types" style="display: {{ entry.checkinGuestCount > 0? "block" : "none" }}">
+            <legend class="require">Oh, we do love guests! Who is with you? (select all that apply)</legend>
+            <div class="checkbox-group grid-x grid-margin-x small-up-1 medium-up-2" data-abide-validator-min="0">
+              {{ hiddenInput("fields[" ~ fieldGuestTypes.handle ~ "]", "") }}
+              {% for option in fieldGuestTypes.settings.options %}
+                <div class="cell">
+                  <label for="field-guest-types-{{ option.value }}">
+                    {{ input("checkbox", "fields[" ~ fieldGuestTypes.handle ~ "][]", option.value, {
+                      id                        : "field-guest-types-" ~ option.value,
+                      checked                   : entry.checkinGuestTypes and entry.checkinGuestTypes.contains(option.value),
+                      min                       : 0,
+                      max                       : 50,
+                      pattern                   : "integer",
+                      data: {
+                        validator               : "require-checkbox"
+                      },
+                      aria: {
+                        invalid                 : entry.hasErrors(fieldGuestTypes.handle),
+                        errormessage            : "guestTypesError"
+                      }
+                    })}}
+                    {{ option.label|raw }}
+                  </label>
+                </div>
+              {% endfor %}
+              <span class="form-error" id="guestTypesError">Please select at least one option</span>
+              {{ _self.errorList(entry.getErrors(fieldGuestTypes.handle)) }}
+            </div>
+          </fieldset>
+
+          <fieldset id="checkin-transportation">
+            <legend class="require">How did you get here?</legend>
+            <div class="checkbox-group grid-x grid-margin-x small-up-1 medium-up-2" data-abide-validator-min="1">
+              {% for option in fieldTransportation.settings.options %}
+                <div class="cell">
+                  <label for="field-transportation-{{ option.value }}">
+                    {{ input("radio", "fields[" ~ fieldTransportation.handle ~ "]", option.value, {
+                      id                        : "field-transportation-" ~ option.value,
+                      checked                   : entry.checkinTransportation and entry.checkinTransportation.value == option.value,
+                      min                       : 0,
+                      max                       : 50,
+                      pattern                   : "integer",
+                      data: {
+                        validator               : "require-checkbox"
+                      },
+                      aria: {
+                        invalid                 : entry.hasErrors(fieldTransportation.handle),
+                        errormessage            : "transportationError"
+                      }
+                    })}}
+                    {{ option.label|raw }}
+                  </label>
+                </div>
+              {% endfor %}
+              <span class="form-error" id="transportationError">Please select an answer</span>
+              {{ _self.errorList(entry.getErrors(fieldTransportation.handle)) }}
+            </div>
+          </fieldset>
+
+        </div>
+
+        <input class="button success large expanded" type="submit" value="CHECK IN">
+
+        <div data-abide-error class="alert callout" style="display: none;">
+          <p class="text-center">There are some errors in your form, please fix them before submitting.</p>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

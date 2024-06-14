@@ -1,0 +1,4 @@
+{# ADMIN EDIT LINK #}
+{% if currentUser.can('accessCp') ?? false %}
+  <a class="edit-link button small hollow alert" href="{{ entry.cpEditUrl }}" target="_blank">Edit entry</a>
+{% endif %}

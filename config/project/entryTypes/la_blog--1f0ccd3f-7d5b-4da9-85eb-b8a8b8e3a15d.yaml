@@ -1,0 +1,125 @@
+fieldLayouts:
+  c6800bac-7427-45b2-8fd2-aeeb4be1e505:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 6b04368a-cd56-41d1-973e-6906ddcb8d03
+            warning: null
+            width: 100
+          -
+            fieldUid: 607fadf8-2650-4793-baa7-00cb551b1ea4 # Subhead
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 69244973-97cf-4cac-b2a7-c0337883a122
+            warning: null
+            width: 100
+          -
+            fieldUid: 106326b9-e90a-4244-9aa2-ca3ec30d8657 # Featured Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 644755d8-e5d9-4b13-888c-5db9336aff47
+            warning: null
+            width: 100
+          -
+            fieldUid: 7a51aca1-1a70-435b-bc16-6ec7bd2c4be0 # Featured Video Embed Code
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b6fb151b-c69e-4284-a209-4efef9113854
+            warning: null
+            width: 100
+          -
+            fieldUid: 5764896d-54f2-425b-b36e-4278f5440071 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 29d84ff2-1383-489c-9c0e-886b60990e4d
+            warning: null
+            width: 100
+          -
+            fieldUid: 3f09ea84-fca8-4c00-a456-da8c386acad9 # Featured
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f57c5a0a-3b45-48ab-82be-3359907431ab
+            warning: null
+            width: 100
+          -
+            fieldUid: ede4bcc5-7922-45a1-8927-831ff4f82b21 # Blog Category
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 189de084-3e6c-456c-b4d8-1c0e360e8b2f
+            warning: null
+            width: 100
+          -
+            fieldUid: 8e26db8d-0eba-4352-b600-6466a8a49041 # Genre
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5c1fa093-e3fd-436d-9c15-d98abe8e9716
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 5edf3505-03f8-4018-863e-04efd6a7bb3f
+      -
+        elements:
+          -
+            fieldUid: 12f0e18b-8472-48c3-b1ea-8d447c21c8ec
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7b33d9f3-92c7-446a-bc41-7ae1f03c8bbe
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 2
+        uid: 8370b960-5b3f-45cf-ba02-f1275d81d83b
+handle: la_blog
+hasTitleField: true
+name: 'LA Blog'
+section: 34eff12f-2a0d-4a7f-a878-0707280412be # LA Blog
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

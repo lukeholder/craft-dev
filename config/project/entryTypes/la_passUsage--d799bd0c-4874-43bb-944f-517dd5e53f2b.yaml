@@ -1,0 +1,100 @@
+fieldLayouts:
+  040a2766-02b8-4705-8ce6-b7165e641c6f:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: e66f87f2-cb1b-4b66-b1e7-558200b55377
+            warning: null
+            width: 100
+          -
+            fieldUid: fe5ad9d7-d539-497c-83ad-020c4f3ecc6f # Event
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4ea875fc-7bff-4a60-a292-ead460e208f6
+            warning: null
+            width: 100
+          -
+            fieldUid: 2546d390-75b9-4e13-beef-438a8b928418 # Pass
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 093a8b77-9bae-4403-bd32-de6591ea621e
+            warning: null
+            width: 100
+          -
+            fieldUid: e796a608-4f61-46ac-9c7d-59ca1074d233 # TeenHasCompanion
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 80e7a615-8832-41dd-a311-e251ac0da7da
+            warning: null
+            width: 100
+          -
+            fieldUid: 22466f6a-85f0-4bbd-bac1-bb9c3cf5b6f5 # TeenCompanionInfo
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 12f154ed-2a35-4eb8-81ca-cff6f44afdd2
+            warning: null
+            width: 100
+          -
+            fieldUid: 1841c9d7-d4db-4167-8fe5-56829152403c # MobilePartnerScannerPlatform
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8465a698-1f45-44ec-8a7c-51cdde30caca
+            warning: null
+            width: 100
+          -
+            fieldUid: 8369a280-2dfe-4bbc-8093-0ec52679754a # Scan Timestamp
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3a40e3c0-4ab9-4916-bd8b-31f00262830f
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 98e1ce5c-59eb-464e-81b7-db9aa82d8e58
+handle: la_passUsage
+hasTitleField: true
+name: 'LA Pass Usage'
+section: b86fb5af-a8ca-4f4c-8aca-22840feda647 # LA Pass Usage
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

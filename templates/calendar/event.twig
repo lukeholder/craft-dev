@@ -1,0 +1,392 @@
+{# CALENDAR SINGLE EVENT VIEW #}
+{% extends "_layout" %}
+
+{# ACQUIRE URL SEGMENTS #}
+{% set baseUrlSegments          = 1 %}
+{% set segment1                 = craft.app.request.segment(baseUrlSegments + 1) %}
+{% set segment2                 = craft.app.request.segment(baseUrlSegments + 2) %}
+
+{# SET EVENT FROM URL #}
+{% set eventSlug                = eventSlug?? segment2 %}
+{% set entry                    = event %}
+
+{# SET ACCOUNT PROPERTIES #}
+{% set isTeen                   = currentUser and currentUser.userBirthdate.diff(now).days/360 < 20 %}
+{% set isExpired                = currentUser and currentUser.userIsProvisional and currentUser.dateCreated.diff(now).days > 15 %}
+
+{# ENSURE ENTRY #}
+{% if not entry %}
+  {% exit 404 %}
+{% endif %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = entry.title %}
+{% set class                    = "calendar single" %}
+
+{# SET EVENT VARIABLES #}
+{% set categories               = entry.eventCategory.all() %}
+{% set genres                   = entry.eventType.all() %}
+{% set partners                 = entry.eventPartner.all() %}
+{% set venues                   = entry.eventVenue.all() %}
+{% set video                    = entry.featuredVideo %}
+{% set gallery                  = entry.eventGallery.all() %}
+{% set body                     = entry.body %}
+{% set website                  = entry.eventWebsite %}
+{% set socialLinks              = entry.eventSocialLinks.all() %}
+{% set agerec                   = entry.eventAgeRecommendations %}
+{% set boxoffice                = entry.eventBoxOffice %}
+{% set availability             = entry.eventTicketAvailability %}
+{% set ticketinfo               = entry.eventTicketInfo %}
+{% set ticketPriceLow           = entry.eventTicketPriceLow %}
+{% set ticketPriceLowInt        = ticketPriceLow|money|replace('$', '')|number_format %}
+{% set ticketPriceHigh          = entry.eventTicketPriceHigh %}
+{% set showTicketPriceHigh      = (ticketPriceHigh is not empty) and (ticketPriceHigh > ticketPriceLow) %}
+{% set equityStatementExcerpt   = "" %}
+{% set equityStatementUrl       = "" %}
+{% set equityStatementPartner   = "" %}
+{% set twoForTenDay             = "" %}
+{% set twoForTenPartner         = "" %}
+{% set hasHours                 = false %}
+{% set hasBoxOffice             = boxoffice? true %}
+{% set alldates                 = "" %}
+{% set isAllDayEvent            = true %}
+
+{# SET TIME RANGE #}
+{% set timeStart                = now %}
+{% set timeEnd                  = now|date_modify('+2 hours +15 min') %}
+
+{# DETERMINE CURRENT EVENT, IF AVAILABLE #}
+{% set currentEvents            = craft.calendar.events({
+  id                            : entry.id,
+  rangeStart                    : timeStart,
+  rangeEnd                      : timeEnd
+}).all() %}
+
+{% set currentEvents            = currentEvents|merge(craft.calendar.events({
+  relatedTo                     : entry.id,
+  rangeStart                    : timeStart,
+  rangeEnd                      : timeEnd
+}).all()) %}
+
+{% block content %}
+
+{% cache %}
+
+  {% set related                = craft.calendar.events({
+    relatedTo                   : entry.id,
+    rangeStart                  : "today"
+  }).all() %}
+  {% set occurrences            = craft.calendar.events({
+    id                          : entry.id,
+    rangeStart                  : "today"
+  }).all() %}
+  {% set datearray              = occurrences|merge( related ) %}
+  {% set alldates               = datearray|supersort('sortAs', '{{ object.startDate }}') %}
+  {% set alldates               = alldates|slice(0, 30) %}
+
+  {# SET INHERITED CONTENT #}
+  {% for partner in partners %}
+    {% if twoForTenDay is empty and partner.twoForTenDay is not empty %}
+      {% set twoForTenDay = partner.twoForTenDay %}
+      {% if partners|length > 1 %}
+        {% set twoForTenPartner = partner.title %}
+      {% endif %}
+    {% endif %}
+    {% if partner.partnerHours is not empty %}
+      {% set hasHours = true %}
+    {% endif %}
+    {% if equityStatementExcerpt is empty and partner.equityStatementExcerpt is not empty %}
+      {% set equityStatementExcerpt = partner.equityStatementExcerpt %}
+      {% set equityStatementUrl = partner.equityStatementUrl %}
+      {% set equityStatementPartner = partner.title %}
+    {% endif %}
+    {% if partner.partnerBoxOffice %}
+      {% set hasBoxOffice = true %}
+    {% endif %}
+  {% endfor %}
+
+  <article id="event-single" class="entry">
+  
+    <header class="page-header">
+      <h1 class="entry-title">{{ entry.title }}</h1>
+      <p class="event-date">
+        {% if entry.eventDatesLabel %}
+          {{ entry.eventDatesLabel }}
+        {% else %}
+          {{ entry.startDate.format("l, F j, Y")}}
+        {% endif %}
+      </p>
+      <div class="event-categories">
+        {% for genre in genres %}
+          <a href="{{ siteUrl }}calendar?genre={{ genre.id }}" class="button small">{{ genre.title }}</a>
+        {% endfor %}
+        {% for category in categories %}
+          <a href="{{ siteUrl }}calendar?cat={{ category.id }}" class="button small">{{ category.title }}</a>
+        {% endfor %}
+      </div>
+    </header>
+  
+    <hr>
+  
+    <div class="grid-x grid-margin-x">
+  
+      <div class="main large-8 cell">
+  
+        <div class="grid-x grid-margin-x">
+
+          <div id="event-info" class="medium-6 cell">
+            <h4 class="section-head sans">Partner{{- partners|length > 1? "s" }}</h4>
+            {% for partner in partners %}
+              <p>
+                <strong><a href="{{partner.url}}">{{ partner.title }}</a></strong><br />
+                {% if partner.partnerWebsite is not empty %}
+                  <a href="{{ partner.partnerWebsite }}">{{ partner.partnerWebsite }}</a><br />
+                {% endif %}
+                {% set emails = partner.partnerEmailAddresses.all() %}
+                {% if emails|length %}
+                  {% for block in emails %}
+                    {% if block.type == "email" and block.emailAddress %}
+                      <a href="mailto:{{block.emailAddress}}" title="{{ block.nameType }}">{{ block.emailAddress }}</a><br />
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+                {% if partner.partnerPhone is not empty %}
+                  <a href="tel:{{ partner.partnerPhone|replace('/[^0-9]/', '') }}">{{ partner.partnerPhone }}</a><br />
+                {% endif %}
+
+              </p>
+            {% endfor %}
+          </div>
+
+          <div id="event-location" class="medium-6 cell">
+            <h4 class="section-head sans">Venue{{- venues|length > 1? "s" }}</h4>
+            {% for venue in venues %}
+              <p>
+                <strong><a href="{{ venue.url }}">{{ venue.title }}</a></strong><br />
+                {% if venue.partnerAddress is not empty %}
+                  <a href="https://maps.google.com/?ll={{ venue.partnerAddress.lat }},{{ venue.partnerAddress.lng }}">
+                    {{ venue.partnerAddress.parts.number }} {{ venue.partnerAddress.parts.address }}, {{ venue.partnerAddress.parts.city }}
+                  </a>
+                {% endif %}
+              </p>
+            {% endfor %}
+          </div>
+
+        </div>
+  
+        {% if video %}
+          <div class="flex-video widescreen">
+            {{ video|raw }}
+          </div>
+        {% endif %}
+
+        {% include '_partials/partner-gallery' %}
+
+        {% if body %}
+          <div id="event-description">{{ body }}</div>
+        {% endif %}
+
+        <div class="grid-x grid-margin-x">
+
+          {% if alldates|length %}
+            <div id="event-dates" class="section medium-6 cell">
+              <h3 class="section-head sans">Upcoming Dates</h3>
+              <ul class="simple-list">
+                {% for date in alldates %}
+                  <li>
+                    <strong>{{ date.startDate.format("D, M j, Y") }}</strong>
+                    {% if date.allDay %}
+                      All Day
+                    {% else %}
+                      {% set isAllDayEvent = false %}
+                      {{ date.startDate.format("g:ia") }}
+                      {% if date.multiDay %}
+                        <br />{{ date.endDate.format("l, F j, Y") }}
+                      {% endif %}
+                    {% endif %}
+                  </li>
+                {% endfor %}
+                {% if datearray|length > alldates|length %}
+                  <li>+{{ datearray|length - alldates|length }} future events</li>
+                {% endif %}
+              </ul>
+            </div>
+          {% endif %}
+
+          {% if isAllDayEvent %}
+            <div id="event-hours" class="section medium-6 cell">
+              <h3 class="section-head sans">Hours</h3>
+              {% for partner in partners %}
+                {% if partner.partnerHours is not empty %}
+                  <div class="event-partner-hours">
+                    {% if partners|length > 1 %}
+                      <p><strong>{{ partner.title }} Hours</strong></p>
+                    {% endif %}
+                    {{ partner.partnerHours }}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+
+        </div>
+
+{% endcache %}
+
+        {% if siteSettings.checkinEnabled and isTeen and not isExpired and alldates|length %}
+          <div id="event-checkin-showtimes" class="section event-checkin show-for-large">
+            <p><a class="button large {{ currentEvents|length? "" : "disabled" }}" href="/calendar/event/{{ entry.slug }}/checkin">Check In</a></p>
+          </div>
+        {% endif %}
+
+      </div>
+
+      <div class="sidebar large-4 cell">
+
+        {% if siteSettings.checkinEnabled and isTeen and not isExpired %}
+          <div id="event-checkin" class="event-checkin section">
+            <a class="button large {{ currentEvents|length? "" : "disabled" }}" href="/calendar/event/{{ entry.slug }}/checkin">Check In</a>
+            {% if currentEvents|length == 0 %}
+              <p>There are no current showtimes for this event. You will be able to check in up to two hours prior to the event’s start time. If we are missing a showtime, <a href="/account/pass/{{ currentUser.id }}">you may check in anyway</a>.</p>
+            {% elseif currentEvents|first.allDay %}
+              <p>This is an all day event. You may check in if you are attending the event.</p>
+            {% elseif currentEvents|length > 1 %}
+              <p>There are {{ currentEvents|length }} current showtimes for this event. You may check in to {{ currentEvents|length > 2? "any" : "either" }} of them now.</p>
+            {% elseif currentEvents|first.startDateLocalized < now %}
+              <p>This event has already started. You may still check in if you are attending the event.</p>
+            {% else %}
+              {% set nextEvent = date(currentEvents|first.startDateLocalized|date('c')).diff(now) %}
+              <p>This event is starting in {{ nextEvent.format("%h") != "0"? nextEvent.format("%h hour" ~ (nextEvent.format("%h") != "1"? "s") ~ " and") }} {{ nextEvent.format("%i minutes") }}. You may check in if you are attending the event.</p>
+            {% endif %}
+          </div>
+        {% endif %}
+
+{% cache %}
+
+        {% if (socialLinks | length) or (website is not empty) %}
+          <div id="event-social" class="social-icons section">
+            <h4 class="section-head sans">Event Links</h4>
+
+            {% if website %}
+              <p class="event-website"><a href="{{ website }}" target="_blank">Event website</a></p>
+            {% endif %}
+
+            {% for block in socialLinks %}
+              {% if block.type == "link" %}
+                {% switch block.website %}
+                  {% case "facebook" %}{% set icon = "fab fa-facebook-f" %}
+                  {% case "twitter" %}{% set icon = "fab fa-twitter" %}
+                  {% case "youtube" %}{% set icon = "fab fa-youtube" %}
+                  {% case "vimeo" %}{% set icon = "fab fa-vimeo-v" %}
+                  {% case "instagram" %}{% set icon = "fab fa-instagram" %}
+                  {% case "flickr" %}{% set icon = "fab fa-flickr" %}
+                  {% default %}{% set icon = "fas fa-link" %}
+                {% endswitch %}
+                <a href="{{ block.websiteUrl }}" target="_blank"><i class="{{ icon }}"></i></a>
+              {% endif %}
+            {% endfor %}
+
+          </div>
+        {% endif %}
+
+        <div id="event-age-restrictions" class="section">
+          <h4 class="section-head sans">Age Recommendation</h4>
+          {% if agerec is not empty %}
+            {{ agerec }}
+          {% else %}
+            All ages welcome
+          {% endif %}
+        </div>
+  
+        {% if ticketPriceLow is not empty %}
+          <div id="event-price" class="section">
+            <h4 class="section-head sans">Admission</h4>
+            {% if ticketPriceLowInt|number_format(0) > 5 %}
+              {{ calendar.eventTicketPriceMember }}
+            {% endif %}
+            <p>Guest tickets cost {{ ticketPriceLow|money }}{{ showTicketPriceHigh? " - " ~ ticketPriceHigh|money }}.</p>
+          </div>
+        {% endif %}
+
+        {% if ticketinfo is not empty %}
+          <div id="event-ticket" class="section">
+            <h4 class="section-head sans">Ticket Info</h4>
+            {{ ticketinfo }}
+          </div>
+        {% endif %}
+
+        {% if availability is not empty %}
+          <div id="event-ticket-availability" class="section">
+            <h4 class="section-head sans">Ticket Availability</h4>
+            {{ availability }}
+          </div>
+        {% endif %}
+
+        {% if twoForTenDay is not empty %}
+          {% include '_partials/partner-two-for-ten' %}
+        {% endif %}
+
+        {% if hasBoxOffice %}
+          <div id="event-box-office" class="section">
+            <h4 class="section-head sans">Box Office Info</h4>
+            {% if boxoffice is not empty %}
+              {{ boxoffice }}
+            {% else %}
+              {% for partner in partners %}
+                {% if partner.partnerBoxOffice %}
+                  <div class="event-partner-box-office">
+                    {% if partners|length > 1 %}
+                      <p><strong>{{ partner.title }} Box Office</strong></p>
+                    {% endif %}
+                    {{ partner.partnerBoxOffice }}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if hasHours and not isAllDayEvent %}
+          <div id="event-hours" class="section">
+            <h4 class="section-head sans">Hours</h4>
+            {% for partner in partners %}
+              {% if partner.partnerHours is not empty %}
+                <div class="event-partner-hours">
+                  {% if partners|length > 1 %}
+                    <p><strong>{{ partner.title }} Hours</strong></p>
+                  {% endif %}
+                  {{ partner.partnerHours }}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if equityStatementExcerpt is not empty %}
+          <div id="org-equity-statement" class="section">
+            <h4 class="section-head sans">Equity Statement</h4>
+            {% if partners|length > 1 %}
+              <p><strong>{{ equityStatementPartner }}</strong></p>
+            {% endif %}
+            <blockquote cite="{{ equityStatementUrl }}">
+              {{ '"' ~ equityStatementExcerpt|raw ~ '"' }}
+            </blockquote>
+            {% if equityStatementUrl is not empty %}
+              For more information about {{ equityStatementPartner }}'s commitment to equity and racial justice, view their <a href="{{ equityStatementUrl }}">full equity statement</a>.
+            {% endif %}
+          </div>
+        {% endif %}
+  
+      </div>
+    </div>
+  </article>
+
+{% endcache %}
+
+{% if entry and craft.calendar.canEditEvent(entry) %}
+  <a class="edit-link button small hollow alert" href="{{ entry.cpEditUrl }}">
+    Edit
+  </a>
+{% endif %}
+
+{% endblock %}

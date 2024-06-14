@@ -1,0 +1,139 @@
+fieldLayouts:
+  c256192a-f445-4a9f-ba59-1c8203aae66c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 3ed56a85-d1f3-4e11-999e-d878a2d644fc
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: "## Ad dates\r\n\r\nUse the entry **Post Date** and **Expiry Date** to set campaign start and end dates."
+            type: craft\fieldlayoutelements\Tip
+            uid: acf6a289-6e7d-42a9-97b8-d1843b0436da
+            userCondition: null
+          -
+            elementCondition: null
+            fieldUid: d8f6df29-8bd5-4eec-8ba6-5fa033c72a49 # Advertiser Name
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a3b72658-7d8d-4536-ac83-405d8abda9c6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b0eceb4f-b5bc-4e49-b49e-33a7974ea2ec # Banner Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 860ad62c-90c7-4b82-8f07-54094b85a5cb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d094b0a5-1093-4ecb-a904-eef7fc65ea3e # Banner Location
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7916cc42-5939-4069-bff7-b3b49fc84517
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f6b825aa-dca9-4c38-ae85-7467c61b8aec # Banner 300x250 or 600x500
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fcc3d4d9-c424-4d79-a831-b24a9b6827e4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: da66bcf0-09d4-4be6-8293-a34eb5076824 # Banner 300x600
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 72a44b4b-7be8-41f6-9059-79227c41259c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 46a70627-1c9f-42d0-99e5-06d393e0b8d2 # Banner 1000x50
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: db2192b8-3c58-43a7-a1a0-b59b2a13156d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: aeb3b289-45fb-4c02-b8b7-db407750d5c1 # Homepage Copy
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ba16f742-3f8f-4e6c-827f-eba1c6d6f2ed
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b3d34bea-9265-4682-b7f9-8f984b353864
+        userCondition: null
+handle: la_ads
+hasTitleField: true
+name: 'LA Ads'
+section: bb1f6d32-2807-499e-991a-56a2838216dc # LA Ads
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

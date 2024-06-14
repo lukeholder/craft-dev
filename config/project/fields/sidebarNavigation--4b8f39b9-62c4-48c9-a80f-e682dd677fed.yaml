@@ -1,0 +1,45 @@
+contentColumnType: string
+fieldGroup: e823674a-d2fc-4023-89dd-2bfacf7bc359 # Common
+handle: sidebarNavigation
+instructions: ''
+name: 'Sidebar Navigation'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Select Nav'
+        -
+          - value
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - About
+        -
+          - value
+          - about
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Support
+        -
+          - value
+          - support
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

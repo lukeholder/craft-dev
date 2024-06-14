@@ -1,0 +1,14 @@
+columnSuffix: xuthkrup
+contentColumnType: boolean
+fieldGroup: 4f2d0446-809a-4896-9a97-3b5409c32324 # Global
+handle: checkinEnabled
+instructions: 'The Digital Membership Pass (legacy) provides a single member pass that can be used for all Events. The Event Check-In requires Members to check-in per Event, which provides analytics for how Members are using the program.'
+name: 'Member Pass Type'
+searchable: false
+settings:
+  default: false
+  offLabel: 'Digital Membership Pass (Legacy)'
+  onLabel: 'Event Check-In Pass'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

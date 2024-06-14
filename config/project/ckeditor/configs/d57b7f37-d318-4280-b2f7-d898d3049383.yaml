@@ -1,0 +1,62 @@
+headingLevels:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+name: Standard
+options:
+  code:
+    indentSequence: '  '
+  style:
+    definitions:
+      -
+        classes:
+          - caption
+        element: p
+        name: Caption
+      -
+        classes:
+          - btn
+          - green
+        element: p
+        name: 'Green Button'
+      -
+        classes:
+          - btn
+          - blue
+        element: p
+        name: 'Blue Button'
+      -
+        classes:
+          - btn
+          - red
+        element: p
+        name: 'Red Button'
+      -
+        classes:
+          - btn
+          - yellow
+        element: p
+        name: 'Yellow Button'
+toolbar:
+  - sourceEditing
+  - '|'
+  - heading
+  - '|'
+  - style
+  - '|'
+  - blockQuote
+  - strikethrough
+  - codeBlock
+  - bold
+  - italic
+  - underline
+  - horizontalLine
+  - bulletedList
+  - numberedList
+  - link
+  - insertImage
+  - mediaEmbed
+  - alignment

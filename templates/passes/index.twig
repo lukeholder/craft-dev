@@ -1,0 +1,49 @@
+{% extends "passes/_layout" %}
+
+{# SET RESULTS BY SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set results                  = craft.entries.section(sitePrefix ~ 'passes').orderBy('elements.id desc').limit(100) %}
+
+{% paginate results as pageInfo, entries %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = siteName ~ " Passes" %}
+{% set class                    = "passes list" %}
+
+{% block content %}
+  
+  <header class="page-header">
+    <h1 class="page-title">{{ siteName }} Passes</h1>
+  </header>
+  
+  {% include 'passes/_partials/filter-passes'  with { 'query' : '', 'status' : '', 'format' : '', 'results' : results|length } %}
+  
+  <div class="grid-x grid-margin-x">
+  
+    <div class="main small-12 cell">
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Pass ID</th>
+            <th>Status</th>
+            <th>Format</th>
+            <th>User ID</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="pass-results">
+          {% for entry in entries %}
+            {% include 'passes/_partials/results-passes' %}
+          {% endfor %}
+        </tbody>
+      </table>
+
+      {% include '_partials/paginate-list' %}
+  
+    </div>
+  
+  </div>
+
+{% endblock %}

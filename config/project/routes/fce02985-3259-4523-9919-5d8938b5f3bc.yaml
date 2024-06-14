@@ -1,0 +1,9 @@
+siteUid: null
+sortOrder: '25'
+template: account/emailcheck
+uriParts:
+  - account/emailcheck/
+  -
+    - '*'
+    - '[^\/]+'
+uriPattern: 'account/emailcheck/<any:[^\/]+>'

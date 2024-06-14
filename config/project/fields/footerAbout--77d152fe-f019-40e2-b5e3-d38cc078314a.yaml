@@ -1,0 +1,20 @@
+contentColumnType: text
+fieldGroup: 4f2d0446-809a-4896-9a97-3b5409c32324 # Global
+handle: footerAbout
+instructions: ''
+name: 'Footer About'
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes: ''
+  ckeConfig: d57b7f37-d318-4280-b2f7-d898d3049383 # Standard
+  columnType: text
+  defaultTransform: ''
+  enableSourceEditingForNonAdmins: true
+  purifierConfig: ''
+  purifyHtml: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: site
+type: craft\ckeditor\Field

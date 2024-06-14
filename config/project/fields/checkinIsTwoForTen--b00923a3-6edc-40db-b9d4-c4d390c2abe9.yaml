@@ -1,0 +1,14 @@
+columnSuffix: ipksojbg
+contentColumnType: boolean
+fieldGroup: 243aa178-cda7-4f1a-8094-268c903002ed # Check Ins
+handle: checkinIsTwoForTen
+instructions: 'The Event that the Member checked into was a 2 for $10 Event—and they brought a companion'
+name: '2 for $10?'
+searchable: true
+settings:
+  default: false
+  offLabel: 'No'
+  onLabel: 'Yes'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

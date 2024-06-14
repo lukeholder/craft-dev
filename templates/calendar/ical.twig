@@ -1,0 +1,18 @@
+{%- set event                   = craft.calendar.event(eventSlug) -%}
+{%- set showtime                = craft.app.request.getQueryParam('showtime') -%}
+
+{%- set events                  = craft.calendar.events({
+  id                            : event.id,
+  rangeStart                    : showtime,
+  rangeEnd                      : showtime,
+  loadOccurrences               : "next"
+}) -%}
+
+{%- if events|length == 0 -%}
+  {%- exit 404 -%}
+{%- endif -%}
+
+{%- header "Content-Type: application/octet-stream" -%}
+{%- header "Content-Transfer-Encoding: binary" -%}
+
+{{- craft.calendar.export(events, {timezone: "America/Los_Angeles"}) -}}

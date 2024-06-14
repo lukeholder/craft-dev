@@ -1,0 +1,34 @@
+{# ACCOUNT PAGE HOME #}
+{% requireLogin %}
+{% extends "_layout" %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Account" %}
+{% set class                    = "account" %}
+
+{# SET SEO VALUES #}
+{% do seomatic.meta.seoTitle( "Your Account" ) %}
+
+{% block content %}
+
+  {% include 'account/_partials/account-header' %}
+
+  <div class="grid-x grid-margin-x">
+  
+    {% include 'account/_partials/nav-sidebar' %}
+  
+    <div class="main large-7 medium-order-1 cell">
+      <h2>My Profile</h2>
+      <h4>Name</h4>
+      <p>{{ currentUser.fullName }}</p>
+      {% if currentUser.userBirthdate %}
+        <h4>Birthday</h4>
+        <p>{{ currentUser.userBirthdate.format('F j, Y') }}</p>
+      {% endif %}
+      <h4>Email</h4>
+      <p>{{ currentUser.email }}</p>
+    </div>
+  
+  </div>
+
+{% endblock %}

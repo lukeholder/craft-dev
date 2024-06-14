@@ -1,0 +1,60 @@
+fieldLayouts:
+  90222ba4-ab1c-4b27-ba35-8134dd35f6c5:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 2b4e4d25-f3f8-44ae-9231-cede71c8a6fa
+            warning: null
+            width: 100
+          -
+            fieldUid: 24a9e9d6-7048-41e2-89f9-b07ce4eb2457 # Alt Tag
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8944cb6f-4185-4c54-a5b6-39a9606d9b13
+            warning: null
+            width: 100
+          -
+            fieldUid: 3b35de68-31ec-45e8-91f3-f55c9ab8d974 # Caption
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dc05bd5c-8ef3-462d-9587-f42e15fe6908
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 7094f681-2e5d-48f1-997e-9042a8896362
+fs: la_sponsorLogos
+handle: la_sponsorLogos
+hasUrls: true
+name: 'LA Sponsor Logos'
+sortOrder: 0
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+url: '@assetsUrl'

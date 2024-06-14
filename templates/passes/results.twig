@@ -1,0 +1,63 @@
+{% extends "passes/_layout" %}
+
+{# SET QUERY PARAMETERS #}
+{% set querystring              = craft.app.request.queryStringWithoutPath %}
+{% set query                    = craft.app.request.getParam('q') %}
+{% set q                        = '*' ~ query ~ '*' %}
+{% set status                   = craft.app.request.getParam('status') %}
+{% set format                   = craft.app.request.getParam('format') %}
+
+{# SET RESULTS BY SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set results                  = craft.entries.section(sitePrefix ~ 'passes').orderBy('score').limit(100).passStatus(status).passFormat(format).search(q) %}
+
+{% paginate results as pageInfo, entries %}
+
+
+{# SET HEADER VARIABLES #}
+{% set title                    = siteName ~ " Passes" %}
+{% set class                    = "passes list" %}
+
+{% block content %}
+  
+  <header class="page-header">
+    <h1 class="page-title">{{ siteName }} Passes</h1>
+  </header>
+  
+  {% include 'passes/_partials/filter-passes' with { 'query' : query, 'status' : status, 'format' : format, 'results' : results|length } %}
+  
+  <div class="grid-x grid-margin-x">
+  
+    <div class="main small-12 cell">
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Pass ID</th>
+            <th>Status</th>
+            <th>Format</th>
+            <th>User ID</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody id="pass-results">
+          {% for entry in entries %}
+            {% include 'passes/_partials/results-passes' %}
+          {% endfor %}
+
+          {% if entries|length == 0 %}
+            <tr><td colspan="5">There are no results</td></tr>
+          {% endif %}
+        </tbody>
+      </table>
+
+      {% if entries|length > 0 %}
+        {% include '_partials/paginate-list' %}
+      {% endif %}
+  
+    </div>
+  
+  </div>
+
+{% endblock %}

@@ -1,0 +1,312 @@
+.pages.centered {
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+}
+
+.pages.twoColumn {
+
+  .main {
+    border-top: 2px dotted $dark-blue;
+    padding: 2rem 0;
+    @include breakpoint(large) {
+      padding-right: 2rem;
+    }
+  }
+
+  .sidebar {
+    padding-top: 1rem;
+    border-top: 2px dotted $dark-blue;
+    @include breakpoint(large) {
+      border-top: none;
+      padding-top: 0;
+      padding-left: 2rem;
+    }
+  }
+
+}
+
+.pages.flexible {
+
+  .section {
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+
+    &.bkg-green,
+    &.bkg-blue,
+    &.bkg-gray {
+      padding: 2rem;
+      font-weight: 500;
+
+      a {
+        color: $white;
+        text-decoration: underline;
+      }
+
+    }
+
+    &.bkg-green {
+      color: $white;
+
+      h1,h2,h3,h4,h5,h6 {
+        color: $white;
+      }
+
+    }
+
+    &.bkg-blue,
+    &.bkg-gray {
+      color: $white;
+
+      h1,h2,h3,h4,h5,h6 {
+        color: $white;
+      }
+
+    }
+
+  }
+
+  .content-two-col {
+
+    &.bkg-green {
+      margin-left: -1rem;
+      border-radius: 0 1rem 1rem 0;
+      @include breakpoint(medium) {
+        margin-left: -2rem;
+      }
+    }
+
+    &.bkg-blue,
+    &.bkg-gray {
+      margin-right: -1rem;
+      border-radius: 1rem 0 0 1rem;
+      @include breakpoint(medium) {
+        margin-right: -2rem;
+      }
+    }
+
+  }
+
+  .content-one-col {
+
+    &.bkg-green {
+      border-radius: 1rem;
+    }
+
+    &.bkg-blue,
+    &.bkg-gray {
+      margin-right: -1rem;
+      border-radius: 1rem 0 0 1rem;
+      @include breakpoint(medium) {
+        margin-right: -2rem;
+      }
+    }
+
+  }
+
+  .image-gallery {
+    margin: 0;
+
+    &.bkg-green,
+    &.bkg-blue,
+    &.bkg-gray {
+      margin-right: -1rem;
+      margin-left: -1rem;
+      @include breakpoint(medium) {
+        margin-right: -2rem;
+        margin-left: -2rem;
+      }
+    }
+
+    .slide {
+      img {
+        margin: 0 auto;
+      }
+    }
+
+  }
+
+  .image-grid {
+
+    .cell {
+      padding: 1rem;
+      text-align: center;
+    }
+
+  }
+
+  .content-video {
+    margin: 0;
+
+    &.bkg-green,
+    &.bkg-blue,
+    &.bkg-gray {
+      margin-right: -1rem;
+      margin-left: -1rem;
+      @include breakpoint(medium) {
+        margin-right: -2rem;
+        margin-left: -2rem;
+      }
+    }
+
+  }
+
+  .section.bkg-none + .section.bkg-none {
+    border-top: 2px dotted $blue;
+  }
+
+  .sidebar {
+    padding: 0rem;
+
+    &.bkg-green,
+    &.bkg-blue,
+    &.bkg-gray {
+      padding: 2rem;
+      font-weight: 500;
+    }
+
+    &.bkg-green,
+    &.bkg-blue,
+    &.bkg-gray {
+      margin-right: -1rem;
+      border-radius: 1rem 0 0 1rem;
+      color: $white;
+      @include breakpoint(medium) {
+        margin-right: -2rem;
+      }
+
+      h1,h2,h3,h4,h5,h6 {
+        color: $white;
+      }
+
+    }
+
+  }
+
+  .medium-order-1  {
+
+    .sidebar {
+
+      &.bkg-green,
+      &.bkg-blue,
+      &.bkg-gray {
+        margin-right: 0rem;
+        margin-left: -1rem;
+        border-radius: 0 1rem 1rem 0;
+        color: $white;
+        @include breakpoint(medium) {
+          margin-left: -2rem;
+        }
+
+        h1,h2,h3,h4,h5,h6 {
+          color: $white;
+        }
+
+      }
+
+    }
+
+  }
+
+  .bkg-none {
+    background-color: transparent;
+  }
+
+  .bkg-green {
+    background-color: $green;
+
+    a {
+      color: $dark-teal;
+    }
+
+    .btn a {
+      color: $white;
+    }
+
+  }
+
+  .bkg-blue {
+    background-color: $dark-blue;
+  }
+
+  .bkg-gray {
+    background-color: $gray;
+  }
+
+  #top-featured {
+    margin: 0 -1rem 2rem -1rem;
+    position: relative;
+
+    @include breakpoint(small only) {
+      background-color: $blue;
+
+      .shadow {
+        box-shadow: none;
+      }
+
+    }
+
+    @include breakpoint(medium) {
+      margin: 0 -2rem 2rem -2rem;
+    }
+
+    .featured-image {
+      background-color: $black;
+      text-align: center;
+
+      a {
+        display: block;
+      }
+
+      @include breakpoint(large) {
+        min-height: 480px;
+        margin-right: 2rem;
+        border-radius: 0 1rem 1rem 0;
+        overflow: hidden;
+
+        img {
+          margin: auto;
+        }
+
+      }
+
+    }
+
+    .featured-content {
+      padding: 1.5rem;
+      background-color: $blue;
+      color: $white;
+      font-weight: 500;
+
+      h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 0;
+      }
+
+      a {
+        transition: all 500ms;
+        &:hover {
+          color: $teal;
+        }
+      }
+
+      @include breakpoint(medium) {
+        padding: 1.5rem 2rem;
+      }
+
+      @include breakpoint(large) {
+        border-radius: 1rem 0 0 1rem;
+        position: absolute;
+        width: 40%;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+    }
+
+  }
+
+}

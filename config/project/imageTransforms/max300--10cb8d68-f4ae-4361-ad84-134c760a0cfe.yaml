@@ -1,0 +1,10 @@
+format: null
+handle: max300
+height: 300
+interlace: none
+mode: fit
+name: 'Max 300'
+position: center-center
+quality: null
+upscale: true
+width: 300

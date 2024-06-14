@@ -1,0 +1,191 @@
+field: 019bfad1-7fee-4969-a0ce-4106539e4f9b # Flexible Content
+fieldLayouts:
+  344ec514-e7f2-470e-92cc-c9459ae91542:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 9d76e086-b2cf-4699-a6dd-445bdea1988b # Header
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 15b4272f-e76e-41de-aa45-e5d11358810c
+            warning: null
+            width: 100
+          -
+            fieldUid: fcf39215-31c1-442c-bf9d-2c4cdbb6a189 # Background Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c3105e69-0ef0-40e5-bda2-9623c714bb73
+            warning: null
+            width: 100
+          -
+            fieldUid: cb33afce-0d25-40ce-b60c-1abe465d5425 # Content Left
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e85e4476-6e09-4e4d-aeec-c3ea585042a3
+            warning: null
+            width: 100
+          -
+            fieldUid: 99a9f27c-e703-4c72-ba89-911b346f2a09 # Content Right
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7433a0d5-de9e-4c09-975f-3a0573a66473
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 4eb8fc95-fee4-4067-b295-4b57f7227b78
+fields:
+  9d76e086-b2cf-4699-a6dd-445bdea1988b: # Header
+    contentColumnType: text
+    fieldGroup: null
+    handle: header
+    instructions: ''
+    name: Header
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  99a9f27c-e703-4c72-ba89-911b346f2a09: # Content Right
+    contentColumnType: text
+    fieldGroup: null
+    handle: contentMain2
+    instructions: ''
+    name: 'Content Right'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes:
+        - ff4a3796-5f38-4dbb-8328-85026951b987 # SEA Page Images
+        - bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb # SEA Partner Images
+        - 834d8a22-ae60-4d04-9fd2-a0924a7e93f2 # SEA Ad Images
+        - a16a3316-a22e-4c0f-82e4-fe841faf49ce # SEA General Images
+        - d8eeb3df-3c65-4ed9-b943-c95348bd3f50 # SEA Sponsor Logos
+        - 7f7bf724-7909-4699-b70a-5cd496c314bb # LA Page Images
+        - 0543ea8d-9bf0-4033-bb9a-bae51d9860cf # LA Partner Images
+        - a6e1f43e-7d92-4454-b86e-9b57856d3c34 # LA Ad Images
+        - d8052c64-2464-4aa2-8b41-9f106bc1d1f6 # LA General Images
+        - 5ec9bf08-ecd8-45fc-9476-42230de4ea06 # LA Sponsor Logos
+      ckeConfig: d57b7f37-d318-4280-b2f7-d898d3049383 # Standard
+      columnType: text
+      defaultTransform: ''
+      enableSourceEditingForNonAdmins: true
+      purifierConfig: ''
+      purifyHtml: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  cb33afce-0d25-40ce-b60c-1abe465d5425: # Content Left
+    contentColumnType: text
+    fieldGroup: null
+    handle: contentMain
+    instructions: ''
+    name: 'Content Left'
+    searchable: true
+    settings:
+      availableTransforms: '*'
+      availableVolumes:
+        - ff4a3796-5f38-4dbb-8328-85026951b987 # SEA Page Images
+        - bb8ba4ad-ead4-4ad1-a642-2bc2b11c7beb # SEA Partner Images
+        - 834d8a22-ae60-4d04-9fd2-a0924a7e93f2 # SEA Ad Images
+        - a16a3316-a22e-4c0f-82e4-fe841faf49ce # SEA General Images
+        - d8eeb3df-3c65-4ed9-b943-c95348bd3f50 # SEA Sponsor Logos
+        - 7f7bf724-7909-4699-b70a-5cd496c314bb # LA Page Images
+        - 0543ea8d-9bf0-4033-bb9a-bae51d9860cf # LA Partner Images
+        - a6e1f43e-7d92-4454-b86e-9b57856d3c34 # LA Ad Images
+        - d8052c64-2464-4aa2-8b41-9f106bc1d1f6 # LA General Images
+        - 5ec9bf08-ecd8-45fc-9476-42230de4ea06 # LA Sponsor Logos
+      ckeConfig: d57b7f37-d318-4280-b2f7-d898d3049383 # Standard
+      columnType: text
+      defaultTransform: ''
+      enableSourceEditingForNonAdmins: true
+      purifierConfig: ''
+      purifyHtml: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\ckeditor\Field
+  fcf39215-31c1-442c-bf9d-2c4cdbb6a189: # Background Color
+    contentColumnType: string
+    fieldGroup: null
+    handle: backgroundColor
+    instructions: ''
+    name: 'Background Color'
+    searchable: true
+    settings:
+      optgroups: true
+      options:
+        -
+          __assoc__:
+            -
+              - label
+              - None
+            -
+              - value
+              - none
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Green
+            -
+              - value
+              - green
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Blue
+            -
+              - value
+              - blue
+            -
+              - default
+              - ''
+        -
+          __assoc__:
+            -
+              - label
+              - Gray
+            -
+              - value
+              - gray
+            -
+              - default
+              - ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Dropdown
+handle: contentTwoCol
+name: 'Content Two Column'
+sortOrder: 3

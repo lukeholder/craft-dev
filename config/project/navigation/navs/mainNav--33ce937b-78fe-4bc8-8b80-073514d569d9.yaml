@@ -1,0 +1,31 @@
+handle: mainNav
+instructions: ''
+maxNodes: ''
+name: 'Sea Main Nav'
+permissions:
+  craft\elements\Asset:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Category:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Entry:
+    enabled: '1'
+    permissions: '*'
+  craft\elements\Tag:
+    enabled: ''
+    permissions: '*'
+  verbb\navigation\nodetypes\CustomType:
+    enabled: '1'
+  verbb\navigation\nodetypes\PassiveType:
+    enabled: '1'
+  verbb\navigation\nodetypes\SiteType:
+    enabled: '1'
+propagationMethod: none
+siteSettings:
+  0e7592e9-74d0-48f7-a1d7-2bf18b97d6a0: # TeenTix
+    enabled: '1'
+sortOrder: 3
+structure:
+  maxLevels: '2'
+  uid: cfa72893-0451-4932-8e2c-388458157832

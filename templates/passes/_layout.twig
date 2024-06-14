@@ -1,0 +1,97 @@
+{% requireLogin %}
+<!doctype html>
+
+{# SET FORM BY SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set physicalPassForm         = sitePrefix ~ "physicalPass" %}
+
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+  <meta name="description" content="{embed:og_description}">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ siteUrl }}assets/styles/app.css?{{ now.getTimestamp }}">
+
+  <link rel="stylesheet" href="https://use.typekit.net/acz8ato.css">
+  <script type="text/javascript" src="//use.typekit.net/tnb1byz.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <link rel="icon" href="{{ siteUrl }}favicon.png" type="image/x-icon">
+  <link rel="manifest" href="{{ siteUrl }}webmanifest/manifest.webmanifest" {{ craft.app.config.general.devMode? "crossorigin=\"use-credentials\"" : "" }} />
+  <meta name="theme-color" content="#79cac9" />
+  <meta name="apple-mobile-web-app-title" content="TeenTix" />
+
+</head>
+
+<body class="{% if class is defined %}{{ class }}{% endif %}">
+  {% if currentUser.admin or currentUser.isInGroup(4) or currentUser.isInGroup(5) %}
+
+    <div class="off-canvas position-right" id="offCanvas" data-off-canvas>
+      {#<div id="off-canvas-search" class="search-form">
+        <form action="{{ url('search/results') }}">
+          <div class="input-group">
+            <input class="input-group-field" type="text" name="q" value="" placeholder="Search TeenTix">
+            <div class="input-group-button"><button type="submit" class="button"><i class="fas fa-search"></i></button></div>
+          </div>
+        </form>
+      </div>#}
+    </div>
+
+    <div class="off-canvas-content" data-off-canvas-content>
+      <div class="site-wrapper">
+
+        <!-- HEADER AND NAV -->
+        <div id="site-header">
+
+          <div class="off-canvas-toggle hide-for-large">
+            <button type="button" class="button success" data-toggle="offCanvas"><i class="fas fa-bars"></i></button>
+          </div>
+
+          <div class="grid-x align-middle">
+            <div class="small-12 medium-shrink cell">
+              <div id="site-logo"><a href="{{ siteUrl }}"><img src="{{ siteUrl }}images/site/teentix-logo.png" /></a></div>
+            </div>
+            <div class="small-12 medium-auto cell show-for-large">
+              <ul id="main-nav" class="menu align-right">
+                <li><a href="{{ siteUrl }}passes">Passes</a></li>
+                <li><a href="{{ siteUrl }}passes/users">Passholders</a></li>
+                <li><a href="{{ cpUrl('freeform/submissions', {source: 'form:1'}) }}" target="_blank">Pass Requests</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div><!-- end #header -->
+
+        <div id="main-content">
+
+          {% block content %}
+            <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+            <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+          {% endblock %}
+
+        </div>
+
+        <div id="footer-credits">
+          <div class="site-copyright">
+            {{ include(template_from_string(footer.footerCopyright)|raw) }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  {% else %}
+    Nothing Here
+  {% endif %}
+
+  <script src="{{ siteUrl }}assets/scripts/scripts.js"></script>
+
+  {% block footerJs %}{% endblock %}
+
+</body>
+</html>

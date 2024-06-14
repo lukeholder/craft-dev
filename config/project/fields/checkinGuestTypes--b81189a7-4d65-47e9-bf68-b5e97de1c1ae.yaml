@@ -1,0 +1,56 @@
+columnSuffix: ysrigexz
+contentColumnType: string
+fieldGroup: 243aa178-cda7-4f1a-8094-268c903002ed # Check Ins
+handle: checkinGuestTypes
+instructions: 'The types of guests who accompanied the Member to the Event'
+name: 'Who’s with you?'
+searchable: true
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Other Teens (Non-Members)'
+        -
+          - value
+          - teens
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Other TeenTix Members'
+        -
+          - value
+          - members
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Parents or Guardians'
+        -
+          - value
+          - parents
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Other
+        -
+          - value
+          - other
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Checkboxes

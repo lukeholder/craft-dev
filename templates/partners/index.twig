@@ -1,0 +1,77 @@
+{# PARTNERS LIST PAGE #}
+{% extends "_layout" %}
+
+{# SET CALENDAR BY SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set arts                     = craft.entries.section(sitePrefix ~ 'partners').partnerType('arts').orderBy('title').all()  %}
+{% set community                = craft.entries.section(sitePrefix ~ 'partners').partnerType('community').orderBy('title').all()  %}
+
+{# SET GENRE OPTIONS #}
+{% set partnerGenre             = craft.categories().group('eventType').all() %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "#{ entry.title }" %}
+{% set class                    = "partners list" %}
+
+{% block content %}
+{% cache %}
+
+  <header class="page-header">
+    <h1 class="page-title">{{ entry.title }}</h1>
+  </header>
+
+  <div class="page-content">
+    {{ entry.body }}
+  </div>
+  
+  {% if arts | length %}
+    <div id="arts-partners">
+
+      <div class="grid-x grid-margin-x">
+        <div class="medium-7 large-9 cell">
+          <h2>Arts Partners</h2>
+        </div>
+        <div class="medium-5 large-3 cell">
+          <nav class="genre-filter">
+            <select id="partner-genre" name="genre">
+              <option value="">Filter Partners by Genre</option>
+              {% nav genre in partnerGenre %}
+                <option value="{{ genre.slug }}">{{ genre.title }}</option>
+              {% endnav %}
+            </select>
+          </nav>
+        </div>
+      </div>
+
+      <div class="partner-grid">
+        <div class="grid-x grid-padding-x small-up-1 medium-up-3 large-up-5">
+          {% for entry in arts %}
+            {% include '_partials/partner-grid' with {'partnerClass': 'partner-filter'} %}
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  {% endif %}
+  
+  {% if community | length %}
+    <div id="community-partners">
+
+      <h2>Community Partners</h2>
+
+      <div class="partner-grid">
+        <div class="grid-x grid-padding-x small-up-1 medium-up-3 large-up-5">
+          {% for entry in community %}
+            {% include '_partials/partner-grid' with {'partnerClass': ''} %}
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  {% endif %}
+
+{% endcache %}
+
+{% include "_partials/edit-link" %}
+
+{% endblock %}

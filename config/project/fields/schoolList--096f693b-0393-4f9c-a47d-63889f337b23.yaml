@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 4f2d0446-809a-4896-9a97-3b5409c32324 # Global
+handle: schoolList
+instructions: ''
+name: 'School List'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: '1'
+  columnType: null
+  initialRows: '10'
+  multiline: '1'
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\PlainText

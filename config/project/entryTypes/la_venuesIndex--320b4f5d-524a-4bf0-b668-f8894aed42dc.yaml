@@ -1,0 +1,59 @@
+fieldLayouts:
+  689f331e-b4f2-4e9a-9d30-65ac88997290:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 7e5d4d33-aeaf-43de-b90e-9eeef19f6ec8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 5764896d-54f2-425b-b36e-4278f5440071 # Body
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 90ab81d2-2273-4bd3-abde-1eb087258838
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: f8d52255-0490-4c9c-9c26-506d723e50a6
+        userCondition: null
+handle: la_venuesIndex
+hasTitleField: true
+name: 'LA Venues Index'
+section: 494afe00-636f-479f-83cc-a0308c6bf0cb # LA Venues Index
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

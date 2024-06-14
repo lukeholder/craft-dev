@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: 77d77e0d-cbd3-4972-b03e-ec05812e4b1b # Event
+handle: eventDatesLabel
+instructions: 'Enter a human friendly label for event dates. For example: Open Daily, Tuesday - Sunday, Fri March 1, 2019 - Sun April 1, 2019. If this is left blank, it will display the first day of the event.'
+name: 'Event Dates Label'
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

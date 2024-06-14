@@ -1,0 +1,89 @@
+contentColumnType: string
+fieldGroup: 1ea0247b-17e7-419a-8029-d57f032f4ed0 # Users
+handle: userInterests
+instructions: ''
+name: Interests
+searchable: true
+settings:
+  multi: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Dance
+        -
+          - value
+          - dance
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Film
+        -
+          - value
+          - film
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Literature
+        -
+          - value
+          - literature
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Music
+        -
+          - value
+          - music
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Opera
+        -
+          - value
+          - opera
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Theater
+        -
+          - value
+          - theater
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Visual Arts'
+        -
+          - value
+          - visualArts
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Checkboxes

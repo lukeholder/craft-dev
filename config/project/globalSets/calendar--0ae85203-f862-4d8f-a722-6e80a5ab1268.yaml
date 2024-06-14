@@ -1,0 +1,79 @@
+fieldLayouts:
+  ee66e72e-c9f2-418c-87bc-7a98c3c02f82:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 607fadf8-2650-4793-baa7-00cb551b1ea4 # Subhead
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5bc12415-a979-40a7-813d-a79339031d85
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b7d26990-cf71-4f7c-8600-87de0daa8cc4 # Calendar Donation Prompt
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 053a6c2e-5db9-44f9-8f9a-aa2546ba0bd7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            fieldUid: 1dc1278d-c429-4ba3-ba73-239a54a8da2f # 2 for  Description
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cf935f43-bf4e-4c27-9506-eacd6977816f
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: a2befbb4-ab0d-466b-9e21-537f7e576644 # Member Ticket Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 833c083e-7cd4-46d4-aff7-2c5bddebb185
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1bef7358-ad99-4460-827c-31e5ab2d4f28 # Affiliated Venue Message
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: eabe9845-e905-4f22-a632-7be9e3ce3ae6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 7befc186-4e73-42d2-be92-de32c46622bf # Unaffiliated Venue Message
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e047714a-4a0f-4b02-a22c-eecd949eb60f
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: 1214cfb6-149e-46ad-9100-5f24b3e2cb56
+handle: calendar
+name: Calendar
+sortOrder: 3

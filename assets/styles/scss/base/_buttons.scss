@@ -1,0 +1,45 @@
+/*
+  Buttons
+*/
+
+.button {
+
+  &.rounded {
+    border-radius: 1000px;
+  }
+
+  &.success, &.success:hover {
+    color: $black;
+  }
+
+}
+
+.btn {
+  margin: 0;
+
+  a {
+    @extend .button;
+    @extend .large;
+    @extend .shadow;
+    margin: 1rem 0;
+    font-weight: 700;
+    border-radius: 1000px;
+  }
+
+  &.blue a {
+    @extend .primary;
+  }
+
+  &.green a {
+    @extend .success;
+  }
+
+  &.yellow a {
+    @extend .warning;
+  }
+
+  &.red a {
+    @extend .alert;
+  }
+
+}

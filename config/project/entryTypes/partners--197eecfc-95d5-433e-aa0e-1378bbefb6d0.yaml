@@ -1,0 +1,210 @@
+fieldLayouts:
+  6bd67877-e2b1-48e0-9af6-dffdeb2e97f7:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 3f05fdb4-f902-4f6c-b44e-e954335dd9f4
+            warning: null
+            width: 100
+          -
+            fieldUid: 9e61e4c1-5b33-42dd-aa7c-b3d11d23b351 # Partner Type
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b4f19d6e-b10e-4dc3-8bc3-e358c6e8a4fd
+            warning: null
+            width: 100
+          -
+            fieldUid: 1fd3c0c4-b7ef-4705-b2f4-cf2f3589dd03 # Partner Genre
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f7407338-6f56-4fa6-b155-47a7c3a93320
+            warning: null
+            width: 100
+          -
+            fieldUid: 6e290fc3-f22c-429b-a097-33ad83ee2ebf # Logo
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e24f835d-3e3b-4cb7-89c5-14215dab8954
+            warning: null
+            width: 100
+          -
+            fieldUid: 6bfc4b23-14c0-4271-ad9a-23fd5bb39c1a # Image Gallery
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c84484b2-5648-4749-9433-b085eb892444
+            warning: null
+            width: 100
+          -
+            fieldUid: 5764896d-54f2-425b-b36e-4278f5440071 # Body
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5a3a7c83-33a2-4f38-a245-2ae1d023f05d
+            warning: null
+            width: 100
+          -
+            fieldUid: 3b2f6fe3-2a5e-4e3b-b7d5-eb08348ff0fb # Venues
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a7121207-8c60-46d6-8f70-a5bcd0a1b67b
+            warning: null
+            width: 100
+          -
+            fieldUid: c0519cb6-b643-4026-a4d3-d6afc4f8fbcb # Hours
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 44ad9d3e-fb6f-4846-8038-1ed793dfcfdf
+            warning: null
+            width: 100
+          -
+            fieldUid: cde5030f-e1a4-496d-b344-f73099d63efb # Box Office Info
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 70d24302-8930-4277-96a0-845c15b81511
+            warning: null
+            width: 100
+          -
+            fieldUid: 127fd295-905e-4e9d-b2d7-5fb09c761391 # Equity Statement Excerpt
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c423d92b-83bd-4f86-a959-4b8a975f687b
+            warning: null
+            width: 100
+          -
+            fieldUid: 3f4bdcee-5f68-4b73-8010-0bf80e558472 # Equity Statement URL
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9f66c400-c557-4179-bf0d-94bab48f1878
+            warning: null
+            width: 100
+          -
+            fieldUid: 05135f4f-5d8a-43da-8396-f6878472c9dd # 2 for  Day?
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 35dca79a-7f59-49a6-9e48-b3891c54b18c
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: b38fbe5b-f000-418d-b958-29be57d9dac6
+      -
+        elements:
+          -
+            fieldUid: 4c6edd80-f445-4879-afe0-3e94039bb6d1 # Phone
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1871f9e1-3f9d-4770-8c35-4e0a5a82bb7a
+            warning: null
+            width: 100
+          -
+            fieldUid: a483d640-ec16-4b2d-9596-db9991b19cfd # Website
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c222df6e-f432-4e51-9755-d98e8aa3bd62
+            warning: null
+            width: 100
+          -
+            fieldUid: 80d49d25-87d4-479c-9277-ae40762c6019 # Email Addresses
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9566e36d-ab6d-46c5-9fac-9381384bb47b
+            warning: null
+            width: 100
+          -
+            fieldUid: 1b067782-5ec8-465b-a1b7-5fb3d20a708f # Social Links
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dee28ee5-177f-4b89-a18b-761746662018
+            warning: null
+            width: 100
+        name: Contact
+        sortOrder: 2
+        uid: 0993b813-5f66-4f14-add4-084821cba41f
+      -
+        elements:
+          -
+            fieldUid: 12f0e18b-8472-48c3-b1ea-8d447c21c8ec
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ed5134fb-a891-491d-a057-76a407abca9b
+            warning: null
+            width: 100
+        name: SEO
+        sortOrder: 3
+        uid: fb5dbbf7-9486-4584-8568-bb425b06f68f
+handle: partners
+hasTitleField: true
+name: Partners
+section: 58ddfcec-fc33-455c-9bc5-918e692e49f8 # SEA Partners
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: none

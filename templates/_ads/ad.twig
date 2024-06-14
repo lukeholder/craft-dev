@@ -1,0 +1,14 @@
+<div class="{{ cssClass }} ad-space">
+  <div class="ad-banner">
+    <a href="{{ ad.adBannerLink }}" target="_blank" onclick="ga('send', 'event', 'banner', 'click','{{ ad.adAdvertiserName }}',1.00, {'nonInteraction': 1});">
+      {% if banner|length %}
+        <img
+          src="{{ banner.url }}"
+          alt="{{ banner.imageAlt }}"
+          onload="ga('send', 'event', 'banner', 'impression','{{ ad.adAdvertiserName }}: {{ ad.title }}',2.00, {'nonInteraction': 1});"
+        >
+      {% endif %}
+    </a>
+  </div>
+  <p class="ad-copy"><a href="{{ ad.adBannerLink }}" target="_blank" onclick="ga('send', 'event', 'text', 'click','{{ ad.adAdvertiserName }}: {{ ad.title }}',1.00, {'nonInteraction': 1});">Sponsored by {{ ad.adAdvertiserName }}</a></p>
+</div>

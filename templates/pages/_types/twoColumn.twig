@@ -1,0 +1,41 @@
+{# SINGLE PAGE TWO COLUMNG TEMPLATE #}
+
+{# SET SITE PREFIX  #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+
+{# SET ENTRY VARIABLES #}
+{% set sidebar                  = entry.sidebarNavigation %}
+  
+<header class="page-header">
+  <h1 class="page-title">{{ entry.title }}</h1>
+</header>
+
+<div class="grid-x grid-margin-x">
+
+  <div class="main large-8 cell">
+    {{ entry.body }}
+  </div>
+
+  <div class="sidebar large-4 cell">
+
+    {% if sidebar == "about" %}
+      {{ craft.navigation.render(sitePrefix ~ 'sidebarAbout', {
+        ulClass: 'sidebar-nav',
+      }) }}
+    {% endif %}
+
+    {% if sidebar == "support" %}
+      {{ craft.navigation.render(sitePrefix ~ 'sidebarSupport', {
+        ulClass: 'sidebar-nav',
+      }) }}
+    {% endif %}
+
+    {% if entry.sidebar %}
+      <div class="sidebar-content">
+        {{ entry.sidebar }}
+      </div>
+    {% endif %}
+
+  </div>
+
+</div>

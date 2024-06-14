@@ -1,0 +1,32 @@
+{# CALENDAR CHECK-IN ENTRY #}
+
+{# ENSURE ROOT EVENT #}
+{% set entry                    = entry.eventRelated? entry.eventRelated.one() : entry %}
+
+{# SET PARAMETER DEFAULTS #}
+{% set showCheckin              = showCheckin?? true %}
+
+{% if entry %}
+  <div class="calendar-item checkin-item">
+    <h3>
+      {{ entry.title }}
+      {% if entry.eventCategory.id(63).exists() %}
+        <a href="/calendar?cat=63" class="category button small">Free</a>
+      {% endif %}
+    </h3>
+    {% if entry.eventGallery|length >= 1 %}
+      <div class="event-image" style="background-image: url({{ entry.eventGallery|first.getUrl('gallery') }})"></div>
+    {% endif %}
+    <p>
+      {% if venue is not defined and entry.eventVenue|length %}
+        <strong>{{- entry.eventVenue.one().title -}}</strong> |
+      {% endif %}
+      {{ time }}
+    </p>
+    {% if showCheckin %}
+      <p><a class="button large" href="/calendar/event/{{ entry.slug }}/checkin?venue={{ venueId }}">Check In</a></p>
+    {% else %}
+      <p><a class="button large" href="/calendar/event/{{ entry.slug }}">Learn More</a></p>
+    {% endif %}
+  </div>
+{% endif %}

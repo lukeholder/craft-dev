@@ -1,0 +1,151 @@
+{# PARTNERS SINGLE PAGE #}
+{% extends "_layout" %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "#{ entry.title }" %}
+{% set class                    = "partners single" %}
+
+{# Set partner variables #}
+{% set type                     = entry.partnerType %}
+{% set website                  = entry.partnerWebsite %}
+{% set phone                    = entry.partnerPhone %}
+{% set emails                   = entry.partnerEmailAddresses.all() %}
+{% set socialLinks              = entry.partnerSocialLinks.all() %}
+{% set venues                   = entry.partnerVenues.all() %}
+{% set hours                    = entry.partnerHours %}
+{% set boxOffice                = entry.partnerBoxOffice %}
+{% set equityStatementExcerpt   = entry.equityStatementExcerpt %}
+{% set equityStatementUrl       = entry.equityStatementUrl %}
+{% set twoForTenDay             = entry.twoForTenDay %}
+{% set twoForTenPartner         = "" %}
+{% set logo                     = entry.partnerLogo.one() %}
+{% set gallery                  = entry.partnerGallery.all() %}
+{% set primaryVenueId           = null %}
+
+{# SET PRIMARY VENUE, IF PRESENT #}
+{% if venues | length == 1 %}
+  {% set primaryVenueId         = venues|first.id %}
+{% endif %}
+
+{% block content %}
+{% cache %}
+
+  <article id="partner-single" class="entry">
+  
+    <header class="page-header grid-x grid-margin-x">
+      {% if logo %}
+        <div class="medium-4 cell align-self-middle medium-order-2">
+          <div class="org-logo">
+            <img src="{{ logo.getUrl('logo') }}" alt="{{ title }}">
+          </div>
+        </div>
+      {% endif %}
+  
+      <div class="auto cell medium-order-1">
+        <p class="entry-section"><a href="{{ siteUrl }}partners">{{type}} Partner</a></p>
+        <h1 class="entry-title">{{ entry.title }}</h1>
+        <div class="partner-contact">
+          {% if website is not empty %}
+            <p class="partner-website"><a href="{{ website }}" target="_blank">{{ website }}</a></p>
+          {% endif %}
+
+          {% if phone is not empty %}
+            <p class="partner-phone"><a href="tel:{{ phone|replace('/[^0-9]/', '') }}">{{ phone }}</a></p>
+          {% endif %}
+
+          {% if emails | length %}
+            {% for block in emails %}
+              <p class="org-email">
+                {% if block.type == "email" %}
+                  {% if block.nameType is not empty %}
+                    {{ block.nameType }}:
+                  {% endif %}
+                  {% if block.emailAddress %}
+                    <a href="mailto:{{block.emailAddress}}">{{ block.emailAddress }}</a>
+                  {% endif %}
+                {% endif %}
+              </p>
+            {% endfor %}
+          {% endif %}
+  
+        </div>
+      </div>
+  
+    </header>
+  
+    <hr>
+  
+    <div class="grid-x grid-margin-x">
+      <div class="main large-8 cell">
+  
+        {% include '_partials/partner-gallery' %}
+  
+        <div class="entry-content">
+          {{ entry.body }}
+        </div>
+
+        {% if equityStatementExcerpt is not empty %}
+          <div id="org-equity-statement" class="entry-content">
+            <h3 class="section-head sans">Equity Statement</h3>
+            <blockquote cite="{{ equityStatementUrl }}">
+              {{ '"' ~ equityStatementExcerpt|raw ~ '"' }}
+            </blockquote>
+            {% if equityStatementUrl is not empty %}
+              For more information about {{ title }}'s commitment to equity and racial justice, view their <a href="{{ equityStatementUrl }}">full equity statement</a>.
+            {% endif %}
+          </div>
+        {% endif %}
+  
+        <div class="org-events">
+          <h3 class="section-head sans">Upcoming Events</h3>
+          {% include 'calendar/_partials/upcoming-listings' %}
+        </div>
+
+      </div>
+  
+      <div class="sidebar large-4 cell">
+  
+        {% include '_partials/partner-social-links' %}
+  
+        {% if venues | length %}
+          <div id="org-venues" class="section">
+            <h4 class="section-head sans">Venues</h4>
+            <ul class="simple-list">
+              {% for entry in venues %}
+                <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+  
+        {% if hours %}
+          <div id="org-hours" class="section">
+            <h4 class="section-head sans">Hours</h4>
+            {{ hours }}
+          </div>
+        {% endif %}
+  
+        {% if boxOffice is not empty %}
+          <div id="org-box-office" class="section">
+            <h4 class="section-head sans">Box Office Info</h4>
+            {{ boxOffice }}
+          </div>
+        {% endif %}
+
+        {% include '_partials/partner-two-for-ten' %}
+
+      </div>
+  
+    </div>
+  
+  </article>
+
+{% endcache %}
+
+{% include "_partials/edit-link" %}
+
+{% endblock %}
+
+{% block footerJs %}
+
+{% endblock %}

@@ -1,0 +1,21 @@
+columnSuffix: vwfxpfuf
+contentColumnType: text
+fieldGroup: 4f2d0446-809a-4896-9a97-3b5409c32324 # Global
+handle: noticeProvisional
+instructions: 'Display at the top of the site if the logged-in user is a Provisional Member.'
+name: 'Provisional Notice'
+searchable: true
+settings:
+  availableTransforms: ''
+  availableVolumes: ''
+  ckeConfig: 9eceeb25-5e29-4263-84f0-53203f894c30 # Simple 2
+  columnType: text
+  defaultTransform: ''
+  enableSourceEditingForNonAdmins: true
+  purifierConfig: null
+  purifyHtml: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: site
+type: craft\ckeditor\Field

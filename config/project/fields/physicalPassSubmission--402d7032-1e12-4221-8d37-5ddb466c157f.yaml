@@ -1,0 +1,20 @@
+contentColumnType: text
+fieldGroup: 4f2d0446-809a-4896-9a97-3b5409c32324 # Global
+handle: physicalPassSubmission
+instructions: ''
+name: 'Physical Pass Submission'
+searchable: false
+settings:
+  availableTransforms: '*'
+  availableVolumes: '*'
+  ckeConfig: 37036a58-d782-4f1e-b28d-d76b77295540 # Default
+  columnType: text
+  defaultTransform: ''
+  enableSourceEditingForNonAdmins: true
+  purifierConfig: ''
+  purifyHtml: '1'
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+translationKeyFormat: null
+translationMethod: site
+type: craft\ckeditor\Field

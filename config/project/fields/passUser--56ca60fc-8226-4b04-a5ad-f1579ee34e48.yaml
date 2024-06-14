@@ -1,0 +1,19 @@
+contentColumnType: integer(10)
+fieldGroup: fd236ba0-1e89-4e9f-987a-b6574f8ba498 # Passes
+handle: passUser
+instructions: ''
+name: User
+searchable: true
+settings:
+  decimals: 0
+  defaultValue: null
+  max: null
+  min: '0'
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

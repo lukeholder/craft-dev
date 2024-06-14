@@ -1,0 +1,97 @@
+fieldLayouts:
+  ebfe5506-952f-42bf-bb5c-cd8fa1e01d79:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 1962d247-6fdb-475f-9a7a-dac5733bb12d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0de665c4-25e6-4fba-8588-a347682f358f # Featured Events
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 72758cba-835b-482d-818f-ca8443eaad0c
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 7d4a5613-3c05-4534-adfc-577177355e56 # Program Copy
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2407a044-94bb-4474-8dc9-c43435257e9e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 98d5f5a0-ba64-4ade-92ed-9ff9cbb75f81 # Featured Programs
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d1f6cf9b-18f8-4d51-b130-b5e41112f7e9
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a3cfbe19-a73e-4b72-9576-c4ed50dc8ff1
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: "## Featured Events\r\n\r\nAdding featured events will display a slide show at the top of the homepage. The featured item does not have to be an event in the calendar and you can enter any url to link from the featured item.\r\n\r\n\r\n## Program Copy and Featured Program\r\n\r\nUse this area to feature TeenTix programs. \r\n\r\n\r\n## Homepage ad space\r\n\r\nTo display ads on the homepage, create a new entry under **Ads**, select **Homepage 600W x 500H** for banner location and upload an image under **Banner 300x250 or 600x500**. For homepage ad image, the recommended size is 600W X 500H. Images will shrink on blog pages.\r\n\r\n\r\n## Recently on the Blog\r\n\r\nThis area will feature three of the most recent blog posts."
+            type: craft\fieldlayoutelements\Tip
+            uid: 15505569-af44-451e-bbbe-957a55a38a6e
+            userCondition: null
+        name: Help
+        uid: d2d8d149-d2b2-4659-860f-2c577e1f915f
+        userCondition: null
+handle: home
+hasTitleField: false
+name: 'SEA Home'
+section: 3224591a-a646-4d25-b95e-2672c1aa85e2 # SEA Home
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,140 +1,69 @@
-# craft-dev
+# teentix-site
+TeenTix.org website built on Craft CMS.
 
-A DDEV-based development environment for Craft CMS.
+# local development
 
-## Requirements
+We have docs for the platforms below. Each one is linked to setup steps.
 
-- DDEV
-- Orbstack (not technically required, but as we will be make use of bind-mounts, it is highly recommended)
+* [Github Codespaces](https://github.com/teentix/docs/wiki/Developing-on-Github-Codespaces)
+* [macOS](https://github.com/teentix/docs/wiki/Developing-on-macOS)
+* [Windows using WSL](https://github.com/teentix/docs/wiki/Developing-on-Windows)
+* [Ubuntu](https://github.com/teentix/docs/wiki/Developing-on-Ubuntu)
 
-## Setup
+Other platforms will likely work, help us document them!
 
-### Disable Mutagen
+## get a copy of the staging db
 
-When using Orbstack, you likely don't want to be using Mutagen, which is enabled by default. To disabled for existing and future projects:
+Download a copy of the staging database (ask TVD or Michiko), and add it to: `docker/db_init_scripts`.
 
-```shell
-ddev mutagen reset && ddev config global --performance-mode=none && ddev config --performance-mode=none
+## running the site
+
+To run the site:
+
+```
+make build-and-run-local
 ```
 
-### Clone packages
+*Note:* the first takes a little while, because it populates the database.
 
-Clone the packages you want to work on into a canonical location, e.g.:
+Then open: http://localhost:4000
 
-```shell
-git clone --branch v3 git@github.com:craftcms/cms.git ~/Dev/craftcms-3
-git clone --branch develop git@github.com:craftcms/cms.git ~/Dev/craftcms-4
-git clone --branch 5.0 git@github.com:craftcms/cms.git ~/Dev/craftcms-5
-git clone --branch develop git@github.com:craftcms/commerce.git ~/Dev/commerce-4
-``` 
+That's the main Seattle site.
 
-### Create projects
-
-Clone this project, create a new one, or use an existing one.
-If cloning this project, there are branches for each major version of Craft:
-
-```shell
-git clone --branch 3.x git@github.com:timkelty/craft-dev.git ~/Dev/craft-3-project
-git clone --branch 4.x git@github.com:timkelty/craft-dev.git ~/Dev/craft-4-project
-git clone --branch 5.x git@github.com:timkelty/craft-dev.git ~/Dev/craft-5-project
-```
-
-### Composer
-
-Within your project, run:
-
-```shell
-composer config repositories.local --json '{
-  "type": "path",
-  "url": "/tmp/packages/*",
-  "options": {
-    "symlink": true
-  }
-}'
-```
-
-### DDEV
-
-With your project running (`ddev start`), run:
-
-```shell
-ddev describe -j | jq --raw-output .raw.services.db.host_ports
-```
-
-Copy the returned integer.
-
-#### .ddev/config.local.yaml
-
-```shell
-cp .ddev/config.local.yaml.example .ddev/config.local.yaml
-```
-
-Paste the value from above as the value of `host_db_port`.
-This will lock this project to that port, so you can save it in TablePlus or wherever.
-
-#### .ddev/docker-compose.local.yaml
-
-```shell
-cp .ddev/config.local.yaml.example .ddev/config.local.yaml
-```
-Modify the `volumes` list to include any paths to checked out repos you'd like to work on.
-
-  - On the left side of the `:` is the path on your host machine. Change this to the path of your checked out package repos.
-  - On the right side of the `:` is the path within the container. This can be anything, so long as it resides in `/tmp/packages/*`.
-
-## PhpStorm Settings
-
-### Attach Projects
-
-For each package repo you want to work on, attach it via `File -> Attach project…`.
-
-- Funny things happen if you attached project have `.`s in them.
-- If `Attach Project…` isn't appearing, try the normal `Open…` dialog. It should ask you if you want to attach it. 
-
-![attach-project.png](storage/docs/attach-project.png)
-
-It should end up looking something like this:
-
-![attach-project.png](storage/docs/attached-projects-sidebar.png)
+The LA site is at: http://la.localhost:4000
+The admin pane is at: http://admin.localhost:4000/admin
 
 
-### `PHP -> Composer`
+For now most changes require stopping and restarting the server, which is fairly quick.
 
-- uncheck `Add packages as libraries`
+## authentication to load page
 
-![php-composer.png](storage/docs/php-composer.png)
+Basic authentication is required for local development, as well as for the dev and staging environments. Use username and password:
 
-### `PHP -> Debug`
+* Username: `empowerteens`
+* Password: (leave blank)
 
-- remove `9000` from `Xdebug -> Debug port` (optional)
-  - 9000 is no longer the default port for Xdebug and often conflicts with other services.
-- uncheck `Force break at first line when no path mapping specified` (optional)
-- uncheck `Force break at first line when a script is outside the project` (optional)
+## admin authentication
 
-![php-debug.png](storage/docs/php-debug.png)
+Work with TVD or Michiko to get access to the http://localhost:4000/admin site. If you loaded the staging database, we'll provide a shared admin username and password.
 
-### `PHP -> Servers -> Path Mappings`
+## debugging with PHPStorm
 
-- For your _additional_ project roots (i.e. composer packages):
-  - Absolute path on the server: `/tmp/packages/<package-name>`, e.g. `/tmp/packages/craft-4`
+See: https://github.com/teentix/docs/wiki/Debugging-with-PHPStorm
 
-![php-servers-default.png](storage/docs/php-servers-default.png)
-![php-servers-bref.png](storage/docs/php-servers-bref.png)
+# development
+For more guidance on developing for the TeenTix site, see additional documentation for:
+- [CraftCMS Configuration](config/project/README.md)
+- [Stylesheets](assets/styles/scss/README.md)
+- [Templates](templates/README.md)
+  - [Calendar](templates/calendar/README.md) 
 
-### `PHP -> Directories`
+# deployment
 
-- Ensure `vendor` is marked as `Excluded` for each of your _additional_ project roots (i.e. composer packages).
+Deployments are managed with Github Actions. See: https://github.com/teentix/teentix-site/actions
 
-![directories.png](storage/docs/directories.png)
+Configuration for deployments is in the `.github/workflows` directory.
 
-### `Languages & Frameworks -> JavaScript -> Libraries`
+# teentix.org redirects
 
-- Add an entry and include the `src` directory of each of your _additional_ project roots (i.e. composer packages). Selecting the `src` directory prevents PhpStorm from indexing the vendor directory and contaminating PHP definitions.
-
-![javascript-libraries.png](storage/docs/javascript-libraries.png)
-
-### `PHP -> Include Path`
-
-- Ensure this is **empty**. If not, remove all entries.
-
-![php.png](storage/docs/php.png)
+We redirect requests for `teentix.org` to `www.teentix.org`. The code to do that is in the `apex-redirect/` directory. The apex-redirect is deployed as part of the production Github Action.

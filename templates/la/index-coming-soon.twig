@@ -1,0 +1,16 @@
+{% extends "_layouts/comingsoon" %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "TeenTix LA" %}
+
+{% block content %}
+{% cache %}
+  <div id="site-logo">
+    <a class="white-block" href="{{ craft.app.sites.primarySite.baseUrl }}">
+      <img src="{{ siteUrl }}images/site/teentix-logo.png" alt="TeenTix Logo" />
+      <h1>TeenTix LA <br>Coming Soon</h1>
+    </a>
+    <p><strong>Questions? Contact <a href="mailto:%69%6e%66%6f%40%6c%61%2e%74%65%65%6e%74%69%78%2e%6f%72%67">info@la.teentix.org</a> for more information!</strong></p>
+  </div>
+{% endcache %}
+{% endblock %}

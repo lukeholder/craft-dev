@@ -1,0 +1,94 @@
+/*
+  Typography
+*/
+
+.edit-link {
+
+}
+
+.slab {
+  font-family: $font-slab;
+  font-weight: 500;
+}
+
+.dharma {
+  font-family: $font-header;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.main {
+  h1, h2, h3, h4, h5, h6 {
+    color: $teal;
+  }
+}
+
+.page-title,
+.entry-title {
+  font-family: $font-header;
+  color: $teal;
+  line-height: 1.2em;
+
+  a {
+    color: $teal;
+    &:hover {
+      color: $dark-teal;
+    }
+  }
+
+}
+
+.subheader, .subtitle {
+  color: $dark-blue;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.entry-section {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.section-head {
+  margin: 1rem 0 .5rem 0;
+  color: $teal;
+  text-transform: uppercase;
+}
+
+.simple-list {
+  list-style: none;
+  margin: 0 0 1rem 0;
+}
+
+.shadow {
+  box-shadow: 0 .1rem .5rem rgba($black, .2);
+}
+
+blockquote {
+  @extend .slab;
+  font-size: 18px;
+  font-style: italic;
+
+}
+
+figure {
+  margin: 1rem 0;
+}
+
+.caption {
+  font-size: rem-calc(14);
+  color: $dark-gray;
+}
+
+.two-column {
+  column-count: 2;
+}
+
+.pagination {
+  border-top: 1px solid $light-gray;
+  padding-top: 1rem;
+}
+
+.no-break {
+  white-space: nowrap;
+}

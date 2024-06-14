@@ -1,0 +1,60 @@
+fieldLayouts:
+  c7017ee9-ca67-4974-8ba3-6d618ce09aa9:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 72befa19-8c20-4582-a5f6-7f13510f9a84
+            warning: null
+            width: 100
+          -
+            fieldUid: 24a9e9d6-7048-41e2-89f9-b07ce4eb2457 # Alt Tag
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: db9a9f1f-bcb6-4250-acfc-264eefee61ae
+            warning: null
+            width: 100
+          -
+            fieldUid: 3b35de68-31ec-45e8-91f3-f55c9ab8d974 # Caption
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 29893988-be6c-4d99-8758-657dcea1c9f2
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: c1087e71-a05f-469c-9546-7d3d5dfc2bbf
+fs: la_partnerImages
+handle: la_partnerImages
+hasUrls: true
+name: 'LA Partner Images'
+sortOrder: 0
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+url: '@assetsUrl'

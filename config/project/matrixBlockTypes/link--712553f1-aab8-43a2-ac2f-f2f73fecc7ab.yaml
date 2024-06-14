@@ -1,0 +1,65 @@
+field: a5e4f400-d013-4f1f-a7f0-bb14f9e64442 # Footer Social Links
+fieldLayouts:
+  a6361aa9-47fd-4a00-89eb-a9ea1c62c790:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: fd168c2d-3fe2-412c-b16f-66be2771df44 # Website
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 882a15bc-089e-4e71-8b59-4cdb0a8c77d0
+            warning: null
+            width: 100
+          -
+            fieldUid: 6fe4cb80-0b85-4a81-90d1-2726460948d0 # Website Url
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dd0cfe22-2976-458c-be28-485d58f38a29
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: bca9ba50-b42f-40dc-b1ce-f47ad013db58
+fields:
+  6fe4cb80-0b85-4a81-90d1-2726460948d0: # Website Url
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: websiteUrl
+    instructions: ''
+    name: 'Website Url'
+    searchable: true
+    settings:
+      maxLength: '255'
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+  fd168c2d-3fe2-412c-b16f-66be2771df44: # Website
+    contentColumnType: text
+    fieldGroup: null
+    handle: website
+    instructions: ''
+    name: Website
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: link
+name: 'Social Link'
+sortOrder: 1

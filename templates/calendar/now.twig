@@ -1,0 +1,153 @@
+{# CALENDAR NOW VIEW #}
+{% extends "_layout" %}
+
+{# SET CALENDAR BY SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set calendars                = [sitePrefix ~ "events", sitePrefix ~ "eventsAdditional"] %}
+
+{# SET VENUE, IF AVAILABLE #}
+{% set venueSlug                = venueSlug?? null %}
+{% if venueSlug %}
+  {% set venue                  = craft.entries.slug(venueSlug).one() %}
+{% endif %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Today's Events" %}
+{% set class                    = "calendar list today" %}
+
+{# SET CRITERIA FROM URL #}
+{% set relationParam            = ['and'] %}
+{% set venueId                  = "" %}
+{% if venue is defined and venue %}
+  {% set venueId                = venue.id %}
+  {% set relationParam          = relationParam|merge([{ targetElement: venueId }]) %}
+{% endif %}
+
+{# SET TIME RANGE #}
+{% set timeStart                = now %}
+{% set timeEnd                  = now|date_modify('+2 hours +15 min') %}
+
+{# RETRIEVE EVENTS #}
+
+{% set currentPeriodEvents    = craft.calendar.events({
+  rangeStart                  : timeStart,
+  rangeEnd                    : timeEnd,
+  relatedTo                   : relationParam|filter|length > 1? relationParam : null,
+  calendar                    : calendars
+}) %}
+
+{% set alldayEvents           = craft.calendar.events({
+  rangeStart                  : timeStart,
+  rangeEnd                    : timeStart,
+  allDay                      : true,
+  orderBy                     : "title ASC",
+  relatedTo                   : relationParam|filter|length > 1? relationParam : null,
+  calendar                    : calendars
+}) %}
+
+{% set displayedEventIds        = currentPeriodEvents.ids() %}
+
+{% if relationParam|length > 1 %}
+  {% set futureEvents           = craft.calendar.events({
+    rangeStart                  : "now",
+    rangeEnd                    : "+3 months",
+    limit                       : 10,
+    loadOccurrences             : "next",
+    relatedTo                   : relationParam
+  }).id('and, not ' ~ displayedEventIds|length > 0? displayedEventIds|join(', not ') : "0") %}
+  {% set futureEvents           = futureEvents|group(e => e.eventRelated? e.eventRelated.one().id : e.id) %}
+{% endif %}
+
+{# SET SEO VALUES #}
+{% do seomatic.tag.get('robots').content('noindex,nofollow') %}
+
+{% block footerJs %}
+  <script>
+    dataLayer = dataLayer || [];
+    dataLayer.push({
+      'event': 'checkin_list',
+      'venue_name': '{{ venue is defined? venue.title : "" }}',
+      'user_age': '{{ currentUser and not currentUser.userIsProvisional? (currentUser.userBirthdate.diff(now).days/360)|round : '' }}',
+      'user_is_provisional': '{{ currentUser.userIsProvisional? 'true' : 'false' }}'
+    });
+  </script>
+{% endblock %}
+
+{% block content %}
+  
+  <div id="main">
+
+    <header class="page-header">
+      {% if venue is defined %}
+        <h1 class="page-title">{{ venue.title }}</h1>
+      {% else %}
+        <h1 class="page-title">Today’s Events</h1>
+        <div class="subheader">{{ timeStart.format('l, F j') }} from {{ timeStart.format('g:ia') }} to {{ timeEnd.format('g:ia') }}</div>
+      {% endif %}
+    </header>
+
+    <div class="welcome-banner">
+      <div class="grid-x grid-margin-x align-middle">
+        {% if not currentUser %}
+          <div class="message medium-8 cell">
+            <h2>Welcome to TeenTix!</h2>
+            <p>Members get $5 tickets at participating venues. All teens welcome.</p>
+          </div>
+          <div class="call-to-action medium-4 cell">
+            <a class="button large" href="/account/new/quick/"><span class="no-break">Sign Up</span>—<span class="no-break">It's Free!</span></a>
+          </div>
+        {% else %}
+          <h2>Are you ready to attend?</h2>
+          Before you can buy a ticket at the box office, you must first check in. Start by choosing what event you're attending below.
+        {% endif %}
+      </div>
+    </div>
+
+    <div id="calEvents" class="day-calendar checkin-calendar section">
+      <div id="calEventsListings">
+        <div id="calList">
+
+          {% if venue is defined %}
+            <h2>Now Playing</h2>
+            <div class="subheader">{{ timeStart.format('l, F j') }} from {{ timeStart.format('g:ia') }} to {{ timeEnd.format('g:ia') }}</div>
+          {% endif %}
+
+          {% for entry in currentPeriodEvents %}
+            {% if not entry.allDay %}
+              {% set time = entry.startDate.format('g:ia') %}
+              {% include 'calendar/_partials/checkin-listing' with {'time': time} %}
+            {% endif %}
+            {% if entry.eventRelated %}
+              {% set displayedEventIds = displayedEventIds|merge([entry.eventRelated.one().id]) %}
+            {% endif %}
+          {% endfor %}
+
+          {% for entry in alldayEvents %}
+            {% include 'calendar/_partials/checkin-listing' with {'time': 'All Day'} %}
+          {% endfor %}
+
+          {% if currentUser %}
+            <p>Events will be displayed for two hours in advance of their start time. If we are missing an event, you may <a href="{{ siteUrl }}account/pass/{{ currentUser.id }}">check-in anyway</a>.</p>
+          {% elseif currentPeriodEvents|length == 0 %}
+            <p>There are no known events occurring during the current period.</p>
+          {% endif %}
+
+          {% if venue is defined and futureEvents is defined and futureEvents|length > 0 %}
+            {% for eventId, showtimes in futureEvents %}
+              {% if eventId not in displayedEventIds %}
+                {% if loop.first %}
+                  <h2>Upcoming Events</h2>
+                {% endif %}
+                {% set entry = showtimes|first %}
+                {% set displayedEventIds = displayedEventIds|merge([entry.id]) %}
+                {% include 'calendar/_partials/checkin-listing' with {'time': entry.startDate.format('l, F j') ~ " at " ~ (entry.allDay? 'All Day' : entry.startDate.format('g:ia')), 'showCheckin': false} %}
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+{% endblock %}

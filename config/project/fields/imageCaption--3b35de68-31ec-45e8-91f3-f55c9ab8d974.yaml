@@ -1,0 +1,18 @@
+contentColumnType: text
+fieldGroup: c144b4bd-543d-43d7-96ec-6ad8626e7880 # Images
+handle: imageCaption
+instructions: ''
+name: Caption
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

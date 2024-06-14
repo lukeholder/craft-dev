@@ -1,0 +1,64 @@
+field: 80d49d25-87d4-479c-9277-ae40762c6019 # Email Addresses
+fieldLayouts:
+  adf40d23-6edb-400f-a1fe-f7754ccda681:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 3be92485-cdce-4cdc-816c-b1bb2f73cd30 # Name or type
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 24f4f4a4-fe5f-41dc-87ca-479503279fdb
+            warning: null
+            width: 100
+          -
+            fieldUid: 35cd9ae2-be06-4393-99ba-f416c96fdbc6 # Email Address
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 95e671dd-a9aa-4f7e-9841-a09cb56dc37d
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+        uid: ed74e9d1-098f-4626-b156-397d5eb8ae53
+fields:
+  3be92485-cdce-4cdc-816c-b1bb2f73cd30: # Name or type
+    contentColumnType: text
+    fieldGroup: null
+    handle: nameType
+    instructions: ''
+    name: 'Name or type'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: text
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  35cd9ae2-be06-4393-99ba-f416c96fdbc6: # Email Address
+    contentColumnType: string
+    fieldGroup: null
+    handle: emailAddress
+    instructions: ''
+    name: 'Email Address'
+    searchable: true
+    settings:
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Email
+handle: email
+name: Email
+sortOrder: 1

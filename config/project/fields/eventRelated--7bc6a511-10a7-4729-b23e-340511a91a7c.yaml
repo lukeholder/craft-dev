@@ -1,0 +1,22 @@
+contentColumnType: string
+fieldGroup: 77d77e0d-cbd3-4972-b03e-ec05812e4b1b # Event
+handle: eventRelated
+instructions: 'It is required to select the parent event this event is related to.'
+name: 'Related Event'
+searchable: false
+settings:
+  allowSelfRelations: false
+  limit: '1'
+  localizeRelations: false
+  selectionLabel: ''
+  showSiteMenu: true
+  source: null
+  sources:
+    - 'calendar:1'
+    - 'calendar:3'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: null
+translationKeyFormat: null
+translationMethod: site
+type: Solspace\Calendar\FieldTypes\EventFieldType

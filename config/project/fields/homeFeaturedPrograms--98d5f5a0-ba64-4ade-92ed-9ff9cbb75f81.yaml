@@ -1,0 +1,14 @@
+contentColumnType: string
+fieldGroup: 0066c35c-d64c-4398-b138-23b72223575d # Home
+handle: homeFeaturedPrograms
+instructions: 'Add additional blocks to feature programs. Including an logo is highly recommended, 640H x 640W.'
+name: 'Featured Programs'
+searchable: true
+settings:
+  contentTable: '{{%matrixcontent_homefeaturedprograms}}'
+  maxBlocks: ''
+  minBlocks: ''
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

@@ -1,0 +1,19 @@
+columnSuffix: sxrupdxi
+contentColumnType: string(40)
+fieldGroup: 4f2d0446-809a-4896-9a97-3b5409c32324 # Global
+handle: givebutterWidgetId
+instructions: null
+name: 'Widget ID'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 10
+  code: true
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\PlainText

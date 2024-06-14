@@ -1,0 +1,89 @@
+{# CALENDAR FILTERS #}
+
+{# Set calendar by current site #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set partners                 = craft.entries.section(sitePrefix ~ 'partners').orderBy('title').relatedTo({ sourceElement: eventIds }).all() %}
+{% set venues                   = craft.entries.section(sitePrefix ~ 'venues').orderBy('title').relatedTo({ sourceElement: eventIds }).all() %}
+
+{% set eventGenre               = craft.categories().group('eventType').relatedTo({ sourceElement: eventIds }).all() %}
+{% set eventCategory            = craft.categories().group('eventCategory').relatedTo({ sourceElement: eventIds }).all() %}
+{% set anyFreeEvents            = craft.categories().id(63).relatedTo({ sourceElement: eventIds }).exists() %}
+
+{# CURRENT INTERESTS #}
+{% set userInterestIds = "" %}
+{% if currentUser %}
+  {% for genre in eventGenre %}
+    {% if currentUser.userInterests|contains("label", genre.title) %}
+      {% set userInterestIds = userInterestIds ~ "x" ~ genre.id %}
+    {% endif %}
+  {% endfor %}
+  {% if query is empty and userInterestIds is not empty %}
+    {% if year %}
+      {% redirect "/calendar?genre=" ~ userInterestIds %}
+    {% else %}
+      {% redirect "/calendar/" ~ year ~ "/" ~ targetDate|date("m") ~ "?genre=" ~ userInterestIds %}
+    {% endif %}
+  {% endif %}
+{% endif %}
+
+<form id="calFilters" action="{{ url(craft.app.request.pathInfo) }}">
+
+  <div class="grid-x grid-margin-x">
+
+    <div class="small-6 medium-12 cell">
+      <label>Free events only</label>
+      <div class="switch">
+        <input class="switch-input" id="isFree" type="checkbox" {{ anyFreeEvents ? "" : "disabled" }} {{ searchIsFree? 'checked="checked"' : '' }} value="true" name="isFree">
+        <label class="switch-paddle" for="isFree">
+          <span class="show-for-sr">Free Events Only</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="small-6 medium-12 cell">
+      <label>Genre</label>
+      <select {{ eventGenre? "" : "disabled" }} name="genre">
+        <option value="">All Genres</option>
+        {% if userInterestIds is not empty %}
+          <option {{ "x" in searchGenre? "selected" : "" }} value="{{ userInterestIds }}">My Interests</option>
+        {% endif %}
+        {% nav entry in eventGenre %}
+          <option value="{{ entry.id }}">{{ entry.title }}</option>
+        {% endnav %}
+      </select>
+      {% if currentUser %}
+        <p class="help-text"><a href="/account/profile">Edit my interests</a></p>
+      {% endif %}
+    </div>
+
+    <div class="small-6 medium-12 cell">
+      <label>Event Category</label>
+      <select {{ eventCategory? "" : "disabled" }} name="cat">
+        <option value="">All Categories</option>
+        {% nav entry in eventCategory %}
+          <option value="{{ entry.id }}">{{ entry.title }}</option>
+        {% endnav %}
+      </select>
+    </div>
+    <div class="small-6 medium-12 cell">
+      <label>Partner Org</label>
+      <select {{ partners? "" : "disabled" }} name="partner">
+        <option value="">All Partners</option>
+        {% nav entry in partners %}
+          <option value="{{ entry.id }}">{{ entry.title }}</option>
+        {% endnav %}
+      </select>
+    </div>
+    <div class="small-6 medium-12 cell">
+      <label>Venue</label>
+      <select {{ venues? "" : "disabled" }} name="venue">
+        <option value="">All Venues</option>
+        {% for entry in venues %}
+          <option value="{{ entry.id }}">{{ entry.title }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+  </div>
+
+</form>

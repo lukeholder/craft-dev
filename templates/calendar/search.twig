@@ -1,0 +1,78 @@
+{# CALENDAR SEARCH RESULTS #}
+{% extends "_layout" %}
+
+{# SET CALENDAR BY SITE #}
+{% set sitePrefix               = currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set calendars                = [sitePrefix ~ "events"] %}
+
+{# SET SEARCH TERM FROM URL #}
+{% set searchQuery              = craft.app.request.getParam('q') %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Calendar Search" %}
+{% set class                    = "calendar list" %}
+
+{# ACQUIRE URL SEGMENTS #}
+{% set baseUrlSegments          = 1 %}
+{% set segment1                 = craft.app.request.segment(baseUrlSegments + 1) %}
+
+{# GET SEARCH QUERY #}
+{% set eventSearch              = {
+  loadOccurrences               : false,
+  limit                         : 20,
+  search                        : searchQuery,
+  orderBy                       : "startDate DESC",
+  calendar                      : calendars
+} %}
+
+{# SET SEO VALUES #}
+{% do seomatic.meta.seoTitle( siteName ~ " Events Calendar - Search Results" ) %}
+{% do seomatic.meta.robots("noindex") %}
+
+{% paginate craft.calendar.events(eventSearch) as pageInfo, events %}
+
+{% block content %}
+  
+  <div id="main">
+  
+    <header class="page-header">
+      <h1 class="page-title">{{ siteName }} Events Calendar</h1>
+    </header>
+  
+    {% include 'calendar/_partials/calendar-view-nav' %}
+  
+    <div id="searchCalendar">
+  
+      <div id="calendarHeader" class="">
+        <h3 class="text-center">Search results for {{ searchQuery }}</h3>
+      </div>
+  
+      <div class="calendar-listing">
+  
+        {% for entry in events %}
+
+          {% if entry.eventDatesLabel %}
+            {% set time = entry.eventDatesLabel %}
+          {% else %}
+            {% set time =  entry.startDate.format("l, F j, Y") %}
+          {% endif %}
+
+          {% include 'calendar/_partials/day-event' with {'time': time} %}
+
+        {% endfor %}
+
+        {% if events|length == 0 %}
+          <p class="text-center">Sorry, we could not find any events for {{ searchQuery }}.</p>
+        {% endif %}
+
+        {% include '_partials/paginate-list' %}
+
+        {% include 'calendar/_partials/calendar-mobile-nav' %}
+
+      </div>
+  
+    </div>
+  
+  </div>
+
+{% endblock %}

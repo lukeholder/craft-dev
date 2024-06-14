@@ -1,0 +1,135 @@
+{% extends "_layout" %}
+
+{# SET HEADER VARIABLES #}
+{% set title                    = "Home" %}
+{% set class                    = "home" %}
+
+{# SET ENTRY VARIABLES #}
+{% set entry                    = craft.entries.section('la_home').one() %}
+{% set ads                      = craft.entries.section('la_ads').search('homepage300wX250h').all() %}
+{% set blog                     = craft.entries.section('la_blog').limit(3).all() %}
+
+{% block content %}
+{% cache %}
+  
+  {% if entry.homeFeaturedEvents|length %}
+    <div id="home-featured" class="slick slick-featured">
+      {% for block in entry.homeFeaturedEvents.all() %}
+        {% if block.type == "featured" %}
+          {% set image = block.image.one() %}
+          <div class="slide">
+            <div class="slide-image">
+              <a href="{{ block.linkUrl }}"><img src="{{ image.getUrl('topImage') }}" alt="{{ image.imageAlt }}"></a>
+            </div>
+            <div class="slide-content shadow">
+              <h2 class="event-title">
+                <a href="{{ block.linkUrl }}">{{ block.headline }}</a>
+              </h2>
+              {% if block.dates %}<p class="event-date">{{ block.dates }}</p>{% endif %}
+              {% if block.copy %}<div class="event-description">{{ block.copy }}</div>{% endif %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+  
+  <div id="home-programs">
+  
+    {% if entry.homeProgramCopy %}
+      <header>{{ entry.homeProgramCopy }}</header>
+    {% endif %}
+
+    {% if entry.homeFeaturedPrograms|length %}
+      <div class="grid-x grid-margin-x align-center" data-equalizer data-equalize-on="medium">
+      {% for block in entry.homeFeaturedPrograms.all() %}
+        {% if block.type == "program" %}
+          <div class="cell large-8">
+            <div class="entry-container grid-x align-middle">
+            {% if block.logo %}
+              <div class="entry-image medium-6 cell">
+                <img src="{{ block.logo.one().getUrl('max800') }}" alt="">
+              </div>
+            {% endif %}
+              <div class="medium-6 cell">
+                {% if block.text %}
+                  <div class="entry-copy" data-equalizer-watch>{{ block.text }}</div>
+                {% endif %}
+                {% if block.buttonLink %}
+                  <div class="entry-button">
+                    <a class="button rounded shadow" href="{{ block.buttonLink }}">{% if block.buttonText %}{{ block.buttonText }}{% else %}Learn More {% endif %}</a>
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      </div>
+    {% endif %}
+
+  </div>
+  
+  {% if ads|length > 0 %}
+    <div id="home-ads" class="slick slick-ads">
+      {% for entry in ads %}
+        {% set image = entry.adBanner300X250.one() %}
+        <div class="slide">
+          <div class=" grid-x grid-margin-x">
+            <div class="medium-6 cell">
+              {{ entry.adHomeCopy }}
+            </div>
+            <div class="medium-6 cell">
+              {% if entry.adBannerLink %}<a href="{{ entry.adBannerLink }}">{% endif %}
+                <img
+                  src="{{ image.getUrl() }}"
+                  alt="{{ image.imageAlt }}"
+                  onload="ga('send', 'event', 'banner', 'impression','{{ entry.adAdvertiserName }}: {{ entry.title }}',2.00, {'nonInteraction': 1});"
+                >
+              {% if entry.adBannerLink %}</a>{% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  
+  {% if blog|length > 0 %}
+    <div id="home-blog">
+
+      <header>
+        <h2 class="section-head"><a href="/blog">Recently on the Blog</a></h2>
+      </header>
+
+      <div class="grid-x grid-margin-x align-center">
+
+      {% for entry in blog %}
+        {% set image = entry.featuredImage.one() %}
+        <div class="large-4 cell">
+          <div class="entry-container grid-x">
+
+            <div class="entry-image medium-6 large-12 cell">
+              <a href="{{ entry.url }}">
+              {% if image %}
+                <img src="{{ image.getUrl('cropped600x400') }}" alt="{{ image.title }}">
+              {% endif %}
+              </a>
+            </div>
+
+            <div class="entry-copy medium-6 large-12 cell">
+              <h3 class="entry-title"><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+              <p class="entry-date">{{ entry.postDate.format('F j, Y') }}</p>
+              {{ entry.subhead }}
+            </div>
+
+          </div>
+        </div>
+      {% endfor %}
+
+      </div>
+    </div>
+  {% endif %}
+
+{% endcache %}
+{% endblock %}

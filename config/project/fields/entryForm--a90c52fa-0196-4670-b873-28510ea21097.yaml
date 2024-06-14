@@ -1,0 +1,9 @@
+contentColumnType: integer
+fieldGroup: e823674a-d2fc-4023-89dd-2bfacf7bc359 # Common
+handle: entryForm
+instructions: ''
+name: Form
+searchable: true
+translationKeyFormat: null
+translationMethod: none
+type: Solspace\Freeform\FieldTypes\FormFieldType

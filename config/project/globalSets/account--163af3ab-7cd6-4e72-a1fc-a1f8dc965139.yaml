@@ -1,0 +1,126 @@
+fieldLayouts:
+  001b24a9-7b7d-4f19-b514-45619b09e7db:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: d322eeba-d462-44c3-97db-ea0f3f76938f # Sign Up Sidebar
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 51aa0491-3ec9-4617-b4c1-786383d58056
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: f5f1ee07-d133-4dc3-b095-7599d5096ebb # Welcome Message
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 468127ea-3770-45ad-9a4b-831d3f815fb0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2b746c39-8ded-45b2-aaf9-77878ad827ff # Alumni Message
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b4ce604c-18cc-4fe9-af48-23f5644bf246
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 402d7032-1e12-4221-8d37-5ddb466c157f # Physical Pass Submission
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 63a06903-58c3-4479-8b31-c2831987ea7c
+            userCondition: null
+            warning: null
+            width: 100
+        name: Primary
+        uid: 61522381-6a99-49f2-8dce-b35da11ed205
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 967ec534-7ba7-419b-9a16-1123629a086d # Sign-Up Sidebar (Quick)
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 42893842-a55c-4d3d-98b2-126a66635d71
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: dbcc3a32-04e0-414d-b42b-51950b060c48 # Sign-Up Sidebar (Provisional)
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 69486e03-a3a4-460f-bd63-d20a03d6d086
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 65cb78cb-f363-4a6e-a999-cdded615158e # Welcome Message (Provisional)
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1127bcde-88ff-4761-9285-9212d2116dbd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 7d574c10-9a96-4a1f-9248-99393e773ba6 # Provisional Notice
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 259bdf6f-200d-4d7c-8517-3088a3f0e209
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: d69ec1fe-34c3-415b-b299-c9e1bd04e9bf # Provisional Notice (Expired)
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a0d29bde-3aaa-4ce2-81f4-75a56d3e2212
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Quick Sign-Up'
+        uid: 15775d08-e199-4728-a910-53d675bee881
+        userCondition: null
+handle: account
+name: Account
+sortOrder: 1
