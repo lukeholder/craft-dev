@@ -1,4 +1,4 @@
-dateModified: 1718817587
+dateModified: 1718818619
 email:
   fromEmail: tim@craftcms.com
   fromName: 'Craft Project'
@@ -8,10 +8,12 @@ meta:
     1c4db2bd-b409-4bf2-a56e-c3327f0b160e: 'Craft Project' # Craft Project
     81a6b84b-4e06-4828-a256-d2d537885644: Common # Common
     283a253c-a365-4823-89c4-b48fbd2232a3: 'Craft Project' # Craft Project
+    913503aa-7083-43a0-80c4-57e841daa3fc: 'Main Nav' # Main Nav
 plugins:
   navigation:
     edition: standard
     enabled: true
+    licenseKey: IUDTS7T27GYYLVIPOOTW4JQZ
     schemaVersion: 2.0.7
 system:
   edition: pro

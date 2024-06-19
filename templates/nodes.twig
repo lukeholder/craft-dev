@@ -1,0 +1,4 @@
+YO
+{% set sitePrefix= currentSite.primary? "" : currentSite.handle ~ "_" %}
+{% set mainNav = craft.navigation.nodes(sitePrefix ~ 'mainNav').all() ?? null %}
+{{ dump(mainNav) }}

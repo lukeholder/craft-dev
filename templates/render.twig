@@ -1,0 +1,2 @@
+{% set sitePrefix= currentSite.primary? "" : currentSite.handle ~ "_" %}
+{{ craft.navigation.render(sitePrefix ~ 'mainNav') }}
