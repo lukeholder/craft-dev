@@ -33,9 +33,9 @@ jobs:
           git config user.name "shinybrad"
           git config user.email "shinybrad@users.noreply.github.com"
 
-      - name: Update ${{ github.ref_name }}-cloud Branch
+      - name: Update cloud/${{ github.ref_name }} Branch
         run: |
-          git checkout -B ${{ github.ref_name }}-cloud
+          git checkout -B cloud/${{ github.ref_name }}
           git add composer.json composer.lock
           git commit -m "Update composer dependencies"
-          git push origin ${{ github.ref_name }}-cloud --force
+          git push origin cloud/${{ github.ref_name }} --force
