@@ -2,6 +2,7 @@
     "require": {
         "craftcms/cloud": "1.x-dev",
         "craftcms/cms": "4.x-dev",
+        "verbb/navigation": "^2.0",
         "vlucas/phpdotenv": "^5.4.0"
     },
     "require-dev": {
