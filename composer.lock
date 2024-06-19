@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fdf3fd3884b3c10f793e72402a2b013c",
+    "content-hash": "f6cf6f6a497eea186d474cbbdc0e6838",
     "packages": [
         {
             "name": "99designs/http-signatures",
@@ -1167,11 +1167,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "4.x-dev",
+            "version": "dev-bugfix/4.x-cloud-dev-mode",
             "dist": {
                 "type": "path",
                 "url": "/tmp/packages/craft-4",
-                "reference": "3965ae2fd52384252ff237d51dc8b01d5ad5089c"
+                "reference": "beec12ba2140ef44f3e3a66ba8953d30266b9fe4"
             },
             "require": {
                 "commerceguys/addressing": "^1.2",
@@ -8991,7 +8991,14 @@
             "time": "2022-09-04T10:37:52+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "package": "craftcms/cms",
+            "version": "dev-bugfix/4.x-cloud-dev-mode",
+            "alias": "4.x-dev",
+            "alias_normalized": "4.9999999.9999999.9999999-dev"
+        }
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
         "craftcms/cloud": 20,
