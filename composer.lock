@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6cf6f6a497eea186d474cbbdc0e6838",
+    "content-hash": "3d2ba5c1feeb53b7ef4312c0479391c0",
     "packages": [
         {
             "name": "99designs/http-signatures",
@@ -8995,8 +8995,8 @@
         {
             "package": "craftcms/cms",
             "version": "dev-bugfix/4.x-cloud-dev-mode",
-            "alias": "4.x-dev",
-            "alias_normalized": "4.9999999.9999999.9999999-dev"
+            "alias": "4.10.2",
+            "alias_normalized": "4.10.2.0"
         }
     ],
     "minimum-stability": "stable",
