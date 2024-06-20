@@ -48,7 +48,6 @@ class NavigationVariable
 
     public function nodes($criteria = null): NodeQuery
     {
-        throw new Exception('STOP!');
         if ($criteria instanceof NodeQuery) {
             $query = $criteria;
         } else {
