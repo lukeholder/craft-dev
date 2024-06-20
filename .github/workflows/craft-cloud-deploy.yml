@@ -37,5 +37,5 @@ jobs:
         run: |
           git checkout -B cloud/${{ github.ref_name }}
           git add composer.json composer.lock
-          git commit -m $(git show -s --format=%s)
+          git commit -m "$(git show -s --format=%s)"
           git push origin cloud/${{ github.ref_name }} --force
