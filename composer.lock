@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3fac7e12e006f8a357293431d1fffbf",
+    "content-hash": "9b0ee0787f983e8474f3336943c507ec",
     "packages": [
         {
             "name": "99designs/http-signatures",
@@ -7112,17 +7112,11 @@
         },
         {
             "name": "verbb/navigation",
-            "version": "dev-bugfix/dev-mode-crashes",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/craftcms/navigation.git",
-                "reference": "27f05be266b07dd45e70fb7fc2d9ac0974b52aa2"
-            },
+            "version": "2.0.28",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/navigation/zipball/27f05be266b07dd45e70fb7fc2d9ac0974b52aa2",
-                "reference": "27f05be266b07dd45e70fb7fc2d9ac0974b52aa2",
-                "shasum": ""
+                "type": "path",
+                "url": "verbb-navigation",
+                "reference": "38bf00f55154ae7f95b75791dc161e4ef7b11fdb"
             },
             "require": {
                 "craftcms/cms": "^4.0.0",
@@ -7166,7 +7160,9 @@
                 "docs": "https://github.com/verbb/navigation",
                 "rss": "https://github.com/verbb/navigation/commits/v2.atom"
             },
-            "time": "2024-06-20T02:55:12+00:00"
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "vlucas/phpdotenv",
@@ -9002,19 +8998,12 @@
             "version": "dev-bugfix/4.x-cloud-dev-mode",
             "alias": "4.10.2",
             "alias_normalized": "4.10.2.0"
-        },
-        {
-            "package": "verbb/navigation",
-            "version": "dev-bugfix/dev-mode-crashes",
-            "alias": "2.0.28",
-            "alias_normalized": "2.0.28.0"
         }
     ],
     "minimum-stability": "stable",
     "stability-flags": {
         "craftcms/cloud": 20,
-        "craftcms/cms": 20,
-        "verbb/navigation": 20
+        "craftcms/cms": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

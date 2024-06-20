@@ -1,0 +1,59 @@
+{% apply spaceless %}
+
+{% set ulAttributes = options.ulAttributes ?? {} %}
+{% set ulClass = options.ulClass is defined ? [options.ulClass] : [] %}
+{% set ulAttributes = ulAttributes | merge({ class: ulClass }) %}
+
+{% set liAttributes = options.liAttributes ?? {} %}
+{% set liClass = options.liClass is defined ? [options.liClass] : [] %}
+{% set liAttributes = liAttributes | merge({ class: liClass }) %}
+
+{% set aAttributes = options.aAttributes ?? {} %}
+{% set aClass = options.aClass is defined ? [options.aClass] : [] %}
+{% set aAttributes = aAttributes | merge({ class: aClass }) %}
+
+{% set currentClass = options.currentClass ?? 'current' %}
+{% set activeClass = options.activeClass ?? 'active' %}
+{% set hasChildrenClass = options.hasChildrenClass ?? 'has-children' %}
+
+<ul {{ attr(ulAttributes) }}>
+    {% nav node in nodes %}
+        {% set liClasses = liAttributes.class | merge([node.classes]) | filter %}
+
+        {% if node.children | length %}
+            {% set liClasses = liClasses | merge([hasChildrenClass]) %}
+        {% endif %}
+
+        {% set liNodeAttributes = liAttributes | merge({ class: liClasses }) %}
+
+        {% set aNodeAttributes = aAttributes | merge({
+            href: node.url ?? false,
+            target: node.newWindow ? '_blank' : false,
+            rel: node.newWindow ? 'noopener' : false,
+        }) | merge(node.getCustomAttributesObject()) %}
+
+        {% if node.active %}
+            {% set aClasses = aNodeAttributes.class | merge([activeClass]) | filter %}
+            {% set aNodeAttributes = aNodeAttributes | merge({ class: aClasses }) %}
+        {% endif %}
+
+        {% if node.getCurrent() %}
+            {% set aClasses = aNodeAttributes.class | merge([currentClass]) | filter %}
+            {% set aNodeAttributes = aNodeAttributes | merge({ class: aClasses, 'aria-current': 'page' }) %}
+        {% endif %}
+
+        <li {{ attr(liNodeAttributes) }}>
+            <a {{ attr(aNodeAttributes) }}>
+                {{- node.title -}}
+            </a>
+
+            {% ifchildren %}
+                <ul {{ attr(ulAttributes) }}>
+                    {% children %}
+                </ul>
+            {% endifchildren %}
+        </li>
+    {% endnav %}
+</ul>
+
+{% endapply %}
