@@ -11,6 +11,7 @@ use craft\helpers\Template;
 use craft\web\View;
 
 use Twig\Markup;
+use yii\base\Exception;
 
 class NavigationVariable
 {
@@ -47,6 +48,7 @@ class NavigationVariable
 
     public function nodes($criteria = null): NodeQuery
     {
+        throw new Exception('STOP!');
         if ($criteria instanceof NodeQuery) {
             $query = $criteria;
         } else {
@@ -71,7 +73,7 @@ class NavigationVariable
         // Add eager-loading in by default. Generate a map for `children.children.children.etc`
         $eagerLoadingMap = [];
 
-        for ($i = 1; $i < 8; $i++) { 
+        for ($i = 1; $i < 8; $i++) {
             $eagerLoadingMap[] = rtrim(str_repeat('children.', $i), '.');
         }
 

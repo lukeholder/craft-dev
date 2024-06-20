@@ -579,7 +579,7 @@ class Node extends Element
             }
         } catch (Throwable $e) {
             // This will throw an error if the class exists, but the plugin disabled/uninstalled,
-            // despite the check with `class_exists()` 
+            // despite the check with `class_exists()`
         }
 
         $classNameParts = explode('\\', $this->type);
@@ -617,7 +617,7 @@ class Node extends Element
             }
         } catch (Throwable $e) {
             // This will throw an error if the class exists, but the plugin disabled/uninstalled,
-            // despite the check with `class_exists()` 
+            // despite the check with `class_exists()`
         }
 
         // Convert to rgb to play nice with opacity alterations
@@ -1192,7 +1192,7 @@ EOD;
 
         return implode("\n", $fields);
     }
-    
+
 
     // Private Methods
     // =========================================================================
