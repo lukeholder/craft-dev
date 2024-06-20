@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a6c8f4b07ef145f592d080b8e27f5606",
+    "content-hash": "6841e443228888be9d5178881677c10f",
     "packages": [
         {
             "name": "99designs/http-signatures",
@@ -7112,16 +7112,16 @@
         },
         {
             "name": "verbb/navigation",
-            "version": "2.0.28",
+            "version": "dev-bugfix/dev-mode-crashes",
             "source": {
                 "type": "git",
-                "url": "https://github.com/verbb/navigation.git",
-                "reference": "9ada688f7ef323028aa1c14ecd7838b7ad4d5b4f"
+                "url": "https://github.com/craftcms/navigation.git",
+                "reference": "27f05be266b07dd45e70fb7fc2d9ac0974b52aa2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/navigation/zipball/9ada688f7ef323028aa1c14ecd7838b7ad4d5b4f",
-                "reference": "9ada688f7ef323028aa1c14ecd7838b7ad4d5b4f",
+                "url": "https://api.github.com/repos/craftcms/navigation/zipball/27f05be266b07dd45e70fb7fc2d9ac0974b52aa2",
+                "reference": "27f05be266b07dd45e70fb7fc2d9ac0974b52aa2",
                 "shasum": ""
             },
             "require": {
@@ -7141,7 +7141,6 @@
                     "verbb\\navigation\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -7153,21 +7152,21 @@
             ],
             "description": "Create navigation menus for your site.",
             "keywords": [
-                "Craft",
                 "cms",
+                "craft",
                 "craft-plugin",
                 "craftcms",
                 "menu",
                 "navigation"
             ],
             "support": {
-                "docs": "https://github.com/verbb/navigation",
                 "email": "support@verbb.io",
                 "issues": "https://github.com/verbb/navigation/issues?state=open",
-                "rss": "https://github.com/verbb/navigation/commits/v2.atom",
-                "source": "https://github.com/verbb/navigation"
+                "source": "https://github.com/verbb/navigation",
+                "docs": "https://github.com/verbb/navigation",
+                "rss": "https://github.com/verbb/navigation/commits/v2.atom"
             },
-            "time": "2024-06-16T01:20:06+00:00"
+            "time": "2024-06-20T02:55:12+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -9003,12 +9002,19 @@
             "version": "dev-bugfix/4.x-cloud-dev-mode",
             "alias": "4.10.2",
             "alias_normalized": "4.10.2.0"
+        },
+        {
+            "package": "verbb/navigation",
+            "version": "dev-bugfix/dev-mode-crashes",
+            "alias": "2.0.28",
+            "alias_normalized": "2.0.28.0"
         }
     ],
     "minimum-stability": "stable",
     "stability-flags": {
         "craftcms/cloud": 20,
-        "craftcms/cms": 20
+        "craftcms/cms": 20,
+        "verbb/navigation": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
