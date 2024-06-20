@@ -34,7 +34,7 @@
     "repositories": {
         "navigation": {
             "type": "vcs",
-            "url": "https://github.com/craftcms/navigation"
+            "url": "https://github.com/craftcms/navigation.git"
         },
         "local": {
             "type": "path",
