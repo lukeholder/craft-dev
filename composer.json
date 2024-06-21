@@ -2,7 +2,7 @@
     "require": {
         "craftcms/cloud": "dev-bugfix/dev-mode-crashes as 1.x-dev",
         "craftcms/cms": "4.x-dev",
-        "verbb/navigation": "*",
+        "verbb/navigation": "^2.0.28",
         "vlucas/phpdotenv": "^5.4.0"
     },
     "require-dev": {
@@ -32,10 +32,6 @@
         ]
     },
     "repositories": {
-        "navigation": {
-            "type": "path",
-            "url": "verbb-navigation"
-        },
         "local": {
             "type": "path",
             "url": "/tmp/packages/*",
