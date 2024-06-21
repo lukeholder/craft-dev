@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f79b47c13a2423eb8c41bb1f0ce2231",
+    "content-hash": "ad24dceb6c0a9c913ec1f447f3d694dc",
     "packages": [
         {
             "name": "99designs/http-signatures",
@@ -1112,11 +1112,11 @@
         },
         {
             "name": "craftcms/cloud",
-            "version": "dev-bugfix/dev-mode-crashes",
+            "version": "dev-feature/test-controller",
             "dist": {
                 "type": "path",
                 "url": "/tmp/packages/cloud-extension-yii2",
-                "reference": "1e1738a66f11645858444b24f2aa0351a9609917"
+                "reference": "10b330e891233c3f4cf83568bb7efd7b830a4571"
             },
             "require": {
                 "99designs/http-signatures": "^4.0",
@@ -8994,7 +8994,7 @@
     "aliases": [
         {
             "package": "craftcms/cloud",
-            "version": "dev-bugfix/dev-mode-crashes",
+            "version": "dev-feature/test-controller",
             "alias": "1.x-dev",
             "alias_normalized": "1.9999999.9999999.9999999-dev"
         }
