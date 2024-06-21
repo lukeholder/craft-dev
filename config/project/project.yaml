@@ -1,4 +1,4 @@
-dateModified: 1717696717
+dateModified: 1718996174
 email:
   fromEmail: tim@craftcms.com
   fromName: 'Craft Project'
@@ -24,10 +24,6 @@ fs:
       localFsUrl: '@web/uploads'
       subpath: public
     type: craft\cloud\fs\AssetsFs
-graphql:
-  publicToken:
-    enabled: false
-    expiryDate: null
 meta:
   __names__:
     1c4db2bd-b409-4bf2-a56e-c3327f0b160e: 'Craft Project' # Craft Project
