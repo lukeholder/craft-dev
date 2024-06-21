@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "20055e00e1dd17fdd4fca6e0a54e337c",
+    "content-hash": "079de0cafe225aa09954c17c4a48835d",
     "packages": [
         {
             "name": "99designs/http-signatures",
@@ -1113,10 +1113,16 @@
         {
             "name": "craftcms/cloud",
             "version": "dev-feature/test-controller",
-            "dist": {
-                "type": "path",
-                "url": "/tmp/packages/cloud-extension-yii2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/cloud-extension-yii2.git",
                 "reference": "10b330e891233c3f4cf83568bb7efd7b830a4571"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/cloud-extension-yii2/zipball/10b330e891233c3f4cf83568bb7efd7b830a4571",
+                "reference": "10b330e891233c3f4cf83568bb7efd7b830a4571",
+                "shasum": ""
             },
             "require": {
                 "99designs/http-signatures": "^4.0",
@@ -1142,36 +1148,33 @@
                 "bootstrap": "craft\\cloud\\Module"
             },
             "autoload": {
-                "psr-4": {
-                    "craft\\cloud\\": "src/"
-                },
                 "files": [
                     "autoload.php"
-                ]
-            },
-            "scripts": {
-                "check-cs": [
-                    "ecs check --ansi"
                 ],
-                "fix-cs": [
-                    "ecs check --ansi --fix"
-                ],
-                "phpstan": [
-                    "phpstan --memory-limit=1G"
-                ]
+                "psr-4": {
+                    "craft\\cloud\\": "src/"
+                }
             },
-            "transport-options": {
-                "symlink": true,
-                "relative": false
-            }
+            "notification-url": "https://packagist.org/downloads/",
+            "support": {
+                "issues": "https://github.com/craftcms/cloud-extension-yii2/issues",
+                "source": "https://github.com/craftcms/cloud-extension-yii2/tree/feature/test-controller"
+            },
+            "time": "2024-06-21T18:42:26+00:00"
         },
         {
             "name": "craftcms/cms",
             "version": "4.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/cms.git",
+                "reference": "5e9339e96f932ee3991f7e2a1a0b1e1af674ef08"
+            },
             "dist": {
-                "type": "path",
-                "url": "/tmp/packages/craft-4",
-                "reference": "81cd6ce9cf28ec64bf3e3318a7e0eda46279cb28"
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/5e9339e96f932ee3991f7e2a1a0b1e1af674ef08",
+                "reference": "5e9339e96f932ee3991f7e2a1a0b1e1af674ef08",
+                "shasum": ""
             },
             "require": {
                 "commerceguys/addressing": "^1.2",
@@ -1248,25 +1251,7 @@
                     "yii2tech\\ar\\softdelete\\": "lib/ar-softdelete/src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "crafttests\\": "tests/"
-                }
-            },
-            "scripts": {
-                "check-cs": [
-                    "ecs check --ansi"
-                ],
-                "fix-cs": [
-                    "ecs check --ansi --fix"
-                ],
-                "codecept-build": [
-                    "codecept build"
-                ],
-                "phpstan": [
-                    "phpstan --memory-limit=1G"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -1284,17 +1269,14 @@
                 "yii2"
             ],
             "support": {
-                "email": "support@craftcms.com",
-                "issues": "https://github.com/craftcms/cms/issues?state=open",
-                "forum": "https://craftcms.stackexchange.com/",
-                "source": "https://github.com/craftcms/cms",
                 "docs": "https://craftcms.com/docs/4.x/",
-                "rss": "https://github.com/craftcms/cms/releases.atom"
+                "email": "support@craftcms.com",
+                "forum": "https://craftcms.stackexchange.com/",
+                "issues": "https://github.com/craftcms/cms/issues?state=open",
+                "rss": "https://github.com/craftcms/cms/releases.atom",
+                "source": "https://github.com/craftcms/cms"
             },
-            "transport-options": {
-                "symlink": true,
-                "relative": false
-            }
+            "time": "2024-06-20T21:27:13+00:00"
         },
         {
             "name": "craftcms/flysystem",
