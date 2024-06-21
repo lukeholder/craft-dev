@@ -17,4 +17,8 @@ class NodeQuery extends ElementQuery
     public mixed $classes = null;
     public mixed $customAttributes = null;
     public mixed $data = null;
+    public mixed $urlSuffix = null;
+    public mixed $newWindow = false;
+    public mixed $element = null;
+    public mixed $hasUrl = false;
 }
