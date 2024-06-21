@@ -51,23 +51,21 @@ class NavigationVariable
 
     public function nodes($criteria = null): ElementQuery
     {
-        return Entry::find();
+        if ($criteria instanceof NodeQuery) {
+            $query = $criteria;
+        } else {
+            $query = NodeElement::find();
+        }
 
-        // if ($criteria instanceof NodeQuery) {
-        //     $query = $criteria;
-        // } else {
-        //     $query = NodeElement::find();
-        // }
-        //
-        // if ($criteria) {
-        //     if (is_string($criteria)) {
-        //         $criteria = ['handle' => $criteria];
-        //     }
-        //
-        //     Craft::configure($query, $criteria);
-        // }
-        //
-        // return $query;
+        if ($criteria) {
+            if (is_string($criteria)) {
+                $criteria = ['handle' => $criteria];
+            }
+
+            Craft::configure($query, $criteria);
+        }
+
+        return $query;
     }
 
     public function render($criteria = null, array $options = []): Markup

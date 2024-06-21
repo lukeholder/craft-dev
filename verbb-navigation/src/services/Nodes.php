@@ -176,7 +176,7 @@ class Nodes extends Component
             $label = '';
 
             for ($i = 1; $i < $node->level; $i++) {
-                $label .= '    ';
+
             }
 
             $label .= $node->title;
