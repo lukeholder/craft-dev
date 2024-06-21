@@ -56,7 +56,8 @@ class NavigationVariable
 
         if ($criteria) {
             if (is_string($criteria)) {
-                $criteria = ['handle' => $criteria];
+                // $criteria = ['handle' => $criteria];
+                $criteria = [];
             }
 
             Craft::configure($query, $criteria);
