@@ -1,9 +1,6 @@
 <?php
 namespace verbb\navigation\variables;
 
-use craft\elements\db\ElementQuery;
-use craft\elements\db\EntryQuery;
-use craft\elements\Entry;
 use verbb\navigation\Navigation;
 use verbb\navigation\elements\db\NodeQuery;
 use verbb\navigation\elements\Node as NodeElement;
@@ -49,7 +46,7 @@ class NavigationVariable
         return null;
     }
 
-    public function nodes($criteria = null): ElementQuery
+    public function nodes($criteria = null): NodeQuery
     {
         if ($criteria instanceof NodeQuery) {
             $query = $criteria;
