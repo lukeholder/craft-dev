@@ -109,33 +109,6 @@ class NodeQuery extends ElementQuery
         return $this;
     }
 
-    // We set the active state on each node, however it gets trickier when trying to do things like settings the active
-    // state when a child is active, which involves firing off additional element queries for each node's children,
-    // which quickly blow out queries. So instead, do this when the elements are populated
-    public function populate($rows): array
-    {
-        // Let the parent class handle this like normal
-        $rows = parent::populate($rows);
-
-        // Store all processed items by their ID, we need to lookup parents later
-        $processedRows = ArrayHelper::index($rows, 'id');
-
-        foreach ($rows as $row) {
-            // If the current node is active, and it has a parent, set its active state
-            if (is_a($row, Node::class) && $row->active) {
-                $ancestors = $row->ancestors->all();
-
-                foreach ($ancestors as $ancestor) {
-                    if (isset($processedRows[$ancestor->id])) {
-                        $processedRows[$ancestor->id]->isActive = true;
-                    }
-                }
-            }
-        }
-
-        return $rows;
-    }
-
 
     // Protected Methods
     // =========================================================================
