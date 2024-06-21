@@ -1,10 +1,7 @@
 <?php
 namespace verbb\navigation\elements\db;
 
-use craft\db\Query;
 use craft\elements\db\ElementQuery;
-use craft\helpers\Db;
-use verbb\navigation\models\Nav as NavModel;
 
 class NodeQuery extends ElementQuery
 {
@@ -38,56 +35,4 @@ class NodeQuery extends ElementQuery
 
         parent::init();
     }
-
-    public function elementId($value): static
-    {
-        $this->elementId = $value;
-        return $this;
-    }
-
-    public function elementSiteId($value): static
-    {
-        $this->slug = $value;
-        return $this;
-    }
-
-    public function navId($value): static
-    {
-        $this->navId = $value;
-        return $this;
-    }
-
-    public function navHandle($value): static
-    {
-        $this->handle = $value;
-        return $this;
-    }
-
-    public function type($value): static
-    {
-        $this->type = $value;
-        return $this;
-    }
-
-    public function element($value): static
-    {
-        $this->element = $value;
-        return $this;
-    }
-
-    public function handle($value): static
-    {
-        $this->handle = $value;
-        return $this;
-    }
-
-    public function hasUrl(bool $value = false): static
-    {
-        $this->hasUrl = $value;
-        return $this;
-    }
-
-
-    // Protected Methods
-    // =========================================================================
 }
