@@ -1,6 +1,9 @@
 <?php
 namespace verbb\navigation\variables;
 
+use craft\elements\db\ElementQuery;
+use craft\elements\db\EntryQuery;
+use craft\elements\Entry;
 use verbb\navigation\Navigation;
 use verbb\navigation\elements\db\NodeQuery;
 use verbb\navigation\elements\Node as NodeElement;
@@ -46,23 +49,25 @@ class NavigationVariable
         return null;
     }
 
-    public function nodes($criteria = null): NodeQuery
+    public function nodes($criteria = null): ElementQuery
     {
-        if ($criteria instanceof NodeQuery) {
-            $query = $criteria;
-        } else {
-            $query = NodeElement::find();
-        }
+        return Entry::find();
 
-        if ($criteria) {
-            if (is_string($criteria)) {
-                $criteria = ['handle' => $criteria];
-            }
-
-            Craft::configure($query, $criteria);
-        }
-
-        return $query;
+        // if ($criteria instanceof NodeQuery) {
+        //     $query = $criteria;
+        // } else {
+        //     $query = NodeElement::find();
+        // }
+        //
+        // if ($criteria) {
+        //     if (is_string($criteria)) {
+        //         $criteria = ['handle' => $criteria];
+        //     }
+        //
+        //     Craft::configure($query, $criteria);
+        // }
+        //
+        // return $query;
     }
 
     public function render($criteria = null, array $options = []): Markup

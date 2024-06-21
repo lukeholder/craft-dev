@@ -34,14 +34,14 @@ class NodeQuery extends ElementQuery
     // Public Methods
     // =========================================================================
 
-    // public function init(): void
-    // {
-    //     if (!isset($this->withStructure)) {
-    //         $this->withStructure = true;
-    //     }
-    //
-    //     parent::init();
-    // }
+    public function init(): void
+    {
+        if (!isset($this->withStructure)) {
+            $this->withStructure = true;
+        }
+
+        parent::init();
+    }
 
     public function elementId($value): static
     {
