@@ -20,5 +20,6 @@ class NodeQuery extends ElementQuery
     public mixed $urlSuffix = null;
     public mixed $newWindow = false;
     public mixed $element = null;
+    public mixed $handle = null;
     public mixed $hasUrl = false;
 }
