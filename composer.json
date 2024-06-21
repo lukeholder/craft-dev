@@ -1,7 +1,7 @@
 {
     "require": {
         "craftcms/cloud": "dev-bugfix/dev-mode-crashes as 1.x-dev",
-        "craftcms/cms": "dev-bugfix/4.x-cloud-dev-mode as 4.10.2",
+        "craftcms/cms": "4.x-dev",
         "verbb/navigation": "*",
         "vlucas/phpdotenv": "^5.4.0"
     },
