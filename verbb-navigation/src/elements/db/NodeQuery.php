@@ -1,14 +1,10 @@
 <?php
 namespace verbb\navigation\elements\db;
 
-use verbb\navigation\elements\Node;
-use verbb\navigation\models\Nav as NavModel;
-
-use Craft;
 use craft\db\Query;
 use craft\elements\db\ElementQuery;
-use craft\helpers\ArrayHelper;
 use craft\helpers\Db;
+use verbb\navigation\models\Nav as NavModel;
 
 class NodeQuery extends ElementQuery
 {
@@ -64,24 +60,6 @@ class NodeQuery extends ElementQuery
     public function navHandle($value): static
     {
         $this->handle = $value;
-        return $this;
-    }
-
-    public function nav($value): static
-    {
-        if ($value instanceof NavModel) {
-            $this->structureId = ($value->structureId ?: false);
-            $this->navId = $value->id;
-        } else if ($value !== null) {
-            $this->navId = (new Query())
-                ->select(['id'])
-                ->from('{{%navigation_navs}}')
-                ->where(Db::parseParam('handle', $value))
-                ->column();
-        } else {
-            $this->navId = null;
-        }
-
         return $this;
     }
 
