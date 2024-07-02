@@ -25,13 +25,6 @@
         ]
     },
     "repositories": {
-        "local": {
-            "type": "path",
-            "url": "/tmp/packages/*",
-            "options": {
-                "symlink": true
-            }
-        }
     },
     "autoload": {
         "psr-4": {
@@ -39,4 +32,3 @@
         }
     }
 }
-
