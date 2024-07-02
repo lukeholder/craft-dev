@@ -1,4 +1,4 @@
-dateModified: 1719330285
+dateModified: 1719938660
 email:
   fromEmail: tim@craftcms.com
   fromName: 'Craft Project'
@@ -39,7 +39,9 @@ system:
   timeZone: America/Los_Angeles
 users:
   allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: null
-  photoVolumeUid: null
+  deactivateByDefault: false
+  defaultGroup: ''
+  photoSubpath: member-photos
+  photoVolumeUid: de40aae4-ed01-4d89-95cc-f71b32bfc255 # Public Assets
   requireEmailVerification: true
+  validateOnPublicRegistration: false
